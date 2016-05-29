@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project adv-config="true">
+  <add-on id="web.struts2.dwr"/>
+  <add-on id="spring.persistence"/>
+  <add-on id="spring.test"/>
+  <add-on id="spring.web"/>
+  <container path="com.genuitec.runtime.library/com.genuitec.struts_2.1">
+    <jar-attrs id="data/2.1/core/struts2-core-2.2.1.jar">
+      <attribute name="javadoc_location" value="jar:file:/E:/源码/struts-2.5/docs/docs/quickstart.zip!/quickstart/src/quickstart"/>
+      <attribute name="source-path-root"/>
+      <attribute name="source-path" value="E:\源码\struts-2.5\src\core\src\main\java\org"/>
+      <attribute name="source_encoding" value="UTF-8"/>
+    </jar-attrs>
+  </container>
+</project>
