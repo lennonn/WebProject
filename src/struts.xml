@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.multipart.maxSize" value="1073741824"></constant>
+	<!-- 设置上传文件的临时文件夹,默认使用javax.servlet.context.tempdir -->
+    <constant name="struts.multipart.saveDir " value="d:/tmp" />
+	<package name="uploadFiles"  extends="struts-default">
+		<action name="uploadfiles">
+			<result>/WEI-INF/jsp/upload/upload.jsp</result>
+		</action>
+		<action name="uploadSingle" method="uploadSingle" class="com.zl.web.action.UploadAction">
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">text/plain,image/x-png,image/bmp,image/pjpeg</param>
+				<param name="maximumSize">2097152</param>
+			</interceptor-ref>
+			<!-- <interceptor-ref name="defaultStack"></interceptor-ref> -->
+			<result name="success">/WEB-INF/jsp/common/success.jsp</result>
+		</action>
+	</package>
+</struts>
