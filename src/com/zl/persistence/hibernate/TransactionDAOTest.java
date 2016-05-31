@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.Types;
 import java.util.List;
 
+import org.hibernate.CacheMode;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -45,9 +46,16 @@ public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
 
 	public List<Dept> queryDeptList(){
 		Session session = sessionFactory.getCurrentSession();
-		String hql = "from Dept dept";
+
+		String hql = "select dept from Dept dept";
 		Query query = session.createQuery(hql);
-		List<Dept> list = query.list();
+		//List<Dept> list = (List<Dept>)query.setCacheable(true).list();
+		List<Dept> list = (List<Dept>)query.setCacheMode(CacheMode.GET).list();
+		System.out.println("***********测试是否通过查询缓存了数据*********");
+		Dept dept =(Dept)session.get(Dept.class, 10);
+		System.out.println(dept.getDname());
+		System.out.println("***********如果没有sql语句说明已缓存，测试结束*********");
+
 		return list;
 	}
 	public void  callProcedureTest(){

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ehcache>
   <!--如果缓存中的对象存储超过指定的缓存数量的对象存储的磁盘地址-->
-  <diskStore path="ehcache/ehcache.txt"/>
+  <diskStore path="/ehcache/ehcache.txt"/>
 
   <!-- 默认cache：如果没有对应的特定区域的缓存，就使用默认缓存 -->
   <defaultCache maxElementsInMemory="10000"
