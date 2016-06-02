@@ -114,7 +114,7 @@ public class UploadAction extends ActionSupport {
 		}
 		public String uploadSingle(){
 			//从ServletContext().getReaPath("/upload")中获取系统部署的实际路径 /upload为自定义的文件夹，必须提前创建
-			String serverPath = ServletActionContext.getServletContext().getRealPath("/upload");
+			String serverPath = ServletActionContext.getServletContext().getRealPath("/images/strutsupload");
 			//建立文件上传的完整路径，File.separator获取不同系统的'/'
 			serverFileName = serverPath+File.separator+uploadFileName;
 			try {

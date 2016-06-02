@@ -58,18 +58,20 @@ public class DownloadAction extends ActionSupport {
 	}
 
 	public InputStream getInputStream() throws IOException {
-		String path = ServletActionContext.getServletContext().getRealPath(
-				"/images");
+		String path = ServletActionContext.getServletContext().getRealPath("/");
 		String filepath = path + "/" + filename;
 		File file = new File(filepath);
 		return FileUtils.openInputStream(file);
-		// return
-		// ServletActionContext.getServletContext().getResourceAsStream(inputPath);
+		// return ServletActionContext.getServletContext().getResourceAsStream(inputPath);
 	}
 
 	public String getDownloadFileName() throws UnsupportedEncodingException {
 		String downloadFileName;
-		downloadFileName = URLEncoder.encode("ÎÄ¼þÏÂÔØ.jpg", "UTF-8");
+		String temp[] =filename.split("/");
+		for(int i=0;i<temp.length;i++){
+			System.out.println(temp[i]);
+		}
+		downloadFileName = URLEncoder.encode(temp[temp.length-1], "UTF-8");
 		return downloadFileName;
 	}
 
