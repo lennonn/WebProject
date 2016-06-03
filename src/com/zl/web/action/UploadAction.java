@@ -70,7 +70,7 @@ public class UploadAction extends ActionSupport {
 	public void setFileSource(FileSource fileSource) {
 		this.fileSource = fileSource;
 	}
-	@Autowired()
+	@Autowired
 	@Qualifier("uploadService")
 	public void setUploadService(UploadService uploadService) {
 		this.uploadService = uploadService;
