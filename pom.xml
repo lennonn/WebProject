@@ -34,11 +34,8 @@
 			<version>2.3.20</version>
 		</dependency>
 		<!-- http://mvnrepository.com/artifact/org.apache.struts/struts-taglib -->
-		<!-- <dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts-taglib</artifactId>
-			<version>2.3.20</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.apache.struts</groupId> <artifactId>struts-taglib</artifactId>
+			<version>2.3.20</version> </dependency> -->
 		<!-- http://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
@@ -51,6 +48,15 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
+		<!-- http://mvnrepository.com/artifact/org.apache.struts/struts2-convention-plugin -->
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-convention-plugin</artifactId>
+			<version>2.3.20</version>
+		</dependency>
+		<!-- http://mvnrepository.com/artifact/org.apache.struts/struts2-spring-plugin -->
+
+
 
 	</dependencies>
 </project>

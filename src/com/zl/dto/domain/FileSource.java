@@ -17,17 +17,20 @@ import javax.persistence.TemporalType;
 /**
  * File entity. @author MyEclipse Persistence Tools
  */
-@Entity
+@Entity(name="fileSource")
 @Table(name = "FILES", schema = "SCOTT")
 public class FileSource implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private String fileId;
 	private Category category;
 	private String fileName;
-	private String fileSize;
-	private String catagoryId;
+	private long fileSize;
 	private Date updateDate;
 	private String updateUser;
 	private Date uploadDate;
@@ -43,25 +46,22 @@ public class FileSource implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public FileSource(Category category, String fileName, String fileSize,
-			String catagoryId, String uploadUser, String fileUrl) {
+	public FileSource(Category category, String fileName, long fileSize, String uploadUser, String fileUrl) {
 		this.category = category;
 		this.fileName = fileName;
 		this.fileSize = fileSize;
-		this.catagoryId = catagoryId;
+		//this.catagoryId = catagoryId;
 		this.uploadUser = uploadUser;
 		this.fileUrl = fileUrl;
 	}
 
 	/** full constructor */
-	public FileSource(Category category, String fileName, String fileSize,
-			String catagoryId, Date updateDate, String updateUser,
+	public FileSource(Category category, String fileName, long fileSize,Date updateDate, String updateUser,
 			Date uploadDate, String uploadUser, String fileUrl,
 			Date downloadDate, Date downloadUser) {
 		this.category = category;
 		this.fileName = fileName;
 		this.fileSize = fileSize;
-		this.catagoryId = catagoryId;
 		this.updateDate = updateDate;
 		this.updateUser = updateUser;
 		this.uploadDate = uploadDate;
@@ -104,22 +104,14 @@ public class FileSource implements java.io.Serializable {
 	}
 
 	@Column(name = "FILE_SIZE", nullable = false, length = 10)
-	public String getFileSize() {
+	public long getFileSize() {
 		return this.fileSize;
 	}
 
-	public void setFileSize(String fileSize) {
+	public void setFileSize(long fileSize) {
 		this.fileSize = fileSize;
 	}
 
-	@Column(name = "CATAGORY_ID", nullable = false, length = 10)
-	public String getCatagoryId() {
-		return this.catagoryId;
-	}
-
-	public void setCatagoryId(String catagoryId) {
-		this.catagoryId = catagoryId;
-	}
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "UPDATE_DATE", length = 7)

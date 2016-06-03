@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-	<constant name="struts.multipart.maxSize" value="1073741824"></constant>
+	<constant name="struts.convention.action.suffix" value="Controller"/>
+	<constant name="struts.convention.action.mapAllMatches" value="true"/>
+	<constant name="struts.convention.result.path" value="/WEB-INF/jsp"/>
+	<!-- <constant name="struts.convention.default.parent.package" value="rest-default"/>
+	<constant name="struts.mapper.class" value="rest" />
+    <constant name="struts.convention.package.locators" value="com.zl.web.action"/> -->
 	<include file="struts-default.xml" />
 	<!--开发模式 -->
-	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.devMode" value="true"/>
+	<!-- <constant name="struts.convention.classes.reload" value="true" /> -->
 	<!-- 设置上传文件的临时文件夹,默认使用javax.servlet.context.tempdir -->
 	<constant name="struts.multipart.saveDir " value="E:/struts.multipart.saveDir" />
-	<package name="global-default" extends="struts-default">
+	<constant name="struts.multipart.maxSize" value="1073741824"></constant>
+	<!-- <package name="global-default" extends="struts-default">
 		<global-results>
 			<result name="error">/WEB-INF/jsp/common/errorPage.jsp</result>
 			<result name="404">/WEB-INF/jsp/common/404.jsp</result>
@@ -47,5 +54,5 @@
 				<param name="bufferSize">8192</param>
 			</result>
 		</action>
-	</package>
+	</package> -->
 </struts>

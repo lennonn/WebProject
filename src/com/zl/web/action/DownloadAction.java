@@ -11,6 +11,7 @@ import java.net.URLEncoder;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.convention.annotation.ParentPackage;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -18,6 +19,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author zlennon
  *
  */
+@ParentPackage("struts-default")
 public class DownloadAction extends ActionSupport {
 
 	/**
