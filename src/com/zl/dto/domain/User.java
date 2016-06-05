@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.stereotype.Component;
@@ -29,8 +30,10 @@ public class User implements java.io.Serializable {
 	private String loginTime;
 	private String loginIp;
 	private String remark;
+	private String repassword;
 
 	// Constructors
+
 
 	/** default constructor */
 	public User() {
@@ -123,6 +126,14 @@ public class User implements java.io.Serializable {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+	@Transient
+	public String getRepassword() {
+		return repassword;
+	}
+
+	public void setRepassword(String repassword) {
+		this.repassword = repassword;
 	}
 
 }

@@ -30,11 +30,14 @@
 	</tr>
 
 	 </s:iterator>
+
 	<%-- <s:iterator var="files" value="#request.files" status="status">
 	<a href="downloadSingle.action?filename=files/download/"><s:property value="#files.fileUrl"/></a><br>
 		<s:property value="cate.cateName"/>
 
 	</s:iterator> --%>
 	</table>
+	 <a href="logout.action">登出</a>
+	  <a href="prepareLogin.action">登陆</a>
 </body>
 </html>

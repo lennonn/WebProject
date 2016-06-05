@@ -20,5 +20,10 @@ public class UserServiceSpringImpl implements UserService {
 	public void saveRegisterInfo(User u) {
 		userDAO.saveRegisterInfo(u);
 	}
+	@Override
+	public User userLogin(User u) {
+		User user= userDAO.userLogin(u);
+		return user;
+	}
 
 }
