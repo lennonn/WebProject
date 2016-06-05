@@ -1,11 +1,1 @@
-/app-action.xml
-/app-cxf-webservice.xml
-/app-dao.xml
-/app-service.xml
-/applicationContext.xml
 /com/
-/ehcache.xml
-/hibernate.cfg.xml
-/jdbc.properties
-/log4j.properties
-/struts.xml
