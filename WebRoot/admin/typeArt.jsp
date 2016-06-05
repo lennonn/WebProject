@@ -1,0 +1,120 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+     <%@ page import = "com.zl.blog.beans.*" %>
+      <%@ page import = "com.zl.blog.daos.*" %>
+      <%@ page import="java.util.*"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%!
+	private static final int pagesize= 4;
+ %>
+<% 
+	
+	
+	String strpageno =request.getParameter("pageno");
+	int tid= Integer.parseInt(request.getParameter("articletype"));
+	
+	int page_no = 1;
+	if(strpageno!=null){
+		page_no = Integer.parseInt(strpageno);
+	
+	}
+	if(page_no<1)   page_no=1;
+	
+
+	ArticleDao ad = new ArticleDao();
+	ArticleTypeDao at = new ArticleTypeDao();
+	List<ArticleType> arttypes = new ArrayList<ArticleType>();
+	arttypes = at.findArticleType();
+	List<Article> arts = new ArrayList<Article>();
+	arts=ad.findArticle(tid, page_no, pagesize);
+%>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+        <title>会员列表</title>
+
+        <link href="./css/mine.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <style> 
+            p.tr_color{background-color: #9F88FF} 
+        </style>
+        <div class="div_head">
+            <span>
+                <span style="float: left;">当前位置是：类型管理-》文章列表</span>
+                <span style="float: right; margin-right: 8px; font-weight: bold;">
+                    <a style="text-decoration: none;" href="#">后台首页</a>
+                </span>
+            </span>
+        </div>
+        <div></div>
+        <div class="div_search">
+            <span>
+                <form action="typeArt.jsp" method="post">
+                    文章类型<select name="articletype" style="width: 200px;">
+                    <%for(Iterator<ArticleType> it = arttypes.iterator();it.hasNext();){ 
+                		ArticleType arttype =it.next(); %>
+                        <option selected="selected" value="<%=arttype.getId()%>"><%=arttype.getType_name() %></option>
+                        <%} %> 
+                    </select>
+                   
+                    <input value="查询" type="submit" />
+                </form>
+            </span>
+        </div>
+        <div style="font-size: 13px; margin: 10px 5px;">
+            <table class="table_a" border="1" width="100%">
+                <tbody>
+                	
+                	<tr style="font-weight: bold;">
+                       
+                        <td>文章类型ID</td>
+                        <td>标题</td>
+                        <td>作者</td>
+                        <td>内容</td>
+                         <td>添加图片</td>
+                      
+                        
+                    </tr>
+                   <%for(Iterator<Article> it = arts.iterator();it.hasNext();){ 
+                		Article art =it.next();
+                	%>
+                    <tr id="product4" style="font-family: fantasy;">
+                        <td><%=art.getT_id() %></td>
+                        <td><%=art.getTitle() %></td>
+                        <td><%=art.getAuthor()%></td>
+                        <td><%=art.getContent(30) %></td>
+                       <td><a href ="uploadpictures.jsp?id=<%=art.getId() %>">上传图片</a></td>
+                    </tr>
+                   <% }%>
+                   
+                	<tr style="font-weight: bold;">
+                       
+                        <td>文章类型ID</td>
+                        <td>标题</td>
+                        <td>作者</td>
+                        <td>内容</td>
+                         <td>添加图片</td>
+                      
+                        
+                    </tr>
+                   <%for(Iterator<Article> it = arts.iterator();it.hasNext();){ 
+                		Article art1 =it.next();
+                	%>
+                    <tr id="product4" style="font-family: fantasy;">
+                        <td><%=art1.getT_id() %></td>
+                        <td><%=art1.getTitle() %></td>
+                        <td><%=art1.getAuthor()%></td>
+                        <td><%=art1.getContent(30) %></td>
+                       <td><a href ="uploadpictures.jsp?id=<%=art1.getId() %>">上传图片</a></td>
+                    </tr>
+                   <% }%>
+                   	
+                </tbody>
+            </table>
+            <a href="typeArt.jsp?pageno=<%=page_no-1 %>">上一页</a>
+    	    <a href="typeArt.jsp?pageno=<%=page_no+1 %>">下一页</a>
+        </div>
+    </body>
+</html>
