@@ -23,10 +23,15 @@
 		</primary-key>
 	</table>
 	<table name="CATEGORIES" schema="SCOTT"></table>
-<table name="ROOT_CATEGORY" schema="SCOTT"
-	class="com.zl.dto.domain.Category">
+	<table name="ROOT_CATEGORY" schema="SCOTT"
+		class="com.zl.dto.domain.Category">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+<table name="T_USER" schema="SCOTT" class="com.zl.dto.domain.User">
 	<primary-key>
-		<generator class="sequence"></generator>
+		<generator class="uuid.string"></generator>
 	</primary-key>
 </table>
 </hibernate-reverse-engineering>

@@ -57,6 +57,7 @@
 		<mapping class="com.zl.dto.domain.FileSource" />
 		<mapping class="com.zl.dto.domain.Category" />
 		<mapping class="com.zl.dto.domain.ChildCategory" />
+		<mapping class="com.zl.dto.domain.User" />
 	</session-factory>
 
 </hibernate-configuration>
