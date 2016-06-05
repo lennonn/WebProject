@@ -1,0 +1,283 @@
+2016-06-03 16:24:45,452 INFO [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7e0babb1: startup date [Fri Jun 03 16:24:45 CST 2016]; root of context hierarchy
+2016-06-03 16:24:45,523 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-06-03 16:24:46,401 INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc.properties]
+2016-06-03 16:24:46,796 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-03 16:24:46,805 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.1.4.Final}
+2016-06-03 16:24:46,810 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-06-03 16:24:46,812 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-06-03 16:24:46,839 INFO [org.hibernate.cfg.Configuration] - HHH000044: Configuring from URL: file:/C:/Users/zlennon/git/SSH_Annotation/WEB-INF/classes/hibernate.cfg.xml
+2016-06-03 16:24:46,922 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-06-03 16:24:47,726 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2016-06-03 16:24:47,733 WARN [org.hibernate.dialect.Oracle9Dialect] - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2016-06-03 16:24:47,736 WARN [org.hibernate.dialect.OracleDialect] - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2016-06-03 16:24:47,741 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-06-03 16:24:47,755 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-03 16:24:47,822 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-03 16:24:48,674 INFO [org.hibernate.cache.spi.UpdateTimestampsCache] - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2016-06-03 16:24:48,678 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+2016-06-03 16:24:48,721 INFO [org.hibernate.cache.internal.StandardQueryCache] - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2016-06-03 16:24:48,722 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+2016-06-03 16:24:48,881 INFO [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@bcec031] of Hibernate SessionFactory for HibernateTransactionManager
+2016-06-03 16:25:20,434 INFO [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@731f8236: startup date [Fri Jun 03 16:25:20 CST 2016]; root of context hierarchy
+2016-06-03 16:25:20,523 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-06-03 16:25:21,244 INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc.properties]
+2016-06-03 16:25:22,391 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-03 16:25:22,429 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.1.4.Final}
+2016-06-03 16:25:22,446 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-06-03 16:25:22,452 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-06-03 16:25:22,571 INFO [org.hibernate.cfg.Configuration] - HHH000044: Configuring from URL: file:/C:/Users/zlennon/git/SSH_Annotation/WEB-INF/classes/hibernate.cfg.xml
+2016-06-03 16:25:22,831 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-06-03 16:25:24,785 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2016-06-03 16:25:24,818 WARN [org.hibernate.dialect.Oracle9Dialect] - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2016-06-03 16:25:24,825 WARN [org.hibernate.dialect.OracleDialect] - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2016-06-03 16:25:24,898 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-06-03 16:25:25,030 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-03 16:25:25,063 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-03 16:25:27,014 INFO [org.hibernate.cache.spi.UpdateTimestampsCache] - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2016-06-03 16:25:27,033 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+2016-06-03 16:25:27,179 INFO [org.hibernate.cache.internal.StandardQueryCache] - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2016-06-03 16:25:27,184 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+2016-06-03 16:25:27,657 INFO [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@6bbe50c9] of Hibernate SessionFactory for HibernateTransactionManager
+2016-06-03 16:29:29,069 INFO [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@731f8236: startup date [Fri Jun 03 16:29:29 CST 2016]; root of context hierarchy
+2016-06-03 16:29:29,160 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-06-03 16:29:29,943 INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc.properties]
+2016-06-03 16:29:31,079 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-03 16:29:31,143 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.1.4.Final}
+2016-06-03 16:29:31,189 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-06-03 16:29:31,201 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-06-03 16:29:31,356 INFO [org.hibernate.cfg.Configuration] - HHH000044: Configuring from URL: file:/C:/Users/zlennon/git/SSH_Annotation/WEB-INF/classes/hibernate.cfg.xml
+2016-06-03 16:29:31,682 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-06-03 16:29:33,951 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2016-06-03 16:29:33,999 WARN [org.hibernate.dialect.Oracle9Dialect] - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2016-06-03 16:29:34,012 WARN [org.hibernate.dialect.OracleDialect] - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2016-06-03 16:29:34,091 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-06-03 16:29:34,235 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-03 16:29:34,264 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-03 16:29:36,447 INFO [org.hibernate.cache.spi.UpdateTimestampsCache] - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2016-06-03 16:29:36,469 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+2016-06-03 16:29:36,609 INFO [org.hibernate.cache.internal.StandardQueryCache] - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2016-06-03 16:29:36,614 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+2016-06-03 16:29:37,077 INFO [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@6bbe50c9] of Hibernate SessionFactory for HibernateTransactionManager
+2016-06-03 16:31:03,611 INFO [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@731f8236: startup date [Fri Jun 03 16:31:03 CST 2016]; root of context hierarchy
+2016-06-03 16:31:03,717 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-06-03 16:31:04,579 INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc.properties]
+2016-06-03 16:38:25,689 INFO [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@731f8236: startup date [Fri Jun 03 16:38:25 CST 2016]; root of context hierarchy
+2016-06-03 16:38:25,774 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-06-03 16:38:26,517 INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc.properties]
+2016-06-03 16:38:27,637 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-03 16:38:27,676 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.1.4.Final}
+2016-06-03 16:38:27,694 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-06-03 16:38:27,701 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-06-03 16:38:27,816 INFO [org.hibernate.cfg.Configuration] - HHH000044: Configuring from URL: file:/C:/Users/zlennon/git/SSH_Annotation/WEB-INF/classes/hibernate.cfg.xml
+2016-06-03 16:38:28,079 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-06-03 16:38:30,084 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2016-06-03 16:38:30,119 WARN [org.hibernate.dialect.Oracle9Dialect] - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2016-06-03 16:38:30,127 WARN [org.hibernate.dialect.OracleDialect] - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2016-06-03 16:38:30,174 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-06-03 16:38:30,251 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-03 16:38:30,352 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-03 16:38:32,303 INFO [org.hibernate.cache.spi.UpdateTimestampsCache] - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2016-06-03 16:38:32,322 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+2016-06-03 16:38:32,462 INFO [org.hibernate.cache.internal.StandardQueryCache] - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2016-06-03 16:38:32,467 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+2016-06-03 16:38:32,875 INFO [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@68577ba8] of Hibernate SessionFactory for HibernateTransactionManager
+2016-06-03 16:41:17,130 INFO [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@731f8236: startup date [Fri Jun 03 16:41:17 CST 2016]; root of context hierarchy
+2016-06-03 16:41:17,230 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-06-03 16:41:18,125 INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc.properties]
+2016-06-03 16:41:19,486 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-03 16:41:19,534 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.1.4.Final}
+2016-06-03 16:41:19,555 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-06-03 16:41:19,562 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-06-03 16:41:19,691 INFO [org.hibernate.cfg.Configuration] - HHH000044: Configuring from URL: file:/C:/Users/zlennon/git/SSH_Annotation/WEB-INF/classes/hibernate.cfg.xml
+2016-06-03 16:41:19,952 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-06-03 16:41:21,981 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2016-06-03 16:41:22,015 WARN [org.hibernate.dialect.Oracle9Dialect] - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2016-06-03 16:41:22,022 WARN [org.hibernate.dialect.OracleDialect] - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2016-06-03 16:41:22,110 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-06-03 16:41:22,249 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-03 16:41:22,282 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-03 16:41:24,269 INFO [org.hibernate.cache.spi.UpdateTimestampsCache] - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2016-06-03 16:41:24,288 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+2016-06-03 16:41:24,434 INFO [org.hibernate.cache.internal.StandardQueryCache] - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2016-06-03 16:41:24,440 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+2016-06-03 16:41:24,931 INFO [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@12abdfb] of Hibernate SessionFactory for HibernateTransactionManager
+2016-06-03 16:42:22,362 INFO [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@731f8236: startup date [Fri Jun 03 16:42:22 CST 2016]; root of context hierarchy
+2016-06-03 16:42:22,452 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-06-03 16:42:23,199 INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc.properties]
+2016-06-03 16:42:24,463 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-03 16:42:24,503 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.1.4.Final}
+2016-06-03 16:42:24,526 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-06-03 16:42:24,532 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-06-03 16:42:24,676 INFO [org.hibernate.cfg.Configuration] - HHH000044: Configuring from URL: file:/C:/Users/zlennon/git/SSH_Annotation/WEB-INF/classes/hibernate.cfg.xml
+2016-06-03 16:42:24,979 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-06-03 16:42:27,035 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2016-06-03 16:42:27,067 WARN [org.hibernate.dialect.Oracle9Dialect] - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2016-06-03 16:42:27,074 WARN [org.hibernate.dialect.OracleDialect] - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2016-06-03 16:42:27,174 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-06-03 16:42:27,315 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-03 16:42:27,348 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-03 16:42:29,552 INFO [org.hibernate.cache.spi.UpdateTimestampsCache] - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2016-06-03 16:42:29,586 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+2016-06-03 16:42:29,760 INFO [org.hibernate.cache.internal.StandardQueryCache] - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2016-06-03 16:42:29,764 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+2016-06-03 16:42:30,301 INFO [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@12abdfb] of Hibernate SessionFactory for HibernateTransactionManager
+2016-06-03 16:56:11,303 INFO [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@731f8236: startup date [Fri Jun 03 16:56:11 CST 2016]; root of context hierarchy
+2016-06-03 16:56:11,420 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-06-03 16:56:12,514 INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc.properties]
+2016-06-03 16:56:14,047 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-03 16:56:14,096 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.1.4.Final}
+2016-06-03 16:56:14,117 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-06-03 16:56:14,126 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-06-03 16:56:14,280 INFO [org.hibernate.cfg.Configuration] - HHH000044: Configuring from URL: file:/C:/Users/zlennon/git/SSH_Annotation/WEB-INF/classes/hibernate.cfg.xml
+2016-06-03 16:56:14,637 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-06-03 16:56:17,268 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2016-06-03 16:56:17,308 WARN [org.hibernate.dialect.Oracle9Dialect] - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2016-06-03 16:56:17,317 WARN [org.hibernate.dialect.OracleDialect] - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2016-06-03 16:56:17,422 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-06-03 16:56:17,615 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-03 16:56:17,649 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-03 16:56:20,120 INFO [org.hibernate.cache.spi.UpdateTimestampsCache] - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2016-06-03 16:56:20,145 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+2016-06-03 16:56:20,328 INFO [org.hibernate.cache.internal.StandardQueryCache] - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2016-06-03 16:56:20,332 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+2016-06-03 16:56:20,957 INFO [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@12abdfb] of Hibernate SessionFactory for HibernateTransactionManager
+2016-06-03 16:57:15,370 INFO [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@731f8236: startup date [Fri Jun 03 16:57:15 CST 2016]; root of context hierarchy
+2016-06-03 16:57:15,594 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-06-03 16:57:16,618 INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc.properties]
+2016-06-03 16:57:18,185 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-03 16:57:18,240 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.1.4.Final}
+2016-06-03 16:57:18,266 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-06-03 16:57:18,274 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-06-03 16:57:18,464 INFO [org.hibernate.cfg.Configuration] - HHH000044: Configuring from URL: file:/C:/Users/zlennon/git/SSH_Annotation/WEB-INF/classes/hibernate.cfg.xml
+2016-06-03 16:57:18,834 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-06-03 16:57:21,433 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2016-06-03 16:57:21,482 WARN [org.hibernate.dialect.Oracle9Dialect] - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2016-06-03 16:57:21,493 WARN [org.hibernate.dialect.OracleDialect] - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2016-06-03 16:57:21,596 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-06-03 16:57:21,789 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-03 16:57:21,829 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-03 16:57:24,412 INFO [org.hibernate.cache.spi.UpdateTimestampsCache] - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2016-06-03 16:57:24,441 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+2016-06-03 16:57:24,664 INFO [org.hibernate.cache.internal.StandardQueryCache] - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2016-06-03 16:57:24,668 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+2016-06-03 16:57:25,330 INFO [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@6bbe50c9] of Hibernate SessionFactory for HibernateTransactionManager
+2016-06-03 17:24:21,862 INFO [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@731f8236: startup date [Fri Jun 03 17:24:21 CST 2016]; root of context hierarchy
+2016-06-03 17:24:21,977 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-06-03 17:24:23,195 INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc.properties]
+2016-06-03 17:24:24,745 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-03 17:24:24,792 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.1.4.Final}
+2016-06-03 17:24:24,825 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-06-03 17:24:24,834 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-06-03 17:24:24,997 INFO [org.hibernate.cfg.Configuration] - HHH000044: Configuring from URL: file:/C:/Users/zlennon/git/SSH_Annotation/WEB-INF/classes/hibernate.cfg.xml
+2016-06-03 17:24:25,322 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-06-03 17:24:27,908 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2016-06-03 17:24:27,949 WARN [org.hibernate.dialect.Oracle9Dialect] - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2016-06-03 17:24:27,958 WARN [org.hibernate.dialect.OracleDialect] - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2016-06-03 17:24:28,035 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-06-03 17:24:28,122 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-03 17:24:28,164 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-03 17:24:30,622 INFO [org.hibernate.cache.spi.UpdateTimestampsCache] - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2016-06-03 17:24:30,645 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+2016-06-03 17:24:30,808 INFO [org.hibernate.cache.internal.StandardQueryCache] - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2016-06-03 17:24:30,812 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+2016-06-03 17:24:31,393 INFO [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@41b1f51e] of Hibernate SessionFactory for HibernateTransactionManager
+2016-06-03 17:24:53,567 INFO [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@731f8236: startup date [Fri Jun 03 17:24:53 CST 2016]; root of context hierarchy
+2016-06-03 17:24:53,732 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-06-03 17:24:54,782 INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc.properties]
+2016-06-03 17:24:56,613 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-03 17:24:56,677 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.1.4.Final}
+2016-06-03 17:24:56,709 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-06-03 17:24:56,720 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-06-03 17:24:56,909 INFO [org.hibernate.cfg.Configuration] - HHH000044: Configuring from URL: file:/C:/Users/zlennon/git/SSH_Annotation/WEB-INF/classes/hibernate.cfg.xml
+2016-06-03 17:24:57,216 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-06-03 17:24:59,943 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2016-06-03 17:24:59,985 WARN [org.hibernate.dialect.Oracle9Dialect] - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2016-06-03 17:24:59,995 WARN [org.hibernate.dialect.OracleDialect] - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2016-06-03 17:25:00,135 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-06-03 17:25:00,244 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-03 17:25:00,281 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-03 17:25:02,652 INFO [org.hibernate.cache.spi.UpdateTimestampsCache] - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2016-06-03 17:25:02,679 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+2016-06-03 17:25:02,854 INFO [org.hibernate.cache.internal.StandardQueryCache] - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2016-06-03 17:25:02,865 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+2016-06-03 17:25:03,619 INFO [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@706fe5c6] of Hibernate SessionFactory for HibernateTransactionManager
+2016-06-03 17:26:31,147 INFO [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@731f8236: startup date [Fri Jun 03 17:26:31 CST 2016]; root of context hierarchy
+2016-06-03 17:26:31,257 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-06-03 17:26:32,330 INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc.properties]
+2016-06-03 17:26:33,926 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-03 17:26:33,974 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.1.4.Final}
+2016-06-03 17:26:33,993 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-06-03 17:26:34,001 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-06-03 17:26:34,252 INFO [org.hibernate.cfg.Configuration] - HHH000044: Configuring from URL: file:/C:/Users/zlennon/git/SSH_Annotation/WEB-INF/classes/hibernate.cfg.xml
+2016-06-03 17:26:34,574 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-06-03 17:26:37,146 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2016-06-03 17:26:37,189 WARN [org.hibernate.dialect.Oracle9Dialect] - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2016-06-03 17:26:37,198 WARN [org.hibernate.dialect.OracleDialect] - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2016-06-03 17:26:37,285 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-06-03 17:26:37,383 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-03 17:26:37,433 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-03 17:26:39,867 INFO [org.hibernate.cache.spi.UpdateTimestampsCache] - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2016-06-03 17:26:39,897 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+2016-06-03 17:26:40,079 INFO [org.hibernate.cache.internal.StandardQueryCache] - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2016-06-03 17:26:40,083 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+2016-06-03 17:26:40,732 INFO [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@41b1f51e] of Hibernate SessionFactory for HibernateTransactionManager
+2016-06-03 21:58:36,911 INFO [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@62e136d3: startup date [Fri Jun 03 21:58:36 CST 2016]; root of context hierarchy
+2016-06-03 21:58:37,047 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-06-03 21:58:38,009 INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc.properties]
+2016-06-03 21:58:39,690 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-03 21:58:39,740 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.1.4.Final}
+2016-06-03 21:58:39,760 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-06-03 21:58:39,766 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-06-03 21:58:39,901 INFO [org.hibernate.cfg.Configuration] - HHH000044: Configuring from URL: file:/C:/Users/zlennon/git/SSH_Annotation/WEB-INF/classes/hibernate.cfg.xml
+2016-06-03 21:58:40,248 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-06-03 21:58:42,647 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2016-06-03 21:58:42,694 WARN [org.hibernate.dialect.Oracle9Dialect] - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2016-06-03 21:58:42,707 WARN [org.hibernate.dialect.OracleDialect] - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2016-06-03 21:58:42,765 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-06-03 21:58:42,843 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-03 21:58:42,878 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-03 21:58:45,153 INFO [org.hibernate.cache.spi.UpdateTimestampsCache] - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2016-06-03 21:58:45,178 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+2016-06-03 21:58:45,327 INFO [org.hibernate.cache.internal.StandardQueryCache] - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2016-06-03 21:58:45,330 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+2016-06-03 21:58:45,959 INFO [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@5e1fc2aa] of Hibernate SessionFactory for HibernateTransactionManager
+2016-06-03 22:06:36,397 INFO [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@62e136d3: startup date [Fri Jun 03 22:06:36 CST 2016]; root of context hierarchy
+2016-06-03 22:06:36,491 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-06-03 22:06:37,414 INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc.properties]
+2016-06-03 22:06:38,772 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-03 22:06:38,813 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.1.4.Final}
+2016-06-03 22:06:38,832 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-06-03 22:06:38,838 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-06-03 22:06:39,022 INFO [org.hibernate.cfg.Configuration] - HHH000044: Configuring from URL: file:/C:/Users/zlennon/git/SSH_Annotation/WEB-INF/classes/hibernate.cfg.xml
+2016-06-03 22:06:39,329 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-06-03 22:06:42,043 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2016-06-03 22:06:42,082 WARN [org.hibernate.dialect.Oracle9Dialect] - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2016-06-03 22:06:42,089 WARN [org.hibernate.dialect.OracleDialect] - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2016-06-03 22:06:42,129 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-06-03 22:06:42,227 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-03 22:06:42,281 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-03 22:06:45,212 INFO [org.hibernate.cache.spi.UpdateTimestampsCache] - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2016-06-03 22:06:45,234 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+2016-06-03 22:06:45,376 INFO [org.hibernate.cache.internal.StandardQueryCache] - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2016-06-03 22:06:45,382 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+2016-06-03 22:06:45,999 INFO [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@6fc29daa] of Hibernate SessionFactory for HibernateTransactionManager
+2016-06-03 22:07:48,770 INFO [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@62e136d3: startup date [Fri Jun 03 22:07:48 CST 2016]; root of context hierarchy
+2016-06-03 22:07:48,920 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-06-03 22:07:50,036 INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc.properties]
+2016-06-03 22:07:51,868 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-03 22:07:51,919 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.1.4.Final}
+2016-06-03 22:07:51,943 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-06-03 22:07:51,950 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-06-03 22:07:52,102 INFO [org.hibernate.cfg.Configuration] - HHH000044: Configuring from URL: file:/C:/Users/zlennon/git/SSH_Annotation/WEB-INF/classes/hibernate.cfg.xml
+2016-06-03 22:07:52,411 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-06-03 22:07:54,822 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.OracleDialect
+2016-06-03 22:07:54,857 WARN [org.hibernate.dialect.Oracle9Dialect] - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2016-06-03 22:07:54,865 WARN [org.hibernate.dialect.OracleDialect] - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2016-06-03 22:07:54,920 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-06-03 22:07:54,998 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-03 22:07:55,030 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-03 22:07:57,236 INFO [org.hibernate.cache.spi.UpdateTimestampsCache] - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2016-06-03 22:07:57,267 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+2016-06-03 22:07:57,417 INFO [org.hibernate.cache.internal.StandardQueryCache] - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2016-06-03 22:07:57,425 WARN [org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory] - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+2016-06-03 22:07:58,002 INFO [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@2042ccce] of Hibernate SessionFactory for HibernateTransactionManager

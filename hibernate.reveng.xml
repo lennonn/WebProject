@@ -3,12 +3,28 @@
 
 <hibernate-reverse-engineering>
 
-	<table name="CATERGORIES" schema="SCOTT" class="com.zl.dto.domain.Category">
+	<table name="CATERGORIES" schema="SCOTT"
+		class="com.zl.dto.domain.Category">
 		<primary-key>
 			<generator class="sequence"></generator>
 		</primary-key>
 	</table>
-<table name="FILES" schema="SCOTT" class="com.zl.dto.domain.File">
+	<table name="FILES" schema="SCOTT"
+		class="com.zl.dto.domain.FileSource">
+		<primary-key>
+			<generator class="sequence"></generator>
+
+		</primary-key>
+	</table>
+	<table name="CHILD_CATEGORIES" schema="SCOTT"
+		class="com.zl.dto.domain.ChildCategory">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="CATEGORIES" schema="SCOTT"></table>
+<table name="ROOT_CATEGORY" schema="SCOTT"
+	class="com.zl.dto.domain.Category">
 	<primary-key>
 		<generator class="sequence"></generator>
 	</primary-key>

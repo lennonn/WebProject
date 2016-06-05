@@ -1,14 +1,14 @@
 package com.zl.dto.domain;
 
-import java.util.Date;
-
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-
 import static javax.persistence.GenerationType.SEQUENCE;
 
+import java.util.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -17,11 +17,14 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.stereotype.Component;
+
 /**
- * File entity. @author MyEclipse Persistence Tools
+ * FileSource entity. @author MyEclipse Persistence Tools
  */
-@Entity(name="fileSource")
+@Entity
 @Table(name = "FILES", schema = "SCOTT")
+@Component
 public class FileSource implements java.io.Serializable {
 
 	// Fields
@@ -30,8 +33,8 @@ public class FileSource implements java.io.Serializable {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private String fileId;
-	private Category category;
+	private int fileId;
+	private ChildCategory childCategory;
 	private String fileName;
 	private long fileSize;
 	private Date updateDate;
@@ -49,20 +52,18 @@ public class FileSource implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public FileSource(Category category, String fileName, long fileSize, String uploadUser, String fileUrl) {
-		this.category = category;
+	public FileSource(String fileName, long fileSize, String fileUrl) {
 		this.fileName = fileName;
 		this.fileSize = fileSize;
-		//this.catagoryId = catagoryId;
-		this.uploadUser = uploadUser;
 		this.fileUrl = fileUrl;
 	}
 
 	/** full constructor */
-	public FileSource(Category category, String fileName, long fileSize,Date updateDate, String updateUser,
+	public FileSource(ChildCategory childCategory, String fileName,
+			long fileSize, Date updateDate, String updateUser,
 			Date uploadDate, String uploadUser, String fileUrl,
 			Date downloadDate, Date downloadUser) {
-		this.category = category;
+		this.childCategory = childCategory;
 		this.fileName = fileName;
 		this.fileSize = fileSize;
 		this.updateDate = updateDate;
@@ -75,26 +76,26 @@ public class FileSource implements java.io.Serializable {
 	}
 
 	// Property accessors
-	@SequenceGenerator(name = "generator")
+	@SequenceGenerator(name = "generator",sequenceName="SEQ_FILESOURCE")
 	@Id
 	@GeneratedValue(strategy = SEQUENCE, generator = "generator")
 	@Column(name = "FILE_ID", unique = true, nullable = false, length = 10)
-	public String getFileId() {
+	public int getFileId() {
 		return this.fileId;
 	}
 
-	public void setFileId(String fileId) {
+	public void setFileId(int fileId) {
 		this.fileId = fileId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "CATEGORY_ID", nullable = false)
-	public Category getCategory() {
-		return this.category;
+	@ManyToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+	@JoinColumn(name = "CC_ID")
+	public ChildCategory getChildCategory() {
+		return this.childCategory;
 	}
 
-	public void setCategory(Category category) {
-		this.category = category;
+	public void setChildCategory(ChildCategory childCategory) {
+		this.childCategory = childCategory;
 	}
 
 	@Column(name = "FILE_NAME", nullable = false, length = 30)
@@ -114,7 +115,6 @@ public class FileSource implements java.io.Serializable {
 	public void setFileSize(long fileSize) {
 		this.fileSize = fileSize;
 	}
-
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "UPDATE_DATE", length = 7)
@@ -145,7 +145,7 @@ public class FileSource implements java.io.Serializable {
 		this.uploadDate = uploadDate;
 	}
 
-	@Column(name = "UPLOAD_USER", nullable = false, length = 10)
+	@Column(name = "UPLOAD_USER", length = 10)
 	public String getUploadUser() {
 		return this.uploadUser;
 	}
@@ -154,7 +154,7 @@ public class FileSource implements java.io.Serializable {
 		this.uploadUser = uploadUser;
 	}
 
-	@Column(name = "FILE_URL", nullable = false, length = 10)
+	@Column(name = "FILE_URL", nullable = false, length = 500)
 	public String getFileUrl() {
 		return this.fileUrl;
 	}

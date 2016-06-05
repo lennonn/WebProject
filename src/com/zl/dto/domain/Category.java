@@ -3,12 +3,15 @@ package com.zl.dto.domain;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+
 import static javax.persistence.GenerationType.SEQUENCE;
+
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
@@ -16,20 +19,27 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Category entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "CATERGORIES", schema = "SCOTT")
+@Table(name = "ROOT_CATEGORY", schema = "SCOTT")
+@Component
 public class Category implements java.io.Serializable {
 
 	// Fields
 
-	private String cateId;
-	private String cateName;
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
+	private int id;
+	private String CName;
 	private Date updateDate;
-	private String cateDesc;
-	private Set<FileSource> files = new HashSet<FileSource>(0);
+	private String CDesc;
+	private Set<ChildCategory> childCategories = new HashSet<ChildCategory>(0);
 
 	// Constructors
 
@@ -38,34 +48,34 @@ public class Category implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Category(String cateName, Date updateDate, String cateDesc,
-			Set<FileSource> files) {
-		this.cateName = cateName;
+	public Category(String CName, Date updateDate, String CDesc,
+			Set<ChildCategory> childCategories) {
+		this.CName = CName;
 		this.updateDate = updateDate;
-		this.cateDesc = cateDesc;
-		this.files = files;
+		this.CDesc = CDesc;
+		this.childCategories = childCategories;
 	}
 
 	// Property accessors
-	@SequenceGenerator(name = "generator")
+	@SequenceGenerator(name = "generator" ,sequenceName="SEQ_CATEGORY")
 	@Id
 	@GeneratedValue(strategy = SEQUENCE, generator = "generator")
-	@Column(name = "CATE_ID", unique = true, nullable = false, length = 10)
-	public String getCateId() {
-		return this.cateId;
+	@Column(name = "ID", unique = true, nullable = false, length = 10)
+	public int getId() {
+		return this.id;
 	}
 
-	public void setCateId(String cateId) {
-		this.cateId = cateId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	@Column(name = "CATE_NAME", length = 20)
-	public String getCateName() {
-		return this.cateName;
+	@Column(name = "C_NAME", length = 20)
+	public String getCName() {
+		return this.CName;
 	}
 
-	public void setCateName(String cateName) {
-		this.cateName = cateName;
+	public void setCName(String CName) {
+		this.CName = CName;
 	}
 
 	@Temporal(TemporalType.DATE)
@@ -78,22 +88,22 @@ public class Category implements java.io.Serializable {
 		this.updateDate = updateDate;
 	}
 
-	@Column(name = "CATE_DESC", length = 100)
-	public String getCateDesc() {
-		return this.cateDesc;
+	@Column(name = "C_DESC", length = 100)
+	public String getCDesc() {
+		return this.CDesc;
 	}
 
-	public void setCateDesc(String cateDesc) {
-		this.cateDesc = cateDesc;
+	public void setCDesc(String CDesc) {
+		this.CDesc = CDesc;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "category")
-	public Set<FileSource> getFiles() {
-		return this.files;
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "category")
+	public Set<ChildCategory> getChildCategories() {
+		return this.childCategories;
 	}
 
-	public void setFiles(Set<FileSource> files) {
-		this.files = files;
+	public void setChildCategories(Set<ChildCategory> childCategories) {
+		this.childCategories = childCategories;
 	}
 
 }

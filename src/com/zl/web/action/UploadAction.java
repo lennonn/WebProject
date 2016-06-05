@@ -26,9 +26,9 @@ import org.apache.struts2.convention.annotation.ResultPath;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-
 import com.opensymphony.xwork2.ActionSupport;
 import com.zl.dto.domain.Category;
+import com.zl.dto.domain.ChildCategory;
 import com.zl.dto.domain.FileSource;
 import com.zl.service.facade.UploadService;
 
@@ -37,8 +37,9 @@ import com.zl.service.facade.UploadService;
  *
  */
 @ParentPackage("struts-default")
-@ResultPath("/WEB-INF/jsp/")
-@Action(value = "error", exceptionMappings = { @ExceptionMapping(exception = "java.lang.Exception", result = "/WEB/INF/jsp/common/errorPage.jsp", params = { "error","value" }) })
+
+@Action(value = "error", exceptionMappings = { @ExceptionMapping(exception = "java.lang.Exception", result = "common/errorPage.jsp", params = {
+		"error", "value" }) })
 public class UploadAction extends ActionSupport {
 
 	/**
@@ -63,13 +64,27 @@ public class UploadAction extends ActionSupport {
 	// service
 
 	UploadService uploadService;
+	Category category;
+	ChildCategory childCategory;
+
+	@Autowired
+	public void setChildCategory(ChildCategory childCategory) {
+		this.childCategory = childCategory;
+	}
+
+	@Autowired
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 
 	FileSource fileSource;
+
 	@Autowired
 	@Qualifier("fileSource")
 	public void setFileSource(FileSource fileSource) {
 		this.fileSource = fileSource;
 	}
+
 	@Autowired
 	@Qualifier("uploadService")
 	public void setUploadService(UploadService uploadService) {
@@ -156,18 +171,22 @@ public class UploadAction extends ActionSupport {
 		this.uploadsFileSizes = uploadsFileSizes;
 	}
 
-	@Actions(value={@Action(value="uploadSingle",results = { @Result(name = "success", location = "/common/sucess.jsp") }, interceptorRefs = {
+	@Actions(value = { @Action(value = "uploadSingle", results = { @Result(name = "success", location = "common/success.jsp")
+					,@Result(name = "error", location = "common/errorPage.jsp")}, interceptorRefs = {
 			@InterceptorRef(value = "fileUpload", params = { "allowedTypes",
 					"text/plain,image/x-png,image/bmp,image/jpeg",
 					"maximumSize", "2097152" }),
-			@InterceptorRef("defaultStack") })
-	}
-	)
+			@InterceptorRef("defaultStack") },
+			 exceptionMappings = { @ExceptionMapping(exception = "java.lang.Exception", result = "error", params = {
+					"error", "value" }) }
+							)
+					}
+			)
 	public String uploadSingle() {
 		// 从ServletContext().getReaPath("/upload")中获取系统部署的实际路径
 		// /upload为自定义的文件夹，必须提前创建
 		String serverPath = ServletActionContext.getServletContext()
-				.getRealPath("/images/strutsupload");
+				.getRealPath("/files/download");
 		// 建立文件上传的完整路径，File.separator获取不同系统的'/'
 		serverFileName = serverPath + File.separator + uploadFileName;
 		try {
@@ -180,16 +199,46 @@ public class UploadAction extends ActionSupport {
 			fileSource.setFileSize(uploadFileSize);
 			fileSource.setUploadDate(new Date());
 			fileSource.setUploadUser("test");
-			Category category = new Category();
-			if (uploadContentType.startsWith("image"))
-				category.setCateName("picture");
-			category.setCateDesc("图片文件");
+
+			if (uploadContentType.startsWith("image")) {
+				category.setCName("picture");
+				category.setCDesc("图片文件");
+				category.setUpdateDate(new Date());
+
+				childCategory.setCategory(category);
+				childCategory.setCcName("子picture");
+				childCategory.setCcDesc("子图片文件");
+				childCategory.setUpdateDate(new Date());
+			}else if(uploadContentType.startsWith("text")){
+				category.setCName("text");
+				category.setCDesc("文本文件");
+				category.setUpdateDate(new Date());
+
+				childCategory.setCategory(category);
+				childCategory.setCcName("子text");
+				childCategory.setCcDesc("子文本文件");
+				childCategory.setUpdateDate(new Date());
+			}
+			//fileSource.setCategory(category);
+			fileSource.setChildCategory(childCategory);
 			uploadService.saveFileInfo(fileSource);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "error";
 		}
 		return SUCCESS;
+	}
+
+	public UploadService getUploadService() {
+		return uploadService;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public FileSource getFileSource() {
+		return fileSource;
 	}
 
 	public String uploadsUsingList() {
