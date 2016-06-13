@@ -56,4 +56,9 @@
 			<result>/WEB-INF/js/{1}.html</result>
 		</action>
 	</package>
+	<package name="test" extends="global-default">
+		<action name="test">
+			<result>/WEB-INF/jsp/test/test.jsp</result>
+		</action>
+	</package>
 </struts>
