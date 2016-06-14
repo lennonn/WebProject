@@ -15,5 +15,8 @@ public class Tmp2 {
 	             }
 	         }
 	         System.out.println(x + "" +y + "" +k);
+	         int i = 5;
+	         int j = 10;
+	         System.out.println(i + ~j);
 	    }
 }
