@@ -15,9 +15,8 @@ public class ProxyHandler implements InvocationHandler{
 			System.out.println("proxy:"+proxy.getClass().getName());
 	        System.out.println("method:"+method.getName());
 	        //System.out.println("args:"+args[0].getClass().getName());
-
 	        System.out.println("Before invoke method...");
-	        Object object=method.invoke(concreteTarget, args);//ÆÕÍ¨µÄJava·´Éä´úÂë,Í¨¹ı·´ÉäÖ´ĞĞÄ³¸öÀàµÄÄ³·½·¨
+	        Object object=method.invoke(concreteTarget, args);//æ™®é€šçš„Javaåå°„ä»£ç ,é€šè¿‡åå°„æ‰§è¡ŒæŸä¸ªç±»çš„æŸæ–¹æ³•
 	        System.out.println("After invoke method...");
 	        return object;
 	}

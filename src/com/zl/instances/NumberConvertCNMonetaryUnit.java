@@ -5,18 +5,18 @@ import java.math.BigDecimal;
 import org.apache.log4j.chainsaw.Main;
 
 public class NumberConvertCNMonetaryUnit {
-	// Êý×Ö´óÐ´³£Á¿
-	private static final String[] CN_UPPER_NUMBER = { "Áã", "Ò¼", "·¡", "Èþ", "ËÁ",
-			"Îé", "Â½", "Æâ", "°Æ", "¾Á" };
-	// ººÓïÖÐ»õ±Òµ¥Î»´óÐ´³£Á¿
-	private static final String[] CN_UPPER_MONETRAY_UNIT = { "·Ö", "½Ç", "Ôª",
-			"Ê°", "°Û", "Çª", "Íò", "Ê°", "°Û", "Çª", "ÒÚ", "Ê°", "°Û", "Çª", "Õ×", "Ê°",
-			"°Û", "Çª" };
-	// ÌØÊâ×Ö·ûÕû£¬¸º
-	private static final String CN_FULL = "Õû";
-	private static final String CN_NEGATIVE = "¸º";
-	private static final String CN_ZEOR_FULL = "ÁãÔª" + CN_FULL;
-	// Ä¬ÈÏ¾«¶È£¬2
+	// æ•°å­—å¤§å†™å¸¸é‡
+	private static final String[] CN_UPPER_NUMBER = { "é›¶", "å£¹", "è´°", "å", "è‚†",
+			"ä¼", "é™†", "æŸ’", "æŒ", "çŽ–" };
+	// æ±‰è¯­ä¸­è´§å¸å•ä½å¤§å†™å¸¸é‡
+	private static final String[] CN_UPPER_MONETRAY_UNIT = { "åˆ†", "è§’", "å…ƒ",
+			"æ‹¾", "ä½°", "ä»Ÿ", "ä¸‡", "æ‹¾", "ä½°", "ä»Ÿ", "äº¿", "æ‹¾", "ä½°", "ä»Ÿ", "å…†", "æ‹¾",
+			"ä½°", "ä»Ÿ" };
+	// ç‰¹æ®Šå­—ç¬¦æ•´ï¼Œè´Ÿ
+	private static final String CN_FULL = "æ•´";
+	private static final String CN_NEGATIVE = "è´Ÿ";
+	private static final String CN_ZEOR_FULL = "é›¶å…ƒ" + CN_FULL;
+	// é»˜è®¤ç²¾åº¦ï¼Œ2
 	private static final int MONEY_PRECISION = 2;
 
 	public String convertNumber(BigDecimal moneny) {
@@ -26,14 +26,14 @@ public class NumberConvertCNMonetaryUnit {
 			return CN_ZEOR_FULL;
 		}
 
-		// ËÄÉáÎåÈë
+		// å››èˆäº”å…¥
 		long number = moneny.movePointRight(MONEY_PRECISION).setScale(0, 4)
 				.abs().longValue();
 		long scale = number % 100;
 		int numUnit = 0;
 		int numIndex = 0;
 		boolean getZero = false;
-		// ÅÐ¶Ï×îºóÁ½Î»Êý£¬Ò»¹²ÓÐËÄÖÐÇé¿ö£º00 = 0, 01 = 1, 10, 11
+		// åˆ¤æ–­æœ€åŽä¸¤ä½æ•°ï¼Œä¸€å…±æœ‰å››ä¸­æƒ…å†µï¼š00 = 0, 01 = 1, 10, 11
 		if (!(scale > 0)) {
 			numIndex = 2;
 			number = number / 100;
@@ -49,7 +49,7 @@ public class NumberConvertCNMonetaryUnit {
 			if (number <= 0) {
 				break;
 			}
-			// Ã¿´Î»ñÈ¡µ½×îºóÒ»¸öÊý
+			// æ¯æ¬¡èŽ·å–åˆ°æœ€åŽä¸€ä¸ªæ•°
 			numUnit = (int) (number % 10);
 			if (numUnit > 0) {
 				if ((numIndex == 9) && (zeroSize >= 3)) {
@@ -76,15 +76,15 @@ public class NumberConvertCNMonetaryUnit {
 				}
 				getZero = true;
 			}
-			// ÈÃnumberÃ¿´Î¶¼È¥µô×îºóÒ»¸öÊý
+			// è®©numberæ¯æ¬¡éƒ½åŽ»æŽ‰æœ€åŽä¸€ä¸ªæ•°
 			number = number / 10;
 			++numIndex;
 		}
-		// Èç¹ûnumMoneny == -1£¬ÔòËµÃ÷ÊäÈëµÄÊý×ÖÎª¸ºÊý£¬¾ÍÔÚ×îÇ°Ãæ×·¼ÓÌØÊâ×Ö·û£º¸º
+		// å¦‚æžœnumMoneny == -1ï¼Œåˆ™è¯´æ˜Žè¾“å…¥çš„æ•°å­—ä¸ºè´Ÿæ•°ï¼Œå°±åœ¨æœ€å‰é¢è¿½åŠ ç‰¹æ®Šå­—ç¬¦ï¼šè´Ÿ
 		if (numMoneny == -1) {
 			sb.insert(0, CN_NEGATIVE);
 		}
-		// ÊäÈëµÄÊý×ÖÐ¡ÊýµãºóÁ½Î»Îª"00"µÄÇé¿ö£¬ÔòÒªÔÚ×îºó×·¼ÓÌØÊâ×Ö·û£ºÕû
+		// è¾“å…¥çš„æ•°å­—å°æ•°ç‚¹åŽä¸¤ä½ä¸º"00"çš„æƒ…å†µï¼Œåˆ™è¦åœ¨æœ€åŽè¿½åŠ ç‰¹æ®Šå­—ç¬¦ï¼šæ•´
 		if (!(scale > 0)) {
 			sb.append(CN_FULL);
 		}
@@ -94,6 +94,6 @@ public class NumberConvertCNMonetaryUnit {
 	public static void main(String[] args) {
 		NumberConvertCNMonetaryUnit numberConvertCNMonetaryUnit = new NumberConvertCNMonetaryUnit();
 		System.out.println(numberConvertCNMonetaryUnit
-				.convertNumber(new BigDecimal(0.228888)));
+				.convertNumber(new BigDecimal(10000000000.00)));
 	}
 }

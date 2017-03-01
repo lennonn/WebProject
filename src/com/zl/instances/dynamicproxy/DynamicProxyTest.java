@@ -16,12 +16,12 @@ public class DynamicProxyTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		 ConcreteTarget c=new ConcreteTarget();//Ôª¶ÔÏó(±»´úÀí¶ÔÏó)
-         InvocationHandler ih=new ProxyHandler(c);//´úÀíÊµÀıµÄµ÷ÓÃ´¦Àí³ÌĞò¡£
-         //´´½¨Ò»¸öÊµÏÖÒµÎñ½Ó¿ÚµÄ´úÀíÀà,ÓÃÓÚ·ÃÎÊÒµÎñÀà(¼û´úÀíÄ£Ê½)¡£
-         //·µ»ØÒ»¸öÖ¸¶¨½Ó¿ÚµÄ´úÀíÀàÊµÀı£¬¸Ã½Ó¿Ú¿ÉÒÔ½«·½·¨µ÷ÓÃÖ¸ÅÉµ½Ö¸¶¨µÄµ÷ÓÃ´¦Àí³ÌĞò£¬ÈçProxyHandler¡£
+		 ConcreteTarget c=new ConcreteTarget();//å…ƒå¯¹è±¡(è¢«ä»£ç†å¯¹è±¡)
+         InvocationHandler ih=new ProxyHandler(c);//ä»£ç†å®ä¾‹çš„è°ƒç”¨å¤„ç†ç¨‹åºã€‚
+         //åˆ›å»ºä¸€ä¸ªå®ç°ä¸šåŠ¡æ¥å£çš„ä»£ç†ç±»,ç”¨äºè®¿é—®ä¸šåŠ¡ç±»(è§ä»£ç†æ¨¡å¼)ã€‚
+         //è¿”å›ä¸€ä¸ªæŒ‡å®šæ¥å£çš„ä»£ç†ç±»å®ä¾‹ï¼Œè¯¥æ¥å£å¯ä»¥å°†æ–¹æ³•è°ƒç”¨æŒ‡æ´¾åˆ°æŒ‡å®šçš„è°ƒç”¨å¤„ç†ç¨‹åºï¼Œå¦‚ProxyHandlerã€‚
          Target target=(Target)Proxy.newProxyInstance(c.getClass().getClassLoader(),c.getClass().getInterfaces(),ih);
-         //µ÷ÓÃ´úÀíÀà·½·¨,JavaÖ´ĞĞInvocationHandler½Ó¿ÚµÄ·½·¨.
+         //è°ƒç”¨ä»£ç†ç±»æ–¹æ³•,Javaæ‰§è¡ŒInvocationHandleræ¥å£çš„æ–¹æ³•.
         target.doSomething();
 
 	}
