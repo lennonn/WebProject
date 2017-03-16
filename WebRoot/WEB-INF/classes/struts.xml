@@ -50,7 +50,9 @@
 		</action>
 		<action name="dom_htmldom_*">
 			<result>/WEB-INF/dom/htmldom/{1}.html</result>
-
+		</action>
+		<action name="ajax_*">
+			<result>/WEB-INF/ajax/{1}.jsp</result>
 		</action>
 		<action name="js_*">
 			<result>/WEB-INF/js/{1}.html</result>
@@ -60,5 +62,10 @@
 		<action name="test">
 			<result>/WEB-INF/jsp/test/test.jsp</result>
 		</action>
+	</package>
+	<package name="user"  extends="global-default">
+			<action name ="user_*">
+				<result>/WEB-INF/jsp/user/{1}.jsp</result>
+			</action>
 	</package>
 </struts>

@@ -9,7 +9,7 @@ public class WebServiceTestSpringImpl implements WebServiceTest {
 	@Override
 	public String cxfTest(String message) {
 		// TODO Auto-generated method stub
-		return "Send CXF message";
+		return "Send CXF message"+message;
 	}
 
 }

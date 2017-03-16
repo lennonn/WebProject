@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+</head>
+<body>
+		<div id="showText"  class="show"></div>
+		<button id="add">add items</button>
+		<ul id="items">
+			<li>first item</li>
+			<li>second item</li>
+			<li>theed item</li>
+		</ul>
+</body>
+</html>
+<script>
+	var btn = document.getElementById("add");
+	var showText = document.getElementById("showText");
+	var item = document.getElementById("items");
+	var items = document.getElementById("items").getElementsByTagName("li");
+	var conter =1;
+ 	item.addEventListener("click", show);
+	function show(e){
+		if(e.target.nodeName=="LI"){
+			showText.innerHTML=e.target.innerHTML;
+			for(i=0;i<e.target.parentNode.children.length;i++){
+				e.target.parentNode.children[i].classList.remove("active");
+			}
+			e.target.classList.add("active")
+		}
+	}
+	btn.addEventListener("click",additem);
+	function additem(){
+		item.innerHTML+="<li>new item-"+conter+"</li>";
+		conter++;
+	}
+	
+	
+</script>

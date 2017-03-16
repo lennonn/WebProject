@@ -1,0 +1,26 @@
+[
+	{
+		"name": "XiaoMing",
+		"species": "youth",
+		"food": {
+				"like": ["candy",""],
+				"dislike": ["noodles","vegetable"]
+		}
+	},
+	{
+		"name": "ZhangSan",
+		"species": "middle-age",
+		"food": {
+				"like": ["kfc","salad"],
+				"dislike": ["junk-fook","fruit"]
+		}
+	},
+	{
+		"name": "LaoWang",
+		"species": "old-age",
+		"food": {
+				"like": ["soup","meat"],
+				"dislike": ["fried-foods","quick-meal"]
+		}
+	}
+]

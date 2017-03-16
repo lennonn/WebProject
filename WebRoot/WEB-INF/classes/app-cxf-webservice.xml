@@ -47,7 +47,7 @@
 			value="http://localhost:8080/SSHXmlConfigration/webservice/webService" />
 	</bean> -->
 	<jaxws:client id="webServiceCient" serviceClass="com.zl.service.facade.WebServiceTest"
-		address="http://localhost:8080/SSHXmlConfigration/webservice/webService">
+		address="http://localhost:18090/SSHXmlConfigration/webservice/webService">
 		<!-- <jaxws:inInterceptors>
 			<bean class="org.apache.cxf.interceptor.LoggingInInterceptor" />
 			<ref bean="anotherInterceptor" />

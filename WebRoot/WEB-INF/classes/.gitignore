@@ -4,3 +4,9 @@
 /app-service.xml
 /applicationContext.xml
 /com/
+/ehcache.xml
+/hibernate.cfg.xml
+/invoker-dispatcher-servlet.xml
+/jdbc.properties
+/log4j.properties
+/struts.xml

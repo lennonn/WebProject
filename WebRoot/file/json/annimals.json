@@ -1,0 +1,26 @@
+[
+	{
+		"name": "Panda",
+		"species": "reptile",
+		"food": {
+				"like": ["bamboo"],
+				"dislike": ["other all"]
+		}
+	},
+	{
+		"name": "Shark",
+		"species": "fish",
+		"food": {
+				"like": ["meal","fish"],
+				"dislike": ["plant"]
+		}
+	},
+	{
+		"name": "Elephant",
+		"species": "terricole",
+		"food": {
+				"like": ["grass"],
+				"dislike": ["leaf"]
+		}
+	}
+]
