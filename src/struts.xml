@@ -67,5 +67,7 @@
 			<action name ="user_*">
 				<result>/WEB-INF/jsp/user/{1}.jsp</result>
 			</action>
+			<action name="saveUser"  class="com.zl.web.action.UserAction" method="saveUser">
+			</action>
 	</package>
 </struts>

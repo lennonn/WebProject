@@ -5,6 +5,19 @@ body{
 .active{
     background-color: yellow
 }
+form{
+    padding: 5px;
+    border: 5px;
+    border-width: auto;
+}
+
+input{
+    padding: 5px;
+    border: 5px;
+    border-style: solid;
+    border-color: #D1EEEE;   
+    border-width: auto;
+}
 #add{
      margin: 10px 5px;
     padding: 5px;

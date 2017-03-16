@@ -10,4 +10,8 @@
 		<!--  <property name="hibernateTemplate" ref="hibernateTemplate"/> -->
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	
+	<bean id="userDAO" class="com.zl.persistence.hibernate.dao.UserDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 </beans>

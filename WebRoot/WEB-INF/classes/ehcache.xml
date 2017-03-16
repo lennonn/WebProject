@@ -4,7 +4,7 @@
   <diskStore path="/ehcache/ehcache.txt"/>
 
   <!-- 默认cache：如果没有对应的特定区域的缓存，就使用默认缓存 -->
-  <defaultCache maxElementsInMemory="10000"
+  <defaultCache maxElementsInMemory="100000"
                 eternal="false"
                 timeToIdleSeconds="300"
                 timeToLiveSeconds="600"

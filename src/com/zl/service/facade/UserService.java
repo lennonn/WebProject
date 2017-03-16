@@ -6,8 +6,8 @@ import org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean;
 
 import com.zl.dto.domain.User;
 
-public interface IUserService {
+public interface UserService {
 	
 	public User getUser();
-
+	public void saveUser(User user);
 }

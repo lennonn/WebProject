@@ -8,5 +8,7 @@
 	<bean id="transactionService" class="com.zl.service.spring.TransactionService">
 		 <property name="transactionDAO" ref="transactionDAO"></property>
 	</bean>
-
+	<bean id="userService" class="com.zl.service.spring.UserServiceImpl">
+		 <property name="userDao" ref="userDAO"></property>
+	</bean>
 </beans>
