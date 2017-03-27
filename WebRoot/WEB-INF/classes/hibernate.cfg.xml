@@ -8,6 +8,7 @@
 	<property name="hibinate.dialect">
 		org.hibernate.dialect.OracleDialect
 	</property>
+	<!-- <property name="current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property> -->
 	<property name="hibernate.show_sql">true</property>
 	<property name="hibernate.format_sql">true</property>
 	<!-- 开启二级缓存 -->

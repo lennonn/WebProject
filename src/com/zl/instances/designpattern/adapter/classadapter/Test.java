@@ -3,8 +3,6 @@
  */
 package com.zl.instances.designpattern.adapter.classadapter;
 
-import org.apache.log4j.chainsaw.Main;
-
 /**
  * @author zlennon
  *

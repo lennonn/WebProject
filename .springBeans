@@ -8,12 +8,17 @@
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
 		<config>src/app-cxf-webservice.xml</config>
+		<config>src/app-springSecurity.xml</config>
 	</configs>
 	<autoconfigs>
+		<config>src/invoker-dispatcher-servlet.xml</config>
 		<config>src/applicationContext.xml</config>
 		<config>src/app-dao.xml</config>
 		<config>src/app-service.xml</config>
+		<config>src/struts.xml</config>
+		<config>src/hibernate.cfg.xml</config>
 		<config>src/app-action.xml</config>
+		<config>src/ehcache.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>

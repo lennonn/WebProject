@@ -12,7 +12,9 @@ public class TransactionServicewww {
 	@Test
 	public final void TestSpringTransaction() {
 		@SuppressWarnings("resource")
+		
 		ApplicationContext ac = new ClassPathXmlApplicationContext("app*.xml");
+		
 		/*ApplicationContext ac = new FileSystemXmlApplicationContext(new String[]{
 				"app-action.xml","app-service.xml","app-dao.xml","app-applicationContext.xml"
 		});*/

@@ -2,12 +2,10 @@ package com.zl.service.facade;
 
 
 
-import org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean;
-
-import com.zl.dto.domain.User;
+import com.zl.dto.domain.CUser;
 
 public interface UserService {
 	
-	public User getUser();
-	public void saveUser(User user);
+	public CUser getUser();
+	public void saveUser(CUser user);
 }

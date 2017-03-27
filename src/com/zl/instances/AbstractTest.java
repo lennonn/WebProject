@@ -10,8 +10,9 @@ public abstract class AbstractTest {
 	}
 	//public abstract String helloWorld();
 	public static void main(String[] args) {
-		//AbstractTest abstractTest = new AbstractTest() ³éÏóÀà²»ÄÜ±»ÊµÀı»¯£¬ÓĞ³éÏó·½·¨£¬ÊµÀı»¯ÎŞÒâÒå,²»ÄÜÊµÀıÎª¾ßÌåµÄÄÄÒ»¸ö
+		//AbstractTest abstractTest = new AbstractTest() ï¿½ï¿½ï¿½ï¿½ï¿½à²»ï¿½Ü±ï¿½Êµï¿½ï¿½ï¿½Ğ³ï¿½ï¿½ó·½·ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 	AbstractTest abstractTest = new AbstractTest() {
+			@Override
 			public void hello(){
 				System.out.println("test");
 			};

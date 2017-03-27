@@ -51,10 +51,10 @@ public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
 		Query query = session.createQuery(hql);
 		//List<Dept> list = (List<Dept>)query.setCacheable(true).list();
 		List<Dept> list = (List<Dept>)query.setCacheMode(CacheMode.GET).list();
-		System.out.println("***********²âÊÔÊÇ·ñÍ¨¹ý²éÑ¯»º´æÁËÊý¾Ý*********");
+		System.out.println("***********ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Í¨ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*********");
 		Dept dept =(Dept)session.get(Dept.class, 10);
 		System.out.println(dept.getDname());
-		System.out.println("***********Èç¹ûÃ»ÓÐsqlÓï¾äËµÃ÷ÒÑ»º´æ£¬²âÊÔ½áÊø*********");
+		System.out.println("***********ï¿½ï¿½ï¿½Ã»ï¿½ï¿½sqlï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½Ñ»ï¿½ï¿½æ£¬ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½*********");
 
 		return list;
 	}
@@ -65,7 +65,7 @@ public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
 		procStr.append("GPFUNDAPPLY.AUTODEALSTATEBYCHECKNO").append("(?,?,?) }");
 		try {
 			//conn = hibernateTemplate.getSessionFactory().getCurrentSession();
-			proc = conn.prepareCall(procStr.toString()); // µ÷ÓÃ´æ´¢¹ý³Ì
+			proc = conn.prepareCall(procStr.toString()); // ï¿½ï¿½ï¿½Ã´æ´¢ï¿½ï¿½ï¿½
 			proc.registerOutParameter(2, Types.VARCHAR);
 			proc.registerOutParameter(3, Types.VARCHAR);
 			//proc.setDate(1,   new Date(8));

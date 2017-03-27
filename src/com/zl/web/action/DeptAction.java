@@ -9,6 +9,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.zl.dto.domain.Dept;
+import com.zl.service.facade.DeptService;
 import com.zl.service.spring.TransactionService;
 
 public class DeptAction extends ActionSupport{
@@ -18,7 +19,12 @@ public class DeptAction extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	Dept dept;
 	TransactionService transactionService;
+	DeptService deptService;
 	HttpServletRequest httpServletRequest;
+	
+	public void setDeptService(DeptService detpService){
+		this.deptService=detpService;
+	}
 	public void setTransactionService(TransactionService transactionService) {
 		this.transactionService = transactionService;
 	}
@@ -31,7 +37,11 @@ public class DeptAction extends ActionSupport{
 		this.dept = dept;
 	}
 	public String saveDept(){
-		transactionService.saveDept(dept);
+		try{
+			deptService.saveDept(dept);
+		}catch(Exception exception ){
+			return "error";
+		}
 		return "saved";
 	}
 	public String queryDept(){

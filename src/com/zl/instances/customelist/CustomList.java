@@ -7,8 +7,6 @@ import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.chainsaw.Main;
-
 /**
  * @author zlennon
  * @param <T>
@@ -23,7 +21,8 @@ public class CustomList extends AbstractList implements List {
 			object =new Object[size];
 		}
 		private int size = 0;
-        public boolean add(Object obj){
+        @Override
+		public boolean add(Object obj){
         	if(size==object.length){
         		Object[] temp=new Object[size*2];
         		for(int i=0; i<object.length;i++){

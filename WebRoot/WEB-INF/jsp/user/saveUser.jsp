@@ -9,15 +9,18 @@
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
-	<form id="user"  action="saveUser"  class="ajax"  method="post">
-		<div>
-			<input type="text"  name="username"  placeholder="you name..."/>
+	<form id="user"  action="login.action"  class="ajax"  method="post">
+		<div>   
+			<input  id="username"type="text"  name="username"  placeholder="you name..."/>
 		</div>
 		<div>
-			<input type="password"  name="password"  placeholder="you password..."/>
+			<input id ="password" type="password"  name="password"  placeholder="you password..."/>
 		</div>
 		<div>
-			<input id="sub"  type ="submit"  value="submit"/>
+			<span id="message"></span>
+		</div>
+		<div>
+			<input id="sub"  type ="submit"  value="Login"/>
 		</div>	
 	</form>
 	
@@ -29,7 +32,17 @@
 		/* 	 $("#sub").click(function(){
 				console.log("test");
 			});  */
-		 $("form.ajax").on("submit",function(){
+		//	trigger();
+		/* 	function trigger(){
+			$("form.ajax").find("[name]").each(function(){
+					var input =$(this);
+					name=input.attr("name");
+					$(name).on("click",function(){
+						document.getElementById("message").innerHTML="";
+					});
+			});
+			}; */
+		  $("form.ajax").on(function(){
 			
 			var userForm = $(this);
 				url =userForm.attr("action");
@@ -43,14 +56,18 @@
 					console.log(data);
 				});
 			var jsonStr=JSON.stringify(data);
-			$.ajax({
+	$.ajax({
 				url:url,
+				cache: false,
+				async : true,
 				type:method,
-				dataType:"json",
-				data:jsonStr,
+				data:data, 
 				success: function(response){
-					console.log(response);
+					document.getElementById("message").innerHTML="提交成功！";
+				},
+				error: function(msg){
+					document.getElementById("message").innerHTML="提交错误！";
 				}
-			});
+			}); 
 		}); 
 	</script>

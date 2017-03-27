@@ -1,7 +1,7 @@
 package com.zl.service.spring;
 
-import com.zl.dto.domain.User;
-import com.zl.persistence.hibernate.dao.UserDao;
+import com.zl.dto.domain.CUser;
+import com.zl.persistence.dao.UserDao;
 import com.zl.service.facade.UserService;
 
 
@@ -19,8 +19,9 @@ public class UserServiceImpl implements UserService {
 		super();
 	}
 
-	public User getUser() {
-		User user = new User();
+	@Override
+	public CUser getUser() {
+		CUser user = new CUser();
 		user.setName("admin");
 		user.setPassword("123456");
 		return user;
@@ -30,7 +31,7 @@ public class UserServiceImpl implements UserService {
 	 * @see com.zl.service.facade.UserService#saveUser()
 	 */
 	@Override
-	public void saveUser(User user) {
+	public void saveUser(CUser user) {
 		userDao.saveUser(user);
 	}
 

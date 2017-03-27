@@ -3,8 +3,6 @@
  */
 package com.zl.instances.designpattern.adapter.interfaceadapter;
 
-import javax.servlet.http.HttpSession;
-
 /**
  * @author zlennon
  *

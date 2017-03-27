@@ -8,7 +8,14 @@
 	<bean id="transactionService" class="com.zl.service.spring.TransactionService">
 		 <property name="transactionDAO" ref="transactionDAO"></property>
 	</bean>
-	<bean id="userService" class="com.zl.service.spring.UserServiceImpl">
+	<bean id="deptService" class="com.zl.service.spring.DeptServiceImpl">
+		 <property name="deptDao" ref="deptDao"></property>
+	</bean>
+	<!--  <bean id="userService" class="com.zl.service.spring.UserServiceImpl">
 		 <property name="userDao" ref="userDAO"></property>
+	</bean> -->
+	<bean id="customUserDetailsService"
+		class="com.zl.spring.security.CustomUserDetailsService">
+		<!-- <property name="userDao"  ref="userDao"></property> -->
 	</bean>
 </beans>

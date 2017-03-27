@@ -1,7 +1,5 @@
 package com.zl.interview;
 
-import org.apache.log4j.chainsaw.Main;
-
 public class Employee implements Comparable<Employee> {
 	private  String name;
 	private  Double salary;

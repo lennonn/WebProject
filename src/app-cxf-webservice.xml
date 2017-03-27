@@ -20,7 +20,6 @@
 	<!-- JAX-RS -->
 	<!-- <jaxrs:server id="webService" address="/"> <jaxrs:serviceBeans> <ref
 		bean="webService" /> </jaxrs:serviceBeans> </jaxrs:server> -->
-
 	<!-- JAX-WS -->
 	<!-- <jaxws:endpoint implementor="#webService" address="/webService" publish="true"
 		xmlns:e="http://service.jaxws.cxf.apache.org/endpoint" xmlns:s="http://service.jaxws.cxf.apache.org/service">

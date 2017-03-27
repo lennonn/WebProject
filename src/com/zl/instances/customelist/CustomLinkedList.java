@@ -6,8 +6,6 @@ package com.zl.instances.customelist;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.w3c.dom.ls.LSInput;
-
 /**
  * @author zlennon
  *

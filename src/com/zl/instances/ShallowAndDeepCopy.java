@@ -3,14 +3,12 @@
  */
 package com.zl.instances;
 
-import freemarker.core.ReturnInstruction.Return;
-
 /**
  * @author zlennon
  *
- * summarise:Ç³¿½±´ÊÇÖ¸ÔÚ¿½±´¶ÔÏóÊ±£¬¶ÔÓÚ»ù±¾Êı¾İÀàĞÍµÄ±äÁ¿»áÖØĞÂ¸´ÖÆÒ»·İ£¬¶ø¶ÔÓÚÒıÓÃÀàĞÍµÄ±äÁ¿Ö»ÊÇ¶ÔÒıÓÃ½øĞĞ¿½±´£¬
- *	Ã»ÓĞ¶ÔÒıÓÃÖ¸ÏòµÄ¶ÔÏó½øĞĞ¿½±´¡£¶øÉî¿½±´ÊÇÖ¸ÔÚ¿½±´¶ÔÏóÊ±£¬Í¬Ê±»á¶ÔÒıÓÃÖ¸ÏòµÄ¶ÔÏó½øĞĞ¿½±´¡£
- *	Çø±ğ¾ÍÔÚÓÚÊÇ·ñ¶Ô  ¶ÔÏóÖĞµÄÒıÓÃ±äÁ¿ËùÖ¸ÏòµÄ¶ÔÏó½øĞĞ¿½±´¡£
+ * summarise:Ç³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ú»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÍµÄ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¸ï¿½ï¿½ï¿½Ò»ï¿½İ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÍµÄ±ï¿½ï¿½ï¿½Ö»ï¿½Ç¶ï¿½ï¿½ï¿½ï¿½Ã½ï¿½ï¿½Ğ¿ï¿½ï¿½ï¿½ï¿½ï¿½
+ *	Ã»ï¿½Ğ¶ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Í¬Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¿ï¿½ï¿½ï¿½ï¿½ï¿½
+ *	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ï¿½Ğµï¿½ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¿ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 public class ShallowAndDeepCopy {
 
@@ -82,15 +80,15 @@ public class ShallowAndDeepCopy {
 		ShallowAndDeepCopy.Student student1 =new ShallowAndDeepCopy().new Student();
 		student1.setStuNum(88888);
 		ShallowAndDeepCopy.Address address1 = new ShallowAndDeepCopy().new Address();
-		address1.setAddress("±±¾©ÊĞº£µíÇø");
+		address1.setAddress("ï¿½ï¿½ï¿½ï¿½ï¿½Ğºï¿½ï¿½ï¿½ï¿½ï¿½");
 		student1.setAddress(address1);
 		ShallowAndDeepCopy.Student  student2=(Student) student1.clone();
 		student2.setStuNum(44444);
 		//Address address2 = address1;
 		Address address2= (Address) address1.clone();
-		address2.setAddress("±±¾©ÊĞ²ıÆ½Çø");
-		System.out.println("student1:"+student1.getStuNum()+"---µØÖ·:"+address1.getAddress());
-		System.out.println("student2:"+student2.getStuNum()+"---µØÖ·:"+address2.getAddress());
+		address2.setAddress("ï¿½ï¿½ï¿½ï¿½ï¿½Ğ²ï¿½Æ½ï¿½ï¿½");
+		System.out.println("student1:"+student1.getStuNum()+"---ï¿½ï¿½Ö·:"+address1.getAddress());
+		System.out.println("student2:"+student2.getStuNum()+"---ï¿½ï¿½Ö·:"+address2.getAddress());
 		System.out.println(student1==student2);
 		System.out.println(address1==address2);
 	}

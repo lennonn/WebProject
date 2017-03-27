@@ -2,7 +2,6 @@ package com.zl.instances;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class MapTest {
 	public static void main(String[] args) {

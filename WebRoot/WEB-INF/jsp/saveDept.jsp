@@ -10,11 +10,11 @@
 <body>
    <center>
    		<h1>欢迎进入保存页面</h1>
-   		<s:form name="saveDept" action="saveDept" >
+   		<s:form name="saveDept" action="saveDept.action" >
    		   <s:textfield name="dept.deptno" label="部门编码"></s:textfield>
    			<s:textfield name="dept.dname" label="部门名称"></s:textfield>
-   			<s:textfield name="dept.loc" label="部分地点"></s:textfield>
-   			<s:submit name="submit">提交保存</s:submit>
+   			<s:textfield name="dept.loc" label="部门地点"></s:textfield>
+   			<s:submit name="submit"></s:submit>
    		</s:form>
    </center>
 

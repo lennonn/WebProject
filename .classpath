@@ -11,8 +11,6 @@
 			<attribute name="owner.project.facets" value="maven.deps"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="E:/CommonJAR/log4j-core-2.5.jar"/>
-	<classpathentry kind="lib" path="D:/Program Files/Java/jdk1.8.0_92/src.zip"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.0"/>
 	<classpathentry kind="con" path="com.genuitec.runtime.library/com.genuitec.struts_2.1">
 		<attributes>
@@ -24,12 +22,6 @@
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="WEB-INF/lib"/>
 			<attribute name="owner.project.facets" value="jst.web.jstl"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="com.genuitec.runtime.library/com.genuitec.spring_4.1">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="WEB-INF/lib"/>
-			<attribute name="owner.project.facets" value="me.spring;#system#"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>

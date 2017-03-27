@@ -3,8 +3,6 @@
  */
 package com.zl.instances.designpattern.factory.abstractfactory;
 
-import com.zl.instances.designpattern.factory.factorymethod.FactoryBWM;
-
 /**
  * @author zlennon
  *

@@ -1,13 +1,17 @@
 package com.zl.dto.domain;
 
-import java.io.Serializable;
-
-public class User implements Serializable {
-
-	private static final long serialVersionUID = 6910584263183142037L;
+public class CUser {
 	private int userid;
 	private String username;
 	private String password;
+	private transient Integer access;
+	public Integer getAccess() {
+		return access;
+	}
+
+	public void setAccess(Integer access) {
+		this.access = access;
+	}
 
 	public String getUsername() {
 		return username;
@@ -17,17 +21,17 @@ public class User implements Serializable {
 		this.username = username;
 	}
 
-	public User() {
+	public CUser() {
 		super();
 	}
 
-	public User(String name, String password) {
+	public CUser(String name, String password) {
 		super();
 		this.username = name;
 		this.password = password;
 	}
 	
-	public User(int userid, String name, String password) {
+	public CUser(int userid, String name, String password) {
 		super();
 		this.userid=userid;
 		this.username = name;

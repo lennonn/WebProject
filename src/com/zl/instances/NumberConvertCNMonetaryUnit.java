@@ -2,8 +2,6 @@ package com.zl.instances;
 
 import java.math.BigDecimal;
 
-import org.apache.log4j.chainsaw.Main;
-
 public class NumberConvertCNMonetaryUnit {
 	// 数字大写常量
 	private static final String[] CN_UPPER_NUMBER = { "零", "壹", "贰", "叁", "肆",

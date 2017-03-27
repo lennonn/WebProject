@@ -16,7 +16,8 @@ public class Base {
 	    static class Sub extends Base
 	    {
 	        private String baseName = "sub";
-	        public void callName()
+	        @Override
+			public void callName()
 	        {
 	            System. out. println (baseName) ;
 	        }

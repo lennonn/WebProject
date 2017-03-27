@@ -9,9 +9,9 @@ public class FlyweightFactory {
 	}
 
 	public Flyweight getFlyWeight(Object obj) {
-		Flyweight flyweight = (Flyweight) flyweights.get(obj);
+		Flyweight flyweight = flyweights.get(obj);
 		if (flyweight == null) {
-			// ²úÉúÐÂµÄConcreteFlyweight
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ConcreteFlyweight
 			flyweight = new ConcreteFlyweight((String) obj);
 			flyweights.put(obj, flyweight);
 		}
