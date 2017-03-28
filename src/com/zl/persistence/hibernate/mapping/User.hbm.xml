@@ -3,12 +3,13 @@
   "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class name="com.zl.dto.domain.User" table="c_user">
+  <class name="com.zl.dto.domain.CUser" table="c_user">
     <!--custom area begin-->
     <!--custom area end-->
     <id name="userid" column="userid" type="int">
       <generator class="assigned" />
     </id>
+    <property name="access"  column="caccess"   type="integer"/>
     <property name="username" column="username" type="string" />
     <property name="password" column="password" type="string" />
   </class>

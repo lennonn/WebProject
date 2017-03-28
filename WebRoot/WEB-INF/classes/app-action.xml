@@ -9,7 +9,6 @@
 		 <property name="deptService" ref="deptService"></property>
 	</bean>
 	<bean id ="userAction" class="com.zl.web.action.UserAction">
-		<!-- <property name="userService"  ref ="userService"></property> -->
 		<property name="customUserDetailsService"  ref ="customUserDetailsService"></property>		
 	</bean>
 </beans>

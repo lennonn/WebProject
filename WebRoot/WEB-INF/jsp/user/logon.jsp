@@ -10,8 +10,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-login successfully!  <a href ="home">返回主页</a>
-<a href ="oksignin.action">signin</a>
+欢迎您，  <s:property value="#request.name"/>
+<div><a href ="deptPortal.action">部门管理</div>
 <div><a href="logout">登出</a></div>
 </body>
 </html>

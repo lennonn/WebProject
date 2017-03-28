@@ -16,6 +16,5 @@
 	</bean> -->
 	<bean id="customUserDetailsService"
 		class="com.zl.spring.security.CustomUserDetailsService">
-		<!-- <property name="userDao"  ref="userDao"></property> -->
 	</bean>
 </beans>

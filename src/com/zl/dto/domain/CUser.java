@@ -4,7 +4,9 @@ public class CUser {
 	private int userid;
 	private String username;
 	private String password;
-	private transient Integer access;
+	private  Integer access;
+	
+	
 	public Integer getAccess() {
 		return access;
 	}

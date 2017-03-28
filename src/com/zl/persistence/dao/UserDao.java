@@ -14,5 +14,5 @@ import com.zl.dto.domain.CUser;
 public interface UserDao {
 	
 	public void saveUser(CUser user);
-	public  CUser getDatabase(String username);
+	public  CUser getUser(String username);
 }

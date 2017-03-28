@@ -60,10 +60,11 @@ public class UserAction extends ActionSupport {
 				user.setPassword(hRequest.getParameter("password"));
 				UserDetails userDetails=customUserDetailsService.loadUserByUsername(hRequest.getParameter("username"));
 				if(userDetails!=null){
+					hRequest.setAttribute("name", userDetails.getUsername());
 					 return SUCCESS;
+				}else{
+					return ERROR;
 				}
-			 //Principal principal = ServletActionContext.getRequest().getUserPrincipal();
-					return  ERROR;
 			}catch(Exception e){
 				return  ERROR;
 			}

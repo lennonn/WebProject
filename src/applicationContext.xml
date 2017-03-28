@@ -93,14 +93,14 @@
 	</bean>
 	<tx:advice id="txAdvice" transaction-manager="txManager">
 		<tx:attributes>
-			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="SUPPORTS" />
 			<tx:method name="delete*" propagation="REQUIRED" />
 		</tx:attributes>
 	</tx:advice>
 
 	<aop:config>
 		<aop:pointcut id="interceptorPointCuts"
-			expression="execution(* com.zl.service.spring.*.*(..))" />
+			expression="execution(* com.zl.service.spring.*.*(..)) " />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="interceptorPointCuts" />
 		<aop:aspect ref="aopClass">
 			<aop:before method="addLog" pointcut-ref="interceptorPointCuts" />

@@ -70,7 +70,7 @@
 		<action name="portal">
 			<result>/WEB-INF/jsp/user/saveUser.jsp</result>
 		</action>
-		<action name="oksignin" class="com.zl.web.action.UserAction"
+		<action name="logon" class="com.zl.web.action.UserAction"
 			method="loginSuccess">
 			<result>/WEB-INF/jsp/user/logon.jsp</result>
 		</action>

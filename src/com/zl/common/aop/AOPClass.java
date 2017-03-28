@@ -48,9 +48,9 @@ public class AOPClass {
 	if (info != null && !info.equals("") && !info.equals(" ")) {  
 	logger.info(info);  
 	} else {  
-	/* System.out.println("请检查您的日志配置文件，AOP" + 
+	 System.out.println("请检查您的日志配置文件，AOP" + 
 	"中配置了此方法记录日志，但是没有在配置文件中找到该方法的描述，方法名：" + key); 
-	*/   
+	
 	}  
 	  
 	}  

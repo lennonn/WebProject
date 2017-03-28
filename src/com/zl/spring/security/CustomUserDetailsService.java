@@ -47,8 +47,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 		try {
 			// 搜索数据库以匹配用户登录名.
 			// 我们可以通过dao使用JDBC来访问数据库
-			CUser dbUser = userDao.getDatabase(username);
-			dbUser.setAccess(0);
+			CUser dbUser = userDao.getUser(username);
 			user = new User(dbUser.getUsername(), dbUser.getPassword()
 					.toLowerCase(), true, true, true, true,
 					getAuthorities(dbUser.getAccess()));
