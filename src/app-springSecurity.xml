@@ -1,37 +1,65 @@
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
-	xsi:schemaLocation="
-			http://www.springframework.org/schema/beans 
-			http://www.springframework.org/schema/beans/spring-beans.xsd
-			 http://www.springframework.org/schema/security
-			 http://www.springframework.org/schema/security/spring-security.xsd
-			">
-	<!-- Spring-Security 的配置 -->
+<b:beans xmlns="http://www.springframework.org/schema/security"
+		 xmlns:b="http://www.springframework.org/schema/beans"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+<http>
+	 <!-- <intercept-url pattern="/login" access="permitAll"/> -->
+	 <!--  <intercept-url pattern="/index" access="permitAll"/> -->
+	<form-login login-page="/login"  	default-target-url="/index"
+	login-processing-url="/index"   authentication-failure-url="/login?error=3"/>
+	<logout  logout-success-url="/login?logout=out"   logout-url="/logout"
+		  invalidate-session="true"
+	/> 
+</http> 
+	<!-- <intercept-url pattern="/resources/**" access="permitAll"/>
+	<intercept-url pattern="/signup" access="permitAll"/>
+	<intercept-url pattern="/about" access="permitAll"/>
+	<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
+	<intercept-url pattern="/db/**" access="hasRole('ADMIN') and hasRole('DBA')"/>
+	<form-login  login-page="/login"/>
+	<http-basic />
+	<logout logout-success-url="/index" logout-url="/logout"/> -->
+<!-- </http> -->
+ <authentication-manager alias="authenticationManager">
+    <authentication-provider>
+        <user-service>
+            <user name="john" password="john"
+                authorities="ROLE_USER" />
+            <user name="admin" password="admin"
+                authorities="ROLE_USER, ROLE_ADMIN" />
+            <user name="guest" password="guest"
+                authorities="ROLE_GUEST" />
+        </user-service>
+    </authentication-provider>
+</authentication-manager> 
+<!--
 	<security:http auto-config="true">
-		<security:csrf disabled="true" />
-		<!-- <security:intercept-url pattern="/index*" access="permitAll"/> -->
-		<!-- <security:intercept-url pattern="/dashboard*" access="ROLE_USER" requires-channel="https"/> -->
-		<security:intercept-url pattern="/login"
-			access="hasAnyRole('ROLE_ADMIN')" />
-		<security:intercept-url pattern="/signin"
-			access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
-		<security:intercept-url pattern="/signup"
-			access="hasRole('ROLE_ADMIN')" />
-		<!-- <security:intercept-url pattern="/login" access="permitAll"/> -->
-		<!-- <security:intercept-url pattern="/mypermission" access="hasRole('ROLE_USER')"/> -->
-		<!-- <security:intercept-url pattern="/login" access="hasRole('ROLE_ADMIN')"/> 
-			<security:intercept-url pattern="/common" access="hasRole('ROLE_USER')"/> 
-			<security:access-denied-handler error-page="/denied"/> -->
-		<security:form-login login-page="/logon"
-			authentication-failure-url="/login?error=true" login-processing-url="/loginSuccess"
-			default-target-url="/logon" />
+			<security:csrf disabled="true" />
+			<security:intercept-url pattern="/index*" access="permitAll"/>
+			<security:intercept-url pattern="/dashboard*" access="ROLE_USER" requires-channel="https"/>
+			<security:intercept-url pattern="/login"
+				access="hasAnyRole('ROLE_ADMIN')" />
+			<security:intercept-url pattern="/signin"
+				access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
+			<security:intercept-url pattern="/signup"
+				access="hasRole('ROLE_ADMIN')" />
+			<security:intercept-url pattern="/login" access="permitAll"/>
+			<security:intercept-url pattern="/mypermission" access="hasRole('ROLE_USER')"/>
+			<security:intercept-url pattern="/login" access="hasRole('ROLE_ADMIN')"/> 
+				<security:intercept-url pattern="/common" access="hasRole('ROLE_USER')"/> 
+				<security:access-denied-handler error-page="/denied"/>
+			<security:form-login login-page="/logon"
+				authentication-failure-url="/login?error=true" login-processing-url="/loginSuccess"
+				default-target-url="/logon" />
+	
+			<security:logout invalidate-session="true"
+				logout-success-url="/logout" logout-url="/logout" />
+		</security:http>
+	
 
-		<security:logout invalidate-session="true"
-			logout-success-url="/logout" logout-url="/logout" />
-	</security:http>
 
-
-	<!-- 指定一个自定义的authentication-manager :customUserDetailsService -->
 	<security:authentication-manager>
 		<security:authentication-provider
 			user-service-ref="customUserDetailsService">
@@ -39,13 +67,12 @@
 		</security:authentication-provider>
 	</security:authentication-manager>
 
-	<!-- 对密码进行MD5编码 -->
 	<bean
 		class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"
 		id="passwordEncoder" />
 
-	<!-- 通过 customUserDetailsService,Spring会自动的用户的访问级别. 也可以理解成:以后我们和数据库操作就是通过customUserDetailsService来进行关联. -->
 	<bean id="customUserDetailsService"
 		class="com.zl.spring.security.CustomUserDetailsService">
 	</bean>
-</beans>
+-->
+</b:beans> 

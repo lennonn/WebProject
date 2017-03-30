@@ -1,39 +1,54 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>save user</title>
-<link rel="stylesheet"  href="css/style.css"  type="text/css"  media="screen">
+<link rel="stylesheet" href="css/style.css" type="text/css"
+	media="screen">
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
-	<form id="user"  action="login.action"  class="ajax"  method="post">
-		<div>   
-			<input  id="username"type="text"  name="username"  placeholder="you name..."/>
-		</div>
-		<div>
-			<input id ="password" type="password"  name="password"  placeholder="you password..."/>
-		</div>
-		<div>
-			<span id="message"></span>
-		</div>
-		<div>
-			<input id="sub"  type ="submit"  value="Login"/>
-		</div>	
+	<form name="f" action="index" method="post">
+		<input type="hidden" name="${_csrf.parameterName}"
+			value="${_csrf.token}" />
+		<fieldset>
+			<legend>Please Login</legend>
+			<div class="alert alert-error">
+				<c:if test="${param.error=='3' }">
+					<c:out value=" Invalid username and password."></c:out>
+				</c:if>
+			</div>
+			<div class="alert alert-success">
+				<c:if test="${param.logout=='out'}">
+					<c:out value="You have been logged out." />
+					</c:if>
+			</div>
+			<div>
+			<label for="username">Username</label> <input type="text"
+				id="username" name="username" /> </div>
+				<div>
+				<label for="password">Password</label>
+			<input type="password" id="password" name="password" /></div>
+			<div class="form-actions">
+				<button type="submit" class="btn">Log in</button>
+			</div>
+		</fieldset>
 	</form>
-	
+
 </body>
 </html>
 
 <script>
-			var sub = document.getElementById("submit");
-		/* 	 $("#sub").click(function(){
+	/* 		var sub = document.getElementById("submit");
+			 $("#sub").click(function(){
 				console.log("test");
-			});  */
+			});  
 		//	trigger();
-		/* 	function trigger(){
+			function trigger(){
 			$("form.ajax").find("[name]").each(function(){
 					var input =$(this);
 					name=input.attr("name");
@@ -41,7 +56,7 @@
 						document.getElementById("message").innerHTML="";
 					});
 			});
-			}; */
+			}; 
 		  $("form.ajax").on(function(){
 			
 			var userForm = $(this);
@@ -69,5 +84,5 @@
 					document.getElementById("message").innerHTML="提交错误！";
 				}
 			}); 
-		}); 
-	</script>
+		});  */
+</script>

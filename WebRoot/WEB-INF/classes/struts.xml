@@ -16,6 +16,9 @@
 				exception="java.lang.NoSuchFieldException"></exception-mapping>
 		</global-exception-mappings>
 	</package>
+	<!-- <package name="default" namespace="/" extends="global-default"> <default-action-ref 
+		name="default" /> <action name="default" > <result>/WEB-INF/jsp/user/index.jsp</result> 
+		</action> </package> -->
 	<package name="saveOrUpdate" extends="global-default">
 
 		<action name="deptPortal">
@@ -44,7 +47,7 @@
 			<result>/WEB-INF/jsp/wechat/wechat_index.jsp</result>
 		</action>
 	</package>
-	<package name="index" extends="global-default">
+	<package name="index"  namespace="/SSHXmlConfigration" extends="global-default">
 		<action name="jsp_*">
 			<result>/WEB-INF/jsp/{1}.jsp</result>
 		</action>
@@ -66,9 +69,9 @@
 			<result>/WEB-INF/jsp/test/test.jsp</result>
 		</action>
 	</package>
-	<package name="user" extends="global-default">
+	<package name="user"  extends="global-default">
 		<action name="portal">
-			<result>/WEB-INF/jsp/user/saveUser.jsp</result>
+			<result>/WEB-INF/jsp/user/login.jsp</result>
 		</action>
 		<action name="logon" class="com.zl.web.action.UserAction"
 			method="loginSuccess">
@@ -77,12 +80,15 @@
 		<action name="index">
 			<result>/WEB-INF/jsp/user/index.jsp</result>
 		</action>
-		<action name="home">
-			<result>/WEB-INF/jsp/user/adminHome.jsp</result>
+		<action name="loout">
+			<result>/WEB-INF/jsp/user/login.jsp</result>
 		</action>
-		<action name="login" class="com.zl.web.action.UserAction"
+		<action name="login">
+			<result>/WEB-INF/jsp/user/login.jsp</result>
+		</action>
+		<action name="logi" class="com.zl.web.action.UserAction"
 			method="saveUser">
-			<result name="success" >/WEB-INF/jsp/user/logon.jsp</result>
+			<result name="success">/WEB-INF/jsp/user/logon.jsp</result>
 			<result name="error">
 				/WEB-INF/jsp/user/deniedPage.jsp
 			</result>
