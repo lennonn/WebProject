@@ -83,9 +83,9 @@
 		<action name="loout">
 			<result>/WEB-INF/jsp/user/login.jsp</result>
 		</action>
-		<action name="login">
+		 <action name="login">
 			<result>/WEB-INF/jsp/user/login.jsp</result>
-		</action>
+		</action> 
 		<action name="logi" class="com.zl.web.action.UserAction"
 			method="saveUser">
 			<result name="success">/WEB-INF/jsp/user/logon.jsp</result>

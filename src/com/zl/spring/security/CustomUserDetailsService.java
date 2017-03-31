@@ -16,6 +16,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.zl.dto.domain.CUser;
 import com.zl.persistence.dao.UserDao;
@@ -47,9 +48,8 @@ public class CustomUserDetailsService implements UserDetailsService {
 		try {
 			// 搜索数据库以匹配用户登录名.
 			// 我们可以通过dao使用JDBC来访问数据库
-			CUser dbUser = userDao.getUser(username);
-			user = new User(dbUser.getUsername(), dbUser.getPassword()
-					.toLowerCase(), true, true, true, true,
+			CUser dbUser = userDao.getUser(username); 
+			user = new User(dbUser.getUsername(), dbUser.getPassword(), true, true, true, true,
 					getAuthorities(dbUser.getAccess()));
 		} catch (Exception e) {
 			logger.error("Error in retrieving user");

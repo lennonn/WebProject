@@ -10,7 +10,7 @@
       <generator class="assigned" />
     </id>
     <property name="access"  column="caccess"   type="integer"/>
-    <property name="username" column="username" type="string" />
+    <property name="username" column="username" type="string"  length="60"/>
     <property name="password" column="password" type="string" />
   </class>
 </hibernate-mapping>
