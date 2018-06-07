@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+	<Resource name="jdbc/DataNeuroWebSQLDB" 
+			  auth="Container" 
+			  type="javax.sql.DataSource"
+              maxTotal="30" 
+              maxIdle="10" 
+              maxWaitMillis="10000"
+              validationQuery="select 1"
+              username="root" 
+              password="123456" 
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://192.168.1.9:3306/dataneuro_realtime_langqi_v2.2?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;rewriteBatchedStatements=TRUE"/>
+              
+	<Resource name="jdbc/DataNeuroTrainSQLDB" 
+			  auth="Container" 
+			  type="javax.sql.DataSource"
+              maxTotal="30" 
+              maxIdle="10" 
+              maxWaitMillis="10000"
+              validationQuery="select 1"
+              username="root" 
+              password="123456" 
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://192.168.1.9:3306/dataneuro_training_langqi_v2.2?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;rewriteBatchedStatements=TRUE"/>
+</Context> 
