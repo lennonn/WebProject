@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
-	<display-name>D.Perspclre</display-name>
+	<display-name>production</display-name>
 	<welcome-file-list>
-		<welcome-file>/index</welcome-file>
+		<welcome-file>index/login</welcome-file>
 	</welcome-file-list>
 	<servlet>
 		<servlet-name>dispatcherServlet</servlet-name>
@@ -18,14 +18,6 @@
 	<servlet-mapping>
 		<servlet-name>dispatcherServlet</servlet-name>
 		<url-pattern>/</url-pattern>
-	</servlet-mapping>
-
-	 <servlet-mapping>   
-	    <servlet-name>default</servlet-name>   
-	    <url-pattern>views/*.css</url-pattern>
-	    <url-pattern>views/*.json</url-pattern>
-	    <url-pattern>views/*.js</url-pattern>
-	    <url-pattern>views/*.html</url-pattern>   
 	</servlet-mapping>
 	<!-- Session配置 -->
 	<session-config>

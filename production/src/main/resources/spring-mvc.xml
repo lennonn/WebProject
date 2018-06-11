@@ -18,7 +18,8 @@
 
 	<!-- 对静态资源文件的访问 -->
 <!-- 	<mvc:resources location="/" mapping="/**/*.html"/> -->
-	<mvc:resources mapping="/views/**" location="/WEB-INF/views/" />
+	<mvc:resources mapping="/**" location="/" />
+	<mvc:resources mapping="/WEB-INF/views/**" location="/WEB-INF/views/" />
 	<!-- 默认的视图解析器 在上边的解析错误时使用 (默认使用html)- -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />

@@ -9,11 +9,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/index")
+@RequestMapping("")
 public class IndexController {
 	
-		@RequestMapping("")
+		@RequestMapping("/index")
 		public String index(Model model, HttpServletRequest request) {
 			return "/index";
+		}
+		
+		@RequestMapping("login")
+		public String login(Model model, HttpServletRequest request) {
+			return "/login/login";
 		}
 }
