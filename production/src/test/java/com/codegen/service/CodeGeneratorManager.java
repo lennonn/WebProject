@@ -19,6 +19,7 @@ import org.slf4j.LoggerFactory;
 import com.codegen.service.impl.ControllerGenerator;
 import com.codegen.service.impl.ModelAndMapperGenerator;
 import com.codegen.service.impl.ServiceGenerator;
+import com.codegen.service.CodeGeneratorConfig;
 import com.codegen.util.StringUtils;
 import com.google.common.base.CaseFormat;
 
