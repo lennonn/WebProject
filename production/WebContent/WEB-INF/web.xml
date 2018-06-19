@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
 	<display-name>production</display-name>
 	<welcome-file-list>
-		<welcome-file>index/login</welcome-file>
+		<welcome-file>/views/login/</welcome-file>
 	</welcome-file-list>
 	<servlet>
 		<servlet-name>dispatcherServlet</servlet-name>
