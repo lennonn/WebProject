@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.codegen.service.CodeGenerator;
-import com.codegen.service.CodeGeneratorConfig;
 import com.codegen.service.CodeGeneratorManager;
 import com.codegen.util.StringUtils;
 import com.google.common.base.CaseFormat;
@@ -26,7 +25,7 @@ public class ControllerGenerator extends CodeGeneratorManager implements CodeGen
 		
 		Map<String, Object> data = getDataMapInit(tableName, modelName, sign, modelNameUpperCamel); 
 		try {
-			File controllerFile = new File(PROJECT_PATH + CodeGeneratorConfig.JAVA_PATH + CodeGeneratorConfig.PACKAGE_PATH_CONTROLLER+ customMapping
+			File controllerFile = new File(PROJECT_PATH + JAVA_PATH + PACKAGE_PATH_CONTROLLER+ customMapping
 						 + modelNameUpperCamel + "Controller.java");
 	        if (!controllerFile.getParentFile().exists()) {
 	        	controllerFile.getParentFile().mkdirs();

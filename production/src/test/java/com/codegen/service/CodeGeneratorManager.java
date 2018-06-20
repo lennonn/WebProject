@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
+import codegen.service.CodeGeneratorConfig;
 import org.mybatis.generator.config.Context;
 import org.mybatis.generator.config.JDBCConnectionConfiguration;
 import org.mybatis.generator.config.ModelType;
@@ -19,7 +20,6 @@ import org.slf4j.LoggerFactory;
 import com.codegen.service.impl.ControllerGenerator;
 import com.codegen.service.impl.ModelAndMapperGenerator;
 import com.codegen.service.impl.ServiceGenerator;
-import com.codegen.service.CodeGeneratorConfig;
 import com.codegen.util.StringUtils;
 import com.google.common.base.CaseFormat;
 

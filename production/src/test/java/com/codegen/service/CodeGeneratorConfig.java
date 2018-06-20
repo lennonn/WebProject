@@ -12,7 +12,7 @@ public class CodeGeneratorConfig {
 	protected static String JDBC_DRIVER_CLASS_NAME;
 	
 	// 项目在硬盘上的基础路径
-	protected static final String PROJECT_PATH = System.getProperty("user.dir");
+	protected static final String PROJECT_PATH = System.getProperty("user.dir")+"/production";
 	// java文件路径
 	public static String JAVA_PATH;
 	// 资源文件路径

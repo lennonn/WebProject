@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.codegen.service.CodeGenerator;
-import com.codegen.service.CodeGeneratorConfig;
 import com.codegen.service.CodeGeneratorManager;
 import com.codegen.util.StringUtils;
 
@@ -26,7 +25,7 @@ public class ServiceGenerator extends CodeGeneratorManager implements CodeGenera
 		Map<String, Object> data = getDataMapInit(modelName, sign, modelNameUpperCamel);
 		try {
 			// 创建 Service 接口
-			File serviceFile = new File(com.codegen.service.CodeGeneratorConfig.PROJECT_PATH + JAVA_PATH + PACKAGE_PATH_SERVICE + customMapping
+			File serviceFile = new File(PROJECT_PATH + JAVA_PATH + PACKAGE_PATH_SERVICE + customMapping
 					+ modelNameUpperCamel + "Service.java");
 			// 查看父级目录是否存在, 不存在则创建
 			if (!serviceFile.getParentFile().exists()) {

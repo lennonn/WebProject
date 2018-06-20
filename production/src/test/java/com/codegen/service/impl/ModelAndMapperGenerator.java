@@ -13,7 +13,6 @@ import org.mybatis.generator.config.TableConfiguration;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
 import com.codegen.service.CodeGenerator;
-import com.codegen.service.CodeGeneratorConfig;
 import com.codegen.service.CodeGeneratorManager;
 import com.codegen.util.StringUtils;
 
@@ -65,13 +64,13 @@ public class ModelAndMapperGenerator extends CodeGeneratorManager implements Cod
 		try {
 			context = initMybatisGeneratorContext(sign);
 			JavaModelGeneratorConfiguration javaModelGeneratorConfiguration = new JavaModelGeneratorConfiguration();
-	        javaModelGeneratorConfiguration.setTargetProject(CodeGeneratorConfig.PROJECT_PATH + CodeGeneratorConfig.JAVA_PATH);
-	        javaModelGeneratorConfiguration.setTargetPackage(CodeGeneratorConfig.MODEL_PACKAGE + "." + sign);
+	        javaModelGeneratorConfiguration.setTargetProject(PROJECT_PATH + JAVA_PATH);
+	        javaModelGeneratorConfiguration.setTargetPackage(MODEL_PACKAGE + "." + sign);
 	        context.setJavaModelGeneratorConfiguration(javaModelGeneratorConfiguration);
 	        
 	        JavaClientGeneratorConfiguration javaClientGeneratorConfiguration = new JavaClientGeneratorConfiguration();
-	        javaClientGeneratorConfiguration.setTargetProject(CodeGeneratorConfig.PROJECT_PATH + CodeGeneratorConfig.JAVA_PATH);
-	        javaClientGeneratorConfiguration.setTargetPackage(CodeGeneratorConfig.MAPPER_PACKAGE + "." + sign);
+	        javaClientGeneratorConfiguration.setTargetProject(PROJECT_PATH + JAVA_PATH);
+	        javaClientGeneratorConfiguration.setTargetPackage(MAPPER_PACKAGE + "." + sign);
 	        javaClientGeneratorConfiguration.setConfigurationType("XMLMAPPER");
 	        context.setJavaClientGeneratorConfiguration(javaClientGeneratorConfiguration);
 	        
