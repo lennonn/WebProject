@@ -7,13 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
-import codegen.service.CodeGeneratorConfig;
-import org.mybatis.generator.config.Context;
-import org.mybatis.generator.config.JDBCConnectionConfiguration;
-import org.mybatis.generator.config.ModelType;
-import org.mybatis.generator.config.PluginConfiguration;
-import org.mybatis.generator.config.PropertyRegistry;
-import org.mybatis.generator.config.SqlMapGeneratorConfiguration;
+import org.mybatis.generator.config.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -73,11 +67,18 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
         SqlMapGeneratorConfiguration sqlMapGeneratorConfiguration = new SqlMapGeneratorConfiguration();
         sqlMapGeneratorConfiguration.setTargetProject(PROJECT_PATH + RESOURCES_PATH);
         sqlMapGeneratorConfiguration.setTargetPackage("mapper");
-        context.setSqlMapGeneratorConfiguration(sqlMapGeneratorConfiguration);
-        
+		sqlMapGeneratorConfiguration.toXmlElement();
+		context.setSqlMapGeneratorConfiguration(sqlMapGeneratorConfiguration);
         // 增加 mapper 插件
         addMapperPlugin(context);
-        
+		//注释
+        CommentGeneratorConfiguration commentGeneratorConfiguration = new CommentGeneratorConfiguration();
+        commentGeneratorConfiguration.addProperty("suppressDate","false");
+        commentGeneratorConfiguration.addProperty("suppressAllComments","true");
+        context.setCommentGeneratorConfiguration(commentGeneratorConfiguration);
+
+        JavaTypeResolverConfiguration javaTypeResolverConfiguration =new JavaTypeResolverConfiguration();
+		javaTypeResolverConfiguration.addProperty("forceBigDecimals","true");
 		return context;
 	}
 	
@@ -244,7 +245,7 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
 	 */
 	private void addMapperPlugin(Context context) {
 		PluginConfiguration pluginConfiguration = new PluginConfiguration();
-        pluginConfiguration.setConfigurationType("tk.mybatis.mapper.generator.MapperPlugin");
+        pluginConfiguration.setConfigurationType("com.zl.production.business.CombineXmlPlugin");
         pluginConfiguration.addProperty("mappers", MAPPER_INTERFACE_REFERENCE);
         context.addPluginConfiguration(pluginConfiguration);
 	}

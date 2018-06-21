@@ -6,6 +6,15 @@ import java.util.List;
  *
  * Created by zlennon on 2018/06/21.
  */
-public interface EmpService extends Service<Emp> {
-   List<Emp> findAll();
+public interface EmpService<Emp> extends Service<Emp> {
+
+    int deleteByPrimaryKey(Short id);
+
+    int insert(Emp emp);
+
+    Emp selectByPrimaryKey(Short id);
+
+    List<Emp> selectAll();
+
+    int updateByPrimaryKey(Emp emp);
 }

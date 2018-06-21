@@ -26,7 +26,7 @@ public class EmpController {
     @ResponseBody
     public String list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
-        List<Emp> list = empService.findAll();
+        List<Emp> list = empService.selectAll();
         PageInfo pageInfo = new PageInfo(list);
         return list.toString();
     }

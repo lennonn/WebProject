@@ -1,9 +1,16 @@
 package com.zl.production.business.emp.mapper;
 
-import com.zl.production.business.MyMapper;
 import com.zl.production.business.emp.model.Emp;
-import org.springframework.stereotype.Repository;
+import java.util.List;
 
-@Repository
-public interface EmpMapper extends MyMapper<Emp> {
+public interface EmpMapper {
+    int deleteByPrimaryKey(Short empno);
+
+    int insert(Emp record);
+
+    Emp selectByPrimaryKey(Short empno);
+
+    List<Emp> selectAll();
+
+    int updateByPrimaryKey(Emp record);
 }

@@ -13,12 +13,36 @@ import java.util.List;
  * Created by zlennon on 2018/06/21.
  */
 @Service
-public class EmpServiceImpl extends AbstractService<Emp> implements EmpService {
+public class EmpServiceImpl extends AbstractService<Emp> implements EmpService<Emp> {
 
-    @Autowired
+
     private EmpMapper empMapper;
 
-    List<Emp> findAll(){
-      return   empMapper.findAll();
+    public EmpMapper getEmpMapper() {
+        return empMapper;
+    }
+
+    public void setEmpMapper(EmpMapper empMapper) {
+        this.empMapper = empMapper;
+    }
+
+    public int deleteByPrimaryKey(Short id){
+      return  empMapper.deleteByPrimaryKey(id);
+    }
+
+    public int insert(Emp emp){
+       return empMapper.insert(emp);
+    }
+
+    public Emp selectByPrimaryKey(Short id){
+       return  empMapper.selectByPrimaryKey(id);
+    }
+
+    public List<Emp> selectAll(){
+       return empMapper.selectAll();
+    }
+
+    public int updateByPrimaryKey(Emp emp){
+       return empMapper.updateByPrimaryKey(emp);
     }
 }

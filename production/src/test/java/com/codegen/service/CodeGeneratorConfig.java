@@ -1,4 +1,4 @@
-package codegen.service;
+package com.codegen.service;
 
 /**
  * 配置信息变量

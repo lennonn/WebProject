@@ -7,6 +7,9 @@
   <package name="com.monitor.test.domain"/>
 </typeAliases>  
   	<mappers>
-  	 	<package name="com.monitor.test.mapper"/>  
-  	</mappers>
+
+			<!-- 直接指定一个包去扫描-内保包含多个Mapper配置- -->
+			<package name="com.zl.production.business"/>
+	</mappers>
+
 </configuration> 
