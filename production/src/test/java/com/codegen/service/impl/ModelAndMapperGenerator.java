@@ -65,19 +65,19 @@ public class ModelAndMapperGenerator extends CodeGeneratorManager implements Cod
 			context = initMybatisGeneratorContext(sign);
 			JavaModelGeneratorConfiguration javaModelGeneratorConfiguration = new JavaModelGeneratorConfiguration();
 	        javaModelGeneratorConfiguration.setTargetProject(PROJECT_PATH + JAVA_PATH);
-	        javaModelGeneratorConfiguration.setTargetPackage(MODEL_PACKAGE + "." + sign);
+	        javaModelGeneratorConfiguration.setTargetPackage(MODEL_PACKAGE + "." + sign+".model");
 	        context.setJavaModelGeneratorConfiguration(javaModelGeneratorConfiguration);
 	        
 	        JavaClientGeneratorConfiguration javaClientGeneratorConfiguration = new JavaClientGeneratorConfiguration();
 	        javaClientGeneratorConfiguration.setTargetProject(PROJECT_PATH + JAVA_PATH);
-	        javaClientGeneratorConfiguration.setTargetPackage(MAPPER_PACKAGE + "." + sign);
+	        javaClientGeneratorConfiguration.setTargetPackage(MAPPER_PACKAGE + "." + sign+".mapper");
 	        javaClientGeneratorConfiguration.setConfigurationType("XMLMAPPER");
 	        context.setJavaClientGeneratorConfiguration(javaClientGeneratorConfiguration);
 	        
 	        TableConfiguration tableConfiguration = new TableConfiguration(context);
 	        tableConfiguration.setTableName(tableName);
 	        tableConfiguration.setDomainObjectName(modelName);
-	        tableConfiguration.setGeneratedKey(new GeneratedKey("id", "Mysql", true, null));
+	        tableConfiguration.setGeneratedKey(new GeneratedKey("id", "Oracle", true, null));
 	        context.addTableConfiguration(tableConfiguration);
 		} catch (Exception e) {
 			throw new RuntimeException("ModelAndMapperGenerator 初始化环境异常!", e);

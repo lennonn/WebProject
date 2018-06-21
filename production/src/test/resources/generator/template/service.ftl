@@ -1,11 +1,11 @@
-package ${basePackage}.service.${sign};
-import ${basePackage}.model.${sign}.${modelNameUpperCamel};
-import ${basePackage}.service.Service;
-
+package ${basePackage}.${sign}.service;
+import ${basePackage}.${sign}.model.${modelNameUpperCamel};
+import ${basePackage}.Service;
+import java.util.List;
 /**
  *
  * Created by ${author} on ${date}.
  */
 public interface ${modelNameUpperCamel}Service extends Service<${modelNameUpperCamel}> {
-
+   List<${modelNameUpperCamel}> findAll();
 }

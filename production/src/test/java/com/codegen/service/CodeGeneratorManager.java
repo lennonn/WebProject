@@ -72,7 +72,7 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
         
         SqlMapGeneratorConfiguration sqlMapGeneratorConfiguration = new SqlMapGeneratorConfiguration();
         sqlMapGeneratorConfiguration.setTargetProject(PROJECT_PATH + RESOURCES_PATH);
-        sqlMapGeneratorConfiguration.setTargetPackage("mapper." + sign);
+        sqlMapGeneratorConfiguration.setTargetPackage("mapper");
         context.setSqlMapGeneratorConfiguration(sqlMapGeneratorConfiguration);
         
         // 增加 mapper 插件
@@ -159,7 +159,7 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
 	 * @return 区分字段 eg: test
 	 */
 	protected String getSign(String tableName) {
-		return getTableNameSplit(tableName)[1];
+		return getTableNameSplit(tableName)[0];
 	}
 	
 	/**
@@ -183,9 +183,9 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
 	 */
 	private String[] getTableNameSplit(String tableName) {
 		String[] strs = tableName.split("_");
-		if (!tableName.contains("_") || strs.length < 3) {
+/*		if (!tableName.contains("_") || strs.length < 3) {
 			throw new RuntimeException("表名格式不正确, 请按规定格式! 例如: gen_test_demo");
-		}
+		}*/
 		return strs;
 	}
 	
@@ -211,7 +211,7 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
 	 * @param flag 标志
 	 */
 	private void genCodeByTableName(String tableName, String modelName, boolean flag) {
-		String sign = getSign(tableName);
+		String sign = getSign(tableName).toLowerCase();
 		if (flag) {
 			modelName = getDefModelName(tableName);
 		}
