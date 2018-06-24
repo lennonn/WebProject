@@ -28,6 +28,7 @@ public class EmpController {
         PageHelper.startPage(page, size);
         List<Emp> list = empService.selectAll();
         PageInfo pageInfo = new PageInfo(list);
+        pageInfo.setPageNum(page);
         return list.toString();
     }
 }
