@@ -1,6 +1,6 @@
-package com.zl.production.business.emp.controller;
-import com.zl.production.business.emp.model.Emp;
-import com.zl.production.business.emp.service.EmpService;
+package com.zl.production.business.controller;
+import com.zl.production.business.model.Emp;
+import com.zl.production.business.service.EmpService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  *
- * Created by zlennon on 2018/06/21.
+ * Created by zlennon on 2018/06/23.
  */
 @Controller
 @RequestMapping("/emp/")

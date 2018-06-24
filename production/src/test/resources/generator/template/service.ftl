@@ -1,5 +1,5 @@
-package ${basePackage}.${sign}.service;
-import ${basePackage}.${sign}.model.${modelNameUpperCamel};
+package ${basePackage}.service;
+import ${basePackage}.model.${modelNameUpperCamel};
 import ${basePackage}.Service;
 import java.util.List;
 /**

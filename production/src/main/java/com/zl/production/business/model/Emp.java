@@ -1,4 +1,4 @@
-package com.zl.production.business.emp.model;
+package com.zl.production.business.model;
 
 import java.math.BigDecimal;
 import java.util.Date;

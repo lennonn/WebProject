@@ -1,8 +1,8 @@
-package ${basePackage}.${sign}.service.impl;
+package ${basePackage}.service.impl;
 
-import ${basePackage}.${sign}.mapper.${modelNameUpperCamel}Mapper;
-import ${basePackage}.${sign}.model.${modelNameUpperCamel};
-import ${basePackage}.${sign}.service.${modelNameUpperCamel}Service;
+import ${basePackage}.mapper.${modelNameUpperCamel}Mapper;
+import ${basePackage}.model.${modelNameUpperCamel};
+import ${basePackage}.service.${modelNameUpperCamel}Service;
 import ${basePackage}.AbstractService;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;

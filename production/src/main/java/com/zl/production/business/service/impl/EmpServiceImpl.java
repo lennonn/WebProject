@@ -1,8 +1,8 @@
-package com.zl.production.business.emp.service.impl;
+package com.zl.production.business.service.impl;
 
-import com.zl.production.business.emp.mapper.EmpMapper;
-import com.zl.production.business.emp.model.Emp;
-import com.zl.production.business.emp.service.EmpService;
+import com.zl.production.business.mapper.EmpMapper;
+import com.zl.production.business.model.Emp;
+import com.zl.production.business.service.EmpService;
 import com.zl.production.business.AbstractService;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 /**
  *
- * Created by zlennon on 2018/06/21.
+ * Created by zlennon on 2018/06/23.
  */
 @Service
 public class EmpServiceImpl extends AbstractService<Emp> implements EmpService<Emp> {
@@ -21,7 +21,7 @@ public class EmpServiceImpl extends AbstractService<Emp> implements EmpService<E
     public EmpMapper getEmpMapper() {
         return empMapper;
     }
-
+    @Autowired
     public void setEmpMapper(EmpMapper empMapper) {
         this.empMapper = empMapper;
     }

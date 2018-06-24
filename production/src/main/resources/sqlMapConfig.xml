@@ -4,12 +4,9 @@
 <configuration>
 <typeAliases>
   <!-- 批量定义别名 ，指定包名，自动扫描包中的类，别名即为类名，首字母大小写无所谓-->
-  <package name="com.monitor.test.domain"/>
+  <package name="com.zl.production.business.model"/>
 </typeAliases>  
   	<mappers>
-
-			<!-- 直接指定一个包去扫描-内保包含多个Mapper配置- -->
-			<package name="com.zl.production.business"/>
 	</mappers>
 
 </configuration> 

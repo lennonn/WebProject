@@ -1,10 +1,10 @@
-package com.zl.production.business.emp.service;
-import com.zl.production.business.emp.model.Emp;
+package com.zl.production.business.service;
+import com.zl.production.business.model.Emp;
 import com.zl.production.business.Service;
 import java.util.List;
 /**
  *
- * Created by zlennon on 2018/06/21.
+ * Created by zlennon on 2018/06/23.
  */
 public interface EmpService<Emp> extends Service<Emp> {
 
