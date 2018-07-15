@@ -1,4 +1,7 @@
 package com.zl.production.business;
 
-public abstract class AbstractService<T> {
+
+import com.zl.production.admin.service.impl.OracleSequenceService;
+
+public abstract class AbstractService<T> extends OracleSequenceService {
 }

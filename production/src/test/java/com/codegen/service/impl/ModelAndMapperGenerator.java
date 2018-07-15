@@ -4,12 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.mybatis.generator.api.MyBatisGenerator;
-import org.mybatis.generator.config.Configuration;
-import org.mybatis.generator.config.Context;
-import org.mybatis.generator.config.GeneratedKey;
-import org.mybatis.generator.config.JavaClientGeneratorConfiguration;
-import org.mybatis.generator.config.JavaModelGeneratorConfiguration;
-import org.mybatis.generator.config.TableConfiguration;
+import org.mybatis.generator.config.*;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
 import com.codegen.service.CodeGenerator;
@@ -75,10 +70,12 @@ public class ModelAndMapperGenerator extends CodeGeneratorManager implements Cod
 	        context.setJavaClientGeneratorConfiguration(javaClientGeneratorConfiguration);
 	        
 	        TableConfiguration tableConfiguration = new TableConfiguration(context);
+			tableConfiguration.addProperty("selectAllOrderByClause","id desc");
+			tableConfiguration.addProperty("useActualColumnNames","false");
 	        tableConfiguration.setTableName(tableName);
 	        tableConfiguration.setDomainObjectName(modelName);
-			tableConfiguration.setSelectByExampleQueryId("byId");
-	        tableConfiguration.setGeneratedKey(new GeneratedKey("id", "Oracle", true, null));
+			tableConfiguration.setSelectByExampleQueryId("true");
+	        tableConfiguration.setGeneratedKey(new GeneratedKey("id", "select seq_"+tableName.toLowerCase()+".nextval from dual", false, "pre"));
 	        context.addTableConfiguration(tableConfiguration);
 		} catch (Exception e) {
 			throw new RuntimeException("ModelAndMapperGenerator 初始化环境异常!", e);

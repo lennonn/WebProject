@@ -71,6 +71,15 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
 		context.setSqlMapGeneratorConfiguration(sqlMapGeneratorConfiguration);
         // 增加 mapper 插件
         addMapperPlugin(context);
+		addBatchInsertPlugin(context);
+		addBatchUpdatePlugin(context);
+		addEqualsHashCodePlugin(context);
+		addMapperAnnotationPlugin(context);
+		addRowBoundsPlugin(context);
+		addToStringPlugin(context);
+		addSerializablePlugin(context);
+
+
 		//注释
         CommentGeneratorConfiguration commentGeneratorConfiguration = new CommentGeneratorConfiguration();
         commentGeneratorConfiguration.addProperty("suppressDate","false");
@@ -245,11 +254,86 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
 	 */
 	private void addMapperPlugin(Context context) {
 		PluginConfiguration pluginConfiguration = new PluginConfiguration();
-        pluginConfiguration.setConfigurationType("com.zl.production.business.CombineXmlPlugin");
+        pluginConfiguration.setConfigurationType("com.codegen.plugin.CombineXmlPlugin");
         pluginConfiguration.addProperty("mappers", MAPPER_INTERFACE_REFERENCE);
         context.addPluginConfiguration(pluginConfiguration);
 	}
-	
+	/**
+	 * 增加 批量插入 插件
+	 * @param context
+	 */
+	private void addBatchInsertPlugin(Context context) {
+		PluginConfiguration pluginConfiguration = new PluginConfiguration();
+		pluginConfiguration.setConfigurationType("com.codegen.plugin.BatchInsertPlugin");
+		pluginConfiguration.addProperty("mappers", MAPPER_INTERFACE_REFERENCE);
+		context.addPluginConfiguration(pluginConfiguration);
+	}
+
+	/**
+	 * 增加 批量更新 插件
+	 * @param context
+	 */
+	private void addBatchUpdatePlugin(Context context) {
+		PluginConfiguration pluginConfiguration = new PluginConfiguration();
+		pluginConfiguration.setConfigurationType("com.codegen.plugin.BatchUpdatePlugin");
+		pluginConfiguration.addProperty("mappers", MAPPER_INTERFACE_REFERENCE);
+		context.addPluginConfiguration(pluginConfiguration);
+	}
+
+	/**
+	 * 增加 equalshashCode 插件
+	 * @param context
+	 */
+	private void addEqualsHashCodePlugin(Context context) {
+		PluginConfiguration pluginConfiguration = new PluginConfiguration();
+		pluginConfiguration.setConfigurationType("com.codegen.plugin.EqualsHashCodePlugin");
+		pluginConfiguration.addProperty("mappers", MAPPER_INTERFACE_REFERENCE);
+		context.addPluginConfiguration(pluginConfiguration);
+	}
+
+	/**
+	 * 增加 MapperAnnotationPlugin 插件
+	 * @param context
+	 */
+	private void addMapperAnnotationPlugin(Context context) {
+		PluginConfiguration pluginConfiguration = new PluginConfiguration();
+		pluginConfiguration.setConfigurationType("com.codegen.plugin.MapperAnnotationPlugin");
+		pluginConfiguration.addProperty("mappers", MAPPER_INTERFACE_REFERENCE);
+		context.addPluginConfiguration(pluginConfiguration);
+	}
+
+	/**
+	 * 增加 RowBoundsPlugin 插件
+	 * @param context
+	 */
+	private void addRowBoundsPlugin(Context context) {
+		PluginConfiguration pluginConfiguration = new PluginConfiguration();
+		pluginConfiguration.setConfigurationType("com.codegen.plugin.RowBoundsPlugin");
+		pluginConfiguration.addProperty("mappers", MAPPER_INTERFACE_REFERENCE);
+		context.addPluginConfiguration(pluginConfiguration);
+	}
+
+	/**
+	 * 增加 SerializablePlugin 插件
+	 * @param context
+	 */
+	private void addSerializablePlugin(Context context) {
+		PluginConfiguration pluginConfiguration = new PluginConfiguration();
+		pluginConfiguration.setConfigurationType("com.codegen.plugin.SerializablePlugin");
+		pluginConfiguration.addProperty("mappers", MAPPER_INTERFACE_REFERENCE);
+		context.addPluginConfiguration(pluginConfiguration);
+	}
+
+	/**
+	 * 增加 ToStringPlugin 插件
+	 * @param context
+	 */
+	private void addToStringPlugin(Context context) {
+		PluginConfiguration pluginConfiguration = new PluginConfiguration();
+		pluginConfiguration.setConfigurationType("com.codegen.plugin.ToStringPlugin");
+		pluginConfiguration.addProperty("mappers", MAPPER_INTERFACE_REFERENCE);
+		context.addPluginConfiguration(pluginConfiguration);
+	}
 	/**
 	 * 包转成路径
 	 * eg: com.bigsea.sns ==> com/bigsea/sns

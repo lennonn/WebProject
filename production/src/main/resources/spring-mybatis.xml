@@ -34,9 +34,9 @@
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
-		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl"></property>
-		<property name="username" value="scott"></property>
-		<property name="password" value="tiger"></property>
+		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:lennon"></property>
+		<property name="username" value="zlennon"></property>
+		<property name="password" value="zlennon"></property>
 	</bean>
 	    <!--  mybatis的SqlSession的工厂: SqlSessionFactoryBean dataSource:引用数据源   MyBatis定义数据源,同意加载配置   -->  
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
@@ -47,7 +47,7 @@
 
 	<!-- Mapper配置 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.zl.production.business.mapper" />
+		<property name="basePackage" value="com.zl.production.*.mapper" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 
@@ -63,20 +63,20 @@
 	<!-- 声明事物 -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
-			<tx:method name="save*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
-			<tx:method name="insert*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
-			<tx:method name="add*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
-            <tx:method name="persist*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
-            <tx:method name="update*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
-            <tx:method name="edit*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
-            <tx:method name="set*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
-            <tx:method name="modify*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
-            <tx:method name="deal*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
-            <tx:method name="delete*" isolation="REPEATABLE_READ"  propagation="REQUIRED" read-only="false" />
-            <tx:method name="remove*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
-            <tx:method name="get*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="true" />
-            <tx:method name="find*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="true" />
-            <tx:method name="query*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="true" />
+			<tx:method name="save*" isolation="READ_COMMITTED" propagation="REQUIRED" read-only="false" />
+			<tx:method name="insert*" isolation="READ_COMMITTED" propagation="REQUIRED" read-only="false" />
+			<tx:method name="add*" isolation="READ_COMMITTED" propagation="REQUIRED" read-only="false" />
+            <tx:method name="persist*" isolation="READ_COMMITTED" propagation="REQUIRED" read-only="false" />
+            <tx:method name="update*" isolation="READ_COMMITTED" propagation="REQUIRED" read-only="false" />
+            <tx:method name="edit*" isolation="READ_COMMITTED" propagation="REQUIRED" read-only="false" />
+            <tx:method name="set*" isolation="READ_COMMITTED" propagation="REQUIRED" read-only="false" />
+            <tx:method name="modify*" isolation="READ_COMMITTED" propagation="REQUIRED" read-only="false" />
+            <tx:method name="deal*" isolation="READ_COMMITTED" propagation="REQUIRED" read-only="false" />
+            <tx:method name="delete*" isolation="READ_COMMITTED"  propagation="REQUIRED" read-only="false" />
+            <tx:method name="remove*" isolation="READ_COMMITTED" propagation="REQUIRED" read-only="false" />
+            <tx:method name="get*" isolation="READ_COMMITTED" propagation="REQUIRED" read-only="true" />
+            <tx:method name="find*" isolation="READ_COMMITTED" propagation="REQUIRED" read-only="true" />
+            <tx:method name="query*" isolation="READ_COMMITTED" propagation="REQUIRED" read-only="true" />
 		</tx:attributes>
 	</tx:advice>
 	

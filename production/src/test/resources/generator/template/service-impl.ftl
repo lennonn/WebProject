@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 public class ${modelNameUpperCamel}ServiceImpl extends AbstractService<${modelNameUpperCamel}> implements ${modelNameUpperCamel}Service<${modelNameUpperCamel}> {
 
-
+    @Autowired
     private ${modelNameUpperCamel}Mapper ${modelNameLowerCamel?uncap_first}Mapper;
 
     public ${modelNameUpperCamel}Mapper get${modelNameUpperCamel}Mapper() {
