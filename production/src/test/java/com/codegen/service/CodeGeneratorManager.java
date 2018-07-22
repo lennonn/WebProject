@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
+import com.codegen.service.impl.FtlGenerator;
 import org.mybatis.generator.config.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -225,9 +226,10 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
 		if (flag) {
 			modelName = getDefModelName(tableName);
 		}
-		new ModelAndMapperGenerator().genCode(tableName, modelName, sign);
-		new ServiceGenerator().genCode(tableName, modelName, sign);
-		new ControllerGenerator().genCode(tableName, modelName, sign);
+		//new ModelAndMapperGenerator().genCode(tableName, modelName, sign);
+		//new ServiceGenerator().genCode(tableName, modelName, sign);
+		//new ControllerGenerator().genCode(tableName, modelName, sign);
+		new FtlGenerator().genCode(tableName, modelName, sign);
 	}
 	
 	/**
