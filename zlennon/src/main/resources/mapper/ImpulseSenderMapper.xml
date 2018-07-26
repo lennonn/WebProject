@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zl.production.admin.mapper.ImpulseSenderMapper">
-  <resultMap id="BaseResultMap" type="com.zl.production.admin.model.ImpulseSender">
+<mapper namespace="com.zlennon.admin.mapper.ImpulseSenderMapper">
+  <resultMap id="BaseResultMap" type="com.zlennon.admin.model.ImpulseSender">
     <id column="SEQUENCE_NAME" jdbcType="VARCHAR" property="sequenceName" />
     <result column="UPDATE_DATE" jdbcType="TIMESTAMP" property="updateDate" />
     <result column="CYCLE_TYPE" jdbcType="CHAR" property="cycleType" />
@@ -35,7 +35,7 @@
     delete from IMPULSE_SENDER
     where SEQUENCE_NAME = #{sequenceName,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.zl.production.admin.model.ImpulseSender">
+  <insert id="insert" parameterType="com.zlennon.admin.model.ImpulseSender">
     insert into IMPULSE_SENDER (SEQUENCE_NAME, UPDATE_DATE, CYCLE_TYPE, 
       CURRENT_VALUE, CURRENT_FMT_VALUE, SEQUENCE_RULE, 
       SEQUENCE_LEN, REMARK, USABLE_STATUS, 
@@ -57,7 +57,7 @@
       #{attribute2,jdbcType=VARCHAR}, #{attribute3,jdbcType=VARCHAR}, #{attribute4,jdbcType=VARCHAR}, 
       #{attribute5,jdbcType=VARCHAR})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.zl.production.admin.model.ImpulseSender">
+  <update id="updateByPrimaryKey" parameterType="com.zlennon.admin.model.ImpulseSender">
     update IMPULSE_SENDER
     set UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
       CYCLE_TYPE = #{cycleType,jdbcType=CHAR},
