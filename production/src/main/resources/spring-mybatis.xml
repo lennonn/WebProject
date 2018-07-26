@@ -24,20 +24,20 @@
 		<context:property-placeholder location="classpath:jdbc.properties" />
 
 
-	<!-- 配置数据源 192.168.2.119:3306 -->
-<!-- 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+
+ 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="${driverClassName}"></property>
 		<property name="url" value="${url}"></property>
 		<property name="username" value="${username}"></property>
 		<property name="password" value="${password}"></property>
-	</bean> -->
+	</bean>
 
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+<!--	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
 		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:lennon"></property>
 		<property name="username" value="zlennon"></property>
 		<property name="password" value="zlennon"></property>
-	</bean>
+	</bean>-->
 	    <!--  mybatis的SqlSession的工厂: SqlSessionFactoryBean dataSource:引用数据源   MyBatis定义数据源,同意加载配置   -->  
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
         <property name="dataSource" ref="dataSource"></property>  
