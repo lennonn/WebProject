@@ -18,18 +18,21 @@
 
 	<mvc:annotation-driven />
     <!--启用自动扫描  -->
-    <context:component-scan base-package="com.zl.production.*" />
+    <context:component-scan base-package="com.zlennon.*" />
 
+	<context:property-placeholder ignore-resource-not-found="false" ignore-unresolvable="true" location="classpath:/jdbc.properties" />
 
-		<context:property-placeholder location="classpath:jdbc.properties" />
-
-
-
- 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+<!-- 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="${driverClassName}"></property>
 		<property name="url" value="${url}"></property>
 		<property name="username" value="${username}"></property>
 		<property name="password" value="${password}"></property>
+	</bean>-->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="${url}"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="123456"></property>
 	</bean>
 
 <!--	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
@@ -47,7 +50,7 @@
 
 	<!-- Mapper配置 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.zl.production.*.mapper" />
+		<property name="basePackage" value="com.zlennon.*.mapper" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 
@@ -81,7 +84,7 @@
 	</tx:advice>
 	
 	<aop:config>
-		<aop:pointcut expression="execution(* com.zl.production.*.service.*.*(..))" id="pc1"/>
+		<aop:pointcut expression="execution(* com.zlennon.*.service.*.*(..))" id="pc1"/>
 		
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="pc1"/>
 	</aop:config>
