@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlennon.website.mapper.BookMapper">
+  <resultMap id="BaseResultMap" type="com.zlennon.website.model.Book">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="bookName" jdbcType="VARCHAR" property="bookname" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from book
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zlennon.website.model.Book">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Integer">
+      select seq_book.nextval from dual
+    </selectKey>
+    insert into book (id, bookName, title, 
+      content)
+    values (#{id,jdbcType=INTEGER}, #{bookname,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.zlennon.website.model.Book">
+    update book
+    set bookName = #{bookname,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, bookName, title, content,SUBSTR(content FROM 1 FOR 150) as shortContent
+    from book
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, bookName, title, content,SUBSTR(content FROM 1 FOR 150) as shortContent
+    from book
+    order by id desc
+  </select>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into book
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="list[0].id!=null">
+        id,
+      </if>
+      <if test="list[0].bookname!=null">
+        bookName,
+      </if>
+      <if test="list[0].title!=null">
+        title,
+      </if>
+      <if test="list[0].content!=null">
+        content,
+      </if>
+    </trim>
+     values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix=" (" suffix=")" suffixOverrides=",">
+        <if test="item.id!=null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.bookname!=null">
+          #{item.bookname,jdbcType=VARCHAR},
+        </if>
+        <if test="item.title!=null">
+          #{item.title,jdbcType=VARCHAR},
+        </if>
+        <if test="item.content!=null">
+          #{item.content,jdbcType=LONGVARCHAR},
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    <foreach collection="list" index="index" item="item" separator=";">
+      update book
+      <set>
+        <if test="item.bookname!=null">
+          bookName=#{item.bookname,jdbcType=VARCHAR},
+        </if>
+        <if test="item.title!=null">
+          title=#{item.title,jdbcType=VARCHAR},
+        </if>
+        <if test="item.content!=null">
+          content=#{item.content,jdbcType=LONGVARCHAR},
+        </if>
+      </set>
+      where 
+      id = #{item.id,jdbcType=INTEGER}
+    </foreach>
+  </update>
+</mapper>

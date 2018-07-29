@@ -1,4 +1,4 @@
-package com.zlennon.business;
+package com.zlennon;
 
 public interface Service<T> {
 }

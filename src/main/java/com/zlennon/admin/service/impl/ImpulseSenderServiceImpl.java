@@ -3,7 +3,7 @@ package com.zlennon.admin.service.impl;
 import com.zlennon.admin.mapper.ImpulseSenderMapper;
 import com.zlennon.admin.model.ImpulseSender;
 import com.zlennon.admin.service.ImpulseSenderService;
-import com.zlennon.business.AbstractService;
+import com.zlennon.AbstractService;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 

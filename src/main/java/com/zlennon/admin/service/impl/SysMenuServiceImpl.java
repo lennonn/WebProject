@@ -4,7 +4,7 @@ import com.zlennon.admin.ZTree;
 import com.zlennon.admin.mapper.SysMenuMapper;
 import com.zlennon.admin.model.SysMenu;
 import com.zlennon.admin.service.SysMenuService;
-import com.zlennon.business.AbstractService;
+import com.zlennon.AbstractService;
 import com.zlennon.utils.MenuTreeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.zlennon.business;
+package com.zlennon;
 
 import tk.mybatis.mapper.common.Mapper;
 

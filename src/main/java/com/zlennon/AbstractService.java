@@ -1,4 +1,4 @@
-package com.zlennon.business;
+package com.zlennon;
 
 
 import com.zlennon.admin.service.impl.OracleSequenceService;

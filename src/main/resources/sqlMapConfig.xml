@@ -4,7 +4,7 @@
 <configuration>
 <typeAliases>
   <!-- 批量定义别名 ，指定包名，自动扫描包中的类，别名即为类名，首字母大小写无所谓-->
-  <package name="com.zlennon.business.model"/>
+  <package name="com.zlennon.website.model"/>
 </typeAliases>  
   	<mappers>
 	</mappers>
