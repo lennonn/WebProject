@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="zlennon" basedir=".">
+
+	<property name="lib.dir" value="lib" />
+
+	<path id="test.classpath">
+
+		<!-- adding the saxon jar to your classpath -->
+
+		<fileset dir="${lib.dir}" includes="*.jar" />
+
+	</path>
+
+	<target name="transform">
+
+		<!-- 需要根据自己的环境进行配置（将E:/workspace/testNG/替换成你自己project的目录） -->
+
+		<xslt
+			in="D:\IdeaProjects\zlennon\test-output\testng-results.xml"
+			style="D:\IdeaProjects\zlennon\test-output\testng-results.xsl"
+
+			out="D:\IdeaProjects\zlennon\test-output\index1.html">
+
+			<!-- 需要根据自己的环境进行配置（将E:/workspace/testNG/替换成你自己project的目录） -->
+
+			<param name="testNgXslt.outputDir" expression="D:\IdeaProjects\zlennon\test-output\" />
+
+			<classpath refid="test.classpath" />
+
+		</xslt>
+
+	</target>
+
+</project>
