@@ -23,14 +23,6 @@ public class BookController {
     @Autowired
     BookService bookService;
 
-    @RequestMapping("list")
-    @ResponseBody
-    public String list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
-        PageHelper.startPage(page, size);
-        List<Book> list = bookService.selectAll();
-        PageInfo pageInfo = new PageInfo(list);
-        return list.toString();
-    }
 
     @RequestMapping("/main")
     public String main(Model model,@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "5") Integer size) {
