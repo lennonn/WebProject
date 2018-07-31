@@ -35,9 +35,7 @@
                                                  width="160" height="100" alt="First slide"></dt>
                                         <dd>${item.shortContent}...</dd>
                                       <%--  <span class="pull-left">hahha</span>--%>
-                                        <span class="pull-right" style="color: #ff0000; font-size: 15px">
-                                            <a href="${pageContext.request.contextPath}/website/book/showDetail?id=${item.id}" >Read More>></a>
-                                        </span>
+                                        <span class="pull-right" style="color: #ff0000; font-size: 15px">阅读全文>></span>
                                     <br/>
                                         <c:if test="${!stat.last}">
                                             <hr/>

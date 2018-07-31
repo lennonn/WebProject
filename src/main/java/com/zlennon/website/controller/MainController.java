@@ -27,16 +27,8 @@ public class MainController {
         PageInfo pageInfo = new PageInfo(list);
         model.addAttribute("newsList",list);
         model.addAttribute("pageInfo",pageInfo);
-        return "/website/main";
+        return "/website/index";
     }
 
 
-    @RequestMapping("list")
-    @ResponseBody
-    public String list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
-        PageHelper.startPage(page, size);
-        List<Book> list = bookService.selectAll();
-        PageInfo pageInfo = new PageInfo(list);
-        return list.toString();
-    }
 }
