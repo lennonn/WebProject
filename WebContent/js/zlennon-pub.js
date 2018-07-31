@@ -7,3 +7,13 @@ function getContent(url) {
         }
     });
 };
+
+function getWebContent(url) {
+    $.ajax({
+        url: url,
+        type: "post",
+        success: function (data) {
+            $("#leftContent").html(data);
+        }
+    });
+};

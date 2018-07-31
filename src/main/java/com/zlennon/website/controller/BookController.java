@@ -32,8 +32,17 @@ public class BookController {
         return list.toString();
     }
 
+    @RequestMapping("/main")
+    public String main(Model model,@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "5") Integer size) {
+        PageHelper.startPage(page, size);
+        List<Book> list = bookService.selectAll();
+        PageInfo pageInfo = new PageInfo(list);
+        //model.addAttribute("newsList",list);
+        model.addAttribute("pageInfo",pageInfo);
+        return "/website/main";
+    }
+
     @RequestMapping("showDetail")
-    @ResponseBody
     public String showDetail(Model model, @RequestParam String id) {
         Book book= (Book) bookService.selectByPrimaryKey(id);
         model.addAttribute("book",book);

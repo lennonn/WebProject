@@ -24,28 +24,13 @@
                             <div class="box-header with-border">
                                 <i class="fa fa-text-width"></i>
 
-                                <h3 class="box-title">最新文章</h3>
+                                <h3 class="box-title">${book.title}</h3>
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
-                                <c:forEach items="${newsList}" var="item" varStatus="stat">
-                                    <dl class="dl-horizontal">
-                                        <h4><p class="text-aqua">${item.title}</p></h4>
-                                        <dt><img src="${pageContext.request.contextPath}/images/books/book.jpg"
-                                                 width="160" height="100" alt="First slide"></dt>
-                                        <dd>${item.shortContent}...</dd>
-                                      <%--  <span class="pull-left">hahha</span>--%>
-                                        <span class="pull-right" style="color: #ff0000; font-size: 15px">阅读全文>></span>
-                                    <br/>
-                                        <c:if test="${!stat.last}">
-                                            <hr/>
-                                        </c:if>
-                                    </dl>
-
-                                </c:forEach>
+                                ${book.content}
                             </div>
                             <!-- /.box-body -->
-                            <jsp:include page="page.jsp"/>
                         </div>
         <!-- /.box -->
 </body>

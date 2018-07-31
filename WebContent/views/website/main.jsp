@@ -28,7 +28,7 @@
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
-                                <c:forEach items="${newsList}" var="item" varStatus="stat">
+                                <c:forEach items="${pageInfo.list}" var="item" varStatus="stat">
                                     <dl class="dl-horizontal">
                                         <h4><p class="text-aqua">${item.title}</p></h4>
                                         <dt><img src="${pageContext.request.contextPath}/images/books/book.jpg"

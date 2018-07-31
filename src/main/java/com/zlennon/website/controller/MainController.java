@@ -20,13 +20,8 @@ public class MainController {
     BookService bookService;
 
 
-    @RequestMapping("/main")
-    public String main(Model model,@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "5") Integer size) {
-        PageHelper.startPage(page, size);
-        List<Book> list = bookService.selectAll();
-        PageInfo pageInfo = new PageInfo(list);
-        model.addAttribute("newsList",list);
-        model.addAttribute("pageInfo",pageInfo);
+    @RequestMapping("/index")
+    public String main() {
         return "/website/index";
     }
 

@@ -36,6 +36,8 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/zlennon-pub.js"></script>
+
     <![endif]-->
 
     <!-- Google Font -->
@@ -63,8 +65,39 @@
                         links instead.</p>
                 </div>
                 <div class="row">
-                    <div class="col-md-9">
-                        <jsp:include page="/views/website/main.jsp"/>
+                    <div class="col-md-9" id="leftContent">
+                       <%-- <jsp:include page="/views/website/main.jsp"/>--%>
+<%--
+                           <div class="box box-solid">
+                               <div class="box-header with-border">
+                                   <i class="fa fa-text-width"></i>
+
+                                   <h3 class="box-title">最新文章</h3>
+                               </div>
+                               <!-- /.box-header -->
+                               <div class="box-body">
+                                   <c:forEach items="${newsList}" var="item" varStatus="stat">
+                                       <dl class="dl-horizontal">
+                                           <h4><p class="text-aqua">${item.title}</p></h4>
+                                           <dt><img src="${pageContext.request.contextPath}/images/books/book.jpg"
+                                                    width="160" height="100" alt="First slide"></dt>
+                                           <dd>${item.shortContent}...</dd>
+                                               &lt;%&ndash;  <span class="pull-left">hahha</span>&ndash;%&gt;
+                                           <span class="pull-right" style="color: #ff0000; font-size: 15px">
+                                            <a href="${pageContext.request.contextPath}/website/book/showDetail?id=${item.id}" >Read More>></a>
+                                        </span>
+                                           <br/>
+                                           <c:if test="${!stat.last}">
+                                               <hr/>
+                                           </c:if>
+                                       </dl>
+
+                                   </c:forEach>
+                               </div>
+                               <!-- /.box-body -->
+                               <jsp:include page="page.jsp"/>
+                           </div>
+--%>
                         <!-- /.box -->
                     </div>
                     <jsp:include page="/views/website/right.jsp"/>
@@ -103,6 +136,12 @@
 <script src="${pageContext.request.contextPath}/views/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="${pageContext.request.contextPath}/views/dist/js/demo.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        getWebContent("${pageContext.request.contextPath}/website/book/main");
+    })
+</script>
 </body>
 </html>
 
