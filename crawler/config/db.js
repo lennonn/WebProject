@@ -18,4 +18,4 @@ var sequelize = new Sequelize(database.DATABASE,database.USERNAME,database.PASSW
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-module.exports = db, database
+module.exports = db
