@@ -10,14 +10,7 @@ const app = express()
 const superagent = require('superagent')
 require('superagent-charset')(superagent)
 const async = require('async');
-
-const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '123456',
-  database: 'zlennon',
-  port: 3306
-})
+const pool = require('../../lib/mysql')
 
 let num = 1  //第几本书开始，失败后根据提示更改此处即可
 
