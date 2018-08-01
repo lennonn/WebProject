@@ -6,7 +6,7 @@ let fs = require('fs');
 let log4js = require('log4js');
 let logger = log4js.getLogger("tags");
 let config = require('../../../config/config');
-let dbtag = require('../../../servlet/douban/book/tag');
+let DBTag = require('../../../servlet/douban/book/tag');
 
 router.get('/tag', (req, res, next) => {
 	logger.info('爬取地址: ' + config.crawlerUrl);
@@ -29,7 +29,7 @@ router.get('/tag', (req, res, next) => {
 						count: parseInt(_that.find('b').text().trim('').replace(/[\(-\)]/g, '')),
 						url: _url
 					};
-					dbtag.save(_item);
+                    DBTag.saveByInfo(_item);
 					_result.push(_item);
 				}
 			}

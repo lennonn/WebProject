@@ -1,8 +1,8 @@
 "use strict";
 
 module.exports = function(sequelize,Sequelize){
-    var dbtag = sequelize.define(
-        'dbtag',
+    var DBTag = sequelize.define(
+        'DBTag',
         {
             'id' : {
                 'type' : Sequelize.UUID,
@@ -18,7 +18,7 @@ module.exports = function(sequelize,Sequelize){
                 'comment' : '种类'
             },
             'count' : {
-                'type' : Sequelize.Number,
+                'type' : Sequelize.NUMERIC,
                 'field' : 'count',
                 'allowNull': true,
                 'comment' : '种类数'
@@ -32,12 +32,12 @@ module.exports = function(sequelize,Sequelize){
                 'type' : Sequelize.STRING(100),
                 'allowNull': true,
                 'comment' : '链接'
-            },
+            }/*,
             'page' : {
                 'type' : Sequelize.Number,
                 'allowNull': true,
                 'comment' : '第几页'
-            }
+            }*/
         },{
             comment : '豆瓣读书标签表',
             timestamps : true,
@@ -48,5 +48,7 @@ module.exports = function(sequelize,Sequelize){
             underscored : true    //使用驼峰命名法
         }
     );
-    return dbtag;
+    DBTag.sync({ force: true });
+
+    return DBTag;
 }
