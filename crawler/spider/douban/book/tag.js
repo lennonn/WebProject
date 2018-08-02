@@ -4,12 +4,11 @@ let request = require('request');
 let cheerio = require('cheerio');
 let fs = require('fs');
 let log4js = require('../../../config/log4js');
-let logger = log4js.getLogger("tags");
+let logger = log4js.getLogger("tag");
 let config = require('../../../config/config');
 let DBTag = require('../../../servlet/douban/book/tag');
-
-router.get('/tagkkk', (req, res, next) => {
-	logger.info('爬取地址: ' + config.crawlerUrl);
+exports.DBTag = getDBTag;
+function getDBTag(){
 	request(config.crawlerUrl, (error, response, body) => {
 		logger.info(response.statusCode);
 		if (!error && response.statusCode == 200) {
@@ -44,7 +43,4 @@ router.get('/tagkkk', (req, res, next) => {
 			logger.error(error);
 		}
 	});
-});
-
-
-module.exports = router;
+};

@@ -8,7 +8,7 @@ let logger = log4js.getLogger("tagList");
 let config = require('../config/config');
 
 let TagModel = require('../controller/tag');
-let TagListModel = require('../controller/tagList');
+let DBTagList = require('../../../servlet/douban/book/');
 
 router.get('/', (req, res, next) => {
 	// TagModel.getOneByIndex(9).then((doc) => {
@@ -40,7 +40,7 @@ router.get('/', (req, res, next) => {
 											let _this = $(_list[n]);
 											let _name = _this.find('.info').find('h2 a').attr('title');
 											let _item = {
-												tag: _tagId,
+												//tag: _tagId,
 												pic: _this.find('.pic').find('a img').attr('src'),
 												name: _name,
 												url: _this.find('.info').find('h2 a').attr('href'),
