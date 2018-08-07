@@ -32,12 +32,12 @@ module.exports = function(sequelize,Sequelize){
                 'type' : Sequelize.STRING(100),
                 'allowNull': true,
                 'comment' : '链接'
-            }/*,
+            },
             'page' : {
-                'type' : Sequelize.Number,
+                'type' : Sequelize.NUMERIC,
                 'allowNull': true,
                 'comment' : '第几页'
-            }*/
+            }
         },{
             comment : '豆瓣读书标签表',
             timestamps : true,
@@ -48,7 +48,7 @@ module.exports = function(sequelize,Sequelize){
             underscored : true    //使用驼峰命名法
         }
     );
-    DBTag.sync({ force: true });
+    DBTag.sync({ force: false });
 
     return DBTag;
 }

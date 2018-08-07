@@ -1,4 +1,4 @@
-let Tag = require('../models/tag');
+let Tag = require('../../../model/douban/book/tag');
 
 module.exports = {
 	addOneItem: (item) => {
@@ -17,7 +17,7 @@ module.exports = {
 		}).exec();
 	},
 	getAll: () => {
-		return Tag.find({}).exec();
+		return Tag.findAll({})
 	},
 	getOneByIndex: (_index) => {
 		if (!isNaN(_index)) {

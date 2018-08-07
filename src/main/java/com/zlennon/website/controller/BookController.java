@@ -31,6 +31,8 @@ public class BookController {
         PageInfo pageInfo = new PageInfo(list);
         //model.addAttribute("newsList",list);
         model.addAttribute("pageInfo",pageInfo);
+        model.addAttribute("pageUrl","/website/book/main");
+
         return "/website/main";
     }
 

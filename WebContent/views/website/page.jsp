@@ -31,7 +31,7 @@
                     </c:when>
                     <c:otherwise>
                         <li>
-                            <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=${pageInfo.prePage}&size=${pageInfo.pageSize}')" aria-label="Previous">
+                            <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=${pageInfo.prePage}&size=${pageInfo.pageSize}')" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                                 <span class="sr-only">Previous</span>
                             </a>
@@ -45,12 +45,12 @@
                             <c:choose>
                                 <c:when test="${i==pageInfo.pageNum}">
                                     <li class="active">
-                                        <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=${i}&size=${pageInfo.pageSize}')">${i}</a>
+                                        <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=${i}&size=${pageInfo.pageSize}')">${i}</a>
                                     </li>
                                 </c:when>
                                 <c:otherwise>
                                     <li>
-                                        <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=${i}&size=${pageInfo.pageSize}')">${i}</a>
+                                        <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=${i}&size=${pageInfo.pageSize}')">${i}</a>
                                     </li>
                                 </c:otherwise>
                             </c:choose>
@@ -64,12 +64,12 @@
                                     <c:choose>
                                         <c:when test="${i==pageInfo.pageNum}">
                                             <li class="active">
-                                                <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=${i}&size=${pageInfo.pageSize}')">${i}</a>
+                                                <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=${i}&size=${pageInfo.pageSize}')">${i}</a>
                                             </li>
                                         </c:when>
                                         <c:otherwise>
                                             <li>
-                                                <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=${i}&size=${pageInfo.pageSize}')">${i}</a>
+                                                <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=${i}&size=${pageInfo.pageSize}')">${i}</a>
                                             </li>
                                         </c:otherwise>
                                     </c:choose>
@@ -78,19 +78,19 @@
                                     <span aria-hidden="true">...</span>
                                 </li>
                                 <li>
-                                    <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=${pageInfo.pages-1}&size=${pageInfo.pageSize}')">${pageInfo.pages-1}</a>
+                                    <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=${pageInfo.pages-1}&size=${pageInfo.pageSize}')">${pageInfo.pages-1}</a>
                                 </li>
                                 <li>
-                                    <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=${pageInfo.pages}&size=${pageInfo.pageSize}')">${pageInfo.pages}</a>
+                                    <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=${pageInfo.pages}&size=${pageInfo.pageSize}')">${pageInfo.pages}</a>
                                 </li>
                             </c:when>
                             <c:when test="${pageInfo.pageNum>pageInfo.pages-7}">
 
                                 <li>
-                                    <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=1&size=${pageInfo.pageSize}')">1</a>
+                                    <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=1&size=${pageInfo.pageSize}')">1</a>
                                 </li>
                                 <li>
-                                    <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=2&size=${pageInfo.pageSize}')">2</a>
+                                    <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=2&size=${pageInfo.pageSize}')">2</a>
                                 </li>
                                 <li>
                                     <span aria-hidden="true">...</span>
@@ -99,12 +99,12 @@
                                     <c:choose>
                                         <c:when test="${i==pageInfo.pageNum}">
                                             <li class="active">
-                                                <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=${i}&size=${pageInfo.pageSize}')">${i}</a>
+                                                <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=${i}&size=${pageInfo.pageSize}')">${i}</a>
                                             </li>
                                         </c:when>
                                         <c:otherwise>
                                             <li>
-                                                <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=${i}&size=${pageInfo.pageSize}')">${i}</a>
+                                                <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=${i}&size=${pageInfo.pageSize}')">${i}</a>
                                             </li>
                                         </c:otherwise>
                                     </c:choose>
@@ -112,10 +112,10 @@
                             </c:when>
                             <c:otherwise>
                                 <li>
-                                    <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=1&size=${pageInfo.pageSize}')">1</a>
+                                    <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=1&size=${pageInfo.pageSize}')">1</a>
                                 </li>
                                 <li>
-                                    <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=2&size=${pageInfo.pageSize}')">2</a>
+                                    <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=2&size=${pageInfo.pageSize}')">2</a>
                                 </li>
                                 <li>
                                     <span aria-hidden="true">...</span>
@@ -125,12 +125,12 @@
                                     <c:choose>
                                         <c:when test="${i==pageInfo.pageNum}">
                                             <li class="active">
-                                                <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=${i}&size=${pageInfo.pageSize}')">${i}</a>
+                                                <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=${i}&size=${pageInfo.pageSize}')">${i}</a>
                                             </li>
                                         </c:when>
                                         <c:otherwise>
                                             <li>
-                                                <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=${i}&size=${pageInfo.pageSize}')">${i}</a>
+                                                <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=${i}&size=${pageInfo.pageSize}')">${i}</a>
                                             </li>
                                         </c:otherwise>
                                     </c:choose>
@@ -140,10 +140,10 @@
                                     <span aria-hidden="true">...</span>
                                 </li>
                                 <li>
-                                    <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=${pageInfo.pages-1}&size=${pageInfo.pageSize}')">${pageInfo.pages-1}</a>
+                                    <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=${pageInfo.pages-1}&size=${pageInfo.pageSize}')">${pageInfo.pages-1}</a>
                                 </li>
                                 <li>
-                                    <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=${pageInfo.pages}&size=${pageInfo.pageSize}')">${pageInfo.pages}</a>
+                                    <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=${pageInfo.pages}&size=${pageInfo.pageSize}')">${pageInfo.pages}</a>
                                 </li>
                             </c:otherwise>
                         </c:choose>
@@ -159,7 +159,7 @@
                     </c:when>
                     <c:otherwise>
                         <li>
-                            <a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/book/main?page=${pageInfo.nextPage}&size=${pageInfo.pageSize}')" aria-label="Previous">
+                            <a href="#" onclick="getWebContent('${pageContext.request.contextPath}${pageUrl}?page=${pageInfo.nextPage}&size=${pageInfo.pageSize}')" aria-label="Previous">
                                 <span aria-hidden="true">&raquo;</span>
                                 <span class="sr-only">Previous</span>
                             </a>

@@ -103,6 +103,10 @@
 <script src="${pageContext.request.contextPath}/views/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="${pageContext.request.contextPath}/views/dist/js/adminlte.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
 <!-- AdminLTE for demo purposes -->
 <script src="${pageContext.request.contextPath}/views/dist/js/demo.js"></script>
 <script src="${pageContext.request.contextPath}/js/zlennon-pub.js"></script>

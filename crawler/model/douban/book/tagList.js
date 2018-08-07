@@ -23,17 +23,17 @@ module.exports = function(sequelize,Sequelize){
                 'comment' : '书名'
             },
             'url' : {
-                'type' : Sequelize.STRING(100),
+                'type' : Sequelize.STRING(200),
                 'allowNull': true,
                 'comment' : '链接'
             },
             'pub' : {
-                'type' : Sequelize.STRING(100),
+                'type' : Sequelize.STRING(300),
                 'allowNull': true,
                 'comment' : 'pub'
             },
             'star' : {
-                'type' : Sequelize.NUMERIC,
+                'type' : Sequelize.DECIMAL(10,1),
                 'allowNull': true,
                 'comment' : '评分'
             },
@@ -52,7 +52,7 @@ module.exports = function(sequelize,Sequelize){
             underscored : true    //使用驼峰命名法
         }
     );
-    DBTagList.sync({ force: true });
+   // DBTagList.sync({ force: false });
 
     return DBTagList;
 }

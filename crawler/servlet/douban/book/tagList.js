@@ -5,9 +5,9 @@
 var moment = require('moment');
 var logger = require('../../../config/log4js').log4js.getLogger(__filename);
 var servlet={};
-var DBTag = require('../../../model/douban/book/index').DBTag;
+var DBTagList = require('../../../model/douban/book/index').DBTagList;
 
-servlet.DBTag = DBTag;
+servlet.DBTagList = DBTagList;
 
 /**
  * 保存方法
@@ -15,18 +15,21 @@ servlet.DBTag = DBTag;
  * @param map       参数集合
  */
 servlet.save = function(callback,map){
-	DBTag.build(map).save().then(function(result){
+	DBTagList.build(map).save().then(function(result){
 		logger.info('保存CZTags表成功');
 		//callback(result);
 	});
 };
 
 servlet.saveByInfo = function(item){
-	DBTag.build({
- 	 'category' : item.category,
+	DBTagList.build({
+ 	 'pic' : item.pic,
  	 'name' : item.name,
- 	 'count' : item.count,
-		'url' : item.url,
+ 	 'url' : item.url,
+		'pub' : item.pub,
+        'star' : item.star,
+        'desc' : item.desc
+
   }).save().then(function(result){
         logger.info('保存CZTags表成功');
 	});

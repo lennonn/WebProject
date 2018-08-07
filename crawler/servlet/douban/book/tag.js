@@ -32,8 +32,24 @@ servlet.saveByInfo = function(item){
 	});
 };
 
+//根据id查询创建时间
+servlet.query = function(map){
+    DBTag.findAll({
+        where : map
+    }).then(function(result){
+       return result;
+    });
+};
 
 
+servlet.updateTag = function(id,param){
+
+    DBTag.update({
+        page: param
+    }, {
+        where: {id: id}
+    });
+};
 
 
 module.exports = servlet;

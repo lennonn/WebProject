@@ -18,7 +18,7 @@
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body class="hold-transition skin-blue layout-top-nav">
-<div class="wrapper">
+
     <header class="main-header">
         <nav class="navbar navbar-static-top">
             <div class="container">
@@ -36,11 +36,11 @@
                         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                         <li><a href="#">Link</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">书籍 <span
                                     class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
+                                <li><a href="${pageContext.request.contextPath}/website/index">八一中文网</a></li>
+                                <li><a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/dbTagList/statistics');">豆瓣书籍</a></li>
                                 <li><a href="#">Something else here</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#">Separated link</a></li>
@@ -212,7 +212,6 @@
         </nav>
     </header>
     <!-- Full Width Column -->
-</div>
 <!-- ./wrapper -->
 
 </body>

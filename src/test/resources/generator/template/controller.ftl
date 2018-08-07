@@ -28,6 +28,7 @@ public class ${modelNameUpperCamel}Controller {
         PageHelper.startPage(page, size);
         List<${modelNameUpperCamel}> list = ${modelNameLowerCamel}Service.selectAll();
         PageInfo pageInfo = new PageInfo(list);
+        model.addAttribute("pageInfo",pageInfo);
         return list.toString();
     }
 }

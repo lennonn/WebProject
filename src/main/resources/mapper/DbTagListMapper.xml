@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlennon.website.mapper.DbTagListMapper">
+  <resultMap id="BaseResultMap" type="com.zlennon.website.model.DbTagList">
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="pic" jdbcType="VARCHAR" property="pic" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="pub" jdbcType="VARCHAR" property="pub" />
+    <result column="star" jdbcType="DECIMAL" property="star" />
+    <result column="desc" jdbcType="VARCHAR" property="desc" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+    <result column="deleted_at" jdbcType="TIMESTAMP" property="deletedAt" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from db_tag_list
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zlennon.website.model.DbTagList">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select seq_db_tag_list.nextval from dual
+    </selectKey>
+    insert into db_tag_list (id, pic, name, url,
+      pub, star, desc, created_at,
+      updated_at, deleted_at)
+    values (#{id,jdbcType=CHAR}, #{pic,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR},
+      #{pub,jdbcType=VARCHAR}, #{star,jdbcType=DECIMAL}, #{desc,jdbcType=VARCHAR}, #{createdAt,jdbcType=TIMESTAMP},
+      #{updatedAt,jdbcType=TIMESTAMP}, #{deletedAt,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.zlennon.website.model.DbTagList">
+    update db_tag_list
+    set pic = #{pic,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      pub = #{pub,jdbcType=VARCHAR},
+      star = #{star,jdbcType=DECIMAL},
+      desc = #{desc,jdbcType=VARCHAR},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+      deleted_at = #{deletedAt,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+
+  <select id="groupByStar" resultType="java.util.HashMap">
+    select star ,count(star) as total
+    from db_tag_list
+    group by star having star >=9.0;
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, pic, name, url, pub, star, desc, created_at, updated_at, deleted_at
+    from db_tag_list
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, pic, `name`, url, pub, star, `desc`, created_at, updated_at, deleted_at
+    from db_tag_list where star>=9.0
+  </select>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into db_tag_list
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="list[0].id!=null">
+        id,
+      </if>
+      <if test="list[0].pic!=null">
+        pic,
+      </if>
+      <if test="list[0].name!=null">
+        name,
+      </if>
+      <if test="list[0].url!=null">
+        url,
+      </if>
+      <if test="list[0].pub!=null">
+        pub,
+      </if>
+      <if test="list[0].star!=null">
+        star,
+      </if>
+      <if test="list[0].desc!=null">
+        desc,
+      </if>
+      <if test="list[0].createdAt!=null">
+        created_at,
+      </if>
+      <if test="list[0].updatedAt!=null">
+        updated_at,
+      </if>
+      <if test="list[0].deletedAt!=null">
+        deleted_at,
+      </if>
+    </trim>
+     values
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix=" (" suffix=")" suffixOverrides=",">
+        <if test="item.id!=null">
+          #{item.id,jdbcType=CHAR},
+        </if>
+        <if test="item.pic!=null">
+          #{item.pic,jdbcType=VARCHAR},
+        </if>
+        <if test="item.name!=null">
+          #{item.name,jdbcType=VARCHAR},
+        </if>
+        <if test="item.url!=null">
+          #{item.url,jdbcType=VARCHAR},
+        </if>
+        <if test="item.pub!=null">
+          #{item.pub,jdbcType=VARCHAR},
+        </if>
+        <if test="item.star!=null">
+          #{item.star,jdbcType=DECIMAL},
+        </if>
+        <if test="item.desc!=null">
+          #{item.desc,jdbcType=VARCHAR},
+        </if>
+        <if test="item.createdAt!=null">
+          #{item.createdAt,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.updatedAt!=null">
+          #{item.updatedAt,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.deletedAt!=null">
+          #{item.deletedAt,jdbcType=TIMESTAMP},
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    <foreach collection="list" index="index" item="item" separator=";">
+      update db_tag_list
+      <set>
+        <if test="item.pic!=null">
+          pic=#{item.pic,jdbcType=VARCHAR},
+        </if>
+        <if test="item.name!=null">
+          name=#{item.name,jdbcType=VARCHAR},
+        </if>
+        <if test="item.url!=null">
+          url=#{item.url,jdbcType=VARCHAR},
+        </if>
+        <if test="item.pub!=null">
+          pub=#{item.pub,jdbcType=VARCHAR},
+        </if>
+        <if test="item.star!=null">
+          star=#{item.star,jdbcType=DECIMAL},
+        </if>
+        <if test="item.desc!=null">
+          desc=#{item.desc,jdbcType=VARCHAR},
+        </if>
+        <if test="item.createdAt!=null">
+          created_at=#{item.createdAt,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.updatedAt!=null">
+          updated_at=#{item.updatedAt,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.deletedAt!=null">
+          deleted_at=#{item.deletedAt,jdbcType=TIMESTAMP},
+        </if>
+      </set>
+      where 
+      id = #{item.id,jdbcType=CHAR}
+    </foreach>
+  </update>
+</mapper>

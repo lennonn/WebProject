@@ -7,6 +7,7 @@ let log4js = require('../../../config/log4js');
 let logger = log4js.getLogger("tag");
 let config = require('../../../config/config');
 let DBTag = require('../../../servlet/douban/book/tag');
+
 exports.DBTag = getDBTag;
 function getDBTag(){
 	request(config.crawlerUrl, (error, response, body) => {

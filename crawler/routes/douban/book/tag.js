@@ -7,6 +7,8 @@ let log4js = require('log4js');
 let logger = log4js.getLogger("tags");
 let config = require('../../../config/config');
 let DBTag = require('../../../servlet/douban/book/tag');
+var DBTagModel = require('../../../model/douban/book/index').DBTag;
+
 
 router.get('/tag', (req, res, next) => {
 	logger.info('爬取地址: ' + config.crawlerUrl);
@@ -29,7 +31,7 @@ router.get('/tag', (req, res, next) => {
 						count: parseInt(_that.find('b').text().trim('').replace(/[\(-\)]/g, '')),
 						url: _url
 					};
-                    DBTag.saveByInfo(_item);
+                    DBTagModel.saveByInfo(_item);
 					_result.push(_item);
 				}
 			}
@@ -47,35 +49,39 @@ router.get('/tag', (req, res, next) => {
 });
 
 
-router.get('/update', (req, res, next) => {
-	Tag.getAll().then((docs) => {
-		let _len = docs.length;
-		for (let i = 0; i < _len; i++) {
-			(() => {
-				setTimeout(() => {
-					//send
-					request(docs[i].url, (error, response, body) => {
-						logger.info(response.statusCode);
-						if (!error && response.statusCode == 200) {
-							let $ = cheerio.load(body);
-							let _page = $('.paginator').find('a');
-							let _max = parseInt($(_page[_page.length - 2]).text());
-							logger.info(_max);
-							if (_max > 50) {
-								_max = 50;
-							}
-							Tag.updateOneById(docs[i]._id, {
-								page: _max
-							});
-						} else {
-							logger.error(error);
-						}
-					});
-				}, i * 3000);
-			})(i)
-		}
+function updateTagList(docs){
+    let _len = docs.length;
+    for (let i = 0; i < _len; i++) {
+        (() => {
+            setTimeout(() => {
+                //send
+                request(docs[i].url, (error, response, body) => {
+                    logger.info(response.statusCode);
+                    if (!error && response.statusCode == 200) {
+                        let $ = cheerio.load(body);
+                        let _page = $('.paginator').find('a');
+                        let _max = parseInt($(_page[_page.length - 2]).text());
+                        logger.info(_max);
+                        if (_max > 50) {
+                            _max = 50;
+                        }
+                        //DBTagModel.updateTag(docs[i]._id, _max);
+                        DBTag.updateTag(docs[i].id, _max);
+
+                    } else {
+                        logger.error(error);
+                    }
+                });
+            }, i * 500);
+        })(i)
+    }
+};
+router.get('/updateTag', (req, res, next) => {
+    DBTagModel.findAll({
+    }).then(function(result){
+        updateTagList(result);
+    });
 		res.send('update....');
-	});
 });
 
 module.exports = router;

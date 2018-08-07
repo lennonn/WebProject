@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlennon.website.mapper.DbTagMapper">
+  <resultMap id="BaseResultMap" type="com.zlennon.website.model.DbTag">
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="category" jdbcType="VARCHAR" property="category" />
+    <result column="count" jdbcType="DECIMAL" property="count" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="page" jdbcType="DECIMAL" property="page" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+    <result column="deleted_at" jdbcType="TIMESTAMP" property="deletedAt" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from db_tag
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zlennon.website.model.DbTag">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select seq_db_tag.nextval from dual
+    </selectKey>
+    insert into db_tag (id, category, count, 
+      name, url, page, created_at, 
+      updated_at, deleted_at)
+    values (#{id,jdbcType=CHAR}, #{category,jdbcType=VARCHAR}, #{count,jdbcType=DECIMAL}, 
+      #{name,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{page,jdbcType=DECIMAL}, #{createdAt,jdbcType=TIMESTAMP}, 
+      #{updatedAt,jdbcType=TIMESTAMP}, #{deletedAt,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.zlennon.website.model.DbTag">
+    update db_tag
+    set category = #{category,jdbcType=VARCHAR},
+      count = #{count,jdbcType=DECIMAL},
+      name = #{name,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      page = #{page,jdbcType=DECIMAL},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+      deleted_at = #{deletedAt,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, category, count, name, url, page, created_at, updated_at, deleted_at
+    from db_tag
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, category, count, name, url, page, created_at, updated_at, deleted_at
+    from db_tag
+    order by id desc
+  </select>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into db_tag
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="list[0].id!=null">
+        id,
+      </if>
+      <if test="list[0].category!=null">
+        category,
+      </if>
+      <if test="list[0].count!=null">
+        count,
+      </if>
+      <if test="list[0].name!=null">
+        name,
+      </if>
+      <if test="list[0].url!=null">
+        url,
+      </if>
+      <if test="list[0].page!=null">
+        page,
+      </if>
+      <if test="list[0].createdAt!=null">
+        created_at,
+      </if>
+      <if test="list[0].updatedAt!=null">
+        updated_at,
+      </if>
+      <if test="list[0].deletedAt!=null">
+        deleted_at,
+      </if>
+    </trim>
+     values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix=" (" suffix=")" suffixOverrides=",">
+        <if test="item.id!=null">
+          #{item.id,jdbcType=CHAR},
+        </if>
+        <if test="item.category!=null">
+          #{item.category,jdbcType=VARCHAR},
+        </if>
+        <if test="item.count!=null">
+          #{item.count,jdbcType=DECIMAL},
+        </if>
+        <if test="item.name!=null">
+          #{item.name,jdbcType=VARCHAR},
+        </if>
+        <if test="item.url!=null">
+          #{item.url,jdbcType=VARCHAR},
+        </if>
+        <if test="item.page!=null">
+          #{item.page,jdbcType=DECIMAL},
+        </if>
+        <if test="item.createdAt!=null">
+          #{item.createdAt,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.updatedAt!=null">
+          #{item.updatedAt,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.deletedAt!=null">
+          #{item.deletedAt,jdbcType=TIMESTAMP},
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    <foreach collection="list" index="index" item="item" separator=";">
+      update db_tag
+      <set>
+        <if test="item.category!=null">
+          category=#{item.category,jdbcType=VARCHAR},
+        </if>
+        <if test="item.count!=null">
+          count=#{item.count,jdbcType=DECIMAL},
+        </if>
+        <if test="item.name!=null">
+          name=#{item.name,jdbcType=VARCHAR},
+        </if>
+        <if test="item.url!=null">
+          url=#{item.url,jdbcType=VARCHAR},
+        </if>
+        <if test="item.page!=null">
+          page=#{item.page,jdbcType=DECIMAL},
+        </if>
+        <if test="item.createdAt!=null">
+          created_at=#{item.createdAt,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.updatedAt!=null">
+          updated_at=#{item.updatedAt,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.deletedAt!=null">
+          deleted_at=#{item.deletedAt,jdbcType=TIMESTAMP},
+        </if>
+      </set>
+      where 
+      id = #{item.id,jdbcType=CHAR}
+    </foreach>
+  </update>
+</mapper>
