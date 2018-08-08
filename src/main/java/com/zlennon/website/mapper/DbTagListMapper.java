@@ -25,4 +25,6 @@ public interface DbTagListMapper {
     int updateBatchByPrimaryKeySelective(List<DbTagList> records);
 
     List<Map<Float,Long>> groupByStar();
+
+    List<DbTagList> selectByStar(Float star);
 }

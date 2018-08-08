@@ -30,30 +30,65 @@
     var counts=[];
     <c:forEach items="${groupList}" var="group">
         <c:forEach items="${group }" var="map"  >
-            star.push(${map.key});
-            counts.push(${map.value});
+            if(${map.key=='total'}){
+                counts.push(${map.value});
+            }else{
+                star.push(${map.value});
+            }
         </c:forEach>
     </c:forEach>
-    new Chart(document.getElementById("canvas"), {
-        type: 'bar',
-        data: {
-            labels: star,
-            datasets: [
-                {
-                    label: "Population (millions)",
-                    backgroundColor: ["#3e95cd"],
-                    data: counts
-                }
-            ]
-        },
-        options: {
-            legend: { display: false },
-            title: {
-                display: true,
-                text: 'Predicted world population (millions) in 2050'
+    var barChartData = {
+        labels : star,
+        datasets : [
+            {
+                label: "总数",
+                backgroundColor: "#3e95cd",
+                data: counts
             }
-        }
-    });
+        ]
+
+    }
+   // var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Bar(barChartData, defaults);
+        new Chart(document.getElementById("canvas"), {
+            type: 'bar',
+            data: {
+                labels : star,
+                datasets : [
+                    {
+                        label: "总数",
+                        backgroundColor: "#3e95cd",
+                        data: counts
+                    }
+                ]
+            },
+            options: {
+                onClick: function(evt) {
+                    var activePoints = this.getElementsAtEvent(evt);
+                    var firstPoint = activePoints[0];
+                    var label = this.data.labels[firstPoint._index];
+                    getWebContent("${pageContext.request.contextPath}/website/dbTagList/list?star="+label);
+                },
+                legend: { display: true
+                },
+                scaleGridLineColor: "rgba(0,0,0,.05)",
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            fontColor:'#fff'
+
+                        },
+                    }]
+                },
+                animation:{                              //动画配置
+                    duration:1000                        //动画播放时间
+                },
+                title: {
+                    display: true,
+                    text: '豆瓣评分9分以上书籍统计'
+                }
+            }
+        });
 </script>
 </body>
 </html>

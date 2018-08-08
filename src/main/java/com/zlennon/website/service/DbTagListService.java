@@ -21,4 +21,6 @@ public interface DbTagListService<DbTagList> extends Service<DbTagList> {
     int updateByPrimaryKey(DbTagList dbTagList);
 
     List<Map<Float,Long>> group();
+
+    List<DbTagList> selectByStar(Float star);
 }

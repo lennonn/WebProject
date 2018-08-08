@@ -42,10 +42,16 @@
     where id = #{id,jdbcType=CHAR}
   </update>
 
+ <select id="selectByStar" parameterType="java.lang.Float" resultMap="BaseResultMap">
+    select id, pic, `name`, url, pub, star, `desc`, created_at, updated_at, deleted_at
+    from db_tag_list
+    where star = #{star,jdbcType=FLOAT}
+  </select>
+
   <select id="groupByStar" resultType="java.util.HashMap">
     select star ,count(star) as total
     from db_tag_list
-    group by star having star >=9.0;
+    group by star having star >=9.0 order  by star;
   </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
@@ -55,7 +61,7 @@
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
     select id, pic, `name`, url, pub, star, `desc`, created_at, updated_at, deleted_at
-    from db_tag_list where star>=9.0
+    from db_tag_list
   </select>
   <insert id="insertBatchSelective" parameterType="java.util.List">
     insert into db_tag_list

@@ -25,12 +25,12 @@ public class DbTagListController {
     DbTagListService dbTagListService;
 
     @RequestMapping("list")
-    public String list(Model model, @RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "5") Integer size) {
+    public String list(Model model,@RequestParam Float star, @RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "5") Integer size) {
         PageHelper.startPage(page, size);
-        List<DbTagList> list = dbTagListService.selectAll();
+        List<DbTagList> list = dbTagListService.selectByStar(star);
         PageInfo pageInfo = new PageInfo(list);
         model.addAttribute("pageInfo",pageInfo);
-        model.addAttribute("pageUrl","/website/dbTagList/list");
+        model.addAttribute("pageUrl","/website/dbTagList/list?star="+star);
         return "/website/douban/doubanlist";
     }
 

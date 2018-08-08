@@ -52,4 +52,9 @@ public class DbTagListServiceImpl extends AbstractService<DbTagList> implements 
     public List<Map<Float, Long>> group() {
         return dbTagListMapper.groupByStar();
     }
+
+    @Override
+    public List<DbTagList> selectByStar(Float star) {
+        return dbTagListMapper.selectByStar(star);
+    }
 }

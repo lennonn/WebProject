@@ -37,7 +37,7 @@
                 <dd>${item.desc}...</dd>
                     <%--  <span class="pull-left">hahha</span>--%>
                 <span class="pull-right" style="color: #ff0000; font-size: 15px">
-                                            <a href="${pageContext.request.contextPath}/website/book/showDetail?id=${item.id}">Read More>></a>
+                                            <a href="${item.url}" target="_blank">豆瓣源网址>></a>
                                         </span>
                 <br/>
                 <c:if test="${!stat.last}">
