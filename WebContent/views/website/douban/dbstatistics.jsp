@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -25,15 +26,23 @@
     <!-- /.box-body -->
 </div>
 <script>
+    var star=[];
+    var counts=[];
+    <c:forEach items="${groupList}" var="group">
+        <c:forEach items="${group }" var="map"  >
+            star.push(${map.key});
+            counts.push(${map.value});
+        </c:forEach>
+    </c:forEach>
     new Chart(document.getElementById("canvas"), {
         type: 'bar',
         data: {
-            labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+            labels: star,
             datasets: [
                 {
                     label: "Population (millions)",
                     backgroundColor: ["#3e95cd"],
-                    data: [2478,5267,734,784,433]
+                    data: counts
                 }
             ]
         },
