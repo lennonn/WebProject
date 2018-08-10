@@ -157,3 +157,816 @@
 [2018-08-02T08:19:21.485] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
 [2018-08-02T08:19:21.486] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
 [2018-08-02T08:19:21.546] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:52:29.427] [INFO] tags - 爬取地址: https://book.douban.com/tag/
+[2018-08-09T09:52:29.844] [INFO] tags - 200
+[2018-08-09T09:54:00.630] [INFO] tags - 爬取地址: https://book.douban.com/tag/
+[2018-08-09T09:54:00.723] [INFO] tags - 200
+[2018-08-09T09:54:02.757] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:02.757] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:02.757] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:02.816] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:02.849] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:02.850] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:02.922] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:02.922] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.012] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.012] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.012] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.074] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.075] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.114] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.172] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.172] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.200] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.201] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.201] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.319] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.341] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.342] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.342] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.342] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.425] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.475] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.475] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.475] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.592] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.623] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.623] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.623] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.624] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.724] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.768] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.768] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.768] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.769] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.847] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.897] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.898] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.989] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:03.989] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.010] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.010] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.010] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.097] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.156] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.157] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.157] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.267] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.351] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.406] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.406] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.406] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.407] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.525] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.548] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.549] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.549] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.549] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.625] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.685] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.685] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.685] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.685] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.783] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.896] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.896] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.896] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.980] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:04.981] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.124] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.126] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.126] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.127] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.127] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.322] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.374] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.374] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.374] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.374] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.488] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.550] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.551] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.551] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.574] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.574] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.638] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.731] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.732] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.732] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.732] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.798] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.898] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.966] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.966] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.967] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:05.967] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.072] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.141] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.142] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.142] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.142] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.338] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.390] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.390] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.390] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.390] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.438] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.475] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.475] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.475] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.475] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.559] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.638] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.638] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.666] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.666] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.666] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.757] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.805] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.805] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.866] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.866] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.866] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.946] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.975] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.975] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.975] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:06.975] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:07.038] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:07.085] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:07.085] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:07.085] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:07.085] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:07.196] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:07.264] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:07.265] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:07.265] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:07.265] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:07.321] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:07.404] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:07.405] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:07.405] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tag.js - 保存CZTags表成功
+[2018-08-09T09:54:26.526] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:26.561] [INFO] tagList - length ----->16
+[2018-08-09T09:54:26.561] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:26.607] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:26.628] [INFO] tagList - length ----->20
+[2018-08-09T09:54:26.629] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:26.745] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:26.777] [INFO] tagList - length ----->20
+[2018-08-09T09:54:26.778] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:26.824] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:26.840] [INFO] tagList - length ----->20
+[2018-08-09T09:54:26.840] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:26.878] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:26.895] [INFO] tagList - length ----->20
+[2018-08-09T09:54:26.895] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:26.927] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:26.939] [INFO] tagList - length ----->20
+[2018-08-09T09:54:26.940] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:26.970] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:27.017] [INFO] tagList - length ----->20
+[2018-08-09T09:54:27.018] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:27.048] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:27.058] [INFO] tagList - length ----->20
+[2018-08-09T09:54:27.058] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:27.087] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:27.108] [INFO] tagList - length ----->20
+[2018-08-09T09:54:27.108] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:27.164] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:27.192] [INFO] tagList - length ----->20
+[2018-08-09T09:54:27.192] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:27.612] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:27.624] [INFO] tagList - length ----->20
+[2018-08-09T09:54:27.624] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:27.652] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:27.667] [INFO] tagList - length ----->20
+[2018-08-09T09:54:27.668] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:27.711] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:27.722] [INFO] tagList - length ----->20
+[2018-08-09T09:54:27.722] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:27.747] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:27.762] [INFO] tagList - length ----->20
+[2018-08-09T09:54:27.762] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:27.804] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:27.813] [INFO] tagList - length ----->20
+[2018-08-09T09:54:27.813] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:27.844] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:27.856] [INFO] tagList - length ----->20
+[2018-08-09T09:54:27.856] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:27.903] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:27.912] [INFO] tagList - length ----->20
+[2018-08-09T09:54:27.912] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:27.938] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:27.947] [INFO] tagList - length ----->20
+[2018-08-09T09:54:27.947] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:28.377] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:28.388] [INFO] tagList - length ----->20
+[2018-08-09T09:54:28.388] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:28.470] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:28.480] [INFO] tagList - length ----->20
+[2018-08-09T09:54:28.481] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:28.511] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:28.545] [INFO] tagList - length ----->20
+[2018-08-09T09:54:28.545] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:28.574] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:28.589] [INFO] tagList - length ----->20
+[2018-08-09T09:54:28.589] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:28.640] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:28.659] [INFO] tagList - length ----->20
+[2018-08-09T09:54:28.659] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:28.693] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:28.705] [INFO] tagList - length ----->20
+[2018-08-09T09:54:28.705] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:28.738] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:28.760] [INFO] tagList - length ----->20
+[2018-08-09T09:54:28.760] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:28.782] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:28.791] [INFO] tagList - length ----->20
+[2018-08-09T09:54:28.791] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:28.814] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:28.857] [INFO] tagList - length ----->20
+[2018-08-09T09:54:28.857] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:28.882] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:28.891] [INFO] tagList - length ----->20
+[2018-08-09T09:54:28.891] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:28.914] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:28.936] [INFO] tagList - length ----->20
+[2018-08-09T09:54:28.936] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:28.958] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:28.968] [INFO] tagList - length ----->20
+[2018-08-09T09:54:28.968] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:28.996] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:29.015] [INFO] tagList - length ----->20
+[2018-08-09T09:54:29.015] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:29.047] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:29.056] [INFO] tagList - length ----->20
+[2018-08-09T09:54:29.056] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:29.083] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:29.105] [INFO] tagList - length ----->19
+[2018-08-09T09:54:29.105] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:29.127] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:29.138] [INFO] tagList - length ----->20
+[2018-08-09T09:54:29.138] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:29.162] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:29.181] [INFO] tagList - length ----->18
+[2018-08-09T09:54:29.181] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:29.203] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:29.213] [INFO] tagList - length ----->20
+[2018-08-09T09:54:29.213] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:29.239] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:29.248] [INFO] tagList - length ----->19
+[2018-08-09T09:54:29.248] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:29.285] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:29.298] [INFO] tagList - length ----->20
+[2018-08-09T09:54:29.298] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:29.329] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:29.346] [INFO] tagList - length ----->20
+[2018-08-09T09:54:29.346] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:29.404] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:29.430] [INFO] tagList - length ----->20
+[2018-08-09T09:54:29.430] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:29.504] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:29.580] [INFO] tagList - length ----->20
+[2018-08-09T09:54:29.580] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:29.608] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:29.619] [INFO] tagList - length ----->20
+[2018-08-09T09:54:29.619] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:29.653] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:29.689] [INFO] tagList - length ----->20
+[2018-08-09T09:54:29.689] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:29.713] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:29.734] [INFO] tagList - length ----->20
+[2018-08-09T09:54:29.734] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:29.755] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:29.773] [INFO] tagList - length ----->20
+[2018-08-09T09:54:29.773] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:29.856] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:29.856] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:29.856] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:30.405] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:30.413] [INFO] tagList - length ----->20
+[2018-08-09T09:54:30.413] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:30.448] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:30.456] [INFO] tagList - length ----->20
+[2018-08-09T09:54:30.456] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:30.478] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:30.486] [INFO] tagList - length ----->20
+[2018-08-09T09:54:30.486] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:30.540] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:30.550] [INFO] tagList - length ----->20
+[2018-08-09T09:54:30.550] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:30.574] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:30.583] [INFO] tagList - length ----->20
+[2018-08-09T09:54:30.583] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:30.619] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:30.628] [INFO] tagList - length ----->20
+[2018-08-09T09:54:30.628] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:30.652] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:30.660] [INFO] tagList - length ----->20
+[2018-08-09T09:54:30.660] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:30.686] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:30.706] [INFO] tagList - length ----->20
+[2018-08-09T09:54:30.706] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:30.730] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:30.739] [INFO] tagList - length ----->20
+[2018-08-09T09:54:30.739] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:30.764] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:30.787] [INFO] tagList - length ----->20
+[2018-08-09T09:54:30.787] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:30.819] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:30.827] [INFO] tagList - length ----->20
+[2018-08-09T09:54:30.828] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:30.871] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:30.890] [INFO] tagList - length ----->20
+[2018-08-09T09:54:30.890] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:30.913] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:30.923] [INFO] tagList - length ----->20
+[2018-08-09T09:54:30.923] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:30.946] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:30.967] [INFO] tagList - length ----->20
+[2018-08-09T09:54:30.967] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:30.987] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:30.995] [INFO] tagList - length ----->20
+[2018-08-09T09:54:30.995] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.016] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.038] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.039] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.064] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.074] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.074] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.101] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.130] [INFO] tagList - length ----->19
+[2018-08-09T09:54:31.130] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.170] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.200] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.200] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.265] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.315] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.315] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.343] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.351] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.351] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.375] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.393] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.393] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.415] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.422] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.423] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.445] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.480] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.480] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.504] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.512] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.512] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.532] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.550] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.550] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.571] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.579] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.579] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.602] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.621] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.621] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.641] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.648] [INFO] tagList - length ----->18
+[2018-08-09T09:54:31.648] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.666] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.674] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.674] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.720] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.727] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.727] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.752] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.760] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.760] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.795] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.804] [INFO] tagList - length ----->19
+[2018-08-09T09:54:31.804] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.827] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.836] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.836] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.863] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.870] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.871] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.889] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.900] [INFO] tagList - length ----->19
+[2018-08-09T09:54:31.900] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.929] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.937] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.937] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.956] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:31.964] [INFO] tagList - length ----->20
+[2018-08-09T09:54:31.964] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:31.984] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.002] [INFO] tagList - length ----->20
+[2018-08-09T09:54:32.002] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:32.023] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.033] [INFO] tagList - length ----->20
+[2018-08-09T09:54:32.033] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:32.053] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.071] [INFO] tagList - length ----->20
+[2018-08-09T09:54:32.071] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:32.092] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.104] [INFO] tagList - length ----->20
+[2018-08-09T09:54:32.105] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:32.125] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.148] [INFO] tagList - length ----->20
+[2018-08-09T09:54:32.148] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:32.167] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.175] [INFO] tagList - length ----->20
+[2018-08-09T09:54:32.175] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:32.194] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.214] [INFO] tagList - length ----->20
+[2018-08-09T09:54:32.214] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:32.235] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.247] [INFO] tagList - length ----->20
+[2018-08-09T09:54:32.247] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:32.267] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.286] [INFO] tagList - length ----->19
+[2018-08-09T09:54:32.286] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:32.308] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.315] [INFO] tagList - length ----->20
+[2018-08-09T09:54:32.316] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:32.339] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.359] [INFO] tagList - length ----->20
+[2018-08-09T09:54:32.359] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:32.379] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.387] [INFO] tagList - length ----->20
+[2018-08-09T09:54:32.387] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:32.413] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.434] [INFO] tagList - length ----->20
+[2018-08-09T09:54:32.434] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:32.453] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.462] [INFO] tagList - length ----->20
+[2018-08-09T09:54:32.462] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:32.485] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.517] [INFO] tagList - length ----->20
+[2018-08-09T09:54:32.517] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:32.537] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.544] [INFO] tagList - length ----->20
+[2018-08-09T09:54:32.544] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:32.566] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:32.587] [INFO] tagList - length ----->20
+[2018-08-09T09:54:32.587] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:33.687] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:33.696] [INFO] tagList - length ----->20
+[2018-08-09T09:54:33.696] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:33.716] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:33.734] [INFO] tagList - length ----->20
+[2018-08-09T09:54:33.734] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:33.755] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:33.764] [INFO] tagList - length ----->20
+[2018-08-09T09:54:33.764] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:33.794] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:33.802] [INFO] tagList - length ----->20
+[2018-08-09T09:54:33.802] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:33.820] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:33.827] [INFO] tagList - length ----->20
+[2018-08-09T09:54:33.827] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:33.858] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:33.866] [INFO] tagList - length ----->20
+[2018-08-09T09:54:33.866] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:33.895] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:33.912] [INFO] tagList - length ----->20
+[2018-08-09T09:54:33.912] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:33.951] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:33.996] [INFO] tagList - length ----->20
+[2018-08-09T09:54:33.996] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.060] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.106] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.106] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.217] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.228] [INFO] tagList - length ----->19
+[2018-08-09T09:54:34.228] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.247] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.255] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.255] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.285] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.293] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.293] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.313] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.321] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.321] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.354] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.363] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.363] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.382] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.390] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.390] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.420] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.429] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.429] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.447] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.455] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.455] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.482] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.489] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.489] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.509] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.517] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.517] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.535] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.571] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.571] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.592] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.611] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.611] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.648] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.669] [INFO] tagList - length ----->19
+[2018-08-09T09:54:34.669] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.687] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.695] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.695] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.714] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.737] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.737] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.758] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.765] [INFO] tagList - length ----->19
+[2018-08-09T09:54:34.765] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.795] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.813] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.813] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.830] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.838] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.838] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:34.875] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:34.898] [INFO] tagList - length ----->20
+[2018-08-09T09:54:34.898] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:36.225] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:36.237] [INFO] tagList - length ----->20
+[2018-08-09T09:54:36.237] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:36.254] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:36.262] [INFO] tagList - length ----->18
+[2018-08-09T09:54:36.262] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:36.289] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:36.297] [INFO] tagList - length ----->19
+[2018-08-09T09:54:36.297] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:36.316] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:36.324] [INFO] tagList - length ----->20
+[2018-08-09T09:54:36.324] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:36.350] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:36.358] [INFO] tagList - length ----->20
+[2018-08-09T09:54:36.358] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:36.374] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:36.383] [INFO] tagList - length ----->20
+[2018-08-09T09:54:36.383] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:36.401] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:36.419] [INFO] tagList - length ----->20
+[2018-08-09T09:54:36.419] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:36.436] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:36.443] [INFO] tagList - length ----->20
+[2018-08-09T09:54:36.443] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:36.683] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:36.743] [INFO] tagList - length ----->20
+[2018-08-09T09:54:36.744] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:36.864] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:36.906] [INFO] tagList - length ----->20
+[2018-08-09T09:54:36.906] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:36.925] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:36.933] [INFO] tagList - length ----->20
+[2018-08-09T09:54:36.933] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:36.958] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:36.965] [INFO] tagList - length ----->19
+[2018-08-09T09:54:36.965] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:36.992] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:37.000] [INFO] tagList - length ----->20
+[2018-08-09T09:54:37.000] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:37.017] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:37.024] [INFO] tagList - length ----->20
+[2018-08-09T09:54:37.024] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:37.054] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:37.062] [INFO] tagList - length ----->20
+[2018-08-09T09:54:37.062] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:37.086] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:37.086] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:37.086] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:37.210] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:37.220] [INFO] tagList - length ----->20
+[2018-08-09T09:54:37.220] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:37.239] [INFO] tagList - ListPageCode: 200
+[2018-08-09T09:54:37.246] [INFO] tagList - length ----->20
+[2018-08-09T09:54:37.246] [INFO] tagList - tag ----->ffced716-c3e3-45fc-97e6-a5d7f0ff657d
+[2018-08-09T09:54:38.816] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:38.816] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:38.816] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:38.873] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.469] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.575] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.645] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.645] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.645] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.650] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.650] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.682] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.690] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.690] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.756] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.774] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.775] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.775] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.775] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.854] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.877] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.877] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.877] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.877] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.939] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.983] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.983] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.983] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:39.983] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.130] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.131] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.131] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.131] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.134] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.354] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.445] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.445] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.445] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.594] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.594] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.594] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.594] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.594] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.626] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.651] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.651] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.651] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.651] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.709] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.749] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.751] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.751] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.751] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.816] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.857] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.859] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.859] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:40.859] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.019] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.059] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.062] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.157] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.157] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.281] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.282] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.282] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.446] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.497] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.498] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.573] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.573] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.573] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.573] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.574] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.707] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.740] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.748] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.748] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.748] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.828] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.857] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.860] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.860] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.861] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.906] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:41.964] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.006] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.006] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.006] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.006] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.064] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.117] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.119] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.123] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.123] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.339] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.359] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.359] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.360] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.360] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.422] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.474] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.476] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.477] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.477] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.541] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.582] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.582] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.583] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.583] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.659] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.699] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.701] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.701] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.789] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.815] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.815] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.815] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.815] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:42.940] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:43.105] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:43.105] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:43.105] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:43.105] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:43.327] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:43.696] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:43.907] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:43.907] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:43.907] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:43.907] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:44.107] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:44.283] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:44.283] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:44.283] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:44.284] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:44.387] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:44.651] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:44.839] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:44.839] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:44.839] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:44.839] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:44.983] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.050] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.132] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.132] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.132] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.132] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.186] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.229] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.265] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.265] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.265] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.339] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.415] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.415] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.474] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.528] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.528] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.569] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.616] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.616] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.708] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.708] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.777] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.867] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.911] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.911] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.911] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:45.966] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.011] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.035] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.042] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.042] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.167] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.167] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.240] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.240] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.409] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.409] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.409] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.448] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.448] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.532] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.593] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.593] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.593] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.593] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.670] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.696] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.696] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.696] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.785] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.803] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.803] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.803] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.803] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.889] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.916] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.916] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.916] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:46.917] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:47.144] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:47.197] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:47.197] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:47.197] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:47.197] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:47.373] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:47.431] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:47.431] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:47.431] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T09:54:47.431] [INFO] D:\IdeaProjects\zlennon\crawler\servlet\douban\book\tagList.js - 保存CZTags表成功
+[2018-08-09T10:18:48.482] [INFO] tags - 爬取地址: https://book.douban.com/tag/
+[2018-08-09T10:18:48.590] [INFO] tags - 403
+[2018-08-09T10:18:48.590] [ERROR] tags - null
+[2018-08-09T10:22:08.697] [INFO] tags - 爬取地址: https://book.douban.com/tag/
+[2018-08-09T10:22:08.943] [INFO] tags - 403
+[2018-08-09T10:22:08.943] [ERROR] tags - null
+[2018-08-09T10:22:28.506] [INFO] tags - 爬取地址: https://book.douban.com/tag/
+[2018-08-09T10:22:28.617] [INFO] tags - 403
+[2018-08-09T10:22:28.617] [ERROR] tags - null
+[2018-08-09T10:24:28.509] [INFO] tags - 爬取地址: https://book.douban.com/tag/
+[2018-08-09T10:24:28.774] [INFO] tags - 403
+[2018-08-09T10:24:28.775] [ERROR] tags - null

@@ -48,7 +48,7 @@ module.exports = function(sequelize,Sequelize){
             underscored : true    //使用驼峰命名法
         }
     );
-    DBTag.sync({ force: false });
+    DBTag.sync({ force: true });
 
     return DBTag;
 }

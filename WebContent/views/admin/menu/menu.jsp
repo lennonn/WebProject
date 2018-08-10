@@ -159,10 +159,9 @@
 
 
         <script type="text/javascript">
-
     //从数据库查询菜单
         $(document).ajaxStart(function () {
-        Pace.restart()
+            Pace.restart()
         })
         $('.pull-right').click(function () {
         $.ajax({

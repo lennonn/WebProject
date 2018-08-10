@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlennon.business.mapper.ArticleMapper">
+  <resultMap id="BaseResultMap" type="com.zlennon.business.model.Article">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="t_id" jdbcType="VARCHAR" property="tId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="scan" jdbcType="INTEGER" property="scan" />
+    <result column="time" jdbcType="DATE" property="time" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from article
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zlennon.business.model.Article">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select seq_article.nextval from dual
+    </selectKey>
+    insert into article (id, t_id, title, 
+      author, scan, time, content
+      )
+    values (#{id,jdbcType=VARCHAR}, #{tId,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{author,jdbcType=VARCHAR}, #{scan,jdbcType=INTEGER}, #{time,jdbcType=DATE}, #{content,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.zlennon.business.model.Article">
+    update article
+    set t_id = #{tId,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      author = #{author,jdbcType=VARCHAR},
+      scan = #{scan,jdbcType=INTEGER},
+      time = #{time,jdbcType=DATE},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, t_id, title, author, scan, time, content
+    from article
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, t_id, title, author, scan, time, content
+    from article
+  </select>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into article
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="list[0].id!=null">
+        id,
+      </if>
+      <if test="list[0].tId!=null">
+        t_id,
+      </if>
+      <if test="list[0].title!=null">
+        title,
+      </if>
+      <if test="list[0].author!=null">
+        author,
+      </if>
+      <if test="list[0].scan!=null">
+        scan,
+      </if>
+      <if test="list[0].time!=null">
+        time,
+      </if>
+      <if test="list[0].content!=null">
+        content,
+      </if>
+    </trim>
+     values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix=" (" suffix=")" suffixOverrides=",">
+        <if test="item.id!=null">
+          #{item.id,jdbcType=VARCHAR},
+        </if>
+        <if test="item.tId!=null">
+          #{item.tId,jdbcType=VARCHAR},
+        </if>
+        <if test="item.title!=null">
+          #{item.title,jdbcType=VARCHAR},
+        </if>
+        <if test="item.author!=null">
+          #{item.author,jdbcType=VARCHAR},
+        </if>
+        <if test="item.scan!=null">
+          #{item.scan,jdbcType=INTEGER},
+        </if>
+        <if test="item.time!=null">
+          #{item.time,jdbcType=DATE},
+        </if>
+        <if test="item.content!=null">
+          #{item.content,jdbcType=LONGVARCHAR},
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    <foreach collection="list" index="index" item="item" separator=";">
+      update article
+      <set>
+        <if test="item.tId!=null">
+          t_id=#{item.tId,jdbcType=VARCHAR},
+        </if>
+        <if test="item.title!=null">
+          title=#{item.title,jdbcType=VARCHAR},
+        </if>
+        <if test="item.author!=null">
+          author=#{item.author,jdbcType=VARCHAR},
+        </if>
+        <if test="item.scan!=null">
+          scan=#{item.scan,jdbcType=INTEGER},
+        </if>
+        <if test="item.time!=null">
+          time=#{item.time,jdbcType=DATE},
+        </if>
+        <if test="item.content!=null">
+          content=#{item.content,jdbcType=LONGVARCHAR},
+        </if>
+      </set>
+      where 
+      id = #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+</mapper>

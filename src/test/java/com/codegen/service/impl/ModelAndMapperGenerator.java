@@ -70,7 +70,7 @@ public class ModelAndMapperGenerator extends CodeGeneratorManager implements Cod
 	        context.setJavaClientGeneratorConfiguration(javaClientGeneratorConfiguration);
 	        
 	        TableConfiguration tableConfiguration = new TableConfiguration(context);
-			tableConfiguration.addProperty("selectAllOrderByClause","id desc");
+			//tableConfiguration.addProperty("selectAllOrderByClause","id desc");
 			tableConfiguration.addProperty("useActualColumnNames","false");
 	        tableConfiguration.setTableName(tableName);
 	        tableConfiguration.setDomainObjectName(modelName);

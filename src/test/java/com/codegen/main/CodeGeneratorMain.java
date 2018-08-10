@@ -13,7 +13,7 @@ public class CodeGeneratorMain {
 	private static final String MODEL_NAME = "ITest";
 	
 	private static final String[] TABLES = {
-			"db_tag", "db_tag_list"
+			"article", "article_type"
 
 	};
 	
