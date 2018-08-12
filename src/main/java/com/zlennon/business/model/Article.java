@@ -14,9 +14,11 @@ public class Article implements Serializable {
 
     private Integer scan;
 
-    private Date time;
+    private Date createTime;
 
     private String content;
+
+    private  String shortContent;
 
     private static final long serialVersionUID = 1L;
 
@@ -61,11 +63,11 @@ public class Article implements Serializable {
     }
 
     public Date getTime() {
-        return time;
+        return createTime;
     }
 
-    public void setTime(Date time) {
-        this.time = time;
+    public void setTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public String getContent() {
@@ -74,6 +76,14 @@ public class Article implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getShortContent() {
+        return shortContent;
+    }
+
+    public void setShortContent(String shortContent) {
+        this.shortContent = shortContent;
     }
 
     @Override
@@ -122,7 +132,7 @@ public class Article implements Serializable {
         sb.append(", title=").append(title);
         sb.append(", author=").append(author);
         sb.append(", scan=").append(scan);
-        sb.append(", time=").append(time);
+        sb.append(", createTime=").append(createTime);
         sb.append(", content=").append(content);
         sb.append("]");
         return sb.toString();

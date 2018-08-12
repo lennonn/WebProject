@@ -31,6 +31,7 @@ public class ArticleTypeServiceImpl extends AbstractService<ArticleType> impleme
     }
 
     public int insert(ArticleType articleType){
+        articleType.setId(getTablePK("ArticleType"));
        return articleTypeMapper.insert(articleType);
     }
 

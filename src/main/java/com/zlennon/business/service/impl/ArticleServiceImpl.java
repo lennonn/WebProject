@@ -7,6 +7,7 @@ import com.zlennon.business.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 /**
  *
@@ -31,6 +32,9 @@ public class ArticleServiceImpl extends AbstractService<Article> implements Arti
     }
 
     public int insert(Article article){
+        article.setId(getTablePK("Article"));
+        article.setTime(new Date());
+        article.setAuthor("zlennon");
        return articleMapper.insert(article);
     }
 

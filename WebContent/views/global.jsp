@@ -78,6 +78,22 @@
 <script src="<%=request.getContextPath()%>/views/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<%=request.getContextPath()%>/views/dist/js/demo.js"></script>
-
+<script src="${pageContext.request.contextPath}/js/zlennon-pub.js"></script>
+<script type="text/javascript">
+    function getRootPath() {
+        //获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp
+        var curWwwPath = window.document.location.href;
+        //获取主机地址之后的目录，如： uimcardprj/share/meun.jsp
+        var pathName = window.document.location.pathname;
+        var pos = curWwwPath.indexOf(pathName);
+        //获取主机地址，如： http://localhost:8083
+        var localhostPaht = curWwwPath.substring(0, pos);
+        //获取带"/"的项目名，如：/uimcardprj
+        var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+        //生产环境 没有项目名称
+        // var projectName = '';
+        return (localhostPaht + projectName);
+    }
+</script>
 </body>
 </html>

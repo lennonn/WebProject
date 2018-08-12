@@ -7,7 +7,7 @@
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="author" jdbcType="VARCHAR" property="author" />
     <result column="scan" jdbcType="INTEGER" property="scan" />
-    <result column="time" jdbcType="DATE" property="time" />
+    <result column="create_time" jdbcType="DATE" property="createTime" />
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
@@ -15,14 +15,11 @@
     where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.zlennon.business.model.Article">
-    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
-      select seq_article.nextval from dual
-    </selectKey>
     insert into article (id, t_id, title, 
-      author, scan, time, content
+      author, scan, create_time, content
       )
     values (#{id,jdbcType=VARCHAR}, #{tId,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
-      #{author,jdbcType=VARCHAR}, #{scan,jdbcType=INTEGER}, #{time,jdbcType=DATE}, #{content,jdbcType=LONGVARCHAR}
+      #{author,jdbcType=VARCHAR}, #{scan,jdbcType=INTEGER}, #{createTime,jdbcType=DATE}, #{content,jdbcType=LONGVARCHAR}
       )
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.zlennon.business.model.Article">
@@ -31,17 +28,17 @@
       title = #{title,jdbcType=VARCHAR},
       author = #{author,jdbcType=VARCHAR},
       scan = #{scan,jdbcType=INTEGER},
-      time = #{time,jdbcType=DATE},
+      create_time = #{createTime,jdbcType=DATE},
       content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select id, t_id, title, author, scan, time, content
+    select id, t_id, title, author, scan, create_time, content
     from article
     where id = #{id,jdbcType=VARCHAR}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
-    select id, t_id, title, author, scan, time, content
+    select id, t_id, title, author, scan, create_time, content,SUBSTR(content FROM 1 FOR 150) as shortContent
     from article
   </select>
   <insert id="insertBatchSelective" parameterType="java.util.List">
@@ -62,8 +59,8 @@
       <if test="list[0].scan!=null">
         scan,
       </if>
-      <if test="list[0].time!=null">
-        time,
+      <if test="list[0].createTime!=null">
+        createTime,
       </if>
       <if test="list[0].content!=null">
         content,
@@ -87,8 +84,8 @@
         <if test="item.scan!=null">
           #{item.scan,jdbcType=INTEGER},
         </if>
-        <if test="item.time!=null">
-          #{item.time,jdbcType=DATE},
+        <if test="item.createTime!=null">
+          #{item.createTime,jdbcType=DATE},
         </if>
         <if test="item.content!=null">
           #{item.content,jdbcType=LONGVARCHAR},
@@ -112,8 +109,8 @@
         <if test="item.scan!=null">
           scan=#{item.scan,jdbcType=INTEGER},
         </if>
-        <if test="item.time!=null">
-          time=#{item.time,jdbcType=DATE},
+        <if test="item.createTime!=null">
+          createTime=#{item.createTime,jdbcType=DATE},
         </if>
         <if test="item.content!=null">
           content=#{item.content,jdbcType=LONGVARCHAR},

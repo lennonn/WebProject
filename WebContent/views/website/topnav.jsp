@@ -33,6 +33,13 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                     <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">我的<span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#" onclick="getWebContent('${pageContext.request.contextPath}/article/website/list')">技术文章</a></li>
+                            </ul>
+                        </li>
                         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                         <li><a href="#">Link</a></li>
                         <li class="dropdown">

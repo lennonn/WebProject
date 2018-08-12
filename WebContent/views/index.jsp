@@ -72,7 +72,9 @@
     <!-- /.content -->
   </div>
   <jsp:include page="/views/copyright.jsp"/>
+<%--
     <jsp:include page="/views/rightSide.jsp"/>
+--%>
 
 <div class="control-sidebar-bg"></div>
 </div>

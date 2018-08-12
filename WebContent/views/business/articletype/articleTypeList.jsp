@@ -1,106 +1,182 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%--
   Created by IntelliJ IDEA.
-  User: QiLang008
-  Date: 2018/8/9
-  Time: 13:40
+  User: Administrator
+  Date: 2018/7/28
+  Time: 15:28
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>文章类型</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/table/bootstrap-table.css">
-    <script src="${pageContext.request.contextPath}/js/bootstrap/table/bootstrap-table.js"></script>
 </head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="articleType"
+                   data-classes="table table-hover "
+                   data-search="true"
+                   data-show-refresh="true"
+                   data-show-toggle="true"
+                   data-show-columns="true"
+                   data-toolbar="#toolbar"></table>
+            <div id="toolbar">
+                <div class="btn-group">
+                    <button class="btn btn-block btn-info" data-toggle="modal" data-target="#modal-default">
+                        <i class="fa fa-plus-square">添加</i>
+                    </button>
+                </div>
+            </div>
+            <div class="modal fade" id="modal-default">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">添加文章类型</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="typeName" class="col-sm-2 control-label">类型名称</label>
 
-<div id="tableDiv"></div>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="typeName" id="typeName"
+                                               placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="typeDesc" class="col-sm-2 control-label">类型描述</label>
+
+                                    <div class="col-sm-10">
+                                    <textarea class="form-control" rows="3" name="typeDesc" id="typeDesc"
+                                              placeholder="Enter ..."></textarea>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-primary" onclick="_save();">保存提交</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+
+        </div>
+    </div>
+<script src="${pageContext.request.contextPath}/js/bootstrap/table/bootstrap-table.js"></script>
+
 <script type="text/javascript">
-    $(function() {
+    $(function () {
 
         //1.初始化Table
         var oTable = new TableInit();
         oTable.Init();
 
-        //2.初始化Button的点击事件
-        var oButtonInit = new ButtonInit();
-        oButtonInit.Init();
-
     });
 
-    var TableInit = function() {
+
+    var TableInit = function () {
         var oTableInit = new Object();
         //初始化Table
-        oTableInit.Init = function() {
-            $('#tableDiv').bootstrapTable({
-                //url: '../static/data/standingData.json',         //请求后台的URL（*）
-                method : 'get', //请求方式（*）
-                toolbar : '#toolbar', //工具按钮用哪个容器
-                striped : true, //是否显示行间隔色
-                cache : false, //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
-                pagination : true, //是否显示分页（*）
-                sortable : false, //是否启用排序
-                sortOrder : "asc", //排序方式
-                queryParams : oTableInit.queryParams,//传递参数（*）
-                sidePagination : "server", //分页方式：client客户端分页，server服务端分页（*）
-                pageNumber : 1, //初始化加载第一页，默认第一页
-                pageSize : 15, //每页的记录行数（*）
-                pageList : [ 15, 30, 45], //可供选择的每页的行数（*）
-                search : true, //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
-                strictSearch : true,
-                showRefresh : false, //是否显示刷新按钮
-                showHeader : true,
-                showExport : true,
-                clickToSelect : true, //是否启用点击选中行
-// 					height : 500, //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
-                uniqueId : "ID", //每一行的唯一标识，一般为主键列
-                detailView : false, //是否显示父子表
-                columns : [ {
-                    checkbox : true
+        oTableInit.Init = function () {
+            $('#articleType').bootstrapTable({
+                url: '${pageContext.request.contextPath}/articleType/initTable',         //请求后台的URL（*）
+                striped: true,  //表格显示条纹
+                pagination: true, //启动分页
+                toolbar: "#toolbar",                //工具按钮用哪个容器
+                pageSize: 10,  //每页显示的记录数
+                pageNumber: 1, //当前第几页
+                pageList: [ 10, 15, 20, 25],  //记录数可选列表
+                search: true,  //是否启用查询
+                showColumns: true,  //显示下拉框勾选要显示的列
+                showRefresh: true,  //显示刷新按钮
+                sidePagination: "server", //表示服务端请求
+                //设置为undefined可以获取pageNumber，pageSize，searchText，sortName，sortOrder
+                //设置为limit可以获取limit, offset, search, sort, order
+                queryParamsType: "undefined",
+                queryParams: function queryParams(params) {   //设置查询参数
+                    var param = {
+                        pageNumber: params.pageNumber,
+                        pageSize: params.pageSize,
+                        queryString: $("#orderNum").val()
+                    };
+                    return param;
+                },
+                columns: [{
+                    checkbox: true
                 }, {
-                    field : "causeName",
-                    title : "原因名称",
-                    align : "center",
-                    valign : "middle",
+                    field: 'typeName',
+                    title: '文章类型名称',
+                    sortable: true
                 }, {
-                    field : "detail",
-                    title : "详细原因",
-                    align : "center",
+                    field: 'typeDesc',
+                    title: '类型描述'
                 }, {
-                    field : "state",
-                    title : "状态",
-                    align : "center",
-                    valign : "middle",
-                    formatter : "displayState"
-                }, ],
-                url : "/D.perspclre/getCauseListByPage.action"
+                    field: 'button',
+                    title: '操作',
+                    events: "operateEvents",
+                    formatter: operateFormatter
+                }],
+                onLoadSuccess: function () {  //加载成功时执行
+                    // alert("加载成功");
+                },
+                onLoadError: function () {  //加载失败时执行
+                    // alert("加载数据失败");
+                }
             });
-        };
-
-        //得到查询的参数
-        oTableInit.queryParams = function(params) {
-            var temp = { //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
-                limit : params.limit, //页面大小
-                offset : params.offset, //页码
-                search : params.search,
-                departmentname : $("#txt_search_departmentname").val(),
-                statu : $("#txt_search_statu").val()
-            };
-            return temp;
         };
         return oTableInit;
     };
 
-    var ButtonInit = function() {
-        var oInit = new Object();
-        var postdata = {};
+    function operateFormatter(value, row, index) {
+        return [
+            '<button type="button" class="edit btn btn-info btn-xs" > <i class="fa fa-edit">编辑</i></button>',
+            '<button type="button" class="delete btn btn-info btn-xs" > <i class="fa  fa-remove">删除</i></button>'
+        ].join('');
+    }
 
-        oInit.Init = function() {
-
-        };
-
-        return oInit;
+    window.operateEvents = {
+        'click .edit': function (e, value, row, index) {
+            debugger;
+            alert(row);
+        },
+        'click .delete': function (e, value, row, index) {
+            $("#editModal").modal('show');
+            alert(index);
+        }
     };
+
+    function _save() {
+        var _data = $(".form-horizontal").serialize();
+        $.ajax({
+            url: "${pageContext.request.contextPath}/articleType/save",
+            type: "post",
+            data: _data,
+            dataType: "json",
+            success: function (data) {
+                alert(data.msg);
+                $("#modal-default").modal('toggle');
+               // $("#articleType").bootstrapTable('refresh');//刷新ds_table的数据
+               getContent("${pageContext.request.contextPath}/articleType/list");
+                //
+               // $('body').removeClass('modal-open');
+                $('.modal-backdrop').remove();
+            }
+        });
+    }
 </script>
 </body>
 </html>

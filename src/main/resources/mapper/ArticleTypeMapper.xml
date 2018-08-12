@@ -11,9 +11,6 @@
     where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.zlennon.business.model.ArticleType">
-    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
-      select seq_article_type.nextval from dual
-    </selectKey>
     insert into article_type (id, type_name, type_desc
       )
     values (#{id,jdbcType=VARCHAR}, #{typeName,jdbcType=VARCHAR}, #{typeDesc,jdbcType=VARCHAR}
