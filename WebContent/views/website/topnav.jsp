@@ -23,7 +23,7 @@
         <nav class="navbar navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a href="${pageContext.request.contextPath}/views/index2.html" class="navbar-brand"><b>Admin</b>LTE</a>
+                    <a href="${pageContext.request.contextPath}/views/index2.html" class="navbar-brand"><b>超神吧</b></a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                             data-target="#navbar-collapse">
                         <i class="fa fa-bars"></i>

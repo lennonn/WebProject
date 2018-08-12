@@ -30,10 +30,8 @@
     <!-- /.box-header -->
     <div class="box-body">
         <c:forEach items="${pageInfo.list}" var="item" varStatus="stat">
-            <dl class="dl-horizontal">
+            <dl class="dl-description">
                 <h4><p class="text-aqua">${item.title}</p></h4>
-                <dt><img src="${pageContext.request.contextPath}/images/books/book.jpg"
-                         width="160" height="100" alt="First slide"></dt>
                 <dd>${item.shortContent}...</dd>
                     <%--  <span class="pull-left">hahha</span>--%>
                 <span class="pull-right" style="color: #ff0000; font-size: 15px">
