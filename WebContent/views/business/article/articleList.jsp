@@ -52,7 +52,7 @@
                                         <option value="${at.id}">${at.typeName}</option>
                                     </c:forEach>
                                 </select>
-
+                            <input class="form-control" id="title" name="title" placeholder="请输入文章标题" style="margin-bottom: 10px"/>
                             <textarea id="content" name="content" rows="10" cols="80" ></textarea>
                         </form>
 
@@ -209,10 +209,11 @@
     function _save() {
         var tId =$("#tId option:selected").val();
         var content = CKEDITOR.instances.content.getData();
+        var title =$("#title").val();
         $.ajax({
             url:"${pageContext.request.contextPath}/article/save",
             type: "post",
-            data: {"tId":tId,"content":content},
+            data: {"tId":tId,"title":title,"content":content},
             dataType: "json",
             success: function (data) {
                 alert(data.msg);

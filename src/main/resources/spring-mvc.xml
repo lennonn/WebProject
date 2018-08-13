@@ -30,7 +30,12 @@
         <!--注释掉的下方代码是指引freemarker的基本信息的配置位置，因为我已经将配置信息移到了applicationContext文件下，所以这里就没必要存在了，不注释也不会有问题的 -->
         <!--<property name="location" value="classpath:/WEB-INF/config/freemarker.properties" />-->
     </bean>
- 
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8" />
+        <property name="maxUploadSize" value="10485760000" />
+        <property name="maxInMemorySize" value="40960" />
+    </bean>
 <!-- html视图解析器 必须先配置freemarkerConfig,注意html是没有prefix前缀属性的-->  
    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">    
        <property name="templateLoaderPath">    

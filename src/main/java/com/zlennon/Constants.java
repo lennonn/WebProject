@@ -61,4 +61,9 @@ public class Constants {
 	 * 缺省长日期格式
 	 */
 	public static final String DEFAULT_LONG_DATE_FMT = "yyyy-MM-dd";
+
+	/**
+	 * ckeditor
+	 */
+	public static final  String UPLOAD_PATH="/ckeditor";
 }
