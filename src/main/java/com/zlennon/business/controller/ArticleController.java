@@ -84,6 +84,7 @@ public class ArticleController {
             resultMap.put("msg", "操作成功");
         } catch (Exception e) {
             logger.info(e.getMessage());
+            e.printStackTrace();
             resultMap.put("msg", "操作失败");
         }
         return resultMap;

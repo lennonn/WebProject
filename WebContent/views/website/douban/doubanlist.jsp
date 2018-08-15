@@ -8,6 +8,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<jsp:include page="/views/global.jsp"></jsp:include>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,38 +22,65 @@
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body class="hold-transition skin-blue layout-top-nav">
-<!-- .box -->
-<div class="box box-solid">
-    <div class="box-header with-border">
-        <i class="fa fa-text-width"></i>
+<div class="wrapper">
 
-        <h3 class="box-title">豆瓣书籍</h3>
-    </div>
-    <!-- /.box-header -->
-    <div class="box-body">
-        <c:forEach items="${pageInfo.list}" var="item" varStatus="stat">
-            <dl class="dl-horizontal">
-                <h4><p class="text-aqua">${item.name}</p></h4>
-                <dt><img src="${pageContext.request.contextPath}/images/douban/${item.pic}"
-                         width="120" height="161" alt="First slide"></dt>
-                <dd>${item.desc}...</dd>
-                    <%--  <span class="pull-left">hahha</span>--%>
-                <span class="pull-right" style="color: #ff0000; font-size: 15px">
+
+    <jsp:include page="/views/website/topnav.jsp"/>
+
+    <!-- Full Width Column -->
+    <div class="content-wrapper">
+        <div class="container">
+            <section class="content">
+                <jsp:include page="/views/website/tips.jsp"></jsp:include>
+                <div class="row">
+                    <div class="col-md-9" id="leftContent">
+                        <div class="box box-solid">
+                            <div class="box-header with-border">
+                                <i class="fa fa-text-width"></i>
+
+                                <h3 class="box-title">豆瓣书籍</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <c:forEach items="${pageInfo.list}" var="item" varStatus="stat">
+                                    <dl class="dl-horizontal">
+                                        <h4><p class="text-aqua">${item.name}</p></h4>
+                                        <dt><img src="${pageContext.request.contextPath}/images/douban/${item.pic}"
+                                                 width="120" height="161" alt="First slide"></dt>
+                                        <dd>${item.desc}...</dd>
+                                            <%--  <span class="pull-left">hahha</span>--%>
+                                        <span class="pull-right" style="color: #ff0000; font-size: 15px">
                                             <a href="${item.url}" target="_blank">豆瓣源网址>></a>
                                         </span>
-                <br/>
-                <c:if test="${!stat.last}">
-                    <hr/>
-                </c:if>
-            </dl>
+                                        <br/>
+                                        <c:if test="${!stat.last}">
+                                            <hr/>
+                                        </c:if>
+                                    </dl>
 
-        </c:forEach>
+                                </c:forEach>
+                            </div>
+                            <!-- /.box-body -->
+
+                            <jsp:include page="../page.jsp"/>
+                        </div>
+                    </div>
+                    <jsp:include page="/views/website/right.jsp"/>
+                </div>
+                <!-- /.box -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.container -->
+
     </div>
-    <!-- /.box-body -->
+    <!-- /.content-wrapper -->
 
-    <jsp:include page="../page.jsp"/>
+<jsp:include page="/views/copyright.jsp"></jsp:include>
 </div>
-<!-- /.box -->
+<script type="text/javascript">
+
+</script>
 </body>
 </html>
 

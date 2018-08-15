@@ -24,18 +24,6 @@ public class BookController {
     BookService bookService;
 
 
-    @RequestMapping("/main")
-    public String main(Model model,@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "5") Integer size) {
-        PageHelper.startPage(page, size);
-        List<Book> list = bookService.selectAll();
-        PageInfo pageInfo = new PageInfo(list);
-        //model.addAttribute("newsList",list);
-        model.addAttribute("pageInfo",pageInfo);
-        model.addAttribute("pageUrl","/website/book/main");
-
-        return "/website/main";
-    }
-
     @RequestMapping("showDetail")
     public String showDetail(Model model, @RequestParam String id) {
         Book book= (Book) bookService.selectByPrimaryKey(id);

@@ -37,7 +37,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">我的<span
                                     class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#" onclick="getWebContent('${pageContext.request.contextPath}/article/website/list')">技术文章</a></li>
+                                <li><a href="${pageContext.request.contextPath}/article/website/list">技术文章</a></li>
                             </ul>
                         </li>
                         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
@@ -47,7 +47,7 @@
                                     class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="${pageContext.request.contextPath}/website/index">八一中文网</a></li>
-                                <li><a href="#" onclick="getWebContent('${pageContext.request.contextPath}/website/dbTagList/statistics');">豆瓣书籍</a></li>
+                                <li><a href="${pageContext.request.contextPath}/website/dbTagList/statistics">豆瓣书籍</a></li>
                                 <li><a href="#">Something else here</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#">Separated link</a></li>
