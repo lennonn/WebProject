@@ -8,9 +8,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--
-<jsp:include page="/views/global.jsp"></jsp:include>
---%>
+
+<%--<jsp:include page="/views/global.jsp"></jsp:include>--%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>文章类型</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/table/bootstrap-table.css">
+
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body>
@@ -53,7 +54,7 @@
                                     </c:forEach>
                                 </select>
                             <input class="form-control" id="title" name="title" placeholder="请输入文章标题" style="margin-bottom: 10px"/>
-                            <textarea id="content" name="content" rows="10" cols="80" ></textarea>
+                            <textarea id="editor1" name="editor1" rows="10" cols="80" ></textarea>
                         </form>
 
                     </div>
@@ -75,10 +76,10 @@
 
 <script type="text/javascript">
     $(function () {
-        $(function () {
-            // Replace the <textarea id="editor1"> with a CKEditor
-            // instance, using default configuration.
-            CKEDITOR.replace( 'content', {
+        CKEDITOR.replace('editor1',{
+            // Define the toolbar: http://docs.ckeditor.com/ckeditor4/docs/#!/guide/dev_toolbar
+            // The standard preset from CDN which we used as a base provides more features than we need.
+            // Also by default it comes with a 2-line toolbar. Here we put all buttons in a single row.
             toolbar: [
                 { name: 'clipboard', items: [ 'Undo', 'Redo' ] },
                 { name: 'styles', items: [ 'Styles', 'Format' ] },
@@ -90,50 +91,51 @@
                 { name: 'editing', items: [ 'Scayt' ] }
             ],
 
-                // Since we define all configuration options here, let's instruct CKEditor to not load config.js which it does by default.
-                // One HTTP request less will result in a faster startup time.
-                // For more information check http://docs.ckeditor.com/ckeditor4/docs/#!/api/CKEDITOR.config-cfg-customConfig
-                customConfig: '',
+            // Since we define all configuration options here, let's instruct CKEditor to not load config.js which it does by default.
+            // One HTTP request less will result in a faster startup time.
+            // For more information check http://docs.ckeditor.com/ckeditor4/docs/#!/api/CKEDITOR.config-cfg-customConfig
+            customConfig: '',
 
-                // Enabling extra plugins, available in the standard-all preset: http://ckeditor.com/presets-all
-                extraPlugins: 'autoembed,embedsemantic,image2,uploadimage,uploadfile',
+            // Enabling extra plugins, available in the standard-all preset: http://ckeditor.com/presets-all
+            extraPlugins: 'autoembed,embedsemantic,image2,uploadimage,uploadfile',
 
-                /*********************** File management support ***********************/
-                // In order to turn on support for file uploads, CKEditor has to be configured to use some server side
-                // solution with file upload/management capabilities, like for example CKFinder.
-                // For more information see http://docs.ckeditor.com/ckeditor4/docs/#!/guide/dev_ckfinder_integration
+            /*********************** File management support ***********************/
+            // In order to turn on support for file uploads, CKEditor has to be configured to use some server side
+            // solution with file upload/management capabilities, like for example CKFinder.
+            // For more information see http://docs.ckeditor.com/ckeditor4/docs/#!/guide/dev_ckfinder_integration
 
-                // Uncomment and correct these lines after you setup your local CKFinder instance.
-                // filebrowserBrowseUrl: 'http://example.com/ckfinder/ckfinder.html',
-                // filebrowserUploadUrl: 'http://example.com/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-                /*********************** File management support ***********************/
-                filebrowserUploadUrl: '/zlennon/ckeditorUpload?type=File',
-                // Remove the default image plugin because image2, which offers captions for images, was enabled above.
-                removePlugins: 'image',
-                disallowedContent:'img{width,height};img[width,height]',
-                // Make the editing area bigger than default.
-                height: 600,
+            // Uncomment and correct these lines after you setup your local CKFinder instance.
+            // filebrowserBrowseUrl: 'http://example.com/ckfinder/ckfinder.html',
+            // filebrowserUploadUrl: 'http://example.com/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+            /*********************** File management support ***********************/
 
-                // An array of stylesheets to style the WYSIWYG area.
-                // Note: it is recommended to keep your own styles in a separate file in order to make future updates painless.
-                contentsCss: [ 'https://cdn.ckeditor.com/4.8.0/standard-all/contents.css', '${pageContext.request.contextPath}/css/ckeditor/mystyles.css' ],
+            // Remove the default image plugin because image2, which offers captions for images, was enabled above.
+            removePlugins: 'image',
 
-                // This is optional, but will let us define multiple different styles for multiple editors using the same CSS file.
-                bodyClass: 'article-editor',
+            // Make the editing area bigger than default.
+            height: 200,
 
-                // Reduce the list of block elements listed in the Format dropdown to the most commonly used.
-                format_tags: 'p;h1;h2;h3;pre',
+            // An array of stylesheets to style the WYSIWYG area.
+            // Note: it is recommended to keep your own styles in a separate file in order to make future updates painless.
+            contentsCss: [ 'https://cdn.ckeditor.com/4.8.0/standard-all/contents.css', '${pageContext.request.contextPath}/css/ckeditor/mystyles.css' ],
+           filebrowserUploadUrl:'/zlennon/ckeditorUpload?type=File',
 
-                // Simplify the Image and Link dialog windows. The "Advanced" tab is not needed in most cases.
-                removeDialogTabs: 'image:advanced;link:advanced',
+            // This is optional, but will let us define multiple different styles for multiple editors using the same CSS file.
+            bodyClass: 'article-editor',
 
-                // Define the list of styles which should be available in the Styles dropdown list.
-                // If the "class" attribute is used to style an element, make sure to define the style for the class in "mystyles.css"
-                // (and on your website so that it rendered in the same way).
-                // Note: by default CKEditor looks for styles.js file. Defining stylesSet inline (as below) stops CKEditor from loading
-                // that file, which means one HTTP request less (and a faster startup).
-                // For more information see http://docs.ckeditor.com/ckeditor4/docs/#!/guide/dev_styles
-                stylesSet: [
+            // Reduce the list of block elements listed in the Format dropdown to the most commonly used.
+            format_tags: 'p;h1;h2;h3;pre',
+
+            // Simplify the Image and Link dialog windows. The "Advanced" tab is not needed in most cases.
+            removeDialogTabs: 'image:advanced;link:advanced',
+
+            // Define the list of styles which should be available in the Styles dropdown list.
+            // If the "class" attribute is used to style an element, make sure to define the style for the class in "mystyles.css"
+            // (and on your website so that it rendered in the same way).
+            // Note: by default CKEditor looks for styles.js file. Defining stylesSet inline (as below) stops CKEditor from loading
+            // that file, which means one HTTP request less (and a faster startup).
+            // For more information see http://docs.ckeditor.com/ckeditor4/docs/#!/guide/dev_styles
+            stylesSet: [
                 /* Inline Styles */
                 { name: 'Marker',			element: 'span', attributes: { 'class': 'marker' } },
                 { name: 'Cited Work',		element: 'cite' },
@@ -175,10 +177,7 @@
                 { name: '720p', type: 'widget', widget: 'embedSemantic', attributes: { 'class': 'embed-720p' } },
                 { name: '1080p', type: 'widget', widget: 'embedSemantic', attributes: { 'class': 'embed-1080p' } }
             ]
-        } );
-
-        })
-        //1.初始化Table
+        } );        //1.初始化Table
         var oTable = new TableInit();
         oTable.Init();
 
@@ -224,7 +223,8 @@
                 }, {
                     field: 'shortContent',
                     title: '文章类容',
-                    sortable: true
+                    sortable: true,
+                    formatter: formatContent
                 }, {
                     field: 'scan',
                     title: '阅读数',
@@ -250,6 +250,13 @@
         return oTableInit;
     };
 
+    formatContent
+
+    function formatContent(value, row, index) {
+        debugger;
+        if(row.shortContent.indexOf("<img")!=-1)return "内容过大无法显示，请查看详细";
+
+    }
     function operateFormatter(value, row, index) {
         return [
             '<button type="button" class="edit btn btn-info btn-xs" > <i class="fa fa-edit">编辑</i></button>',
@@ -304,7 +311,7 @@
 
     function _save() {
         var tId =$("#tId option:selected").val();
-        var content = CKEDITOR.instances.content.getData();
+        var content = CKEDITOR.instances.editor1.getData();
         var title =$("#title").val();
         $.ajax({
             url:"${pageContext.request.contextPath}/article/save",
@@ -315,7 +322,7 @@
                 alert(data.msg);
                 $("#modal-default").modal('toggle');
                 // $("#articleType").bootstrapTable('refresh');//刷新ds_table的数据
-                getContent("${pageContext.request.contextPath}/article/list");
+                window.location.href="${pageContext.request.contextPath}/article/list";
                 // $('body').removeClass('modal-open');
                 $('.modal-backdrop').remove();
             }

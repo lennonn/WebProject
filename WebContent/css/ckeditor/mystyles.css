@@ -11,6 +11,9 @@ body.article-editor h1,
 body.article-editor h2,
 body.article-editor h3,
 body.article-editor h4,
+body.article-editor img{
+    max-width: 300px;
+}
 body.article-editor h5 {
     font-weight: 600;
     letter-spacing: inherit;
