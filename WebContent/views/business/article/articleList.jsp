@@ -110,7 +110,7 @@
                 filebrowserUploadUrl: '/zlennon/ckeditorUpload?type=File',
                 // Remove the default image plugin because image2, which offers captions for images, was enabled above.
                 removePlugins: 'image',
-
+                disallowedContent:'img{width,height};img[width,height]',
                 // Make the editing area bigger than default.
                 height: 600,
 
