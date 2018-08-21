@@ -1,3 +1,4 @@
+<%@ page import="java.util.Date" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%--
@@ -20,13 +21,9 @@
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body class="hold-transition skin-blue layout-top-nav">
 <div class="callout callout-info">
-    <h4>Tip!</h4>
-
-    <p>Add the layout-top-nav class to the body tag to get this layout. This feature can also be used
-        with a
-        sidebar! So use this class if you want to remove the custom dropdown menus from the navbar and
-        use regular
-        links instead.</p>
+    <div class="row">
+        不管路走了多远，错了就要重新返回。
+    </div>
 </div>
 
 </body>

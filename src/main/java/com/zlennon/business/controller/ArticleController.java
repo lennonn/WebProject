@@ -73,14 +73,23 @@ public class ArticleController {
         PageInfo pageInfo = new PageInfo(list);
         return  "{\"total\":" + pageInfo.getTotal() + ",\"rows\":" + JSONObject.toJSON(pageInfo.getList()) + "}";
     }
-
+    @RequestMapping("delete")
+    @ResponseBody
+    public String  delete(@RequestParam String id){
+        articleService.deleteByPrimaryKey(id);
+        return  "";
+    }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Map<String,Object> save(@Valid Article article) {
         Map<String, Object> resultMap = new HashMap<String, Object>();
         try {
-            articleService.insert(article);
+            if(article.getId()==null) {
+                articleService.insert(article);
+            }else{
+                articleService.updateByPrimaryKey(article);
+            }
             resultMap.put("msg", "操作成功");
         } catch (Exception e) {
             logger.info(e.getMessage());

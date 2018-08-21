@@ -48,7 +48,10 @@
                     </div>
                     <div class="modal-body">
                         <form class="form-horizontal">
-                                <select class="form-control" id="tId" name="tId" style="margin-bottom: 10px">
+                            <input type="hidden" name="id" id="_id" >
+                            <input type="hidden" name="scan" id="scan" >
+
+                            <select class="form-control" id="tId" name="tId" style="margin-bottom: 10px">
                                     <c:forEach items="${articleType}" var="at">
                                         <option value="${at.id}">${at.typeName}</option>
                                     </c:forEach>
@@ -76,7 +79,7 @@
 
 <script type="text/javascript">
     $(function () {
-        CKEDITOR.replace('editor1',{
+         CKEDITOR.replace('editor1',{
             // Define the toolbar: http://docs.ckeditor.com/ckeditor4/docs/#!/guide/dev_toolbar
             // The standard preset from CDN which we used as a base provides more features than we need.
             // Also by default it comes with a 2-line toolbar. Here we put all buttons in a single row.
@@ -117,7 +120,7 @@
 
             // An array of stylesheets to style the WYSIWYG area.
             // Note: it is recommended to keep your own styles in a separate file in order to make future updates painless.
-            contentsCss: [ 'https://cdn.ckeditor.com/4.8.0/standard-all/contents.css', '${pageContext.request.contextPath}/css/ckeditor/mystyles.css' ],
+            contentsCss: ['${pageContext.request.contextPath}/css/ckeditor/mystyles.css'],
            filebrowserUploadUrl:'/zlennon/ckeditorUpload?type=File',
 
             // This is optional, but will let us define multiple different styles for multiple editors using the same CSS file.
@@ -267,11 +270,25 @@
     window.operateEvents = {
         'click .edit': function (e, value, row, index) {
             debugger;
-            alert(row);
+
+
+            $("#tId").val(row.tId);
+            $("#title").val(row.title);
+            $("#_id").val(row.id);
+            $("#scan").val(row.scan);
+            CKEDITOR.instances.editor1.setData(row.content);
+            $("#modal-default").modal('show');
         },
         'click .delete': function (e, value, row, index) {
-            $("#editModal").modal('show');
-            alert(index);
+
+            $.ajax({
+                url:"${pageContext.request.contextPath}/article/delete?id="+row.id,
+                type: "post",
+                dataType: "json",
+                success: function (res) {
+                     $("#articleType").bootstrapTable('refresh');//刷新ds_table的数据
+                }
+            });
         }
     };
 
@@ -313,16 +330,23 @@
         var tId =$("#tId option:selected").val();
         var content = CKEDITOR.instances.editor1.getData();
         var title =$("#title").val();
+        var data= {"tId":tId,"title":title,"content":content};
+        var id =$("#_id").val();
+        var scan =$("#scan").val();
+        if(id!=""){
+            data.id=id;
+            data.scan =scan;
+        }
         $.ajax({
             url:"${pageContext.request.contextPath}/article/save",
             type: "post",
-            data: {"tId":tId,"title":title,"content":content},
+            data:data,
             dataType: "json",
-            success: function (data) {
-                alert(data.msg);
+            success: function (res) {
+                alert(res.msg);
                 $("#modal-default").modal('toggle');
-                // $("#articleType").bootstrapTable('refresh');//刷新ds_table的数据
-                window.location.href="${pageContext.request.contextPath}/article/list";
+                 $("#articleType").bootstrapTable('refresh');//刷新ds_table的数据
+                //window.location.href="${pageContext.request.contextPath}/article/list";
                 // $('body').removeClass('modal-open');
                 $('.modal-backdrop').remove();
             }
