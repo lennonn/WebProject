@@ -68,6 +68,21 @@
                             </div>
                             <!-- /.box-body -->
                         </div>
+
+
+                        <div class="box box-solid">
+                 <div class="box-header with-border">
+                     <i class="fa fa-text-width"></i>
+
+                     <h3 class="box-title">文章类型</h3>
+                 </div>
+                 <!-- /.box-header -->
+                 <div class="box-body" id="articleType">
+
+
+                 </div>
+                 <!-- /.box-body -->
+             </div>
                         <div class="box box-solid">
                             <div class="box-header with-border">
                                 <h3 class="box-title">Collapsible Accordion</h3>
@@ -155,5 +170,25 @@
                     </div>
 
 </body>
+<script type="text/javascript">
+    $(function(){
+        $.ajax({
+            url:"${pageContext.request.contextPath}/right/load",
+            type:"post",
+            success:function (res) {
+                setArticleType(res);
+            }
+        });
+    });
+    function setArticleType(data){
+            var html="";
+            var atList =data.atList;
+            debugger;
+            for(var at in atList){
+                html+='<p class="text-green"><a href="/article/findByTypeId?typeId='+atList[at].id+'">'+atList[at].typeName+'</a></p>';
+            }
+            $("#articleType").append(html);
+    }
+</script>
 </html>
 

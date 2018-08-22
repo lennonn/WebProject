@@ -22,8 +22,7 @@
 <body class="hold-transition skin-blue layout-top-nav">
 <div class="callout callout-info">
     <div class="row">
-        不管路走了多远，错了就要重新返回。
-    </div>
+        我需要三件东西：爱情友谊和图书。然而这三者之间何其相通！炽热的爱情可以充实图书的内容，图书又是人们最忠实的朋友。 —— 蒙田    </div>
 </div>
 
 </body>
