@@ -39,5 +39,6 @@ CKEDITOR.editorConfig = function( config ) {
     config.filebrowserUploadUrl = '/zlennon/ckeditorUpload?type=File';
     config.filebrowserImageUploadUrl = "/zlennon/ckeditorUpload?type=image";
     config.filebrowserImageBrowseUrl = "/zlennon/browerServer?type=image";
+    config.extraPlugins = 'codesnippet';
 
 };
