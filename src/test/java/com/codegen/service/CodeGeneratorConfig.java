@@ -21,7 +21,8 @@ public class CodeGeneratorConfig {
 	protected static String RESOURCES_PATH;
 	// 模板存放位置
 	protected static String TEMPLATE_FILE_PATH;
-	
+
+	protected static String MODULES;
 	// 项目基础包
 	protected static String BASE_PACKAGE;
 	// 项目 Model 所在包

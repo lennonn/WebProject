@@ -25,7 +25,7 @@ public class ControllerGenerator extends CodeGeneratorManager implements CodeGen
 		
 		Map<String, Object> data = getDataMapInit(tableName, modelName, sign, modelNameUpperCamel); 
 		try {
-			File controllerFile = new File(PROJECT_PATH + JAVA_PATH + PACKAGE_PATH_CONTROLLER +"/controller/"+ modelNameUpperCamel + "Controller.java");
+			File controllerFile = new File(PROJECT_PATH + JAVA_PATH + PACKAGE_PATH_CONTROLLER +MODULES+"/controller/"+ modelNameUpperCamel + "Controller.java");
 	        if (!controllerFile.getParentFile().exists()) {
 	        	controllerFile.getParentFile().mkdirs();
 	        }
@@ -49,6 +49,7 @@ public class ControllerGenerator extends CodeGeneratorManager implements CodeGen
 		data.put("date", DATE);
         data.put("author", AUTHOR);
         data.put("sign", sign);
+        data.put("modules",MODULES);
         data.put("baseRequestMapping", StringUtils.toLowerCaseFirstOne(modelNameUpperCamel));
         data.put("modelNameUpperCamel", modelNameUpperCamel);
         data.put("modelNameLowerCamel", CaseFormat.UPPER_CAMEL.to(CaseFormat.LOWER_CAMEL, modelNameUpperCamel));

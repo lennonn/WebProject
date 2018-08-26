@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlennon.admin.mapper.SysRoleMapper">
+  <resultMap id="BaseResultMap" type="com.zlennon.model.SysRole">
+    <id column="ROLE_ID" jdbcType="VARCHAR" property="roleId" />
+    <result column="ROLE_NAME" jdbcType="VARCHAR" property="roleName" />
+    <result column="ROLE_DESC" jdbcType="VARCHAR" property="roleDesc" />
+    <result column="ROLE" jdbcType="VARCHAR" property="role" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from sys_role
+    where ROLE_ID = #{roleId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zlennon.model.SysRole">
+    insert into sys_role (ROLE_ID, ROLE_NAME, ROLE_DESC, 
+      ROLE)
+    values (#{roleId,jdbcType=VARCHAR}, #{roleName,jdbcType=VARCHAR}, #{roleDesc,jdbcType=VARCHAR}, 
+      #{role,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.zlennon.model.SysRole">
+    update sys_role
+    set ROLE_NAME = #{roleName,jdbcType=VARCHAR},
+      ROLE_DESC = #{roleDesc,jdbcType=VARCHAR},
+      ROLE = #{role,jdbcType=VARCHAR}
+    where ROLE_ID = #{roleId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select ROLE_ID, ROLE_NAME, ROLE_DESC, ROLE
+    from sys_role
+    where ROLE_ID = #{roleId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ROLE_ID, ROLE_NAME, ROLE_DESC, ROLE
+    from sys_role
+  </select>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into sys_role
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="list[0].roleId!=null">
+        ROLE_ID,
+      </if>
+      <if test="list[0].roleName!=null">
+        ROLE_NAME,
+      </if>
+      <if test="list[0].roleDesc!=null">
+        ROLE_DESC,
+      </if>
+      <if test="list[0].role!=null">
+        ROLE,
+      </if>
+    </trim>
+     values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix=" (" suffix=")" suffixOverrides=",">
+        <if test="item.roleId!=null">
+          #{item.roleId,jdbcType=VARCHAR},
+        </if>
+        <if test="item.roleName!=null">
+          #{item.roleName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.roleDesc!=null">
+          #{item.roleDesc,jdbcType=VARCHAR},
+        </if>
+        <if test="item.role!=null">
+          #{item.role,jdbcType=VARCHAR},
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    <foreach collection="list" index="index" item="item" separator=";">
+      update sys_role
+      <set>
+        <if test="item.roleName!=null">
+          ROLE_NAME=#{item.roleName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.roleDesc!=null">
+          ROLE_DESC=#{item.roleDesc,jdbcType=VARCHAR},
+        </if>
+        <if test="item.role!=null">
+          ROLE=#{item.role,jdbcType=VARCHAR},
+        </if>
+      </set>
+      where 
+      ROLE_ID = #{item.roleId,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+</mapper>

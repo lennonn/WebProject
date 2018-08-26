@@ -1,6 +1,6 @@
-package ${basePackage}.service;
-import ${basePackage}.model.${modelNameUpperCamel};
-import ${basePackage}.Service;
+package ${basePackage}.${modules}service;
+import ${basePackage}.model.${modules}${modelNameUpperCamel};
+import com.zlennon.Service;
 import java.util.List;
 /**
  *

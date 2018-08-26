@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlennon.admin.mapper.SysUserMapper">
+  <resultMap id="BaseResultMap" type="com.zlennon.admin.model.SysUser">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="PASSWD" jdbcType="VARCHAR" property="passwd" />
+    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
+    <result column="SEX" jdbcType="VARCHAR" property="sex" />
+    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+    <result column="MARK" jdbcType="VARCHAR" property="mark" />
+    <result column="URANK" jdbcType="VARCHAR" property="urank" />
+    <result column="LASTLOGIN" jdbcType="TIMESTAMP" property="lastlogin" />
+    <result column="LOGINIP" jdbcType="VARCHAR" property="loginip" />
+    <result column="IMAGEURL" jdbcType="VARCHAR" property="imageurl" />
+    <result column="REGTIME" jdbcType="TIMESTAMP" property="regtime" />
+    <result column="LOCKED" jdbcType="DECIMAL" property="locked" />
+    <result column="RIGHTS" jdbcType="VARCHAR" property="rights" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from sys_user
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zlennon.admin.model.SysUser">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select seq_sys_user.nextval from dual
+    </selectKey>
+    insert into sys_user (ID, USERNAME, PASSWD, 
+      PHONE, SEX, EMAIL, 
+      MARK, URANK, LASTLOGIN, 
+      LOGINIP, IMAGEURL, REGTIME, 
+      LOCKED, RIGHTS)
+    values (#{id,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{passwd,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{mark,jdbcType=VARCHAR}, #{urank,jdbcType=VARCHAR}, #{lastlogin,jdbcType=TIMESTAMP}, 
+      #{loginip,jdbcType=VARCHAR}, #{imageurl,jdbcType=VARCHAR}, #{regtime,jdbcType=TIMESTAMP}, 
+      #{locked,jdbcType=DECIMAL}, #{rights,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.zlennon.admin.model.SysUser">
+    update sys_user
+    set USERNAME = #{username,jdbcType=VARCHAR},
+      PASSWD = #{passwd,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      SEX = #{sex,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      MARK = #{mark,jdbcType=VARCHAR},
+      URANK = #{urank,jdbcType=VARCHAR},
+      LASTLOGIN = #{lastlogin,jdbcType=TIMESTAMP},
+      LOGINIP = #{loginip,jdbcType=VARCHAR},
+      IMAGEURL = #{imageurl,jdbcType=VARCHAR},
+      REGTIME = #{regtime,jdbcType=TIMESTAMP},
+      LOCKED = #{locked,jdbcType=DECIMAL},
+      RIGHTS = #{rights,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select ID, USERNAME, PASSWD, PHONE, SEX, EMAIL, MARK, URANK, LASTLOGIN, LOGINIP, 
+    IMAGEURL, REGTIME, LOCKED, RIGHTS
+    from sys_user
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ID, USERNAME, PASSWD, PHONE, SEX, EMAIL, MARK, URANK, LASTLOGIN, LOGINIP, 
+    IMAGEURL, REGTIME, LOCKED, RIGHTS
+    from sys_user
+  </select>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into sys_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="list[0].id!=null">
+        ID,
+      </if>
+      <if test="list[0].username!=null">
+        USERNAME,
+      </if>
+      <if test="list[0].passwd!=null">
+        PASSWD,
+      </if>
+      <if test="list[0].phone!=null">
+        PHONE,
+      </if>
+      <if test="list[0].sex!=null">
+        SEX,
+      </if>
+      <if test="list[0].email!=null">
+        EMAIL,
+      </if>
+      <if test="list[0].mark!=null">
+        MARK,
+      </if>
+      <if test="list[0].urank!=null">
+        URANK,
+      </if>
+      <if test="list[0].lastlogin!=null">
+        LASTLOGIN,
+      </if>
+      <if test="list[0].loginip!=null">
+        LOGINIP,
+      </if>
+      <if test="list[0].imageurl!=null">
+        IMAGEURL,
+      </if>
+      <if test="list[0].regtime!=null">
+        REGTIME,
+      </if>
+      <if test="list[0].locked!=null">
+        LOCKED,
+      </if>
+      <if test="list[0].rights!=null">
+        RIGHTS,
+      </if>
+    </trim>
+     values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix=" (" suffix=")" suffixOverrides=",">
+        <if test="item.id!=null">
+          #{item.id,jdbcType=VARCHAR},
+        </if>
+        <if test="item.username!=null">
+          #{item.username,jdbcType=VARCHAR},
+        </if>
+        <if test="item.passwd!=null">
+          #{item.passwd,jdbcType=VARCHAR},
+        </if>
+        <if test="item.phone!=null">
+          #{item.phone,jdbcType=VARCHAR},
+        </if>
+        <if test="item.sex!=null">
+          #{item.sex,jdbcType=VARCHAR},
+        </if>
+        <if test="item.email!=null">
+          #{item.email,jdbcType=VARCHAR},
+        </if>
+        <if test="item.mark!=null">
+          #{item.mark,jdbcType=VARCHAR},
+        </if>
+        <if test="item.urank!=null">
+          #{item.urank,jdbcType=VARCHAR},
+        </if>
+        <if test="item.lastlogin!=null">
+          #{item.lastlogin,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.loginip!=null">
+          #{item.loginip,jdbcType=VARCHAR},
+        </if>
+        <if test="item.imageurl!=null">
+          #{item.imageurl,jdbcType=VARCHAR},
+        </if>
+        <if test="item.regtime!=null">
+          #{item.regtime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.locked!=null">
+          #{item.locked,jdbcType=DECIMAL},
+        </if>
+        <if test="item.rights!=null">
+          #{item.rights,jdbcType=VARCHAR},
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    <foreach collection="list" index="index" item="item" separator=";">
+      update sys_user
+      <set>
+        <if test="item.username!=null">
+          USERNAME=#{item.username,jdbcType=VARCHAR},
+        </if>
+        <if test="item.passwd!=null">
+          PASSWD=#{item.passwd,jdbcType=VARCHAR},
+        </if>
+        <if test="item.phone!=null">
+          PHONE=#{item.phone,jdbcType=VARCHAR},
+        </if>
+        <if test="item.sex!=null">
+          SEX=#{item.sex,jdbcType=VARCHAR},
+        </if>
+        <if test="item.email!=null">
+          EMAIL=#{item.email,jdbcType=VARCHAR},
+        </if>
+        <if test="item.mark!=null">
+          MARK=#{item.mark,jdbcType=VARCHAR},
+        </if>
+        <if test="item.urank!=null">
+          URANK=#{item.urank,jdbcType=VARCHAR},
+        </if>
+        <if test="item.lastlogin!=null">
+          LASTLOGIN=#{item.lastlogin,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.loginip!=null">
+          LOGINIP=#{item.loginip,jdbcType=VARCHAR},
+        </if>
+        <if test="item.imageurl!=null">
+          IMAGEURL=#{item.imageurl,jdbcType=VARCHAR},
+        </if>
+        <if test="item.regtime!=null">
+          REGTIME=#{item.regtime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.locked!=null">
+          LOCKED=#{item.locked,jdbcType=DECIMAL},
+        </if>
+        <if test="item.rights!=null">
+          RIGHTS=#{item.rights,jdbcType=VARCHAR},
+        </if>
+      </set>
+      where 
+      ID = #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+</mapper>

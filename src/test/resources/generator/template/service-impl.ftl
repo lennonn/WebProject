@@ -1,9 +1,9 @@
-package ${basePackage}.service.impl;
+package ${basePackage}.${modules}service.impl;
 
-import ${basePackage}.mapper.${modelNameUpperCamel}Mapper;
-import ${basePackage}.model.${modelNameUpperCamel};
-import ${basePackage}.service.${modelNameUpperCamel}Service;
-import ${basePackage}.AbstractService;
+import ${basePackage}.${modules}mapper.${modelNameUpperCamel}Mapper;
+import ${basePackage}.${modules}model.${modelNameUpperCamel};
+import ${basePackage}.${modules}service.${modelNameUpperCamel}Service;
+import com.zlennon.AbstractService;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 

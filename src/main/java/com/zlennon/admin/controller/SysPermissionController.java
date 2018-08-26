@@ -1,6 +1,6 @@
-package ${basePackage}.${modules}.controller;
-import ${basePackage}.${modules}.model.${modelNameUpperCamel};
-import ${basePackage}.${modules}.service.${modelNameUpperCamel}Service;
+package com.zlennon.admin.controller;
+import com.zlennon.admin.model.SysPermission;
+import com.zlennon.admin.service.SysPermissionService;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -23,22 +23,22 @@ import java.util.Map;
 
 /**
  *
- * Created by ${author} on ${date}.
+ * Created by zlennon on 2018/08/26.
  */
 @Controller
-@RequestMapping("/${baseRequestMapping}/")
-public class ${modelNameUpperCamel}Controller {
-    protected static final Logger logger = LoggerFactory.getLogger(${modelNameUpperCamel}Controller.class);
+@RequestMapping("/sysPermission/")
+public class SysPermissionController {
+    protected static final Logger logger = LoggerFactory.getLogger(SysPermissionController.class);
 
     @Autowired
-    ${modelNameUpperCamel}Service ${modelNameLowerCamel}Service;
+    SysPermissionService sysPermissionService;
 
 
    @RequestMapping("list")
     public String list(Model model) {
-        List<${modelNameUpperCamel}> ats=${modelNameLowerCamel}Service.selectAll();
+        List<SysPermission> ats=sysPermissionService.selectAll();
         model.addAttribute("articleType",ats);
-        return "/${modules}/${modelNameLowerCamel}/${modules}List";
+        return "/admin/sysPermission/adminList";
     }
 
 
@@ -46,7 +46,7 @@ public class ${modelNameUpperCamel}Controller {
     @ResponseBody
     public String  initTable(HttpServletRequest request, @RequestParam Integer pageNumber, @RequestParam Integer pageSize){
     PageHelper.startPage(pageNumber, pageSize);
-    List<${modelNameUpperCamel}> list = ${modelNameLowerCamel}Service.selectAll();
+    List<SysPermission> list = sysPermissionService.selectAll();
         PageInfo pageInfo = new PageInfo(list);
         return  "{\"total\":" + pageInfo.getTotal() + ",\"rows\":" + JSONObject.toJSON(pageInfo.getList()) + "}";
     }
@@ -54,19 +54,19 @@ public class ${modelNameUpperCamel}Controller {
     @RequestMapping("delete")
     @ResponseBody
     public String  delete(@RequestParam String id){
-        ${modelNameLowerCamel}Service.deleteByPrimaryKey(id);
+        sysPermissionService.deleteByPrimaryKey(id);
         return  "";
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public Map<String,Object> save(@Valid ${modelNameUpperCamel} ${modelNameLowerCamel}) {
+    public Map<String,Object> save(@Valid SysPermission sysPermission) {
         Map<String, Object> resultMap = new HashMap<String, Object>();
         try {
-            if(${modelNameLowerCamel}.getId()==null) {
-                ${modelNameLowerCamel}Service.insert(${modelNameLowerCamel});
+            if(sysPermission.getId()==null) {
+                sysPermissionService.insert(sysPermission);
             }else{
-                ${modelNameLowerCamel}Service.updateByPrimaryKey(${modelNameLowerCamel});
+                sysPermissionService.updateByPrimaryKey(sysPermission);
             }
              resultMap.put("msg", "操作成功");
         } catch (Exception e) {

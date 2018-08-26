@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlennon.admin.mapper.SysOperationMapper">
+  <resultMap id="BaseResultMap" type="com.zlennon.model.SysOperation">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="ODESC" jdbcType="VARCHAR" property="odesc" />
+    <result column="ONAME" jdbcType="VARCHAR" property="oname" />
+    <result column="OPER" jdbcType="VARCHAR" property="oper" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from sys_operation
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zlennon.model.SysOperation">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select seq_sys_operation.nextval from dual
+    </selectKey>
+    insert into sys_operation (ID, ODESC, ONAME, 
+      OPER)
+    values (#{id,jdbcType=VARCHAR}, #{odesc,jdbcType=VARCHAR}, #{oname,jdbcType=VARCHAR}, 
+      #{oper,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.zlennon.model.SysOperation">
+    update sys_operation
+    set ODESC = #{odesc,jdbcType=VARCHAR},
+      ONAME = #{oname,jdbcType=VARCHAR},
+      OPER = #{oper,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select ID, ODESC, ONAME, OPER
+    from sys_operation
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ID, ODESC, ONAME, OPER
+    from sys_operation
+  </select>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into sys_operation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="list[0].id!=null">
+        ID,
+      </if>
+      <if test="list[0].odesc!=null">
+        ODESC,
+      </if>
+      <if test="list[0].oname!=null">
+        ONAME,
+      </if>
+      <if test="list[0].oper!=null">
+        OPER,
+      </if>
+    </trim>
+     values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix=" (" suffix=")" suffixOverrides=",">
+        <if test="item.id!=null">
+          #{item.id,jdbcType=VARCHAR},
+        </if>
+        <if test="item.odesc!=null">
+          #{item.odesc,jdbcType=VARCHAR},
+        </if>
+        <if test="item.oname!=null">
+          #{item.oname,jdbcType=VARCHAR},
+        </if>
+        <if test="item.oper!=null">
+          #{item.oper,jdbcType=VARCHAR},
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    <foreach collection="list" index="index" item="item" separator=";">
+      update sys_operation
+      <set>
+        <if test="item.odesc!=null">
+          ODESC=#{item.odesc,jdbcType=VARCHAR},
+        </if>
+        <if test="item.oname!=null">
+          ONAME=#{item.oname,jdbcType=VARCHAR},
+        </if>
+        <if test="item.oper!=null">
+          OPER=#{item.oper,jdbcType=VARCHAR},
+        </if>
+      </set>
+      where 
+      ID = #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+</mapper>

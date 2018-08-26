@@ -25,7 +25,7 @@ public class ServiceGenerator extends CodeGeneratorManager implements CodeGenera
 		Map<String, Object> data = getDataMapInit(modelName, sign, modelNameUpperCamel);
 		try {
 			// 创建 Service 接口
-			File serviceFile = new File(PROJECT_PATH + JAVA_PATH + PACKAGE_PATH_SERVICE +"/service/"+ modelNameUpperCamel + "Service.java");
+			File serviceFile = new File(PROJECT_PATH + JAVA_PATH + PACKAGE_PATH_SERVICE +MODULES+"/service/"+ modelNameUpperCamel + "Service.java");
 			// 查看父级目录是否存在, 不存在则创建
 			if (!serviceFile.getParentFile().exists()) {
 				serviceFile.getParentFile().mkdirs();
@@ -34,7 +34,7 @@ public class ServiceGenerator extends CodeGeneratorManager implements CodeGenera
 			logger.info(modelNameUpperCamel + "Service.java 生成成功!");
 			
 			// 创建 Service 接口的实现类
-			File serviceImplFile = new File(PROJECT_PATH + JAVA_PATH + PACKAGE_PATH_SERVICE_IMPL +"/service/impl/"+ modelNameUpperCamel + "ServiceImpl.java");
+			File serviceImplFile = new File(PROJECT_PATH + JAVA_PATH + PACKAGE_PATH_SERVICE_IMPL+MODULES +"/service/impl/"+ modelNameUpperCamel + "ServiceImpl.java");
 			// 查看父级目录是否存在, 不存在则创建
 			if (!serviceImplFile.getParentFile().exists()) {
 				serviceImplFile.getParentFile().mkdirs();
@@ -48,7 +48,6 @@ public class ServiceGenerator extends CodeGeneratorManager implements CodeGenera
 	
 	/**
 	 * 预置页面所需数据
-	 * @param tableName 表名
 	 * @param modelName 自定义实体类名, 为null则默认将表名下划线转成大驼峰形式
 	 * @param sign 区分字段, 规定如表 gen_test_demo, 则 test 即为区分字段
 	 * @param modelNameUpperCamel 首字为大写的实体类名
@@ -61,7 +60,7 @@ public class ServiceGenerator extends CodeGeneratorManager implements CodeGenera
 		data.put("sign", sign);
 		data.put("modelNameUpperCamel", modelNameUpperCamel);
 		data.put("modelNameLowerCamel", StringUtils.toLowerCaseFirstOne(modelNameUpperCamel));
-		data.put("basePackage", BASE_PACKAGE);
+		data.put("basePackage", BASE_PACKAGE+"."+MODULES);
 		
 		return data;
 	}
