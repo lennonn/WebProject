@@ -38,12 +38,18 @@
                         <h4 class="modal-title">添加文章</h4>
                     </div>
                     <div class="modal-body">
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" id ="${actionName}">
+
                             <input type="hidden" name="id" id="_id" >
                             <#list tableInfo as item>
+                             <div class="form-group">
                                 <#if item_index!=0>
-                            <input class="form-control" id="${item.colName}" name="${item.colName}" placeholder="请输入${item.remark}"/>
+                                    <label for="${item.colName}" class="col-sm-2 control-label">${item.remark}</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="${item.colName}" name="${item.colName}" placeholder="请输入${item.remark}"/>
+                                    </div>
                                 </#if>
+                             </div>
                             </#list>
                         </form>
 
@@ -64,7 +70,10 @@
 <script src="<#noparse>${pageContext.request.contextPath}</#noparse>/views/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
 <script type="text/javascript">
-
+    $(function(){
+        var oTable = new TableInit();
+        oTable.Init();
+    });
     var TableInit = function () {
         var oTableInit = new Object();
         //初始化Table

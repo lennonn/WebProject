@@ -37,21 +37,89 @@
                         <h4 class="modal-title">添加文章</h4>
                     </div>
                     <div class="modal-body">
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" id ="sysUser">
+
                             <input type="hidden" name="id" id="_id" >
-                            <input class="form-control" id="username" name="username" placeholder="请输入用户名"/>
-                            <input class="form-control" id="passwd" name="passwd" placeholder="请输入密码"/>
-                            <input class="form-control" id="phone" name="phone" placeholder="请输入手机"/>
-                            <input class="form-control" id="sex" name="sex" placeholder="请输入性别"/>
-                            <input class="form-control" id="email" name="email" placeholder="请输入邮箱"/>
-                            <input class="form-control" id="mark" name="mark" placeholder="请输入备注"/>
-                            <input class="form-control" id="urank" name="urank" placeholder="请输入账号等级"/>
-                            <input class="form-control" id="lastlogin" name="lastlogin" placeholder="请输入最后一次登录时间"/>
-                            <input class="form-control" id="loginip" name="loginip" placeholder="请输入登录ip"/>
-                            <input class="form-control" id="imageurl" name="imageurl" placeholder="请输入头像图片路径"/>
-                            <input class="form-control" id="regtime" name="regtime" placeholder="请输入注册时间"/>
-                            <input class="form-control" id="locked" name="locked" placeholder="请输入账号是否被锁定"/>
-                            <input class="form-control" id="rights" name="rights" placeholder="请输入权限（没有使用）"/>
+                             <div class="form-group">
+                             </div>
+                             <div class="form-group">
+                                    <label for="username" class="col-sm-2 control-label">用户名</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="username" name="username" placeholder="请输入用户名"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="passwd" class="col-sm-2 control-label">密码</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="passwd" name="passwd" placeholder="请输入密码"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="phone" class="col-sm-2 control-label">手机</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="phone" name="phone" placeholder="请输入手机"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="sex" class="col-sm-2 control-label">性别</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="sex" name="sex" placeholder="请输入性别"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">邮箱</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="email" name="email" placeholder="请输入邮箱"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="mark" class="col-sm-2 control-label">备注</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="mark" name="mark" placeholder="请输入备注"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="urank" class="col-sm-2 control-label">账号等级</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="urank" name="urank" placeholder="请输入账号等级"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="lastlogin" class="col-sm-2 control-label">最后一次登录时间</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="lastlogin" name="lastlogin" placeholder="请输入最后一次登录时间"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="loginip" class="col-sm-2 control-label">登录ip</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="loginip" name="loginip" placeholder="请输入登录ip"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="imageurl" class="col-sm-2 control-label">头像图片路径</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="imageurl" name="imageurl" placeholder="请输入头像图片路径"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="regtime" class="col-sm-2 control-label">注册时间</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="regtime" name="regtime" placeholder="请输入注册时间"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="locked" class="col-sm-2 control-label">账号是否被锁定</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="locked" name="locked" placeholder="请输入账号是否被锁定"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="rights" class="col-sm-2 control-label">权限（没有使用）</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="rights" name="rights" placeholder="请输入权限（没有使用）"/>
+                                    </div>
+                             </div>
                         </form>
 
                     </div>
@@ -75,7 +143,6 @@
         var oTable = new TableInit();
         oTable.Init();
     });
-
     var TableInit = function () {
         var oTableInit = new Object();
         //初始化Table

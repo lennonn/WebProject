@@ -37,11 +37,29 @@
                         <h4 class="modal-title">添加文章</h4>
                     </div>
                     <div class="modal-body">
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" id ="sysOperation">
+
                             <input type="hidden" name="id" id="_id" >
-                            <input class="form-control" id="odesc" name="odesc" placeholder="请输入操作描述"/>
-                            <input class="form-control" id="oname" name="oname" placeholder="请输入操作名称"/>
-                            <input class="form-control" id="oper" name="oper" placeholder="请输入操作标志"/>
+                             <div class="form-group">
+                             </div>
+                             <div class="form-group">
+                                    <label for="odesc" class="col-sm-2 control-label">操作描述</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="odesc" name="odesc" placeholder="请输入操作描述"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="oname" class="col-sm-2 control-label">操作名称</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="oname" name="oname" placeholder="请输入操作名称"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="oper" class="col-sm-2 control-label">操作标志</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="oper" name="oper" placeholder="请输入操作标志"/>
+                                    </div>
+                             </div>
                         </form>
 
                     </div>
@@ -61,12 +79,15 @@
 <script src="${pageContext.request.contextPath}/views/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
 <script type="text/javascript">
-
+    $(function(){
+        var oTable = new TableInit();
+        oTable.Init();
+    });
     var TableInit = function () {
         var oTableInit = new Object();
         //初始化Table
         oTableInit.Init = function () {
-            $('#articleType').bootstrapTable({
+            $('#sysOperation').bootstrapTable({
                 url: '${pageContext.request.contextPath}/sysOperation/initTable',         //请求后台的URL（*）
                 striped: true,  //表格显示条纹
                 pagination: true, //启动分页

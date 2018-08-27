@@ -37,11 +37,29 @@
                         <h4 class="modal-title">添加文章</h4>
                     </div>
                     <div class="modal-body">
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" id ="sysRole">
+
                             <input type="hidden" name="id" id="_id" >
-                            <input class="form-control" id="roleName" name="roleName" placeholder="请输入角色名称"/>
-                            <input class="form-control" id="roleDesc" name="roleDesc" placeholder="请输入角色描述"/>
-                            <input class="form-control" id="role" name="role" placeholder="请输入角色标志"/>
+                             <div class="form-group">
+                             </div>
+                             <div class="form-group">
+                                    <label for="roleName" class="col-sm-2 control-label">角色名称</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="roleName" name="roleName" placeholder="请输入角色名称"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="roleDesc" class="col-sm-2 control-label">角色描述</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="roleDesc" name="roleDesc" placeholder="请输入角色描述"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="role" class="col-sm-2 control-label">角色标志</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="role" name="role" placeholder="请输入角色标志"/>
+                                    </div>
+                             </div>
                         </form>
 
                     </div>
@@ -61,12 +79,15 @@
 <script src="${pageContext.request.contextPath}/views/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
 <script type="text/javascript">
-
+    $(function(){
+        var oTable = new TableInit();
+        oTable.Init();
+    });
     var TableInit = function () {
         var oTableInit = new Object();
         //初始化Table
         oTableInit.Init = function () {
-            $('#articleType').bootstrapTable({
+            $('#sysRole').bootstrapTable({
                 url: '${pageContext.request.contextPath}/sysRole/initTable',         //请求后台的URL（*）
                 striped: true,  //表格显示条纹
                 pagination: true, //启动分页

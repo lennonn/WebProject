@@ -37,11 +37,29 @@
                         <h4 class="modal-title">添加文章</h4>
                     </div>
                     <div class="modal-body">
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" id ="sysPermission">
+
                             <input type="hidden" name="id" id="_id" >
-                            <input class="form-control" id="pdesc" name="pdesc" placeholder="请输入权限描述"/>
-                            <input class="form-control" id="pname" name="pname" placeholder="请输入权限名称"/>
-                            <input class="form-control" id="menuId" name="menuId" placeholder="请输入菜单_id"/>
+                             <div class="form-group">
+                             </div>
+                             <div class="form-group">
+                                    <label for="pdesc" class="col-sm-2 control-label">权限描述</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="pdesc" name="pdesc" placeholder="请输入权限描述"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="pname" class="col-sm-2 control-label">权限名称</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="pname" name="pname" placeholder="请输入权限名称"/>
+                                    </div>
+                             </div>
+                             <div class="form-group">
+                                    <label for="menuId" class="col-sm-2 control-label">菜单_id</label>
+                                    <div class="col-xs-6">
+                                        <input class="form-control" id="menuId" name="menuId" placeholder="请输入菜单_id"/>
+                                    </div>
+                             </div>
                         </form>
 
                     </div>
@@ -61,12 +79,15 @@
 <script src="${pageContext.request.contextPath}/views/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
 <script type="text/javascript">
-
+    $(function(){
+        var oTable = new TableInit();
+        oTable.Init();
+    });
     var TableInit = function () {
         var oTableInit = new Object();
         //初始化Table
         oTableInit.Init = function () {
-            $('#articleType').bootstrapTable({
+            $('#sysPermission').bootstrapTable({
                 url: '${pageContext.request.contextPath}/sysPermission/initTable',         //请求后台的URL（*）
                 striped: true,  //表格显示条纹
                 pagination: true, //启动分页
