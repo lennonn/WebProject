@@ -85,9 +85,9 @@
     </security:http>
 
     <!-- 认证成功后的处理类 -->
-    <bean id="authenticationSuccessHandlerImpl" class="diary.security.AuthenticationSuccessHandlerImpl"/>
+    <bean id="authenticationSuccessHandlerImpl" class="com.zlennon.security.AuthenticationSuccessHandlerImpl"/>
     <!-- 认证失败后的处理类 -->
-    <bean id="authenticationFailureHandlerImpl" class="diary.security.AuthenticationFailureHandlerImpl"/>
+    <bean id="authenticationFailureHandlerImpl" class="com.zlennon.security.AuthenticationFailureHandlerImpl"/>
 
     <!-- 登录认证 -->
     <security:authentication-manager>
@@ -105,10 +105,10 @@
         </security:authentication-provider>
     </security:authentication-manager>
 
-    <bean id="myMessageDigestPasswordEncoder" class="diary.security.MyMessageDigestPasswordEncoder">
+    <bean id="myMessageDigestPasswordEncoder" class="com.zlennon.security.MyMessageDigestPasswordEncoder">
         <constructor-arg name="algorithm" value="md5"/>
     </bean>
 
-    <bean id="userDetailsServiceImpl" class="diary.security.UserDetailsServiceImpl"></bean>
+    <bean id="userDetailsServiceImpl" class="com.zlennon.security.UserDetailsServiceImpl"></bean>
 
 </beans>

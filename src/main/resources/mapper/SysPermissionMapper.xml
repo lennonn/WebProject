@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zlennon.admin.mapper.SysPermissionMapper">
-  <resultMap id="BaseResultMap" type="com.zlennon.model.SysPermission">
+  <resultMap id="BaseResultMap" type="com.zlennon.admin.model.SysPermission">
     <id column="ID" jdbcType="VARCHAR" property="id" />
     <result column="PDESC" jdbcType="VARCHAR" property="pdesc" />
     <result column="PNAME" jdbcType="VARCHAR" property="pname" />
@@ -11,7 +11,7 @@
     delete from sys_permission
     where ID = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.zlennon.model.SysPermission">
+  <insert id="insert" parameterType="com.zlennon.admin.model.SysPermission">
     <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
       select seq_sys_permission.nextval from dual
     </selectKey>
@@ -20,7 +20,7 @@
     values (#{id,jdbcType=VARCHAR}, #{pdesc,jdbcType=VARCHAR}, #{pname,jdbcType=VARCHAR}, 
       #{menuId,jdbcType=VARCHAR})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.zlennon.model.SysPermission">
+  <update id="updateByPrimaryKey" parameterType="com.zlennon.admin.model.SysPermission">
     update sys_permission
     set PDESC = #{pdesc,jdbcType=VARCHAR},
       PNAME = #{pname,jdbcType=VARCHAR},

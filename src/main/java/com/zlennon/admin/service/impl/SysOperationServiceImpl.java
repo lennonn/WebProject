@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 /**
  *
- * Created by zlennon on 2018/08/26.
+ * Created by zlennon on 2018/08/27.
  */
 @Service
 public class SysOperationServiceImpl extends AbstractService<SysOperation> implements SysOperationService<SysOperation> {

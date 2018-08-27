@@ -58,6 +58,7 @@ public class ServiceGenerator extends CodeGeneratorManager implements CodeGenera
 		data.put("date", DATE);
 		data.put("author", AUTHOR);
 		data.put("sign", sign);
+		data.put("modules", MODULES);
 		data.put("modelNameUpperCamel", modelNameUpperCamel);
 		data.put("modelNameLowerCamel", StringUtils.toLowerCaseFirstOne(modelNameUpperCamel));
 		data.put("basePackage", BASE_PACKAGE+"."+MODULES);

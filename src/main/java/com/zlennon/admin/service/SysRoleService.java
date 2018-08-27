@@ -1,10 +1,9 @@
 package com.zlennon.admin.service;
-import com.zlennon.admin.model.SysRole;
 import com.zlennon.Service;
 import java.util.List;
 /**
  *
- * Created by zlennon on 2018/08/26.
+ * Created by zlennon on 2018/08/27.
  */
 public interface SysRoleService<SysRole> extends Service<SysRole> {
 

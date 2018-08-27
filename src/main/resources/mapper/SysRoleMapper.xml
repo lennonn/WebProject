@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zlennon.admin.mapper.SysRoleMapper">
-  <resultMap id="BaseResultMap" type="com.zlennon.model.SysRole">
+  <resultMap id="BaseResultMap" type="com.zlennon.admin.model.SysRole">
     <id column="ROLE_ID" jdbcType="VARCHAR" property="roleId" />
     <result column="ROLE_NAME" jdbcType="VARCHAR" property="roleName" />
     <result column="ROLE_DESC" jdbcType="VARCHAR" property="roleDesc" />
@@ -11,13 +11,13 @@
     delete from sys_role
     where ROLE_ID = #{roleId,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.zlennon.model.SysRole">
+  <insert id="insert" parameterType="com.zlennon.admin.model.SysRole">
     insert into sys_role (ROLE_ID, ROLE_NAME, ROLE_DESC, 
       ROLE)
     values (#{roleId,jdbcType=VARCHAR}, #{roleName,jdbcType=VARCHAR}, #{roleDesc,jdbcType=VARCHAR}, 
       #{role,jdbcType=VARCHAR})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.zlennon.model.SysRole">
+  <update id="updateByPrimaryKey" parameterType="com.zlennon.admin.model.SysRole">
     update sys_role
     set ROLE_NAME = #{roleName,jdbcType=VARCHAR},
       ROLE_DESC = #{roleDesc,jdbcType=VARCHAR},

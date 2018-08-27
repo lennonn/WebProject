@@ -27,7 +27,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         UserDetails userDetails = null;
         // 根据用户名从数据库查询用户信息，根据自己的业务规则去写
-        SysUser user = this.userMapper.getUserByUsername(username);
+       // SysUser user = this.userMapper.getUserByUsername(username);
+        SysUser user =new SysUser();
         if(user == null) {
             throw new BadCredentialsException("用户名不存在");
         }

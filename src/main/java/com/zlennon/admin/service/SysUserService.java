@@ -1,5 +1,4 @@
 package com.zlennon.admin.service;
-import com.zlennon.admin.model.SysUser;
 import com.zlennon.Service;
 import java.util.List;
 /**
