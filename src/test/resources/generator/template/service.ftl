@@ -8,11 +8,11 @@ import java.util.List;
  */
 public interface ${modelNameUpperCamel}Service<${modelNameUpperCamel}> extends Service<${modelNameUpperCamel}> {
 
-    int deleteByPrimaryKey(Short id);
+    int deleteByPrimaryKey(String id);
 
     int insert(${modelNameUpperCamel} ${modelNameUpperCamel?uncap_first});
 
-    ${modelNameUpperCamel} selectByPrimaryKey(Short id);
+    ${modelNameUpperCamel} selectByPrimaryKey(String id);
 
     List<${modelNameUpperCamel}> selectAll();
 

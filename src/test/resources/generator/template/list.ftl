@@ -13,7 +13,7 @@
 <body>
 <div class="row">
     <div class="col-md-12">
-        <table id="${modelNameLowerCamel}"
+        <table id="${actionName}"
                data-classes="table table-hover "
                data-search="true"
                data-show-refresh="true"
@@ -68,7 +68,7 @@
         //初始化Table
         oTableInit.Init = function () {
             $('#articleType').bootstrapTable({
-                url: '<#noparse>${pageContext.request.contextPath}</#noparse>/${modelNameLowerCamel}/initTable',         //请求后台的URL（*）
+                url: '<#noparse>${pageContext.request.contextPath}</#noparse>/${actionName}/initTable',         //请求后台的URL（*）
                 striped: true,  //表格显示条纹
                 pagination: true, //启动分页
                 toolbar: "#toolbar",                //工具按钮用哪个容器
@@ -135,7 +135,7 @@
                 type: "post",
                 dataType: "json",
                 success: function (res) {
-                    $("#${modelNameLowerCamel}").bootstrapTable('refresh');//刷新ds_table的数据
+                    $("#${actionName}").bootstrapTable('refresh');//刷新ds_table的数据
                 }
             });
         }
@@ -160,7 +160,7 @@
             success: function (res) {
                 alert(res.msg);
                 $("#modal-default").modal('toggle');
-                $("#${modelNameLowerCamel}").bootstrapTable('refresh');//刷新ds_table的数据
+                $("#${actionName}").bootstrapTable('refresh');//刷新ds_table的数据
                 //window.location.href="<#noparse>${pageContext.request.contextPath}</#noparse>/article/list";
                 // $('body').removeClass('modal-open');
                 $('.modal-backdrop').remove();

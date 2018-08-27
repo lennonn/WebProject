@@ -1,10 +1,10 @@
 package com.zlennon.admin.service;
+import com.zlennon.admin.model.SysUser;
 import com.zlennon.Service;
-
 import java.util.List;
 /**
  *
- * Created by zlennon on 2018/08/26.
+ * Created by zlennon on 2018/08/27.
  */
 public interface SysUserService<SysUser> extends Service<SysUser> {
 

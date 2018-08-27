@@ -1,16 +1,16 @@
 package com.zlennon.admin.service.impl;
 
-import com.zlennon.AbstractService;
 import com.zlennon.admin.mapper.SysUserMapper;
 import com.zlennon.admin.model.SysUser;
 import com.zlennon.admin.service.SysUserService;
+import com.zlennon.AbstractService;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 /**
  *
- * Created by zlennon on 2018/08/26.
+ * Created by zlennon on 2018/08/27.
  */
 @Service
 public class SysUserServiceImpl extends AbstractService<SysUser> implements SysUserService<SysUser> {

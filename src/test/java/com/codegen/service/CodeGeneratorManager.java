@@ -128,7 +128,7 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
 	 * @param tableName 表名, eg: gen_test_demo
 	 * @return
 	 */
-	protected String tableNameConvertLowerCamel(String tableName) {
+	protected  static String  tableNameConvertLowerCamel(String tableName) {
 		return CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, tableName.toLowerCase());
 	}
 	
@@ -226,10 +226,10 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
 		if (flag) {
 			modelName = getDefModelName(tableName);
 		}
-		new ModelAndMapperGenerator().genCode(tableName, modelName, sign);
-		new ServiceGenerator().genCode(tableName, modelName, sign);
+		//new ModelAndMapperGenerator().genCode(tableName, modelName, sign);
+		//new ServiceGenerator().genCode(tableName, modelName, sign);
 		new ControllerGenerator().genCode(tableName, modelName, sign);
-		//new FtlGenerator().genCode(tableName, modelName, sign);
+		new FtlGenerator().genCode(tableName, modelName, sign);
 	}
 	
 	/**
@@ -359,6 +359,8 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
 		
 		JAVA_PATH = prop.getProperty("java.path");
 		RESOURCES_PATH = prop.getProperty("resources.path");
+		JSP_FILE_PATH = prop.getProperty("jsp.path");
+
 		TEMPLATE_FILE_PATH = PROJECT_PATH + prop.getProperty("template.file.path");
 
 

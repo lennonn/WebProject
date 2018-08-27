@@ -36,9 +36,9 @@ public class ${modelNameUpperCamel}Controller {
 
    @RequestMapping("list")
     public String list(Model model) {
-        List<${modelNameUpperCamel}> ats=${modelNameLowerCamel}Service.selectAll();
-        model.addAttribute("articleType",ats);
-        return "/${modules}/${modelNameLowerCamel}/${modules}List";
+        List<${modelNameUpperCamel}> ${abbr}=${modelNameLowerCamel}Service.selectAll();
+        model.addAttribute("${modelNameLowerCamel}",${abbr});
+        return "/${modules}/${modelNameLowerCamel?lower_case}/${modelNameLowerCamel}List";
     }
 
 

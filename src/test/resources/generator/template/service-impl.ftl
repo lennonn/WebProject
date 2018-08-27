@@ -26,7 +26,7 @@ public class ${modelNameUpperCamel}ServiceImpl extends AbstractService<${modelNa
         this.${modelNameLowerCamel?uncap_first}Mapper = ${modelNameLowerCamel?uncap_first}Mapper;
     }
 
-    public int deleteByPrimaryKey(Short id){
+    public int deleteByPrimaryKey(String id){
       return  ${modelNameLowerCamel}Mapper.deleteByPrimaryKey(id);
     }
 
@@ -34,7 +34,7 @@ public class ${modelNameUpperCamel}ServiceImpl extends AbstractService<${modelNa
        return ${modelNameLowerCamel}Mapper.insert(${modelNameUpperCamel?uncap_first});
     }
 
-    public ${modelNameUpperCamel} selectByPrimaryKey(Short id){
+    public ${modelNameUpperCamel} selectByPrimaryKey(String id){
        return  ${modelNameLowerCamel}Mapper.selectByPrimaryKey(id);
     }
 

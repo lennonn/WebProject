@@ -13,8 +13,7 @@ public class CodeGeneratorMain {
 	private static final String MODEL_NAME = "ITest";
 	
 	private static final String[] TABLES = {
-			"sys_operation","sys_permission","sys_role"
-
+			"sys_user",
 	};
 	
 	/**
@@ -34,7 +33,7 @@ public class CodeGeneratorMain {
 		
 		//cgm.genCodeWithSimpleName(TABLE);
 		
-	cgm.genCodeWithDetailName(TABLES);
+			cgm.genCodeWithDetailName(TABLES);
 		
 //		cgm.genCodeWithCustomName(TABLE, MODEL_NAME);
 	}

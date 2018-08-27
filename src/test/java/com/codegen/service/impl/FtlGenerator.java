@@ -22,25 +22,29 @@ public class FtlGenerator extends CodeGeneratorManager implements CodeGenerator 
 	public void genCode(String tableName, String modelName, String sign) {
 		List tableInfo =getTableInfo(tableName);
 		Configuration cfg = getFreemarkerConfiguration();
-		String customMapping = "/" + sign + "/";
 		String modelNameUpperCamel = StringUtils.isNullOrEmpty(modelName) ? tableNameConvertUpperCamel(tableName) : modelName;
-		Map<String, Object> data = getDataMapInit(modelName, sign, modelNameUpperCamel);
+        String customMapping = "/" + MODULES + "/"+modelNameUpperCamel.toLowerCase()+"/";
+        Map<String, Object> data = getDataMapInit(modelName, sign, modelNameUpperCamel);
 		data.put("tableInfo",tableInfo);
-
+		String lowerNameUpperCamel =StringUtils.toLowerCaseFirstOne(modelNameUpperCamel);
 		// 创建 Service 接口
-		File serviceFile = new File(PROJECT_PATH + JAVA_PATH + PACKAGE_PATH_SERVICE +"/service/"+ modelNameUpperCamel + "Service.java");
-		// 查看父级目录是否存在, 不存在则创建
-		if (!serviceFile.getParentFile().exists()) {
-			serviceFile.getParentFile().mkdirs();
+		String fileType[] = {"list"};
+		for(int i=0;i<fileType.length;i++) {
+
+			File serviceFile = new File(PROJECT_PATH + JSP_FILE_PATH+ customMapping+ lowerNameUpperCamel +tableNameConvertUpperCamel(fileType[i])+".jsp");
+			// 查看父级目录是否存在, 不存在则创建
+			if (!serviceFile.getParentFile().exists()) {
+				serviceFile.getParentFile().mkdirs();
+			}
+			try {
+				cfg.getTemplate(fileType[i]+".ftl").process(data, new FileWriter(serviceFile));
+			} catch (TemplateException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			logger.info(serviceFile.getPath() + "生成成功!");
 		}
-		try {
-			cfg.getTemplate("ftl.ftl").process(data, new FileWriter(serviceFile));
-		} catch (TemplateException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		logger.info(modelNameUpperCamel + "Service.java 生成成功!");
 	}
 
 	/**
@@ -69,6 +73,7 @@ public class FtlGenerator extends CodeGeneratorManager implements CodeGenerator 
 						//System.out.println("字段名："+rs.getString("COLUMN_NAME")+"--字段注释："+rs.getString("REMARKS")+"--字段数据类型："+rs.getString("TYPE_NAME"));
 						Map<String,Object> map = new HashMap();
 						String colName = rs.getString("COLUMN_NAME");
+						colName=tableNameConvertLowerCamel(colName);
 						map.put("colName", colName);
 
 						String remarks = rs.getString("REMARKS");
@@ -100,7 +105,24 @@ public class FtlGenerator extends CodeGeneratorManager implements CodeGenerator 
 		return result;
 	}
 
-
+	/**
+	 * 获取单词首字符并且小写
+	 * @param str
+	 * @return
+	 */
+	private  String getAbbr(String str){
+		StringBuffer buffer = new StringBuffer();
+		// 转为char数组
+		char[] ch = str.toCharArray();
+		// 得到大写字母
+		for(int i = 0; i < ch.length ; i++){
+			if(ch[i] >= 'A' && ch[i] <= 'Z'){
+				buffer.append(ch[i]);
+			}
+		}
+		// 倒序
+		return buffer.toString().toLowerCase();
+	}
 
 	/**
 	 * 预置页面所需数据
@@ -113,9 +135,9 @@ public class FtlGenerator extends CodeGeneratorManager implements CodeGenerator 
 		Map<String, Object> data = new HashMap<>();
 		data.put("date", DATE);
 		data.put("author", AUTHOR);
-		//data.put("sign", sign);
+		data.put("abbr", modelName==null?"":getAbbr(modelName));
 		data.put("modelNameUpperCamel", modelNameUpperCamel);
-		data.put("modelNameLowerCamel", StringUtils.toLowerCaseFirstOne(modelNameUpperCamel));
+		data.put("actionName", StringUtils.toLowerCaseFirstOne(modelNameUpperCamel));
 		data.put("basePackage", BASE_PACKAGE);
 		return data;
 	}

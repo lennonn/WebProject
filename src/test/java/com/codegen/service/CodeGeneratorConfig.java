@@ -19,6 +19,9 @@ public class CodeGeneratorConfig {
 	public static String JAVA_PATH;
 	// 资源文件路径
 	protected static String RESOURCES_PATH;
+
+	//jsp文件位置
+	protected static String JSP_FILE_PATH;
 	// 模板存放位置
 	protected static String TEMPLATE_FILE_PATH;
 

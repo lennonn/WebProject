@@ -28,7 +28,7 @@ public class SysUser implements Serializable {
 
     private Date regtime;
 
-    private String locked;
+    private Short locked;
 
     private String rights;
 
@@ -130,11 +130,11 @@ public class SysUser implements Serializable {
         this.regtime = regtime;
     }
 
-    public String getLocked() {
+    public Short getLocked() {
         return locked;
     }
 
-    public void setLocked(String locked) {
+    public void setLocked(Short locked) {
         this.locked = locked;
     }
 
