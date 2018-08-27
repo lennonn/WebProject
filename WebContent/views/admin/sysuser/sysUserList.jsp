@@ -8,17 +8,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>文章类型</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/table/bootstrap-table.css">
-
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body>
 <div class="row">
     <div class="col-md-12">
-        <table id="sysUser"
+        <table id="sysUserTable"
                data-classes="table table-hover "
                data-search="true"
                data-show-refresh="true"
-               data-show-toggle="true"
                data-show-columns="true"
                data-toolbar="#toolbar"></table>
         <div id="toolbar">
@@ -37,9 +35,9 @@
                         <h4 class="modal-title">添加文章</h4>
                     </div>
                     <div class="modal-body">
-                        <form class="form-horizontal" id ="sysUser">
+                        <form class="form-horizontal" id ="sysUserForm">
 
-                            <input type="hidden" name="id" id="_id" >
+                            <input type="hidden" name="id" id="id" value="" >
                              <div class="form-group">
                              </div>
                              <div class="form-group">
@@ -51,7 +49,7 @@
                              <div class="form-group">
                                     <label for="passwd" class="col-sm-2 control-label">密码</label>
                                     <div class="col-xs-6">
-                                        <input class="form-control" id="passwd" name="passwd" placeholder="请输入密码"/>
+                                        <input class="form-control" type="password" id="passwd" name="passwd" placeholder="请输入密码"/>
                                     </div>
                              </div>
                              <div class="form-group">
@@ -61,9 +59,12 @@
                                     </div>
                              </div>
                              <div class="form-group">
-                                    <label for="sex" class="col-sm-2 control-label">性别</label>
+                                    <label class="col-sm-2 control-label">性别</label>
                                     <div class="col-xs-6">
-                                        <input class="form-control" id="sex" name="sex" placeholder="请输入性别"/>
+                                        <select class="form-control" name="sex" id="sex">
+                                            <option value="1">男</option>
+                                            <option value="2">女</option>
+                                        </select>
                                     </div>
                              </div>
                              <div class="form-group">
@@ -78,46 +79,11 @@
                                         <input class="form-control" id="mark" name="mark" placeholder="请输入备注"/>
                                     </div>
                              </div>
+
                              <div class="form-group">
-                                    <label for="urank" class="col-sm-2 control-label">账号等级</label>
-                                    <div class="col-xs-6">
-                                        <input class="form-control" id="urank" name="urank" placeholder="请输入账号等级"/>
-                                    </div>
-                             </div>
-                             <div class="form-group">
-                                    <label for="lastlogin" class="col-sm-2 control-label">最后一次登录时间</label>
-                                    <div class="col-xs-6">
-                                        <input class="form-control" id="lastlogin" name="lastlogin" placeholder="请输入最后一次登录时间"/>
-                                    </div>
-                             </div>
-                             <div class="form-group">
-                                    <label for="loginip" class="col-sm-2 control-label">登录ip</label>
-                                    <div class="col-xs-6">
-                                        <input class="form-control" id="loginip" name="loginip" placeholder="请输入登录ip"/>
-                                    </div>
-                             </div>
-                             <div class="form-group">
-                                    <label for="imageurl" class="col-sm-2 control-label">头像图片路径</label>
+                                    <label for="imageurl" class="col-sm-2 control-label">头像</label>
                                     <div class="col-xs-6">
                                         <input class="form-control" id="imageurl" name="imageurl" placeholder="请输入头像图片路径"/>
-                                    </div>
-                             </div>
-                             <div class="form-group">
-                                    <label for="regtime" class="col-sm-2 control-label">注册时间</label>
-                                    <div class="col-xs-6">
-                                        <input class="form-control" id="regtime" name="regtime" placeholder="请输入注册时间"/>
-                                    </div>
-                             </div>
-                             <div class="form-group">
-                                    <label for="locked" class="col-sm-2 control-label">账号是否被锁定</label>
-                                    <div class="col-xs-6">
-                                        <input class="form-control" id="locked" name="locked" placeholder="请输入账号是否被锁定"/>
-                                    </div>
-                             </div>
-                             <div class="form-group">
-                                    <label for="rights" class="col-sm-2 control-label">权限（没有使用）</label>
-                                    <div class="col-xs-6">
-                                        <input class="form-control" id="rights" name="rights" placeholder="请输入权限（没有使用）"/>
                                     </div>
                              </div>
                         </form>
@@ -147,7 +113,7 @@
         var oTableInit = new Object();
         //初始化Table
         oTableInit.Init = function () {
-            $('#sysUser').bootstrapTable({
+            $('#sysUserTable').bootstrapTable({
                 url: '${pageContext.request.contextPath}/sysUser/initTable',         //请求后台的URL（*）
                 striped: true,  //表格显示条纹
                 pagination: true, //启动分页
@@ -166,7 +132,7 @@
                     var param = {
                         pageNumber: params.pageNumber,
                         pageSize: params.pageSize,
-                        queryString: $("#orderNum").val()
+                        queryString: params.queryString
                     };
                     return param;
                 },
@@ -178,14 +144,14 @@
                     {field: 'sex', title: '性别', sortable: true},
                     {field: 'email', title: '邮箱', sortable: true},
                     {field: 'mark', title: '备注', sortable: true},
-                    {field: 'urank', title: '账号等级', sortable: true},
+/*                    {field: 'urank', title: '账号等级', sortable: true},
                     {field: 'lastlogin', title: '最后一次登录时间', sortable: true},
                     {field: 'loginip', title: '登录ip', sortable: true},
                     {field: 'imageurl', title: '头像图片路径', sortable: true},
                     {field: 'regtime', title: '注册时间', sortable: true},
                     {field: 'locked', title: '账号是否被锁定', sortable: true},
-                    {field: 'rights', title: '权限（没有使用）', sortable: true},
-                    {field: 'button', title: '操作', events: "operateEvents", formatter: operateFormatter}
+                    {field: 'rights', title: '权限（没有使用）', sortable: true},*/
+                    {field: 'button',width:200, title: '   操作    ', events: "operateEvents", formatter: operateFormatter}
                     ],
                 onLoadSuccess: function () {  //加载成功时执行
                     // alert("加载成功");
@@ -208,48 +174,37 @@
 
     window.operateEvents = {
         'click .edit': function (e, value, row, index) {
-            debugger;
-
-            $("#tId").val(row.tId);
-            $("#title").val(row.title);
-            $("#_id").val(row.id);
-            $("#scan").val(row.scan);
-            CKEDITOR.instances.editor1.setData(row.content);
+            $("#sysUserForm").find(':input').each(function () {
+                var  name= $(this).attr("name");
+                debugger;
+                $("#"+name).val(row[name]);
+            });
             $("#modal-default").modal('show');
         },
         'click .delete': function (e, value, row, index) {
             $.ajax({
-                url:"${pageContext.request.contextPath}/article/delete?id="+row.id,
+                url:"${pageContext.request.contextPath}/sysUser/delete?id="+row.id,
                 type: "post",
                 dataType: "json",
                 success: function (res) {
-                    $("#sysUser").bootstrapTable('refresh');//刷新ds_table的数据
+                    alert(res.msg);
+                    getContent('${pageContext.request.contextPath}/sysUser/list');//刷新ds_table的数据
                 }
             });
         }
     };
 
     function _save() {
-        var tId =$("#tId option:selected").val();
-        var content = CKEDITOR.instances.editor1.getData();
-        var title =$("#title").val();
-        var data= {"tId":tId,"title":title,"content":content};
-        var id =$("#_id").val();
-        var scan =$("#scan").val();
-        if(id!=""){
-            data.id=id;
-            data.scan =scan;
-        }
+        var  data = $("#sysUserForm").serialize();
         $.ajax({
-            url:"${pageContext.request.contextPath}/article/save",
+            url:"${pageContext.request.contextPath}/sysUser/save",
             type: "post",
             data:data,
             dataType: "json",
             success: function (res) {
                 alert(res.msg);
                 $("#modal-default").modal('toggle');
-                $("#sysUser").bootstrapTable('refresh');//刷新ds_table的数据
-                //window.location.href="${pageContext.request.contextPath}/article/list";
+                getContent('${pageContext.request.contextPath}/sysUser/list');//刷新ds_table的数据                //window.location.href="${pageContext.request.contextPath}/article/list";
                 // $('body').removeClass('modal-open');
                 $('.modal-backdrop').remove();
             }

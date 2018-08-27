@@ -7,6 +7,7 @@ import com.zlennon.AbstractService;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Date;
 import java.util.List;
 /**
  *
@@ -31,6 +32,8 @@ public class SysUserServiceImpl extends AbstractService<SysUser> implements SysU
     }
 
     public int insert(SysUser sysUser){
+        sysUser.setId(getTablePK("SysUser"));
+        sysUser.setRegtime(new Date());
        return sysUserMapper.insert(sysUser);
     }
 

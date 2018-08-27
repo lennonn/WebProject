@@ -22,9 +22,6 @@
     where ID = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.zlennon.admin.model.SysUser">
-    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
-      select seq_sys_user.nextval from dual
-    </selectKey>
     insert into sys_user (ID, USERNAME, PASSWD, 
       PHONE, SEX, EMAIL, 
       MARK, URANK, LASTLOGIN, 

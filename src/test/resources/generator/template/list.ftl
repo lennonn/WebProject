@@ -15,7 +15,7 @@
 <body>
 <div class="row">
     <div class="col-md-12">
-        <table id="${actionName}"
+        <table id="${actionName}Table"
                data-classes="table table-hover "
                data-search="true"
                data-show-refresh="true"
@@ -38,9 +38,9 @@
                         <h4 class="modal-title">添加文章</h4>
                     </div>
                     <div class="modal-body">
-                        <form class="form-horizontal" id ="${actionName}">
+                        <form class="form-horizontal" id ="${actionName}Form">
 
-                            <input type="hidden" name="id" id="_id" >
+                            <input type="hidden" name="id" id="id" value="">
                             <#list tableInfo as item>
                              <div class="form-group">
                                 <#if item_index!=0>
@@ -78,7 +78,7 @@
         var oTableInit = new Object();
         //初始化Table
         oTableInit.Init = function () {
-            $('#${actionName}').bootstrapTable({
+            $('#${actionName}Table').bootstrapTable({
                 url: '<#noparse>${pageContext.request.contextPath}</#noparse>/${actionName}/initTable',         //请求后台的URL（*）
                 striped: true,  //表格显示条纹
                 pagination: true, //启动分页
@@ -131,48 +131,37 @@
 
     window.operateEvents = {
         'click .edit': function (e, value, row, index) {
-            debugger;
-
-            $("#tId").val(row.tId);
-            $("#title").val(row.title);
-            $("#_id").val(row.id);
-            $("#scan").val(row.scan);
-            CKEDITOR.instances.editor1.setData(row.content);
+            $("#${actionName}Form").find(':input').each(function () {
+                var  name= $(this).attr("name");
+                debugger;
+                $("#"+name).val(row[name]);
+            });
             $("#modal-default").modal('show');
         },
         'click .delete': function (e, value, row, index) {
             $.ajax({
-                url:"<#noparse>${pageContext.request.contextPath}</#noparse>/article/delete?id="+row.id,
+                url:"${pageContext.request.contextPath}/${actionName}/delete?id="+row.id,
                 type: "post",
                 dataType: "json",
                 success: function (res) {
-                    $("#${actionName}").bootstrapTable('refresh');//刷新ds_table的数据
+                    alert(res.msg);
+                    getContent('${pageContext.request.contextPath}/${actionName}/list');//刷新ds_table的数据
                 }
             });
         }
     };
 
     function _save() {
-        var tId =$("#tId option:selected").val();
-        var content = CKEDITOR.instances.editor1.getData();
-        var title =$("#title").val();
-        var data= {"tId":tId,"title":title,"content":content};
-        var id =$("#_id").val();
-        var scan =$("#scan").val();
-        if(id!=""){
-            data.id=id;
-            data.scan =scan;
-        }
+        var  data = $("#sysUserForm").serialize();
         $.ajax({
-            url:"<#noparse>${pageContext.request.contextPath}</#noparse>/article/save",
+            url:"${pageContext.request.contextPath}/${actionName}/save",
             type: "post",
             data:data,
             dataType: "json",
             success: function (res) {
                 alert(res.msg);
                 $("#modal-default").modal('toggle');
-                $("#${actionName}").bootstrapTable('refresh');//刷新ds_table的数据
-                //window.location.href="<#noparse>${pageContext.request.contextPath}</#noparse>/article/list";
+                getContent('${pageContext.request.contextPath}/${actionName}/list');//刷新ds_table的数据                //window.location.href="${pageContext.request.contextPath}/article/list";
                 // $('body').removeClass('modal-open');
                 $('.modal-backdrop').remove();
             }

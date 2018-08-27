@@ -75,7 +75,7 @@ public class ModelAndMapperGenerator extends CodeGeneratorManager implements Cod
 	        tableConfiguration.setTableName(tableName);
 	        tableConfiguration.setDomainObjectName(modelName);
 			tableConfiguration.setSelectByExampleQueryId("true");
-	        tableConfiguration.setGeneratedKey(new GeneratedKey("id", "select seq_"+tableName.toLowerCase()+".nextval from dual", false, "pre"));
+	       // tableConfiguration.setGeneratedKey(new GeneratedKey("id", "select seq_"+tableName.toLowerCase()+".nextval from dual", false, "pre"));
 	        context.addTableConfiguration(tableConfiguration);
 		} catch (Exception e) {
 			throw new RuntimeException("ModelAndMapperGenerator 初始化环境异常!", e);
