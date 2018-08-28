@@ -69,7 +69,7 @@ public class SysPermissionController {
     public Map<String,Object> save(@Valid SysPermission sysPermission) {
         Map<String, Object> resultMap = new HashMap<String, Object>();
         try {
-            if(sysPermission.getId()==null) {
+            if(sysPermission.getId()==null||sysPermission.getId().equals("")) {
                 sysPermissionService.insert(sysPermission);
             }else{
                 sysPermissionService.updateByPrimaryKey(sysPermission);

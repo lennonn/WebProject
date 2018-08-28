@@ -12,9 +12,6 @@
     where ID = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.zlennon.admin.model.SysOperation">
-    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
-      select seq_sys_operation.nextval from dual
-    </selectKey>
     insert into sys_operation (ID, ODESC, ONAME, 
       OPER)
     values (#{id,jdbcType=VARCHAR}, #{odesc,jdbcType=VARCHAR}, #{oname,jdbcType=VARCHAR}, 
@@ -34,9 +31,9 @@
   </select>
 
   <select id="selectByQueryParams" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select ID, PDESC, PNAME, MENU_ID
+    select ID, ODESC, ONAME, OPER
     from sys_operation
-    WHERE CONCAT(IFNULL(`PNAME`,'')) LIKE  '%${search}%'
+    WHERE CONCAT(IFNULL(`ONAME`,'')) LIKE  '%${search}%'
   </select>
 
   <select id="selectAll" resultMap="BaseResultMap">

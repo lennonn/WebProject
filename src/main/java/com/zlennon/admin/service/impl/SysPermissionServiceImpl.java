@@ -31,6 +31,7 @@ public class SysPermissionServiceImpl extends AbstractService<SysPermission> imp
     }
 
     public int insert(SysPermission sysPermission){
+        sysPermission.setId(getTablePK("SysPermission"));
        return sysPermissionMapper.insert(sysPermission);
     }
 

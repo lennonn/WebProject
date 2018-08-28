@@ -69,7 +69,7 @@ public class ${modelNameUpperCamel}Controller {
     public Map<String,Object> save(@Valid ${modelNameUpperCamel} ${modelNameLowerCamel}) {
         Map<String, Object> resultMap = new HashMap<String, Object>();
         try {
-            if(${modelNameLowerCamel}.getId()==null) {
+            if(${modelNameLowerCamel}.getId()==null||${modelNameLowerCamel}.getId().equals("")) {
                 ${modelNameLowerCamel}Service.insert(${modelNameLowerCamel});
             }else{
                 ${modelNameLowerCamel}Service.updateByPrimaryKey(${modelNameLowerCamel});

@@ -31,6 +31,7 @@ public class SysOperationServiceImpl extends AbstractService<SysOperation> imple
     }
 
     public int insert(SysOperation sysOperation){
+        sysOperation.setId(getTablePK("SysOperation"));
        return sysOperationMapper.insert(sysOperation);
     }
 

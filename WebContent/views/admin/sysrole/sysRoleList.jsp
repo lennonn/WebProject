@@ -14,13 +14,7 @@
 <body>
 <div class="row">
     <div class="col-md-12">
-        <table id="sysRoleTable"
-               data-classes="table table-hover "
-               data-search="true"
-               data-show-refresh="true"
-               data-show-toggle="true"
-               data-show-columns="true"
-               data-toolbar="#toolbar"></table>
+        <table id="sysRoleTable"></table>
         <div id="toolbar">
             <div class="btn-group">
                 <button class="btn btn-block btn-info" data-toggle="modal" data-target="#modal-default">

@@ -172,7 +172,6 @@
             success: function (result) {
                 alert(result.success);
                 init(result.menuId);
-
         }
         })
         })

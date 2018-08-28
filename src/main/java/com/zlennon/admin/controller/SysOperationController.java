@@ -69,7 +69,7 @@ public class SysOperationController {
     public Map<String,Object> save(@Valid SysOperation sysOperation) {
         Map<String, Object> resultMap = new HashMap<String, Object>();
         try {
-            if(sysOperation.getId()==null) {
+            if(sysOperation.getId()==null||sysOperation.getId().equals("")) {
                 sysOperationService.insert(sysOperation);
             }else{
                 sysOperationService.updateByPrimaryKey(sysOperation);

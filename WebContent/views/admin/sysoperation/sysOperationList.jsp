@@ -1,10 +1,9 @@
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
- <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page contentType="text/html;charset=utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>文章类型</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/table/bootstrap-table.css">
@@ -14,13 +13,7 @@
 <body>
 <div class="row">
     <div class="col-md-12">
-        <table id="sysOperationTable"
-               data-classes="table table-hover "
-               data-search="true"
-               data-show-refresh="true"
-               data-show-toggle="true"
-               data-show-columns="true"
-               data-toolbar="#toolbar"></table>
+        <table id="sysOperationTable"></table>
         <div id="toolbar">
             <div class="btn-group">
                 <button class="btn btn-block btn-info" data-toggle="modal" data-target="#modal-default">
