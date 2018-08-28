@@ -29,6 +29,13 @@
     from sys_role
     where ROLE_ID = #{roleId,jdbcType=VARCHAR}
   </select>
+
+  <select id="selectByQueryParams" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select ROLE_ID, ROLE_NAME, ROLE_DESC, ROLE
+    from sys_role
+    WHERE CONCAT(IFNULL(`ROLE_NAME`,'')) LIKE  '%${search}%'
+  </select>
+
   <select id="selectAll" resultMap="BaseResultMap">
     select ROLE_ID, ROLE_NAME, ROLE_DESC, ROLE
     from sys_role

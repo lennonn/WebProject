@@ -45,4 +45,9 @@ public class SysOperationServiceImpl extends AbstractService<SysOperation> imple
     public int updateByPrimaryKey(SysOperation sysOperation){
        return sysOperationMapper.updateByPrimaryKey(sysOperation);
     }
+
+    @Override
+    public List<SysOperation> selectByQueryParams(String searchText) {
+        return sysOperationMapper.selectByQueryParams(searchText);
+    }
 }

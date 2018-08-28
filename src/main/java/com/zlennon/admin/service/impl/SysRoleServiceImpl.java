@@ -45,4 +45,9 @@ public class SysRoleServiceImpl extends AbstractService<SysRole> implements SysR
     public int updateByPrimaryKey(SysRole sysRole){
        return sysRoleMapper.updateByPrimaryKey(sysRole);
     }
+
+    @Override
+    public List<SysRole> selectByQueryParams(String searchText) {
+        return sysRoleMapper.selectByQueryParams(searchText);
+    }
 }

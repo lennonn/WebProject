@@ -2,6 +2,8 @@ package com.zlennon.admin.mapper;
 
 import com.zlennon.admin.model.SysUser;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Repository;;
 
@@ -23,4 +25,6 @@ public interface SysUserMapper {
     int updateBatchByPrimaryKeySelective(List<SysUser> records);
 
     SysUser getUserByUsername(String username);
+
+    List<SysUser> selectByQueryParams(@Param(value="search")String search);
 }

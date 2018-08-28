@@ -13,12 +13,8 @@
 <body>
 <div class="row">
     <div class="col-md-12">
-        <table id="sysUserTable"
-               data-classes="table table-hover "
-               data-search="true"
-               data-show-refresh="true"
-               data-show-columns="true"
-               data-toolbar="#toolbar"></table>
+        <table id="sysUserTable" data-classes="table table-hover ">
+        </table>
         <div id="toolbar">
             <div class="btn-group">
                 <button class="btn btn-block btn-info" data-toggle="modal" data-target="#modal-default">
@@ -101,7 +97,7 @@
 
     </div>
 </div>
-<script src="${pageContext.request.contextPath}/js/bootstrap/table/bootstrap-table.js"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap/table/bootstrap-table.min.js"></script>
 <script src="${pageContext.request.contextPath}/views/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
 <script type="text/javascript">
@@ -118,7 +114,7 @@
                 striped: true,  //表格显示条纹
                 pagination: true, //启动分页
                 toolbar: "#toolbar",                //工具按钮用哪个容器
-                pageSize: 20,  //每页显示的记录数
+                pageSize: 10,  //每页显示的记录数
                 pageNumber: 1, //当前第几页
                 pageList: [30, 40, 80],  //记录数可选列表
                 search: true,  //是否启用查询
@@ -127,12 +123,13 @@
                 sidePagination: "server", //表示服务端请求
                 //设置为undefined可以获取pageNumber，pageSize，searchText，sortName，sortOrder
                 //设置为limit可以获取limit, offset, search, sort, order
-                queryParamsType: "undefined",
+                //queryParamsType: "undefined",
+                queryParamsType : 'undefined',
                 queryParams: function queryParams(params) {   //设置查询参数
                     var param = {
                         pageNumber: params.pageNumber,
                         pageSize: params.pageSize,
-                        queryString: params.queryString
+                        searchText:params.searchText
                     };
                     return param;
                 },

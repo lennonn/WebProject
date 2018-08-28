@@ -50,12 +50,19 @@
       RIGHTS = #{rights,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=VARCHAR}
   </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectByQueryParams" parameterType="java.lang.String" resultMap="BaseResultMap">
     select ID, USERNAME, PASSWD, PHONE, SEX, EMAIL, MARK, URANK, LASTLOGIN, LOGINIP, 
+    IMAGEURL, REGTIME, LOCKED, RIGHTS
+    from sys_user
+    WHERE CONCAT(IFNULL(`USERNAME`,''),IFNULL(`PHONE`,''),IFNULL(`EMAIL`,'')) LIKE  '%${search}%'
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select ID, USERNAME, PASSWD, PHONE, SEX, EMAIL, MARK, URANK, LASTLOGIN, LOGINIP,
     IMAGEURL, REGTIME, LOCKED, RIGHTS
     from sys_user
     where ID = #{id,jdbcType=VARCHAR}
   </select>
+
   <select id="selectAll" resultMap="BaseResultMap">
     select ID, USERNAME, PASSWD, PHONE, SEX, EMAIL, MARK, URANK, LASTLOGIN, LOGINIP, 
     IMAGEURL, REGTIME, LOCKED, RIGHTS

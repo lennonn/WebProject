@@ -2,6 +2,8 @@ package com.zlennon.admin.mapper;
 
 import com.zlennon.admin.model.SysPermission;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Repository;
 
@@ -21,4 +23,6 @@ public interface SysPermissionMapper {
     int insertBatchSelective(List<SysPermission> records);
 
     int updateBatchByPrimaryKeySelective(List<SysPermission> records);
+
+    List<SysPermission> selectByQueryParams(@Param(value="search")String searchText);
 }

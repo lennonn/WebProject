@@ -1,5 +1,7 @@
 package com.zlennon.admin.service;
 import com.zlennon.Service;
+import com.zlennon.admin.model.SysOperation;
+
 import java.util.List;
 /**
  *
@@ -16,4 +18,6 @@ public interface SysOperationService<SysOperation> extends Service<SysOperation>
     List<SysOperation> selectAll();
 
     int updateByPrimaryKey(SysOperation sysOperation);
+
+    List<SysOperation> selectByQueryParams(String searchText);
 }

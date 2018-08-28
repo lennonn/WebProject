@@ -1,5 +1,7 @@
 package com.zlennon.admin.service;
 import com.zlennon.Service;
+import com.zlennon.admin.model.SysUser;
+
 import java.util.List;
 /**
  *
@@ -16,4 +18,6 @@ public interface SysUserService<SysUser> extends Service<SysUser> {
     List<SysUser> selectAll();
 
     int updateByPrimaryKey(SysUser sysUser);
+
+    List<SysUser> selectByQueryParams(String search);
 }

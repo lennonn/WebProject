@@ -23,7 +23,7 @@ import java.util.Map;
 
 /**
  *
- * Created by zlennon on 2018/08/27.
+ * Created by zlennon on 2018/08/28.
  */
 @Controller
 @RequestMapping("/sysRole/")
@@ -36,26 +36,32 @@ public class SysRoleController {
 
    @RequestMapping("list")
     public String list(Model model) {
-        List<SysRole> sr=sysRoleService.selectAll();
-        model.addAttribute("sysRole",sr);
+
         return "/admin/sysrole/sysRoleList";
     }
 
 
     @RequestMapping("initTable")
     @ResponseBody
-    public String  initTable(HttpServletRequest request, @RequestParam Integer pageNumber, @RequestParam Integer pageSize){
-    PageHelper.startPage(pageNumber, pageSize);
-    List<SysRole> list = sysRoleService.selectAll();
+    public String  initTable(@RequestParam String searchText,@RequestParam Integer pageNumber,@RequestParam Integer pageSize){
+        PageHelper.startPage(pageNumber, pageSize);
+        List<SysRole> list = sysRoleService.selectByQueryParams(searchText);
         PageInfo pageInfo = new PageInfo(list);
         return  "{\"total\":" + pageInfo.getTotal() + ",\"rows\":" + JSONObject.toJSON(pageInfo.getList()) + "}";
     }
 
     @RequestMapping("delete")
     @ResponseBody
-    public String  delete(@RequestParam String id){
-        sysRoleService.deleteByPrimaryKey(id);
-        return  "";
+    public Map<String,Object>  delete(@RequestParam String id){
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        try {
+            sysRoleService.deleteByPrimaryKey(id);
+            resultMap.put("msg", "操作成功");
+        }catch (Exception e){
+            logger.info(e.getMessage());
+            resultMap.put("msg", "操作失败");
+        }
+        return  resultMap;
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)

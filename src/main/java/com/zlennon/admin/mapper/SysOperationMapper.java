@@ -2,6 +2,8 @@ package com.zlennon.admin.mapper;
 
 import com.zlennon.admin.model.SysOperation;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Repository;;
 
@@ -21,4 +23,6 @@ public interface SysOperationMapper {
     int insertBatchSelective(List<SysOperation> records);
 
     int updateBatchByPrimaryKeySelective(List<SysOperation> records);
+
+    List<SysOperation> selectByQueryParams(@Param(value="search")String searchText);
 }

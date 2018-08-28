@@ -1,5 +1,7 @@
 package com.zlennon.admin.service;
 import com.zlennon.Service;
+import com.zlennon.admin.model.SysRole;
+
 import java.util.List;
 /**
  *
@@ -16,4 +18,6 @@ public interface SysRoleService<SysRole> extends Service<SysRole> {
     List<SysRole> selectAll();
 
     int updateByPrimaryKey(SysRole sysRole);
+
+    List<SysRole> selectByQueryParams(String searchText);
 }

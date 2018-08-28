@@ -45,4 +45,9 @@ public class SysPermissionServiceImpl extends AbstractService<SysPermission> imp
     public int updateByPrimaryKey(SysPermission sysPermission){
        return sysPermissionMapper.updateByPrimaryKey(sysPermission);
     }
+
+    @Override
+    public List<SysPermission> selectByQueryParams(String searchText) {
+        return sysPermissionMapper.selectByQueryParams(searchText);
+    }
 }

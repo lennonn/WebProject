@@ -44,11 +44,11 @@ public class SysUserController {
 
     @RequestMapping("initTable")
     @ResponseBody
-    public String  initTable(HttpServletRequest request, @RequestParam Integer pageNumber, @RequestParam Integer pageSize){
-    PageHelper.startPage(pageNumber, pageSize);
-    List<SysUser> list = sysUserService.selectAll();
-        PageInfo pageInfo = new PageInfo(list);
-        return  "{\"total\":" + pageInfo.getTotal() + ",\"rows\":" + JSONObject.toJSON(pageInfo.getList()) + "}";
+    public String  initTable(@RequestParam String searchText,@RequestParam Integer pageNumber,@RequestParam Integer pageSize){
+       PageHelper.startPage(pageNumber, pageSize);
+       List<SysUser> list = sysUserService.selectByQueryParams(searchText);
+       PageInfo pageInfo = new PageInfo(list);
+       return  "{\"total\":" + pageInfo.getTotal() + ",\"rows\":" + JSONObject.toJSON(pageInfo.getList()) + "}";
     }
 
     @RequestMapping("delete")

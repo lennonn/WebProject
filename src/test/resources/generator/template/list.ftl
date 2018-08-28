@@ -83,7 +83,7 @@
                 striped: true,  //表格显示条纹
                 pagination: true, //启动分页
                 toolbar: "#toolbar",                //工具按钮用哪个容器
-                pageSize: 20,  //每页显示的记录数
+                pageSize: 10,  //每页显示的记录数
                 pageNumber: 1, //当前第几页
                 pageList: [30, 40, 80],  //记录数可选列表
                 search: true,  //是否启用查询
@@ -92,12 +92,13 @@
                 sidePagination: "server", //表示服务端请求
                 //设置为undefined可以获取pageNumber，pageSize，searchText，sortName，sortOrder
                 //设置为limit可以获取limit, offset, search, sort, order
-                queryParamsType: "undefined",
+                //queryParamsType: "undefined",
+                queryParamsType : 'undefined',
                 queryParams: function queryParams(params) {   //设置查询参数
                     var param = {
                         pageNumber: params.pageNumber,
                         pageSize: params.pageSize,
-                        queryString: $("#orderNum").val()
+                        searchText:params.searchText
                     };
                     return param;
                 },
@@ -140,28 +141,28 @@
         },
         'click .delete': function (e, value, row, index) {
             $.ajax({
-                url:"${pageContext.request.contextPath}/${actionName}/delete?id="+row.id,
+                url:"<#noparse>${pageContext.request.contextPath}</#noparse>/${actionName}/delete?id="+row.id,
                 type: "post",
                 dataType: "json",
                 success: function (res) {
                     alert(res.msg);
-                    getContent('${pageContext.request.contextPath}/${actionName}/list');//刷新ds_table的数据
+                    getContent('<#noparse>${pageContext.request.contextPath}</#noparse>/${actionName}/list');//刷新ds_table的数据
                 }
             });
         }
     };
 
     function _save() {
-        var  data = $("#sysUserForm").serialize();
+        var  data = $("#${actionName}Form").serialize();
         $.ajax({
-            url:"${pageContext.request.contextPath}/${actionName}/save",
+            url:"<#noparse>${pageContext.request.contextPath}</#noparse>/${actionName}/save",
             type: "post",
             data:data,
             dataType: "json",
             success: function (res) {
                 alert(res.msg);
                 $("#modal-default").modal('toggle');
-                getContent('${pageContext.request.contextPath}/${actionName}/list');//刷新ds_table的数据                //window.location.href="${pageContext.request.contextPath}/article/list";
+                getContent('<#noparse>${pageContext.request.contextPath}</#noparse>/${actionName}/list');
                 // $('body').removeClass('modal-open');
                 $('.modal-backdrop').remove();
             }

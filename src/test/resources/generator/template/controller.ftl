@@ -36,26 +36,32 @@ public class ${modelNameUpperCamel}Controller {
 
    @RequestMapping("list")
     public String list(Model model) {
-        List<${modelNameUpperCamel}> ${abbr}=${modelNameLowerCamel}Service.selectAll();
-        model.addAttribute("${modelNameLowerCamel}",${abbr});
+
         return "/${modules}/${modelNameLowerCamel?lower_case}/${modelNameLowerCamel}List";
     }
 
 
     @RequestMapping("initTable")
     @ResponseBody
-    public String  initTable(HttpServletRequest request, @RequestParam Integer pageNumber, @RequestParam Integer pageSize){
-    PageHelper.startPage(pageNumber, pageSize);
-    List<${modelNameUpperCamel}> list = ${modelNameLowerCamel}Service.selectAll();
+    public String  initTable(@RequestParam String searchText,@RequestParam Integer pageNumber,@RequestParam Integer pageSize){
+        PageHelper.startPage(pageNumber, pageSize);
+        List<${modelNameUpperCamel}> list = ${modelNameLowerCamel}Service.selectByQueryParams(searchText);
         PageInfo pageInfo = new PageInfo(list);
         return  "{\"total\":" + pageInfo.getTotal() + ",\"rows\":" + JSONObject.toJSON(pageInfo.getList()) + "}";
     }
 
     @RequestMapping("delete")
     @ResponseBody
-    public String  delete(@RequestParam String id){
-        ${modelNameLowerCamel}Service.deleteByPrimaryKey(id);
-        return  "";
+    public Map<String,Object>  delete(@RequestParam String id){
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        try {
+            ${modelNameLowerCamel}Service.deleteByPrimaryKey(id);
+            resultMap.put("msg", "操作成功");
+        }catch (Exception e){
+            logger.info(e.getMessage());
+            resultMap.put("msg", "操作失败");
+        }
+        return  resultMap;
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)

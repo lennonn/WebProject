@@ -14,7 +14,7 @@
 <body>
 <div class="row">
     <div class="col-md-12">
-        <table id="sysOperation"
+        <table id="sysOperationTable"
                data-classes="table table-hover "
                data-search="true"
                data-show-refresh="true"
@@ -37,9 +37,9 @@
                         <h4 class="modal-title">添加文章</h4>
                     </div>
                     <div class="modal-body">
-                        <form class="form-horizontal" id ="sysOperation">
+                        <form class="form-horizontal" id ="sysOperationForm">
 
-                            <input type="hidden" name="id" id="_id" >
+                            <input type="hidden" name="id" id="id" value="">
                              <div class="form-group">
                              </div>
                              <div class="form-group">
@@ -87,12 +87,12 @@
         var oTableInit = new Object();
         //初始化Table
         oTableInit.Init = function () {
-            $('#sysOperation').bootstrapTable({
+            $('#sysOperationTable').bootstrapTable({
                 url: '${pageContext.request.contextPath}/sysOperation/initTable',         //请求后台的URL（*）
                 striped: true,  //表格显示条纹
                 pagination: true, //启动分页
                 toolbar: "#toolbar",                //工具按钮用哪个容器
-                pageSize: 20,  //每页显示的记录数
+                pageSize: 10,  //每页显示的记录数
                 pageNumber: 1, //当前第几页
                 pageList: [30, 40, 80],  //记录数可选列表
                 search: true,  //是否启用查询
@@ -101,12 +101,13 @@
                 sidePagination: "server", //表示服务端请求
                 //设置为undefined可以获取pageNumber，pageSize，searchText，sortName，sortOrder
                 //设置为limit可以获取limit, offset, search, sort, order
-                queryParamsType: "undefined",
+                //queryParamsType: "undefined",
+                queryParamsType : 'undefined',
                 queryParams: function queryParams(params) {   //设置查询参数
                     var param = {
                         pageNumber: params.pageNumber,
                         pageSize: params.pageSize,
-                        queryString: $("#orderNum").val()
+                        searchText:params.searchText
                     };
                     return param;
                 },
@@ -138,48 +139,37 @@
 
     window.operateEvents = {
         'click .edit': function (e, value, row, index) {
-            debugger;
-
-            $("#tId").val(row.tId);
-            $("#title").val(row.title);
-            $("#_id").val(row.id);
-            $("#scan").val(row.scan);
-            CKEDITOR.instances.editor1.setData(row.content);
+            $("#sysOperationForm").find(':input').each(function () {
+                var  name= $(this).attr("name");
+                debugger;
+                $("#"+name).val(row[name]);
+            });
             $("#modal-default").modal('show');
         },
         'click .delete': function (e, value, row, index) {
             $.ajax({
-                url:"${pageContext.request.contextPath}/article/delete?id="+row.id,
+                url:"${pageContext.request.contextPath}/sysOperation/delete?id="+row.id,
                 type: "post",
                 dataType: "json",
                 success: function (res) {
-                    $("#sysOperation").bootstrapTable('refresh');//刷新ds_table的数据
+                    alert(res.msg);
+                    getContent('${pageContext.request.contextPath}/sysOperation/list');//刷新ds_table的数据
                 }
             });
         }
     };
 
     function _save() {
-        var tId =$("#tId option:selected").val();
-        var content = CKEDITOR.instances.editor1.getData();
-        var title =$("#title").val();
-        var data= {"tId":tId,"title":title,"content":content};
-        var id =$("#_id").val();
-        var scan =$("#scan").val();
-        if(id!=""){
-            data.id=id;
-            data.scan =scan;
-        }
+        var  data = $("#sysOperationForm").serialize();
         $.ajax({
-            url:"${pageContext.request.contextPath}/article/save",
+            url:"${pageContext.request.contextPath}/sysOperation/save",
             type: "post",
             data:data,
             dataType: "json",
             success: function (res) {
                 alert(res.msg);
                 $("#modal-default").modal('toggle');
-                $("#sysOperation").bootstrapTable('refresh');//刷新ds_table的数据
-                //window.location.href="${pageContext.request.contextPath}/article/list";
+                getContent('${pageContext.request.contextPath}/sysOperation/list');
                 // $('body').removeClass('modal-open');
                 $('.modal-backdrop').remove();
             }

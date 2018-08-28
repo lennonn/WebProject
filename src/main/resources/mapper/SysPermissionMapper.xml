@@ -32,6 +32,13 @@
     from sys_permission
     where ID = #{id,jdbcType=VARCHAR}
   </select>
+
+  <select id="selectByQueryParams" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select ID, PDESC, PNAME, MENU_ID
+    from sys_permission
+    WHERE CONCAT(IFNULL(`PNAME`,'')) LIKE  '%${search}%'
+  </select>
+
   <select id="selectAll" resultMap="BaseResultMap">
     select ID, PDESC, PNAME, MENU_ID
     from sys_permission

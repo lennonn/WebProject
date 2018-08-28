@@ -48,4 +48,9 @@ public class SysUserServiceImpl extends AbstractService<SysUser> implements SysU
     public int updateByPrimaryKey(SysUser sysUser){
        return sysUserMapper.updateByPrimaryKey(sysUser);
     }
+
+    @Override
+    public List<SysUser> selectByQueryParams(String search) {
+        return sysUserMapper.selectByQueryParams(search);
+    }
 }

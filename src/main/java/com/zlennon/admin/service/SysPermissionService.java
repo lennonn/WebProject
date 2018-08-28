@@ -1,5 +1,7 @@
 package com.zlennon.admin.service;
 import com.zlennon.Service;
+import com.zlennon.admin.model.SysPermission;
+
 import java.util.List;
 /**
  *
@@ -16,4 +18,6 @@ public interface SysPermissionService<SysPermission> extends Service<SysPermissi
     List<SysPermission> selectAll();
 
     int updateByPrimaryKey(SysPermission sysPermission);
+
+    List<SysPermission> selectByQueryParams(String searchText);
 }
