@@ -8,12 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>文章类型</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/table/bootstrap-table.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/ztree/demo.css" type="text/css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/ztree/zTreeStyle/zTreeStyle.css" type="text/css">
-    <script type="text/javascript" src="<%=request.getContextPath()%>/js/ztree/jquery-1.4.4.min.js"></script>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/js/ztree/jquery.ztree.core.js"></script>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/js/ztree/jquery.ztree.excheck.js"></script>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/js/ztree/jquery.ztree.exedit.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/treeview/bootstrap-treeview.css">
+    <style type="text/css">
+    </style>
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body>
@@ -44,12 +41,9 @@
                             <div class="form-group">
                                 <label for="menuName" class="col-sm-2 control-label">菜单</label>
                                 <div class="col-xs-6">
-
                                     <input class="form-control" type="hidden" id="menuId" name="menuId" />
-                                    <input class="form-control" id="menuName" name="menuName" placeholder="请选择菜单" onclick="showMenu();"/>
-                                    <div id="menuContent" class="menuContent" style="display:none;position: absolute;">
-                                        <ul id="treeDemo" class="ztree" style="margin-top:0;"></ul>
-                                    </div>
+                                    <input type="text" id="menuName" name="menuName" class="form-control" value="" onclick="$('#treeview').show()" placeholder="请选择菜单">
+                                    <div id="treeview" style="display: none;"/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -78,91 +72,11 @@
         </div>
     </div>
 </div>
+<script src="${pageContext.request.contextPath}/js/bootstrap/treeview/bootstrap-treeview.js"></script>
 <script src="${pageContext.request.contextPath}/js/bootstrap/table/bootstrap-table.js"></script>
 <script src="${pageContext.request.contextPath}/views/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
 <script type="text/javascript">
-
-    var setting = {
-        check: {
-            enable: true,
-            chkboxType: {"Y":"", "N":""}
-        },
-        view: {
-            dblClickExpand: false
-        },
-        data: {
-            simpleData: {
-                enable: true
-            }
-        },
-        callback: {
-            beforeClick: beforeClick,
-            onCheck: onCheck
-        }
-    };
-
-    var zNodes =[
-        {id:1, pId:0, name:"北京"},
-        {id:2, pId:0, name:"天津"},
-        {id:3, pId:0, name:"上海"},
-        {id:6, pId:0, name:"重庆"},
-        {id:4, pId:0, name:"河北省", open:true, nocheck:true},
-        {id:41, pId:4, name:"石家庄"},
-        {id:42, pId:4, name:"保定"},
-        {id:43, pId:4, name:"邯郸"},
-        {id:44, pId:4, name:"承德"},
-        {id:5, pId:0, name:"广东省", open:true, nocheck:true},
-        {id:51, pId:5, name:"广州"},
-        {id:52, pId:5, name:"深圳"},
-        {id:53, pId:5, name:"东莞"},
-        {id:54, pId:5, name:"佛山"},
-        {id:6, pId:0, name:"福建省", open:true, nocheck:true},
-        {id:61, pId:6, name:"福州"},
-        {id:62, pId:6, name:"厦门"},
-        {id:63, pId:6, name:"泉州"},
-        {id:64, pId:6, name:"三明"}
-    ];
-
-    function beforeClick(treeId, treeNode) {
-        var zTree = $.fn.zTree.getZTreeObj("treeDemo");
-        zTree.checkNode(treeNode, !treeNode.checked, null, true);
-        return false;
-    }
-
-    function onCheck(e, treeId, treeNode) {
-        var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
-            nodes = zTree.getCheckedNodes(true),
-            v = "";
-        for (var i=0, l=nodes.length; i<l; i++) {
-            v += nodes[i].name + ",";
-        }
-        if (v.length > 0 ) v = v.substring(0, v.length-1);
-        var cityObj = $("#menuName");
-        cityObj.attr("value", v);
-    }
-
-    function showMenu() {
-        var cityObj = $("#menuName");
-        var cityOffset = $("#menuName").offset();
-        $("#menuContent").css({left:cityOffset.left + "px", top:cityOffset.top + cityObj.outerHeight() + "px"}).slideDown("fast");
-
-        $("body").bind("mousedown", onBodyDown);
-    }
-    function hideMenu() {
-        $("#menuContent").fadeOut("fast");
-        $("body").unbind("mousedown", onBodyDown);
-    }
-    function onBodyDown(event) {
-        if (!(event.target.id == "menuBtn" || event.target.id == "menuName" || event.target.id == "menuContent" || $(event.target).parents("#menuContent").length>0)) {
-            hideMenu();
-        }
-    }
-
-    $(document).ready(function(){
-        $.fn.zTree.init($("#treeDemo"), setting, zNodes);
-    });
-
 
 
 
@@ -262,6 +176,99 @@
             }
         });
     }
+
+   // var data1 = [];
+    var data1 = [
+        {
+            text: 'Parent 1',
+            nodes: [
+                {
+                    text: 'Child 1',
+                    nodes: [
+                        {
+                            text: 'Grandchild 1'
+                        },
+                        {
+                            text: 'Grandchild 2'
+                        }
+                    ]
+                },
+                {
+                    text: 'Child 2'
+                }
+            ]
+        },
+        {
+            text: 'Parent 2'
+        },
+        {
+            text: 'Parent 3'
+        },
+        {
+            text: 'Parent 4'
+        },
+        {
+            text: 'Parent 5'
+        }
+    ];
+/*    $(function() {
+        $.ajax({
+            type : "post",
+            url : "/receiverShow/findTree.action",
+            success : function(data, status) {
+                if (status == "success") {
+                    data1 = eval("[" + data + "]");
+                }
+            },
+            error : function() {
+                toastr.error('Error');
+            },
+        });
+    });*/
+
+    function buildDomTree() {
+        var data = [];
+        var root = "所有分类";
+        function walk(nodes, data) {
+            if (!nodes) {
+                return;
+            }
+            $.each(nodes, function(id, node) {
+                var obj = {
+                    id : id,
+                    text : node.name != null ? node.name : root
+                    // 										tags : [ node.isLeaf == true ? node.
+                    // 												+ ' child elements'
+                    // 												: '' ]
+                };
+                if (node.isLeaf = true) {
+                    obj.nodes = [];
+                    walk(node.children, obj.nodes);
+                }
+                data.push(obj);
+            });
+        }
+
+        walk(data1, data);
+        return data;
+    }
+
+    $("#txt_departmentname").click(function() {
+        var options = {
+            bootstrap2 : false,
+            showTags : true,
+            levels : 5,
+            showCheckbox : true,
+            checkedIcon : "glyphicon glyphicon-check",
+            data : buildDomTree(),
+            onNodeSelected : function(event, data) {
+                $("#txt_departmentname").val(data.text);
+                $("#treeview").hide();
+            }
+        };
+
+        $('#treeview').treeview(options);
+    });
 
 </script>
 </body>
