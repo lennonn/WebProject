@@ -8,76 +8,106 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/views/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/bootstrap.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/views/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/views/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Ionicons/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/views/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/dist/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/views/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/dist/skins/_all-skins.min.css">
     <!-- Morris chart -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/views/bower_components/morris.js/morris.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/morris/morris.css">
     <!-- jvectormap -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/views/bower_components/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/jvectormap/jquery-jvectormap.css">
     <!-- Date Picker -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/views/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/datepicker/bootstrap-datepicker.min.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/views/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/views/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/plugins/iCheck/all.css">
+
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/table/bootstrap-table.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/views/bower_components/select2/dist/css/select2.min.css">
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/select/bootstrap-select.css">
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/treeview/bootstrap-treeview.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="<%=request.getContextPath()%>/views/https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="<%=request.getContextPath()%>/views/https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  </head>
+    <!-- jQuery 3 -->
+    <script src="${pageContext.request.contextPath}/js/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="${pageContext.request.contextPath}/js/jquery/ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="${pageContext.request.contextPath}/js/bootstrap/bootstrap.js"></script>
 
-    <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-</head>
-<!-- jQuery 3 -->
-<script src="<%=request.getContextPath()%>/views/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="<%=request.getContextPath()%>/views/bower_components/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Bootstrap 3.3.7 -->
-<script src="<%=request.getContextPath()%>/views/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="<%=request.getContextPath()%>/views/bower_components/raphael/raphael.min.js"></script>
-<script src="<%=request.getContextPath()%>/views/bower_components/morris.js/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="<%=request.getContextPath()%>/views/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="<%=request.getContextPath()%>/views/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="<%=request.getContextPath()%>/views/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="<%=request.getContextPath()%>/views/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="<%=request.getContextPath()%>/views/bower_components/moment/min/moment.min.js"></script>
-<script src="<%=request.getContextPath()%>/views/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="<%=request.getContextPath()%>/views/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="<%=request.getContextPath()%>/views/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="<%=request.getContextPath()%>/views/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="<%=request.getContextPath()%>/views/bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="<%=request.getContextPath()%>/views/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<%=request.getContextPath()%>/views/dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="<%=request.getContextPath()%>/views/dist/js/demo.js"></script>
-<script src="${pageContext.request.contextPath}/js/zlennon-pub.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap/treeview/bootstrap-treeview.js"></script>
+    <%--
+    <script src="${pageContext.request.contextPath}/js/bootstrap/table/locale/bootstrap-table-zh-CN.js"></script>
+    --%>
+    <script src="${pageContext.request.contextPath}/js/bootstrap/table/bootstrap-table.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap/select/bootstrap-select.js"></script>
+
+    <!-- Morris.js charts -->
+    <script src="${pageContext.request.contextPath}/views/bower_components/raphael/raphael.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/morris/morris.min.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/zlennon-pub.js"></script>
+    <!-- Select2 -->
+    <script src="${pageContext.request.contextPath}/views/bower_components/select2/dist/js/select2.full.min.js"></script>
+    <!-- Sparkline -->
+    <script src="${pageContext.request.contextPath}/js/jquery/sparkline/jquery.sparkline.min.js"></script>
+    <!-- jvectormap -->
+    <script src="${pageContext.request.contextPath}/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="${pageContext.request.contextPath}/js/jquery/knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="${pageContext.request.contextPath}/js/moment/moment.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap/daterangepicker/daterangepicker.js"></script>
+    <!-- datepicker -->
+    <script src="${pageContext.request.contextPath}/js/bootstrap/datepicker/bootstrap-datepicker.min.js"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="${pageContext.request.contextPath}/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <!-- PACE -->
+    <script src="${pageContext.request.contextPath}/js/pace/pace.min.js"></script>
+    <!-- Slimscroll -->
+    <script src="${pageContext.request.contextPath}/js/jquery/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="${pageContext.request.contextPath}/js/fastclick/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="${pageContext.request.contextPath}/js/dist/adminlte.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="${pageContext.request.contextPath}/js/dist/page/dashboard.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="${pageContext.request.contextPath}/js/dist/demo.js"></script>
+    <!-- iCheck 1.0.1 -->
+    <script src="${pageContext.request.contextPath}/js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' /* optional */
+            });
+        });
+    </script>
+
+    <script src="${pageContext.request.contextPath}/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/zlennon-pub.js"></script>
 <script type="text/javascript">
     function getRootPath() {
         //获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp

@@ -4,33 +4,9 @@
         <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>AdminLTE 2 | Pace Page</title>
+        <title>莫辂技术日志 | Pace Page</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <!-- Bootstrap 3.3.7 -->
-        <link rel="stylesheet"  media="all" href="${pageContext.request.contextPath}/views/bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/views/bower_components/font-awesome/css/font-awesome.min.css">
-        <!-- Ionicons -->
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/views/bower_components/Ionicons/css/ionicons.min.css">
-        <!-- Theme style -->
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/views/dist/css/AdminLTE.min.css">
-        <!-- AdminLTE Skins. Choose a skin from the css/skins
-        folder instead of downloading all of them to reduce the load. -->
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/views/dist/css/skins/_all-skins.min.css">
-        <!-- Pace style -->
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/views/plugins/pace/pace.min.css">
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-        <!-- ztree-->
-<%--
-        <link rel="stylesheet" href="<%=request.getContextPath()%>/css/ztree/demo.css" type="text/css">
---%>
         <link rel="stylesheet" href="<%=request.getContextPath()%>/css/ztree/metroStyle/metroStyle.css" type="text/css">
         <script type="text/javascript" src="<%=request.getContextPath()%>/js/ztree/jquery-1.4.4.min.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath()%>/js/ztree/jquery.ztree.core.js"></script>
@@ -43,9 +19,6 @@
             <link href="<%=request.getContextPath()%>/css/bootstrap/icons/icon-picker.min.css" rel="stylesheet" media="all" type="text/css" />
             <script type="text/javascript" src="<%=request.getContextPath()%>/js/bootstrap/icons/iconPicker.min.js"></script>
         <!--/icon-->
-        <!-- Google Font -->
-        <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
         </head>
         <body>
         <!-- Site wrapper -->

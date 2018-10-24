@@ -1,12 +1,12 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+--%>
+<%@ page language="java" import="java.util.*" pageEncoding="gbk"%>
 <%@ page contentType="text/html;charset=utf-8"%>
-<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gbk">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>æ–‡ç« ç±»å‹</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/table/bootstrap-table.css">
+    <title>ÎÄÕÂÀàĞÍ</title>
 
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
@@ -17,7 +17,7 @@
         <div id="toolbar">
             <div class="btn-group">
                 <button class="btn btn-block btn-info" data-toggle="modal" data-target="#modal-default">
-                    <i class="fa fa-plus-square">æ·»åŠ </i>
+                    <i class="fa fa-plus-square">Ìí¼Ó</i>
                 </button>
             </div>
         </div>
@@ -27,7 +27,7 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">æ·»åŠ æ–‡ç« </h4>
+                        <h4 class="modal-title">Ìí¼ÓÎÄÕÂ</h4>
                     </div>
                     <div class="modal-body">
                         <form class="form-horizontal" id ="sysOperationForm">
@@ -36,29 +36,29 @@
                              <div class="form-group">
                              </div>
                              <div class="form-group">
-                                    <label for="odesc" class="col-sm-2 control-label">æ“ä½œæè¿°</label>
+                                    <label for="odesc" class="col-sm-2 control-label">²Ù×÷ÃèÊö</label>
                                     <div class="col-xs-6">
-                                        <input class="form-control" id="odesc" name="odesc" placeholder="è¯·è¾“å…¥æ“ä½œæè¿°"/>
+                                        <input class="form-control" id="odesc" name="odesc" placeholder="ÇëÊäÈë²Ù×÷ÃèÊö"/>
                                     </div>
                              </div>
                              <div class="form-group">
-                                    <label for="oname" class="col-sm-2 control-label">æ“ä½œåç§°</label>
+                                    <label for="oname" class="col-sm-2 control-label">²Ù×÷Ãû³Æ</label>
                                     <div class="col-xs-6">
-                                        <input class="form-control" id="oname" name="oname" placeholder="è¯·è¾“å…¥æ“ä½œåç§°"/>
+                                        <input class="form-control" id="oname" name="oname" placeholder="ÇëÊäÈë²Ù×÷Ãû³Æ"/>
                                     </div>
                              </div>
                              <div class="form-group">
-                                    <label for="oper" class="col-sm-2 control-label">æ“ä½œæ ‡å¿—</label>
+                                    <label for="oper" class="col-sm-2 control-label">²Ù×÷±êÖ¾</label>
                                     <div class="col-xs-6">
-                                        <input class="form-control" id="oper" name="oper" placeholder="è¯·è¾“å…¥æ“ä½œæ ‡å¿—"/>
+                                        <input class="form-control" id="oper" name="oper" placeholder="ÇëÊäÈë²Ù×÷±êÖ¾"/>
                                     </div>
                              </div>
                         </form>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">å…³é—­</button>
-                        <button type="button" class="btn btn-primary" onclick="_save();">ä¿å­˜æäº¤</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">¹Ø±Õ</button>
+                        <button type="button" class="btn btn-primary" onclick="_save();">±£´æÌá½»</button>
                     </div>
                 </div>
                 <!-- /.modal-content -->
@@ -68,8 +68,6 @@
 
     </div>
 </div>
-<script src="${pageContext.request.contextPath}/js/bootstrap/table/bootstrap-table.js"></script>
-<script src="${pageContext.request.contextPath}/views/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
 <script type="text/javascript">
     $(function(){
@@ -78,25 +76,26 @@
     });
     var TableInit = function () {
         var oTableInit = new Object();
-        //åˆå§‹åŒ–Table
+        //³õÊ¼»¯Table
         oTableInit.Init = function () {
             $('#sysOperationTable').bootstrapTable({
-                url: '${pageContext.request.contextPath}/sysOperation/initTable',         //è¯·æ±‚åå°çš„URLï¼ˆ*ï¼‰
-                striped: true,  //è¡¨æ ¼æ˜¾ç¤ºæ¡çº¹
-                pagination: true, //å¯åŠ¨åˆ†é¡µ
-                toolbar: "#toolbar",                //å·¥å…·æŒ‰é’®ç”¨å“ªä¸ªå®¹å™¨
-                pageSize: 10,  //æ¯é¡µæ˜¾ç¤ºçš„è®°å½•æ•°
-                pageNumber: 1, //å½“å‰ç¬¬å‡ é¡µ
-                pageList: [30, 40, 80],  //è®°å½•æ•°å¯é€‰åˆ—è¡¨
-                search: true,  //æ˜¯å¦å¯ç”¨æŸ¥è¯¢
-                showColumns: true,  //æ˜¾ç¤ºä¸‹æ‹‰æ¡†å‹¾é€‰è¦æ˜¾ç¤ºçš„åˆ—
-                showRefresh: true,  //æ˜¾ç¤ºåˆ·æ–°æŒ‰é’®
-                sidePagination: "server", //è¡¨ç¤ºæœåŠ¡ç«¯è¯·æ±‚
-                //è®¾ç½®ä¸ºundefinedå¯ä»¥è·å–pageNumberï¼ŒpageSizeï¼ŒsearchTextï¼ŒsortNameï¼ŒsortOrder
-                //è®¾ç½®ä¸ºlimitå¯ä»¥è·å–limit, offset, search, sort, order
+                url: '${pageContext.request.contextPath}/sysOperation/initTable',         //ÇëÇóºóÌ¨µÄURL£¨*£©
+                striped: true,  //±í¸ñÏÔÊ¾ÌõÎÆ
+                method: 'get',
+                pagination: true, //Æô¶¯·ÖÒ³
+                toolbar: "#toolbar",                //¹¤¾ß°´Å¥ÓÃÄÄ¸öÈİÆ÷
+                pageSize: 10,  //Ã¿Ò³ÏÔÊ¾µÄ¼ÇÂ¼Êı
+                pageNumber: 1, //µ±Ç°µÚ¼¸Ò³
+                pageList: [30, 40, 80],  //¼ÇÂ¼Êı¿ÉÑ¡ÁĞ±í
+                search: true,  //ÊÇ·ñÆôÓÃ²éÑ¯
+                showColumns: true,  //ÏÔÊ¾ÏÂÀ­¿ò¹´Ñ¡ÒªÏÔÊ¾µÄÁĞ
+                showRefresh: true,  //ÏÔÊ¾Ë¢ĞÂ°´Å¥
+                sidePagination: "server", //±íÊ¾·şÎñ¶ËÇëÇó
+                //ÉèÖÃÎªundefined¿ÉÒÔ»ñÈ¡pageNumber£¬pageSize£¬searchText£¬sortName£¬sortOrder
+                //ÉèÖÃÎªlimit¿ÉÒÔ»ñÈ¡limit, offset, search, sort, order
                 //queryParamsType: "undefined",
                 queryParamsType : 'undefined',
-                queryParams: function queryParams(params) {   //è®¾ç½®æŸ¥è¯¢å‚æ•°
+                queryParams: function queryParams(params) {   //ÉèÖÃ²éÑ¯²ÎÊı
                     var param = {
                         pageNumber: params.pageNumber,
                         pageSize: params.pageSize,
@@ -106,16 +105,16 @@
                 },
                 columns: [
                     {checkbox: true},
-                    {field: 'odesc', title: 'æ“ä½œæè¿°', sortable: true},
-                    {field: 'oname', title: 'æ“ä½œåç§°', sortable: true},
-                    {field: 'oper', title: 'æ“ä½œæ ‡å¿—', sortable: true},
-                    {field: 'button', title: 'æ“ä½œ', events: "operateEvents", formatter: operateFormatter}
+                    {field: 'oname', title: '²Ù×÷Ãû³Æ', sortable: true},
+                    {field: 'odesc', title: '²Ù×÷ÃèÊö', sortable: true},
+                    {field: 'oper', title: '²Ù×÷±êÖ¾', sortable: true},
+                    {field: 'button', title: '²Ù×÷', events: "operateEvents", formatter: operateFormatter}
                     ],
-                onLoadSuccess: function () {  //åŠ è½½æˆåŠŸæ—¶æ‰§è¡Œ
-                    // alert("åŠ è½½æˆåŠŸ");
+                onLoadSuccess: function () {  //¼ÓÔØ³É¹¦Ê±Ö´ĞĞ
+                    // alert("¼ÓÔØ³É¹¦");
                 },
-                onLoadError: function () {  //åŠ è½½å¤±è´¥æ—¶æ‰§è¡Œ
-                    // alert("åŠ è½½æ•°æ®å¤±è´¥");
+                onLoadError: function () {  //¼ÓÔØÊ§°ÜÊ±Ö´ĞĞ
+                    // alert("¼ÓÔØÊı¾İÊ§°Ü");
                 }
             });
         };
@@ -125,9 +124,12 @@
 
     function operateFormatter(value, row, index) {
         return [
-            '<button type="button" class="edit btn btn-info btn-xs" > <i class="fa fa-edit">ç¼–è¾‘</i></button>',
-            '<button type="button" class="delete btn btn-info btn-xs" > <i class="fa  fa-remove">åˆ é™¤</i></button>'
+            '<button type="button" class="edit btn btn-info btn-xs" > <i class="fa fa-edit">±à¼­</i></button>',
+            '<button type="button" class="delete btn btn-info btn-xs" > <i class="fa  fa-remove">É¾³ı</i></button>'
         ].join('');
+    }
+    function test(value, row, index){
+        debugger;
     }
 
     window.operateEvents = {
@@ -146,7 +148,7 @@
                 dataType: "json",
                 success: function (res) {
                     alert(res.msg);
-                    getContent('${pageContext.request.contextPath}/sysOperation/list');//åˆ·æ–°ds_tableçš„æ•°æ®
+                    getContent('${pageContext.request.contextPath}/sysOperation/list');//Ë¢ĞÂds_tableµÄÊı¾İ
                 }
             });
         }

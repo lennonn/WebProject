@@ -1,5 +1,6 @@
 package com.zlennon.admin.mapper;
 
+import com.zlennon.admin.BootTree;
 import com.zlennon.admin.model.SysMenu;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Repository;
@@ -41,4 +42,6 @@ public interface SysMenuMapper {
     public List<SysMenu> findSubMenuByParentId(String id);
 
     String getMaxCode(String menuId);
+
+    List<BootTree> getBootMenu();
 }

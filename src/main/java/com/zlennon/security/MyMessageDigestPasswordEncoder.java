@@ -3,8 +3,8 @@ package com.zlennon.security;
 import com.zlennon.utils.MD5Util;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.encoding.MessageDigestPasswordEncoder;
 
-import org.springframework.security.crypto.password.MessageDigestPasswordEncoder;
 
 /**
  * 用于对用户提交的密码进行自定义的加密操作

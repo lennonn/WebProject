@@ -5,6 +5,7 @@
 	<welcome-file-list>
 		<welcome-file>login</welcome-file>
 	</welcome-file-list>
+
 	<!-- 编码过滤器 -->
 	<filter>
 		<filter-name>characterEncodingFilter</filter-name>
@@ -38,19 +39,35 @@
 		<servlet-name>dispatcherServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
+<!--	<servlet-mapping>
 		<servlet-name>dispatcherServlet</servlet-name>
 		<url-pattern>/login</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping>-->
 
-<!--	<filter>
+	   <servlet>
+	       <!-- 声明Servlet对象 -->
+	       <servlet-name>TestServlet</servlet-name>
+	       <!-- 上面一句指定Servlet对象的名称 -->
+	       <servlet-class>com.zlennon.servlet.TestTableServlet</servlet-class>
+	       <!-- 上面一句指定Servlet对象的完整位置，包含包名和类名 -->
+	   </servlet>
+	   <servlet-mapping>
+	       <!-- 映射Servlet -->
+	       <servlet-name>TestServlet</servlet-name>
+	       <!--<servlet-name>与上面<Servlet>标签的<servlet-name>元素相对应，不可以随便起名  -->
+	       <url-pattern>/TestTableServlet</url-pattern>
+	       <!-- 上面一句话用于映射访问URL -->
+	   </servlet-mapping>
+
+
+<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>-->
+	</filter-mapping>
 	<!-- Session配置 -->
 	<session-config>
 		<session-timeout>30</session-timeout>

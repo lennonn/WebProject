@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlennon.admin.mapper.PageViewMapper">
+  <resultMap id="BaseResultMap" type="com.zlennon.admin.model.PageView">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="view_ip" jdbcType="VARCHAR" property="viewIp" />
+    <result column="view_date" jdbcType="DATE" property="viewDate" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from page_view
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zlennon.admin.model.PageView">
+    insert into page_view (id, view_ip, view_date
+      )
+    values (#{id,jdbcType=VARCHAR}, #{viewIp,jdbcType=VARCHAR}, #{viewDate,jdbcType=DATE}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.zlennon.admin.model.PageView">
+    update page_view
+    set view_ip = #{viewIp,jdbcType=VARCHAR},
+      view_date = #{viewDate,jdbcType=DATE}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, view_ip, view_date
+    from page_view
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, view_ip, view_date
+    from page_view
+  </select>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into page_view
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="list[0].id!=null">
+        id,
+      </if>
+      <if test="list[0].viewIp!=null">
+        view_ip,
+      </if>
+      <if test="list[0].viewDate!=null">
+        view_date,
+      </if>
+    </trim>
+     values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix=" (" suffix=")" suffixOverrides=",">
+        <if test="item.id!=null">
+          #{item.id,jdbcType=VARCHAR},
+        </if>
+        <if test="item.viewIp!=null">
+          #{item.viewIp,jdbcType=VARCHAR},
+        </if>
+        <if test="item.viewDate!=null">
+          #{item.viewDate,jdbcType=DATE},
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    <foreach collection="list" index="index" item="item" separator=";">
+      update page_view
+      <set>
+        <if test="item.viewIp!=null">
+          view_ip=#{item.viewIp,jdbcType=VARCHAR},
+        </if>
+        <if test="item.viewDate!=null">
+          view_date=#{item.viewDate,jdbcType=DATE},
+        </if>
+      </set>
+      where 
+      id = #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+</mapper>

@@ -11,19 +11,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Top Navigation</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue layout-top-nav">
+<body>
 <!-- .box-footer -->
     <div class="box-footer ">
         <c:choose>
             <c:when test="${pageUrl.indexOf('?')!=-1}">
                 <c:set var="bashPath" value="${pageContext.request.contextPath}${pageUrl}&"></c:set>
+            </c:when>
+            <c:when test="${pageUrl=='/'}">
+                <c:set var="bashPath" value="${pageContext.request.contextPath}?"></c:set>
             </c:when>
             <c:otherwise>
                 <c:set var="bashPath" value="${pageContext.request.contextPath}${pageUrl}?"></c:set>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlennon.admin.mapper.SysUserRoleMapper">
+  <resultMap id="BaseResultMap" type="com.zlennon.admin.model.SysUserRole">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="ROLE_ID" jdbcType="VARCHAR" property="roleId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from sys_user_role
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zlennon.admin.model.SysUserRole">
+    insert into sys_user_role (ID, USER_ID, ROLE_ID
+      )
+    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{roleId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.zlennon.admin.model.SysUserRole">
+    update sys_user_role
+    set USER_ID = #{userId,jdbcType=VARCHAR},
+      ROLE_ID = #{roleId,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select ID, USER_ID, ROLE_ID
+    from sys_user_role
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="getUserRoleByUserId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select ID, USER_ID, ROLE_ID
+    from sys_user_role
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ID, USER_ID, ROLE_ID
+    from sys_user_role
+  </select>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into sys_user_role
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="list[0].id!=null">
+        ID,
+      </if>
+      <if test="list[0].userId!=null">
+        USER_ID,
+      </if>
+      <if test="list[0].roleId!=null">
+        ROLE_ID,
+      </if>
+    </trim>
+     values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix=" (" suffix=")" suffixOverrides=",">
+        <if test="item.id!=null">
+          #{item.id,jdbcType=VARCHAR},
+        </if>
+        <if test="item.userId!=null">
+          #{item.userId,jdbcType=VARCHAR},
+        </if>
+        <if test="item.roleId!=null">
+          #{item.roleId,jdbcType=VARCHAR},
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    <foreach collection="list" index="index" item="item" separator=";">
+      update sys_user_role
+      <set>
+        <if test="item.userId!=null">
+          USER_ID=#{item.userId,jdbcType=VARCHAR},
+        </if>
+        <if test="item.roleId!=null">
+          ROLE_ID=#{item.roleId,jdbcType=VARCHAR},
+        </if>
+      </set>
+      where 
+      ID = #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+</mapper>

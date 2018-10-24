@@ -94,6 +94,39 @@
             </div>
             <!-- /.modal-dialog -->
         </div>
+        <div class="modal fade" id="modal-roleAuth">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">添加文章</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" id ="roleAuth">
+                            <input type="hidden" name="userId" id="userId" value="" >
+                            <!-- checkbox -->
+                            <div class="form-group">
+                                <c:forEach items="${sysRole}" var="sr">
+                                <label>
+                                    <input type="checkbox" id="${sr.roleId}" class="flat-red" value="${sr.roleId}" >
+                                    ${sr.roleName}
+                                </label>
+                                </c:forEach>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary" onclick="_saveRole();">授权</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
 
     </div>
 </div>
@@ -165,7 +198,8 @@
     function operateFormatter(value, row, index) {
         return [
             '<button type="button" class="edit btn btn-info btn-xs" > <i class="fa fa-edit">编辑</i></button>',
-            '<button type="button" class="delete btn btn-info btn-xs" > <i class="fa  fa-remove">删除</i></button>'
+            '<button type="button" class="delete btn btn-info btn-xs" > <i class="fa  fa-remove">删除</i></button>',
+            '<button type="button" class="roleAuth btn btn-info btn-xs" > <i class="fa  fa-remove">角色授权</i></button>'
         ].join('');
     }
 
@@ -177,6 +211,28 @@
                 $("#"+name).val(row[name]);
             });
             $("#modal-default").modal('show');
+        },
+        'click .roleAuth': function (e, value, row, index) {
+            //获取已授权的角色
+            $.ajax({
+                url:"${pageContext.request.contextPath}/sysUser/getAuthedRole",
+                type: "post",
+                dataType: "json",
+                data:{"userId":row.id},
+                async:false,
+                success: function (res) {
+                    var authedRole = res.authedRole;
+                    for(var p in authedRole ){
+                        $("#roleAuth").find("input[type=checkbox]").each(function(){
+                            if(authedRole[p].roleId==$(this).val()){
+                                $(this).attr("checked","checked");
+                            }
+                        });
+                    }
+                }
+            });
+            $("#userId").val(row.id);
+            $("#modal-roleAuth").modal('show');
         },
         'click .delete': function (e, value, row, index) {
             $.ajax({
@@ -207,6 +263,29 @@
             }
         });
     }
+
+    function _saveRole() {
+        var roleIds="";
+        $("#roleAuth").find("input[type=checkbox]").each(function(){
+            if ($(this).is(':checked')) {
+                roleIds+=$(this).val()+",";
+            }
+        });
+        $.ajax({
+            url:"${pageContext.request.contextPath}/sysUser/authRole",
+            type: "post",
+            data:{"userId": $("#userId").val(),"roleIds":roleIds.substring(0,roleIds.length-1)},
+            dataType: "json",
+            success: function (res) {
+                alert(res.msg);
+                $("#modal-default").modal('toggle');
+                getContent('${pageContext.request.contextPath}/sysUser/list');//刷新ds_table的数据                //window.location.href="${pageContext.request.contextPath}/article/list";
+                // $('body').removeClass('modal-open');
+                $('.modal-backdrop').remove();
+            }
+        });
+    }
+
 </script>
 </body>
 </html>

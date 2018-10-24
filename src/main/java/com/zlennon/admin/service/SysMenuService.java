@@ -1,5 +1,6 @@
 package com.zlennon.admin.service;
 
+import com.zlennon.admin.BootTree;
 import com.zlennon.admin.ZTree;
 import com.zlennon.Service;
 
@@ -26,7 +27,12 @@ public interface SysMenuService<SysMenu> extends Service<SysMenu> {
 
     List<SysMenu> findSubMenuById(String id);
 
+    List<SysMenu> findLastStage();
+
     List<ZTree>  getMenuTreeJson(HttpServletRequest request);
 
+    List<BootTree>  getBootMenu();
+
     String getMaxCode(String menuId);
+
 }

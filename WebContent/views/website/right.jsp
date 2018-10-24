@@ -11,17 +11,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Top Navigation</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue layout-top-nav">
-
+<body>
      <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="box box-solid">
+         <div class="box box-solid">
                             <div class="box-header with-border">
                                 <h3 class="box-title">Carousel</h3>
                             </div>
@@ -68,115 +62,101 @@
                             </div>
                             <!-- /.box-body -->
                         </div>
+         <div class="box box-solid">
+ <div class="box-header with-border">
+     <i class="fa fa-text-width"></i>
+
+     <h3 class="box-title">文章类型</h3>
+ </div>
+ <!-- /.box-header -->
+ <div class="box-body" id="articleType">
 
 
-                        <div class="box box-solid">
-                 <div class="box-header with-border">
-                     <i class="fa fa-text-width"></i>
-
-                     <h3 class="box-title">文章类型</h3>
-                 </div>
-                 <!-- /.box-header -->
-                 <div class="box-body" id="articleType">
-
-
-                 </div>
-                 <!-- /.box-body -->
-             </div>
-                        <div class="box box-solid">
-                            <div class="box-header with-border">
-                                <h3 class="box-title">Collapsible Accordion</h3>
-                            </div>
-                            <!-- /.box-header -->
-                            <div class="box-body">
-                                <div class="box-group" id="accordion">
-                                    <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
-                                    <div class="panel box box-primary">
-                                        <div class="box-header with-border">
-                                            <h4 class="box-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                                    Collapsible Group Item #1
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseOne" class="panel-collapse collapse in">
-                                            <div class="box-body">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                                                terry richardson ad squid. 3
-                                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                                                truck quinoa nesciunt laborum
-                                                eiusmod.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel box box-danger">
-                                        <div class="box-header with-border">
-                                            <h4 class="box-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                                    Collapsible Group Danger
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseTwo" class="panel-collapse collapse">
-                                            <div class="box-body">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                                                terry richardson ad squid. 3
-                                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                                                truck quinoa nesciunt laborum
-                                                eiusmod.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel box box-success">
-                                        <div class="box-header with-border">
-                                            <h4 class="box-title">
-                                                <a data-toggle="collapse" data-parent="#accordion"
-                                                   href="#collapseThree">
-                                                    Collapsible Group Success
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseThree" class="panel-collapse collapse">
-                                            <div class="box-body">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                                                terry richardson ad squid. 3
-                                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                                                truck quinoa nesciunt laborum
-                                                eiusmod.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.box-body -->
+ </div>
+ <!-- /.box-body -->
+</div>
+         <div class="box box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">每日推荐</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="box-group" id="accordion">
+                    <div class="panel box box-primary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                    每日一句
+                                </a>
+                            </h4>
                         </div>
-                        <div class="info-box bg-aqua">
-                            <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="box-body" id="dailySentence">
 
-                            <div class="info-box-content">
-                                <span class="info-box-text">Bookmarks</span>
-                                <span class="info-box-number">41,410</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description">
-                    70% Increase in 30 Days
-                  </span>
                             </div>
-                            <!-- /.info-box-content -->
                         </div>
-                        <!-- /.box -->
                     </div>
+                   <div class="panel box box-danger">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                    Collapsible Group Danger
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="box-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                terry richardson ad squid. 3
+                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                truck quinoa nesciunt laborum
+                                eiusmod.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-success">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapseThree">
+                                    Collapsible Group Success
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="box-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                terry richardson ad squid. 3
+                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                truck quinoa nesciunt laborum
+                                eiusmod.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+        </div>
+         <div class="info-box">
+             <span class="info-box-icon bg-green"><i class="fa fa-flag-o"></i></span>
 
+             <div class="info-box-content">
+                 <span class="info-box-text">网站访问总量</span>
+                 <span class="info-box-number"></span>
+             </div>
+             <!-- /.info-box-content -->
+         </div>
+     </div>
 </body>
 <script type="text/javascript">
     $(function(){
         $.ajax({
-            url:"${pageContext.request.contextPath}/right/load",
+            url:"${pageContext.request.contextPath}/right/website/load",
             type:"post",
             success:function (res) {
                 setArticleType(res);
+                $(".info-box-number").html(res.pv);
+                $("#dailySentence").html(res.dc.content);
             }
         });
     });

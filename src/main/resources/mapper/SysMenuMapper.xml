@@ -23,6 +23,13 @@
       #{menuIcon,jdbcType=VARCHAR}, #{menuUrl,jdbcType=VARCHAR}, #{menuType,jdbcType=VARCHAR}, 
       #{menuOrder,jdbcType=VARCHAR}, #{menuStatus,jdbcType=VARCHAR})
   </insert>
+
+
+  <select id="getBootMenu" resultType="com.zlennon.admin.BootTree">
+    select MENU_ID as id, PARENT_ID as parentId, MENU_NAME as text
+    from SYS_MENU
+  </select>
+
   <update id="updateByPrimaryKey" parameterType="com.zlennon.admin.model.SysMenu">
     update SYS_MENU
     set PARENT_ID = #{parentId,jdbcType=VARCHAR},

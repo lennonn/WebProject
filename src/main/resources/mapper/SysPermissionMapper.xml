@@ -12,9 +12,6 @@
     where ID = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.zlennon.admin.model.SysPermission">
-    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
-      select seq_sys_permission.nextval from dual
-    </selectKey>
     insert into sys_permission (ID, PDESC, PNAME, 
       MENU_ID)
     values (#{id,jdbcType=VARCHAR}, #{pdesc,jdbcType=VARCHAR}, #{pname,jdbcType=VARCHAR}, 

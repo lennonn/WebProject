@@ -2,6 +2,10 @@ package com.zlennon.website.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.zlennon.business.model.Article;
+import com.zlennon.business.model.DailyContent;
+import com.zlennon.business.service.ArticleService;
+import com.zlennon.business.service.DailyContentService;
 import com.zlennon.website.model.Book;
 import com.zlennon.website.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +17,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-@RequestMapping("/website")
 public class MainController {
     @Autowired
     BookService bookService;
+
+    @Autowired
+    ArticleService articleService;
+
 
 
  /*   @RequestMapping("/index")
@@ -24,15 +31,14 @@ public class MainController {
         return "/website/index";
     }*/
 
-    @RequestMapping("/index")
-    public String main(Model model,@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "5") Integer size) {
+    @RequestMapping("/")
+    public String main(Model model,@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10") Integer size) {
         PageHelper.startPage(page, size);
-        List<Book> list = bookService.selectAll();
+        List<Article> list = articleService.selectAll();
         PageInfo pageInfo = new PageInfo(list);
         //model.addAttribute("newsList",list);
         model.addAttribute("pageInfo",pageInfo);
-        model.addAttribute("pageUrl","/website/index");
-
+        model.addAttribute("pageUrl","/");
         return "/website/index";
     }
 

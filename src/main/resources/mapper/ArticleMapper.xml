@@ -8,6 +8,9 @@
     <result column="author" jdbcType="VARCHAR" property="author" />
     <result column="scan" jdbcType="INTEGER" property="scan" />
     <result column="create_time" jdbcType="DATE" property="createTime" />
+    <result column="update_time" jdbcType="DATE" property="updateTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
@@ -19,7 +22,8 @@
       author, scan, create_time, content
       )
     values (#{id,jdbcType=VARCHAR}, #{tId,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
-      #{author,jdbcType=VARCHAR}, #{scan,jdbcType=INTEGER}, #{createTime,jdbcType=DATE}, #{content,jdbcType=LONGVARCHAR}
+      #{author,jdbcType=VARCHAR}, #{scan,jdbcType=INTEGER}, #{createTime,jdbcType=DATE}, #{content,jdbcType=LONGVARCHAR},
+      #{updateTime,jdbcType=DATE},#{updateUser,jdbcType=VARCHAR},#{createUser,jdbcType=VARCHAR},#{plainText,jdbcType=VARCHAR}
       )
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.zlennon.business.model.Article">
@@ -29,16 +33,20 @@
       author = #{author,jdbcType=VARCHAR},
       scan = #{scan,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=DATE},
+      update_time = #{updateTime,jdbcType=DATE},
+      update_user = #{updateUser,jdbcType=VARCHAR},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      plain_text = #{plainText,jdbcType=VARCHAR},
       content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select id, t_id, title, author, scan, create_time, content
+    select id, t_id, title, author, scan, create_time, content,update_time,plain_text
     from article
     where id = #{id,jdbcType=VARCHAR}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
-    select id, t_id, title, author, scan, create_time, content,SUBSTR(content FROM 1 FOR 150) as shortContent
+    select id, t_id, title, author, scan, create_time, content,SUBSTR(plain_text FROM 1 FOR 150) as plainText
     from article
   </select>
   <insert id="insertBatchSelective" parameterType="java.util.List">

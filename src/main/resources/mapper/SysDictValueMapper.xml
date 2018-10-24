@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlennon.admin.mapper.SysDictValueMapper">
+  <resultMap id="BaseResultMap" type="com.zlennon.admin.model.SysDictValue">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <id column="DICT_TYPE_ID" jdbcType="VARCHAR" property="dictTypeId" />
+    <result column="LABEL" jdbcType="VARCHAR" property="label" />
+    <result column="CODE" jdbcType="VARCHAR" property="code" />
+    <result column="SORT" jdbcType="VARCHAR" property="sort" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_DATE" jdbcType="DATE" property="createDate" />
+    <result column="UPDATE_BY" jdbcType="VARCHAR" property="updateBy" />
+    <result column="UPDATE_DATE" jdbcType="DATE" property="updateDate" />
+    <result column="DEL_FLAG" jdbcType="VARCHAR" property="delFlag" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from sys_dict_value
+    where ID = #{id,jdbcType=VARCHAR}
+      and DICT_TYPE_ID = #{dictTypeId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zlennon.admin.model.SysDictValue">
+    insert into sys_dict_value (ID, DICT_TYPE_ID, LABEL, 
+      CODE, SORT, CREATE_BY, 
+      CREATE_DATE, UPDATE_BY, UPDATE_DATE, 
+      DEL_FLAG)
+    values (#{id,jdbcType=VARCHAR}, #{dictTypeId,jdbcType=VARCHAR}, #{label,jdbcType=VARCHAR}, 
+      #{code,jdbcType=VARCHAR}, #{sort,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR}, #{updateDate,jdbcType=DATE}, 
+      #{delFlag,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.zlennon.admin.model.SysDictValue">
+    update sys_dict_value
+    set LABEL = #{label,jdbcType=VARCHAR},
+      CODE = #{code,jdbcType=VARCHAR},
+      SORT = #{sort,jdbcType=VARCHAR},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=DATE},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_DATE = #{updateDate,jdbcType=DATE},
+      DEL_FLAG = #{delFlag,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select ID, DICT_TYPE_ID, LABEL, CODE, SORT, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE, 
+    DEL_FLAG
+    from sys_dict_value
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectByQueryParams" parameterType="map" resultMap="BaseResultMap">
+    select ID, DICT_TYPE_ID, LABEL, CODE, SORT, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE,
+    DEL_FLAG
+    from sys_dict_value
+    where CONCAT(IFNULL(`LABEL`,'')) LIKE  '%${search}%'
+      and DICT_TYPE_ID = #{typeId,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectByTypeId" parameterType="map" resultMap="BaseResultMap">
+    select ID, DICT_TYPE_ID, LABEL, CODE, SORT, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE,
+    DEL_FLAG
+    from sys_dict_value
+    where  DICT_TYPE_ID = #{typeId,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ID, DICT_TYPE_ID, LABEL, CODE, SORT, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE, 
+    DEL_FLAG
+    from sys_dict_value
+  </select>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into sys_dict_value
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="list[0].id!=null">
+        ID,
+      </if>
+      <if test="list[0].dictTypeId!=null">
+        DICT_TYPE_ID,
+      </if>
+      <if test="list[0].label!=null">
+        LABEL,
+      </if>
+      <if test="list[0].code!=null">
+        CODE,
+      </if>
+      <if test="list[0].sort!=null">
+        SORT,
+      </if>
+      <if test="list[0].createBy!=null">
+        CREATE_BY,
+      </if>
+      <if test="list[0].createDate!=null">
+        CREATE_DATE,
+      </if>
+      <if test="list[0].updateBy!=null">
+        UPDATE_BY,
+      </if>
+      <if test="list[0].updateDate!=null">
+        UPDATE_DATE,
+      </if>
+      <if test="list[0].delFlag!=null">
+        DEL_FLAG,
+      </if>
+    </trim>
+     values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix=" (" suffix=")" suffixOverrides=",">
+        <if test="item.id!=null">
+          #{item.id,jdbcType=VARCHAR},
+        </if>
+        <if test="item.dictTypeId!=null">
+          #{item.dictTypeId,jdbcType=VARCHAR},
+        </if>
+        <if test="item.label!=null">
+          #{item.label,jdbcType=VARCHAR},
+        </if>
+        <if test="item.code!=null">
+          #{item.code,jdbcType=VARCHAR},
+        </if>
+        <if test="item.sort!=null">
+          #{item.sort,jdbcType=VARCHAR},
+        </if>
+        <if test="item.createBy!=null">
+          #{item.createBy,jdbcType=VARCHAR},
+        </if>
+        <if test="item.createDate!=null">
+          #{item.createDate,jdbcType=DATE},
+        </if>
+        <if test="item.updateBy!=null">
+          #{item.updateBy,jdbcType=VARCHAR},
+        </if>
+        <if test="item.updateDate!=null">
+          #{item.updateDate,jdbcType=DATE},
+        </if>
+        <if test="item.delFlag!=null">
+          #{item.delFlag,jdbcType=VARCHAR},
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    <foreach collection="list" index="index" item="item" separator=";">
+      update sys_dict_value
+      <set>
+        <if test="item.dictTypeId!=null">
+          DICT_TYPE_ID=#{item.dictTypeId,jdbcType=VARCHAR},
+        </if>
+        <if test="item.label!=null">
+          LABEL=#{item.label,jdbcType=VARCHAR},
+        </if>
+        <if test="item.code!=null">
+          CODE=#{item.code,jdbcType=VARCHAR},
+        </if>
+        <if test="item.sort!=null">
+          SORT=#{item.sort,jdbcType=VARCHAR},
+        </if>
+        <if test="item.createBy!=null">
+          CREATE_BY=#{item.createBy,jdbcType=VARCHAR},
+        </if>
+        <if test="item.createDate!=null">
+          CREATE_DATE=#{item.createDate,jdbcType=DATE},
+        </if>
+        <if test="item.updateBy!=null">
+          UPDATE_BY=#{item.updateBy,jdbcType=VARCHAR},
+        </if>
+        <if test="item.updateDate!=null">
+          UPDATE_DATE=#{item.updateDate,jdbcType=DATE},
+        </if>
+        <if test="item.delFlag!=null">
+          DEL_FLAG=#{item.delFlag,jdbcType=VARCHAR},
+        </if>
+      </set>
+      where 
+      ID = #{item.id,jdbcType=VARCHAR}
+      DICT_TYPE_ID = #{item.dictTypeId,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+</mapper>

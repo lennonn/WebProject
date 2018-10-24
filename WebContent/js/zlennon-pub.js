@@ -42,7 +42,8 @@ function getWebContent(url) {
         url: url,
         type: "post",
         success: function (data) {
-            $("#leftContent").html(data);
+            debugger;
+            $("#leftContent").append(data);
         }
     });
 };

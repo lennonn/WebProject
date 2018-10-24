@@ -65,5 +65,5 @@ public class Constants {
 	/**
 	 * ckeditor
 	 */
-	public static final  String UPLOAD_PATH="/ckeditor";
+	public static final  String UPLOAD_PATH="/images/ckeditor/";
 }

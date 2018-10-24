@@ -10,20 +10,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Top Navigation</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue layout-top-nav">
+<body>
 
     <header class="main-header">
         <nav class="navbar navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a href="${pageContext.request.contextPath}/views/index2.html" class="navbar-brand"><b>超神吧</b></a>
+                    <a href="www.zlennon.com" class="navbar-brand"><b>莫辂技术</b></a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                             data-target="#navbar-collapse">
                         <i class="fa fa-bars"></i>
@@ -40,19 +35,12 @@
                                 <li><a href="${pageContext.request.contextPath}/article/website/list">技术文章</a></li>
                             </ul>
                         </li>
-                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Link</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">书籍 <span
                                     class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="${pageContext.request.contextPath}/website/index">八一中文网</a></li>
                                 <li><a href="${pageContext.request.contextPath}/website/dbTagList/statistics">豆瓣书籍</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -62,11 +50,129 @@
                         </div>
                     </form>
                 </div>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown tasks-menu">
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                登录
+                            </a>
+                            <ul class="dropdown-menu" style="width: 500px;background-color: #3c8dbc">
+                                <div class="login-box">
+                                    <!-- /.login-logo -->
+                                    <div class="login-box-body">
+                                        <p class="login-box-msg">如需投稿请登录</p>
+
+                                        <form action="../../index2.html" method="post">
+                                            <div class="form-group has-feedback">
+                                                <input type="email" class="form-control" placeholder="Email">
+                                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                                            </div>
+                                            <div class="form-group has-feedback">
+                                                <input type="password" class="form-control" placeholder="Password">
+                                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-8">
+                                                    <div class="checkbox icheck">
+                                                        <label>
+                                                            <input type="checkbox"> Remember Me
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4">
+                                                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                                                </div>
+                                                <!-- /.col -->
+                                            </div>
+                                        </form>
+
+                                        <div class="social-auth-links text-center">
+                                            <p>- OR -</p>
+                                            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
+                                                Facebook</a>
+                                            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
+                                                Google+</a>
+                                        </div>
+                                        <!-- /.social-auth-links -->
+
+                                        <a href="#">I forgot my password</a><br>
+                                        <a href="register.html" class="text-center">Register a new membership</a>
+
+                                    </div>
+                                    <!-- /.login-box-body -->
+                                </div>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown tasks-menu">
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                注册
+                            </a>
+                            <ul class="dropdown-menu" style="width: 500px;background-color: #3c8dbc">
+                                <div class="register-box">
+                                    <div class="register-box-body">
+                                        <p class="login-box-msg">注册进行技术交流</p>
+
+                                        <form action="../../index_temp.html" method="post">
+                                            <div class="form-group has-feedback">
+                                                <input type="text" class="form-control" placeholder="Full name">
+                                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                            </div>
+                                            <div class="form-group has-feedback">
+                                                <input type="email" class="form-control" placeholder="Email">
+                                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                                            </div>
+                                            <div class="form-group has-feedback">
+                                                <input type="password" class="form-control" placeholder="Password">
+                                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                            </div>
+                                            <div class="form-group has-feedback">
+                                                <input type="password" class="form-control" placeholder="Retype password">
+                                                <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-8">
+                                                    <div class="checkbox icheck">
+                                                        <label>
+                                                            <input type="checkbox"> I agree to the <a href="#">terms</a>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4">
+                                                    <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+                                                </div>
+                                                <!-- /.col -->
+                                            </div>
+                                        </form>
+
+                                        <div class="social-auth-links text-center">
+                                            <p>- OR -</p>
+                                            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using
+                                                Facebook</a>
+                                            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using
+                                                Google+</a>
+                                        </div>
+
+                                        <a href="login.html" class="text-center">I already have a membership</a>
+                                    </div>
+                                    <!-- /.form-box -->
+                                </div>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+
                 <!-- /.navbar-collapse -->
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        <!-- Messages: style can be found in dropdown.less-->
+<%--                        <!-- Messages: style can be found in dropdown.less-->
                         <li class="dropdown messages-menu">
                             <!-- Menu toggle button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -102,7 +208,6 @@
                             </ul>
                         </li>
                         <!-- /.messages-menu -->
-
                         <!-- Notifications Menu -->
                         <li class="dropdown notifications-menu">
                             <!-- Menu toggle button -->
@@ -169,7 +274,7 @@
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="${pageContext.request.contextPath}/views/dist/img/user2-160x160.jpg"
+                                <img src="${pageContext.request.contextPath}/images/profile/user2-160x160.jpg"
                                      class="user-image" alt="User Image">
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 <span class="hidden-xs">Alexander Pierce</span>
@@ -177,7 +282,7 @@
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="${pageContext.request.contextPath}/views/dist/img/user2-160x160.jpg"
+                                    <img src="${pageContext.request.contextPath}/images/profile/user2-160x160.jpg"
                                          class="img-circle" alt="User Image">
 
                                     <p>
@@ -210,7 +315,10 @@
                                     </div>
                                 </li>
                             </ul>
-                        </li>
+                        </li>--%>
+                        <a href="" >登录</a>
+                        <a href="">注册</a>
+
                     </ul>
                 </div>
                 <!-- /.navbar-custom-menu -->

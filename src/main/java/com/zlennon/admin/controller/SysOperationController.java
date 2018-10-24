@@ -36,18 +36,18 @@ public class SysOperationController {
 
    @RequestMapping("list")
     public String list(Model model) {
-
+       List<SysOperation> list = sysOperationService.selectAll();
         return "/admin/sysoperation/sysOperationList";
     }
 
 
     @RequestMapping("initTable")
     @ResponseBody
-    public String  initTable(@RequestParam String searchText,@RequestParam Integer pageNumber,@RequestParam Integer pageSize){
+    public String  initTable(String searchText,@RequestParam Integer pageNumber,@RequestParam Integer pageSize){
         PageHelper.startPage(pageNumber, pageSize);
         List<SysOperation> list = sysOperationService.selectByQueryParams(searchText);
         PageInfo pageInfo = new PageInfo(list);
-        return  "{\"total\":" + pageInfo.getTotal() + ",\"rows\":" + JSONObject.toJSON(pageInfo.getList()) + "}";
+      return  "{\"total\":" + pageInfo.getTotal() + ",\"rows\":" + JSONObject.toJSON(pageInfo.getList()) + "}";
     }
 
     @RequestMapping("delete")

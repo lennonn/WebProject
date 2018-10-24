@@ -10,7 +10,9 @@ public class ZTree implements Serializable{
     private String pId;//父节点pId I必须大写
     private String name;//节点名称
     private String open = "false";//是否展开树节点，默认不展开
-
+    //bootstrap tree 使用
+    private String isChild="false";
+    private String nodes;
     public String getId() {
         return id;
     }
@@ -42,5 +44,19 @@ public class ZTree implements Serializable{
     public void setOpen(String open) {
         this.open = open;
     }
+    public String getIsChild() {
+        return isChild;
+    }
 
+    public void setIsChild(String isChild) {
+        this.isChild = isChild;
+    }
+
+    public String getNodes() {
+        return nodes;
+    }
+
+    public void setNodes(String nodes) {
+        this.nodes = nodes;
+    }
 }

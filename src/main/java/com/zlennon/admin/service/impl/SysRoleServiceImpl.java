@@ -31,6 +31,7 @@ public class SysRoleServiceImpl extends AbstractService<SysRole> implements SysR
     }
 
     public int insert(SysRole sysRole){
+        sysRole.setRoleId(getTablePK("SysRole"));
        return sysRoleMapper.insert(sysRole);
     }
 

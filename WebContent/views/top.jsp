@@ -5,12 +5,10 @@
   Time: 10:29
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta charset="utf-8" content="text/html">
     <meta http-equiv="X-UA-Compatible" content="text/html" charset="UTF-8">
-    <title>AdminLTE 2 | Dashboard</title>
+    <title>莫辂技术日志 | Dashboard</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 </head>
@@ -267,7 +265,7 @@
                                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="${pageContext.request.contextPath}/signout" class="btn btn-default btn-flat">Sign out</a>
                                 </div>
                             </li>
                         </ul>

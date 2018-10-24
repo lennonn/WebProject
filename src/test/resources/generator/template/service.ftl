@@ -16,4 +16,7 @@ public interface ${modelNameUpperCamel}Service<${modelNameUpperCamel}> extends S
     List<${modelNameUpperCamel}> selectAll();
 
     int updateByPrimaryKey(${modelNameUpperCamel} ${modelNameUpperCamel?uncap_first});
+
+    List<${modelNameUpperCamel}> selectByQueryParams(String searchText);
+
 }

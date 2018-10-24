@@ -1,6 +1,7 @@
 package com.zlennon.admin.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.zlennon.admin.BootTree;
 import com.zlennon.admin.ZTree;
 import com.zlennon.admin.model.SysMenu;
 import com.zlennon.admin.service.SysMenuService;
@@ -214,6 +215,5 @@ public class SysMenuController {
         }
         return zTrees;
     }
-
 
 }

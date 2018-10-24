@@ -45,4 +45,9 @@ public class ${modelNameUpperCamel}ServiceImpl extends AbstractService<${modelNa
     public int updateByPrimaryKey(${modelNameUpperCamel} ${modelNameUpperCamel?uncap_first}){
        return ${modelNameLowerCamel}Mapper.updateByPrimaryKey(${modelNameUpperCamel?uncap_first});
     }
+
+    @Override
+    public List<${modelNameUpperCamel}> selectByQueryParams(String searchText) {
+       return ${modelNameLowerCamel}Mapper.selectByQueryParams(searchText);
+    }
 }

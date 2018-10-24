@@ -1,12 +1,15 @@
 package com.zlennon.security;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.alibaba.fastjson.JSONObject;
 import com.zlennon.admin.mapper.SysUserMapper;
 import com.zlennon.admin.model.SysUser;
 import org.springframework.security.core.Authentication;
@@ -30,7 +33,13 @@ public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHa
         // 将用户放到 Session
         request.getSession().setAttribute("currUser", user);
         // 跳转到主页
-        response.sendRedirect(request.getContextPath() + "/home.html");
+        //response.sendRedirect(request.getContextPath() + "/views/index");
+        Map<String, Object> result = new HashMap<>();
+        result.put("isSuccess", true);
+        response.setContentType("application/json;charset=UTF-8");
+        response.getWriter().write(JSONObject.toJSONString(result));
+        response.getWriter().flush();
+        response.getWriter().close();
     }
 
 }

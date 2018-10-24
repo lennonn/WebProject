@@ -1,5 +1,7 @@
 package com.zlennon.admin.controller;
-import com.zlennon.admin.model.SysUser;
+import com.zlennon.admin.model.*;
+import com.zlennon.admin.service.SysRoleService;
+import com.zlennon.admin.service.SysUserRoleService;
 import com.zlennon.admin.service.SysUserService;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
@@ -33,18 +35,24 @@ public class SysUserController {
     @Autowired
     SysUserService sysUserService;
 
+    @Autowired
+    SysRoleService sysRoleService;
+
+    @Autowired
+    SysUserRoleService sysUserRoleService;
+
 
    @RequestMapping("list")
     public String list(Model model) {
-        List<SysUser> su=sysUserService.selectAll();
-        model.addAttribute("sysUser",su);
+        List<SysRole>  sr=sysRoleService.selectAll();
+        model.addAttribute("sysRole",sr);
         return "/admin/sysuser/sysUserList";
     }
 
 
     @RequestMapping("initTable")
     @ResponseBody
-    public String  initTable(@RequestParam String searchText,@RequestParam Integer pageNumber,@RequestParam Integer pageSize){
+    public String  initTable(String searchText,@RequestParam Integer pageNumber,@RequestParam Integer pageSize){
        PageHelper.startPage(pageNumber, pageSize);
        List<SysUser> list = sysUserService.selectByQueryParams(searchText);
        PageInfo pageInfo = new PageInfo(list);
@@ -82,6 +90,37 @@ public class SysUserController {
 
         }
              return resultMap;
+    }
+
+    @RequestMapping(value = "/authRole", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public Map<String,Object> auth(@RequestParam String roleIds,String userId) {
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        try {
+            if(roleIds!="") {
+                String ids[] = roleIds.split(",");
+                for(String id:ids){
+                    SysUserRole sr = new SysUserRole();
+                    sr.setRoleId(id);
+                    sr.setUserId(userId);
+                    sysUserRoleService.insert(sr);
+                }
+            }
+            resultMap.put("msg", "授权成功！");
+        }catch (Exception e){
+            e.printStackTrace();
+            resultMap.put("msg","授权失败"+e.getMessage());
+        }
+        return resultMap;
+    }
+
+    @RequestMapping(value = "/getAuthedRole", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public Map<String,Object> getAuthedRole(@RequestParam String userId) {
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        List<SysUserRole> surList=sysUserRoleService.getUserRoleByUserId(userId);
+        resultMap.put("authedRole",surList);
+        return resultMap;
     }
 
 }

@@ -1,15 +1,15 @@
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
- <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=utf-8" pageEncoding="utf-8" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>文章类型</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/table/bootstrap-table.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/treeview/bootstrap-treeview.css">
     <style type="text/css">
+        .modal-body{
+            height: 400px;
+        }
     </style>
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
@@ -43,7 +43,7 @@
                                 <div class="col-xs-6">
                                     <input class="form-control" type="hidden" id="menuId" name="menuId" />
                                     <input type="text" id="menuName" name="menuName" class="form-control" value="" onclick="$('#treeview').show()" placeholder="请选择菜单">
-                                    <div id="treeview" style="display: none;"/>
+                                    <div id="treeview"  style="width: 93.1%;color: #54ca9a; display: none;position:absolute;z-index:999"/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -52,6 +52,16 @@
                                         <input class="form-control" id="pname" name="pname" placeholder="请输入权限名称"/>
                                     </div>
                              </div>
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">权限操作</label>
+                                <div class="col-xs-6">
+                                    <c:forEach items="${operations}" var="oper">
+                                        <label>
+                                            <input type="checkbox" id="${oper.id}"  value="${oper.id}">${oper.oname}
+                                        </label>
+                                    </c:forEach>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="pdesc" class="col-sm-2 control-label">权限描述</label>
                                 <div class="col-xs-6">
@@ -72,9 +82,6 @@
         </div>
     </div>
 </div>
-<script src="${pageContext.request.contextPath}/js/bootstrap/treeview/bootstrap-treeview.js"></script>
-<script src="${pageContext.request.contextPath}/js/bootstrap/table/bootstrap-table.js"></script>
-<script src="${pageContext.request.contextPath}/views/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
 <script type="text/javascript">
 
@@ -89,6 +96,8 @@
         //初始化Table
         oTableInit.Init = function () {
             $('#sysPermissionTable').bootstrapTable({
+                method:"get",
+               // contentType: "application/x-www-form-urlencoded",//必须要有！！！！
                 url: '${pageContext.request.contextPath}/sysPermission/initTable',         //请求后台的URL（*）
                 striped: true,  //表格显示条纹
                 pagination: true, //启动分页
@@ -119,12 +128,13 @@
                     {field: 'menuId', title: '菜单_id', sortable: true},
                     {field: 'button', title: '操作', events: "operateEvents", formatter: operateFormatter}
                     ],
-                onLoadSuccess: function () {  //加载成功时执行
-                    // alert("加载成功");
+                onLoadSuccess: function (res) {  //加载成功时执行
+                    debugger;
                 },
                 onLoadError: function () {  //加载失败时执行
                     // alert("加载数据失败");
                 }
+
             });
         };
         return oTableInit;
@@ -142,9 +152,28 @@
         'click .edit': function (e, value, row, index) {
             $("#sysPermissionForm").find(':input').each(function () {
                 var  name= $(this).attr("name");
-                debugger;
                 $("#"+name).val(row[name]);
             });
+            $.ajax({
+                url:"${pageContext.request.contextPath}/sysPermission/getPO?permissionId="+row.id+"&menuId="+row.menuId,
+                type: "post",
+                dataType: "json",
+                async:false,
+                success: function (res) {
+                    var pos=res.pos;//改权限已有的操作
+                    for (var p in pos){
+                        <c:forEach items="${operations}" var="oper">
+                        if(pos[p].operationId=='${oper.id}'){
+                            $("#"+pos[p].operationId).attr("checked","true");
+                        }
+                        </c:forEach>
+                        $("#menuName").val(res.menu.menuName);
+                        $("#menuId").val(res.menu.menuId);
+
+                    }
+                }
+            });
+
             $("#modal-default").modal('show');
         },
         'click .delete': function (e, value, row, index) {
@@ -161,9 +190,16 @@
     };
 
     function _save() {
+        var operIds="";
         var  data = $("#sysPermissionForm").serialize();
+        $("#sysPermissionForm").find("input[type=checkbox]").each(function () {
+            if ($(this).is(':checked')) {
+                operIds+=$(this).val()+",";
+            }
+        });
+        operIds=operIds.substring(0,operIds.length-1);
         $.ajax({
-            url:"${pageContext.request.contextPath}/sysPermission/save",
+            url:"${pageContext.request.contextPath}/sysPermission/save?operIds="+operIds,
             type: "post",
             data:data,
             dataType: "json",
@@ -177,92 +213,17 @@
         });
     }
 
-   // var data1 = [];
-    var data1 = [
-        {
-            text: 'Parent 1',
-            nodes: [
-                {
-                    text: 'Child 1',
-                    nodes: [
-                        {
-                            text: 'Grandchild 1'
-                        },
-                        {
-                            text: 'Grandchild 2'
-                        }
-                    ]
-                },
-                {
-                    text: 'Child 2'
-                }
-            ]
-        },
-        {
-            text: 'Parent 2'
-        },
-        {
-            text: 'Parent 3'
-        },
-        {
-            text: 'Parent 4'
-        },
-        {
-            text: 'Parent 5'
-        }
-    ];
-/*    $(function() {
-        $.ajax({
-            type : "post",
-            url : "/receiverShow/findTree.action",
-            success : function(data, status) {
-                if (status == "success") {
-                    data1 = eval("[" + data + "]");
-                }
-            },
-            error : function() {
-                toastr.error('Error');
-            },
-        });
-    });*/
-
-    function buildDomTree() {
-        var data = [];
-        var root = "所有分类";
-        function walk(nodes, data) {
-            if (!nodes) {
-                return;
-            }
-            $.each(nodes, function(id, node) {
-                var obj = {
-                    id : id,
-                    text : node.name != null ? node.name : root
-                    // 										tags : [ node.isLeaf == true ? node.
-                    // 												+ ' child elements'
-                    // 												: '' ]
-                };
-                if (node.isLeaf = true) {
-                    obj.nodes = [];
-                    walk(node.children, obj.nodes);
-                }
-                data.push(obj);
-            });
-        }
-
-        walk(data1, data);
-        return data;
-    }
-
-    $("#txt_departmentname").click(function() {
+    $("#menuName").click(function() {
         var options = {
             bootstrap2 : false,
             showTags : true,
             levels : 5,
             showCheckbox : true,
             checkedIcon : "glyphicon glyphicon-check",
-            data : buildDomTree(),
+            data : ${menus},
             onNodeSelected : function(event, data) {
-                $("#txt_departmentname").val(data.text);
+                $("#menuName").val(data.text);
+                $("#menuId").val(data.id);
                 $("#treeview").hide();
             }
         };

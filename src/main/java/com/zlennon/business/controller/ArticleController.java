@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -59,9 +60,11 @@ public class ArticleController {
     @RequestMapping("website/showDetail")
     public String showDetail(Model model, @RequestParam String id) {
         Article article= (Article) articleService.selectByPrimaryKey(id);
-        model.addAttribute("article",article);
-        model.addAttribute("article",article);
+        //访问加一
 
+        article.setScan((article.getScan()==null?0:article.getScan())+1);
+        articleService.updateByPrimaryKey(article);
+        model.addAttribute("article",article);
         return "/website/article/articleDetail";
     }
     @RequestMapping("initTable")
@@ -79,6 +82,7 @@ public class ArticleController {
         return  "";
     }
 
+
     @RequestMapping(value = "/save", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Map<String,Object> save(@Valid Article article) {
@@ -87,6 +91,7 @@ public class ArticleController {
             if(article.getId()==null) {
                 articleService.insert(article);
             }else{
+                article.setUpdateTime(new Date());
                 articleService.updateByPrimaryKey(article);
             }
             resultMap.put("msg", "操作成功");

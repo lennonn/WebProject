@@ -1,5 +1,6 @@
 package com.zlennon.admin.service.impl;
 
+import com.zlennon.admin.BootTree;
 import com.zlennon.admin.ZTree;
 import com.zlennon.admin.mapper.SysMenuMapper;
 import com.zlennon.admin.model.SysMenu;
@@ -66,6 +67,17 @@ public class SysMenuServiceImpl extends AbstractService<SysMenu> implements SysM
     }
 
     @Override
+    public List<SysMenu> findLastStage() {
+        List<SysMenu> allMenuList= sysMenuMapper.selectAll();
+        List<SysMenu> lastStageList= new ArrayList<>();
+        for(SysMenu sm:allMenuList){
+            if(sm.getMenuUrl()!=null)
+                lastStageList.add(sm);
+        }
+        return lastStageList;
+    }
+
+    @Override
     public List<ZTree> getMenuTreeJson(HttpServletRequest request) {
         /**获取用户可以查看的菜单**/
         Map<String,Object> menuMap = new HashMap<>();
@@ -77,6 +89,11 @@ public class SysMenuServiceImpl extends AbstractService<SysMenu> implements SysM
         initMenu(treeMenus,zTrees);
         menuMap.put("allMenu",zTrees);
         return  zTrees;
+    }
+
+    @Override
+    public List<BootTree> getBootMenu() {
+       return  sysMenuMapper.getBootMenu();
     }
 
     @Override

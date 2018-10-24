@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlennon.business.mapper.DailyContentMapper">
+  <resultMap id="BaseResultMap" type="com.zlennon.business.model.DailyContent">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="CONTENT" jdbcType="VARCHAR" property="content" />
+    <result column="TYPE" jdbcType="VARCHAR" property="type" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="CREATE_USER" jdbcType="VARCHAR" property="createUser" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from daily_content
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zlennon.business.model.DailyContent">
+    insert into daily_content (ID, CONTENT, TYPE, 
+      CREATE_TIME, CREATE_USER)
+    values (#{id,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.zlennon.business.model.DailyContent">
+    update daily_content
+    set CONTENT = #{content,jdbcType=VARCHAR},
+      TYPE = #{type,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{createUser,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select ID, CONTENT, TYPE, CREATE_TIME, CREATE_USER
+    from daily_content
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ID, CONTENT, TYPE, CREATE_TIME, CREATE_USER
+    from daily_content
+  </select>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into daily_content
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="list[0].id!=null">
+        ID,
+      </if>
+      <if test="list[0].content!=null">
+        CONTENT,
+      </if>
+      <if test="list[0].type!=null">
+        TYPE,
+      </if>
+      <if test="list[0].createTime!=null">
+        CREATE_TIME,
+      </if>
+      <if test="list[0].createUser!=null">
+        CREATE_USER,
+      </if>
+    </trim>
+     values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix=" (" suffix=")" suffixOverrides=",">
+        <if test="item.id!=null">
+          #{item.id,jdbcType=VARCHAR},
+        </if>
+        <if test="item.content!=null">
+          #{item.content,jdbcType=VARCHAR},
+        </if>
+        <if test="item.type!=null">
+          #{item.type,jdbcType=VARCHAR},
+        </if>
+        <if test="item.createTime!=null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createUser!=null">
+          #{item.createUser,jdbcType=VARCHAR},
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    <foreach collection="list" index="index" item="item" separator=";">
+      update daily_content
+      <set>
+        <if test="item.content!=null">
+          CONTENT=#{item.content,jdbcType=VARCHAR},
+        </if>
+        <if test="item.type!=null">
+          TYPE=#{item.type,jdbcType=VARCHAR},
+        </if>
+        <if test="item.createTime!=null">
+          CREATE_TIME=#{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createUser!=null">
+          CREATE_USER=#{item.createUser,jdbcType=VARCHAR},
+        </if>
+      </set>
+      where 
+      ID = #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+</mapper>

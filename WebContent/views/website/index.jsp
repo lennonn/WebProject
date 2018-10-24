@@ -15,9 +15,15 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Top Navigation</title>
+    <title>莫辂技术</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <![endif]-->
+
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body class="hold-transition skin-blue layout-top-nav">
@@ -31,9 +37,8 @@
         <div class="container">
             <section class="content">
                 <jsp:include page="/views/website/tips.jsp"></jsp:include>
-
                 <div class="row">
-                    <div class="col-md-9" id="leftContent">
+                    <div class="col-md-9 col-sm-6 col-xs-12" id="leftContent">
                         <div class="box box-solid">
                             <div class="box-header with-border">
                                 <i class="fa fa-text-width"></i>
@@ -43,26 +48,37 @@
                             <!-- /.box-header -->
                             <div class="box-body">
                                 <c:forEach items="${pageInfo.list}" var="item" varStatus="stat">
-                                    <dl class="dl-horizontal">
+                                    <dl>
                                         <h4><p class="text-aqua">${item.title}</p></h4>
-                                        <dt><img src="${pageContext.request.contextPath}/images/books/book.jpg"
-                                                 width="160" height="100" alt="First slide"></dt>
-                                        <dd>${item.shortContent}...</dd>
-                                            <%--  <span class="pull-left">hahha</span>--%>
+
+                                        <dd> ${item.plainText}...</dd>
+
                                         <span class="pull-right" style="color: #ff0000; font-size: 15px">
-                                            <a href="${pageContext.request.contextPath}/website/book/showDetail?id=${item.id}">Read More>></a>
+                                            <a href="${pageContext.request.contextPath}/article/website/showDetail?id=${item.id}">阅读全文>></a>
                                         </span>
+                                        <strong><i style="color: #0b93d5" class="fa fa-fw fa-clock-o"></i> 创建时间</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <strong><i class="fa fa-share"></i> 分享</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <strong><i style="color: #9f191f" class="fa fa-fw fa-eye"></i> 阅读数（
+                                            <c:choose>
+                                                <c:when test="${item.scan eq null}">0</c:when>
+                                                <c:otherwise>${item.scan}</c:otherwise>
+                                            </c:choose>
+                                            ）</strong>
+                                        <strong><i  style="color: green" class="fa fa-fw fa-comments"></i>评论数（2）</strong>
+
                                         <br/>
                                         <c:if test="${!stat.last}">
-                                            <hr/>
+                                            <hr style="margin: 5px">
                                         </c:if>
+
                                     </dl>
 
                                 </c:forEach>
                             </div>
-                            <!-- /.box-body -->
-                            <jsp:include page="page.jsp"/>
+                            <jsp:include page="page.jsp"></jsp:include>
+
                         </div>
+
                     </div>
                     <jsp:include page="/views/website/right.jsp"/>
                 </div>
@@ -76,9 +92,10 @@
     <!-- /.content-wrapper -->
 
     <jsp:include page="/views/copyright.jsp"></jsp:include>
+
+
 </div>
 <script type="text/javascript">
-
 </script>
 </body>
 </html>

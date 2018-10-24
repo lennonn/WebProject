@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlennon.admin.mapper.SysRolePermissionMapper">
+  <resultMap id="BaseResultMap" type="com.zlennon.admin.model.SysRolePermission">
+    <id column="RP_ID" jdbcType="VARCHAR" property="rpId" />
+    <result column="ROLE_ID" jdbcType="VARCHAR" property="roleId" />
+    <result column="PERMISSION_ID" jdbcType="VARCHAR" property="permissionId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from sys_role_permission
+    where RP_ID = #{rpId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zlennon.admin.model.SysRolePermission">
+    insert into sys_role_permission (RP_ID, ROLE_ID, PERMISSION_ID
+      )
+    values (#{rpId,jdbcType=VARCHAR}, #{roleId,jdbcType=VARCHAR}, #{permissionId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.zlennon.admin.model.SysRolePermission">
+    update sys_role_permission
+    set ROLE_ID = #{roleId,jdbcType=VARCHAR},
+      PERMISSION_ID = #{permissionId,jdbcType=VARCHAR}
+    where RP_ID = #{rpId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select RP_ID, ROLE_ID, PERMISSION_ID
+    from sys_role_permission
+    where RP_ID = #{rpId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select RP_ID, ROLE_ID, PERMISSION_ID
+    from sys_role_permission
+  </select>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into sys_role_permission
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="list[0].rpId!=null">
+        RP_ID,
+      </if>
+      <if test="list[0].roleId!=null">
+        ROLE_ID,
+      </if>
+      <if test="list[0].permissionId!=null">
+        PERMISSION_ID,
+      </if>
+    </trim>
+     values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix=" (" suffix=")" suffixOverrides=",">
+        <if test="item.rpId!=null">
+          #{item.rpId,jdbcType=VARCHAR},
+        </if>
+        <if test="item.roleId!=null">
+          #{item.roleId,jdbcType=VARCHAR},
+        </if>
+        <if test="item.permissionId!=null">
+          #{item.permissionId,jdbcType=VARCHAR},
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    <foreach collection="list" index="index" item="item" separator=";">
+      update sys_role_permission
+      <set>
+        <if test="item.roleId!=null">
+          ROLE_ID=#{item.roleId,jdbcType=VARCHAR},
+        </if>
+        <if test="item.permissionId!=null">
+          PERMISSION_ID=#{item.permissionId,jdbcType=VARCHAR},
+        </if>
+      </set>
+      where 
+      RP_ID = #{item.rpId,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+</mapper>

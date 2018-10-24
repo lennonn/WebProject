@@ -63,6 +63,13 @@
     where ID = #{id,jdbcType=VARCHAR}
   </select>
 
+  <select id="getUserByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select ID, USERNAME, PASSWD, PHONE, SEX, EMAIL, MARK, URANK, LASTLOGIN, LOGINIP,
+    IMAGEURL, REGTIME, LOCKED, RIGHTS
+    from sys_user
+    where USERNAME = #{username,jdbcType=VARCHAR}
+  </select>
+
   <select id="selectAll" resultMap="BaseResultMap">
     select ID, USERNAME, PASSWD, PHONE, SEX, EMAIL, MARK, URANK, LASTLOGIN, LOGINIP, 
     IMAGEURL, REGTIME, LOCKED, RIGHTS

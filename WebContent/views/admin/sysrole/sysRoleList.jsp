@@ -8,9 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>文章类型</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/table/bootstrap-table.css">
-
 </head>
-<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+
 <body>
 <div class="row">
     <div class="col-md-12">
@@ -33,7 +32,7 @@
                     <div class="modal-body">
                         <form class="form-horizontal" id ="sysRoleForm">
 
-                            <input type="hidden" name="id" id="id" value="">
+                            <input type="hidden" name="roleId" id="roleId" value="">
                              <div class="form-group">
                              </div>
                              <div class="form-group">
@@ -66,6 +65,31 @@
             </div>
             <!-- /.modal-dialog -->
         </div>
+
+        <div class="modal fade" id="modal-permission" >
+            <div class="modal-dialog modal-lg" >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">添加文章</h4>
+                    </div>
+                    <div class="modal-body" style="height:300px; overflow:scroll;">
+                        <form class="form-horizontal" id ="permissionForm">
+                            <input type="hidden" name="roleId" id="roleId2" value=""/>
+                            <div id="treeview"  style="color: #54ca9a;"/>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary" onclick="_savePermission();">授权</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
 
     </div>
 </div>
@@ -127,7 +151,8 @@
     function operateFormatter(value, row, index) {
         return [
             '<button type="button" class="edit btn btn-info btn-xs" > <i class="fa fa-edit">编辑</i></button>',
-            '<button type="button" class="delete btn btn-info btn-xs" > <i class="fa  fa-remove">删除</i></button>'
+            '<button type="button" class="delete btn btn-info btn-xs" > <i class="fa  fa-remove">删除</i></button>',
+            '<button type="button" class="auth btn btn-info btn-xs" > <i class="fa  fa-group">授权</i></button>'
         ].join('');
     }
 
@@ -142,7 +167,7 @@
         },
         'click .delete': function (e, value, row, index) {
             $.ajax({
-                url:"${pageContext.request.contextPath}/sysRole/delete?id="+row.id,
+                url:"${pageContext.request.contextPath}/sysRole/delete?id="+row.roleId,
                 type: "post",
                 dataType: "json",
                 success: function (res) {
@@ -150,6 +175,22 @@
                     getContent('${pageContext.request.contextPath}/sysRole/list');//刷新ds_table的数据
                 }
             });
+        },
+        'click .auth': function (e, value, row, index) {
+            var options = {
+                bootstrap2 : false,
+                showTags : true,
+                levels : 5,
+                showCheckbox : true,
+                checkedIcon : "glyphicon glyphicon-check",
+                data : ${menus},
+                onNodeSelected : function(event, data) {
+
+                }
+            };
+            $("#roleId2").val(row.roleId);
+            $('#treeview').treeview(options);
+            $("#modal-permission").modal('show');
         }
     };
 
@@ -159,6 +200,27 @@
             url:"${pageContext.request.contextPath}/sysRole/save",
             type: "post",
             data:data,
+            dataType: "json",
+            success: function (res) {
+                alert(res.msg);
+                $("#modal-default").modal('toggle');
+                getContent('${pageContext.request.contextPath}/sysRole/list');
+                // $('body').removeClass('modal-open');
+                $('.modal-backdrop').remove();
+            }
+        });
+    }
+    function _savePermission() {
+        debugger;
+        var permissionIds="";
+        $('#treeview').treeview('getChecked').forEach(function(e){
+            alert(e.text);
+            permissionIds+=e.id+",";
+        });
+        $.ajax({
+            url:"${pageContext.request.contextPath}/sysRole/auth",
+            type: "post",
+            data:{"permissionIds":permissionIds.substring(0,permissionIds.length-1),"roleId":$("#roleId2").val()},
             dataType: "json",
             success: function (res) {
                 alert(res.msg);
