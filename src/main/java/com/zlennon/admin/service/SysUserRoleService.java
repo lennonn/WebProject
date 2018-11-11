@@ -20,4 +20,6 @@ public interface SysUserRoleService<SysUserRole> extends Service<SysUserRole> {
     int updateByPrimaryKey(SysUserRole sysUserRole);
 
     List<SysUserRole> getUserRoleByUserId(String userId);
+
+    SysUserRole selectByUserId(String id);
 }

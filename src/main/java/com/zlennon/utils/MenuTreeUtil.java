@@ -12,17 +12,23 @@ public class MenuTreeUtil {
     public List<SysMenu> rootMenu;
     public List<SysMenu> list = new ArrayList<SysMenu>();
 
+    private static String type=null;
+
 
     
-    public List<SysMenu> menuList(List<SysMenu> menus) {
+    public List<SysMenu> menuList(List<SysMenu> menus,String type) {
         this.rootMenu=menus;
+        this.type=type;
         // 先找到所有的一级菜单
         for (int i = 0; i < rootMenu.size(); i++) {
             // 一级菜单没有parentId
-            if (rootMenu.get(i).getParentId().equals("0")) {
-                list.add(rootMenu.get(i));
+            if(rootMenu.get(i).getMenuLevel()!=null) {
+                if (rootMenu.get(i).getMenuLevel().equals("1")) {
+                    list.add(rootMenu.get(i));
+                }
             }
         }
+
         // 为一级菜单设置子菜单，getChild是递归调用的
         for (SysMenu menu : list) {
             menu.setSubMenu(getChild(menu.getMenuId(), rootMenu));
@@ -46,14 +52,20 @@ public class MenuTreeUtil {
         for (SysMenu menu : rootMenu) {
             // 遍历所有节点，将父菜单id与传过来的id比较
             if (!menu.getParentId().equals("0")){
-                if (menu.getParentId().equals(id)) {
-                    childList.add(menu);
+                if(type!=null) {
+                    if (menu.getParentId().equals(id) && menu.getMenuType().equals("1")) {
+                        childList.add(menu);
+                    }
+                }else{
+                    if (menu.getParentId().equals(id)) {
+                        childList.add(menu);
+                    }
                 }
             }
         }
         // 把子菜单的子菜单再循环一遍
-        for (SysMenu menu : childList) {// 没有url子菜单还有子菜单
-            if (StringUtils.isBlank(menu.getMenuUrl())) {
+        for (SysMenu menu : childList) {// 不是叶子节点的菜单还有子菜单
+            if (menu.getMenuStatus().equals("0")) {
                 // 递归
                 menu.setSubMenu(getChild(menu.getMenuId(), rootMenu));
             }

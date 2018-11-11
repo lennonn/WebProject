@@ -8,7 +8,7 @@ public class DailyContent implements Serializable {
 
     private String content;
 
-    private String type;
+    private String dailyType;
 
     private Date createTime;
 
@@ -32,12 +32,12 @@ public class DailyContent implements Serializable {
         this.content = content;
     }
 
-    public String getType() {
-        return type;
+    public String getDailyType() {
+        return dailyType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setDailyType(String dailyType) {
+        this.dailyType = dailyType;
     }
 
     public Date getCreateTime() {
@@ -70,7 +70,6 @@ public class DailyContent implements Serializable {
         DailyContent other = (DailyContent) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
             && (this.getContent() == null ? other.getContent() == null : this.getContent().equals(other.getContent()))
-            && (this.getType() == null ? other.getType() == null : this.getType().equals(other.getType()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
             && (this.getCreateUser() == null ? other.getCreateUser() == null : this.getCreateUser().equals(other.getCreateUser()));
     }
@@ -81,7 +80,6 @@ public class DailyContent implements Serializable {
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
         result = prime * result + ((getContent() == null) ? 0 : getContent().hashCode());
-        result = prime * result + ((getType() == null) ? 0 : getType().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getCreateUser() == null) ? 0 : getCreateUser().hashCode());
         return result;
@@ -95,7 +93,7 @@ public class DailyContent implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", content=").append(content);
-        sb.append(", type=").append(type);
+        sb.append(", dailyType=").append(dailyType);
         sb.append(", createTime=").append(createTime);
         sb.append(", createUser=").append(createUser);
         sb.append("]");

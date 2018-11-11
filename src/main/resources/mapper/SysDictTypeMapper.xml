@@ -19,13 +19,13 @@
     insert into sys_dict_type (ID, TYPE_NAME, DESCRIPTION, 
       CREATE_BY, CREATE_DATE, UPDATE_BY, 
       UPDATE_DATE, DEL_FLAG)
-    values (#{id,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=VARCHAR}, #{typeName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
       #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR}, 
       #{updateDate,jdbcType=DATE}, #{delFlag,jdbcType=VARCHAR})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.zlennon.admin.model.SysDictType">
     update sys_dict_type
-    set TYPE_NAME = #{type,jdbcType=VARCHAR},
+    set TYPE_NAME = #{typeName,jdbcType=VARCHAR},
       DESCRIPTION = #{description,jdbcType=VARCHAR},
       CREATE_BY = #{createBy,jdbcType=VARCHAR},
       CREATE_DATE = #{createDate,jdbcType=DATE},
@@ -55,7 +55,7 @@
       <if test="list[0].id!=null">
         ID,
       </if>
-      <if test="list[0].type!=null">
+      <if test="list[0].typeName!=null">
         TYPE_NAME,
       </if>
       <if test="list[0].description!=null">
@@ -83,8 +83,8 @@
         <if test="item.id!=null">
           #{item.id,jdbcType=VARCHAR},
         </if>
-        <if test="item.type!=null">
-          #{item.type,jdbcType=VARCHAR},
+        <if test="item.typeName!=null">
+          #{item.typeName,jdbcType=VARCHAR},
         </if>
         <if test="item.description!=null">
           #{item.description,jdbcType=VARCHAR},
@@ -111,8 +111,8 @@
     <foreach collection="list" index="index" item="item" separator=";">
       update sys_dict_type
       <set>
-        <if test="item.type!=null">
-          TYPE_NAME=#{item.type,jdbcType=VARCHAR},
+        <if test="item.typeName!=null">
+          TYPE_NAME=#{item.typeName,jdbcType=VARCHAR},
         </if>
         <if test="item.description!=null">
           DESCRIPTION=#{item.description,jdbcType=VARCHAR},

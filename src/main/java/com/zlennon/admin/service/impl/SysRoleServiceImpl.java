@@ -51,4 +51,5 @@ public class SysRoleServiceImpl extends AbstractService<SysRole> implements SysR
     public List<SysRole> selectByQueryParams(String searchText) {
         return sysRoleMapper.selectByQueryParams(searchText);
     }
+
 }

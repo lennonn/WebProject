@@ -1,5 +1,7 @@
 package com.zlennon.business.service;
 import com.zlennon.Service;
+import com.zlennon.business.model.DailyContent;
+
 import java.util.List;
 /**
  *
@@ -19,4 +21,5 @@ public interface DailyContentService<DailyContent> extends Service<DailyContent>
 
     List<DailyContent> selectByQueryParams(String searchText);
 
+    List<DailyContent> selectByType(String s);
 }

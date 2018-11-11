@@ -9,6 +9,7 @@ import com.zlennon.AbstractService;
 import com.zlennon.utils.MenuTreeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -25,6 +26,14 @@ public class SysMenuServiceImpl extends AbstractService<SysMenu> implements SysM
 
     @Autowired
     private SysMenuMapper sysMenuMapper;
+
+    public SysMenuMapper getSysMenuMapper() {
+        return sysMenuMapper;
+    }
+
+    public void setSysMenuMapper(SysMenuMapper sysMenuMapper) {
+        this.sysMenuMapper = sysMenuMapper;
+    }
 
     public int deleteByPrimaryKey(String id){
       return  sysMenuMapper.deleteByPrimaryKey(id);
@@ -84,7 +93,7 @@ public class SysMenuServiceImpl extends AbstractService<SysMenu> implements SysM
         List<SysMenu> menuList = selectAll();
 
         MenuTreeUtil treeUtil = new MenuTreeUtil();
-        List<SysMenu> treeMenus = treeUtil.menuList(menuList);
+        List<SysMenu> treeMenus = treeUtil.menuList(menuList,null);
          List<ZTree> zTrees = new ArrayList<ZTree>();
         initMenu(treeMenus,zTrees);
         menuMap.put("allMenu",zTrees);
@@ -101,12 +110,17 @@ public class SysMenuServiceImpl extends AbstractService<SysMenu> implements SysM
         return sysMenuMapper.getMaxCode(menuId);
     }
 
+    @Override
+    public List<SysMenu> selectPermissionMenuByRole(String roleId) {
+        return sysMenuMapper.selectPermissionMenuByRole(roleId);
+    }
+
     private void initMenu(List<SysMenu> treeMenus, List<ZTree> zTrees) {
 
         for (int i = 0; i < treeMenus.size(); i++) {
             SysMenu sm = treeMenus.get(i);
 
-            if(sm.getParentId().equals("0")){//把根节点添加上
+            if(sm.getMenuLevel().equals("1")){//把根节点添加上
                 ZTree zTree = new ZTree();
                 zTree.setOpen("true");
                 zTree.setId(String.valueOf(sm.getMenuId()));
@@ -125,7 +139,8 @@ public class SysMenuServiceImpl extends AbstractService<SysMenu> implements SysM
                         subZTree.setName(sub.getMenuName());
                         subZTree.setpId(sub.getParentId());
                         zTrees.add(subZTree);
-
+                        if(sub.getSubMenu()!=null)
+                        initMenu(sub.getSubMenu(),zTrees);
                 }
                 initMenu(sm.getSubMenu(),zTrees);
             }

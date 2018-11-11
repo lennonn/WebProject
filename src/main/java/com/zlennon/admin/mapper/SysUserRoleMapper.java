@@ -23,4 +23,6 @@ public interface SysUserRoleMapper {
     int updateBatchByPrimaryKeySelective(List<SysUserRole> records);
 
     List<SysUserRole> getUserRoleByUserId(String userId);
+
+    SysUserRole selectByUserId(String userId);
 }

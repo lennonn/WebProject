@@ -46,8 +46,10 @@ public class RightController {
         resultMap.put("pv",pvList.size());
         List<ArticleType> atList=articleTypeService.selectAll();
         resultMap.put("atList",atList);
-        List<DailyContent> dc= dailyContentService.selectAll();
+        List<DailyContent> dc= dailyContentService.selectByType("01");
         resultMap.put("dc",dc.get(0));
+        List<DailyContent> dc03= dailyContentService.selectByType("03");
+        resultMap.put("dc03",dc03.get(0));
         return resultMap;
     }
 

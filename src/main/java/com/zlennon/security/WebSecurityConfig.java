@@ -24,7 +24,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         // 设置不拦截规则
-        web.ignoring().antMatchers("/login","/","/website/**","/common/**", "/error/**","/css/**","/plugins/**", "/help/**", "/images/**", "/js/**", "/res/**");
+        web.ignoring().antMatchers("/login","/","/website/**","/common/**","/videos/**", "/error/**","/css/**","/plugins/**", "/help/**", "/images/**", "/js/**", "/res/**");
     }
 
     @Override

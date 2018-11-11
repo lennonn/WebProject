@@ -21,4 +21,6 @@ public interface ArticleMapper {
     int insertBatchSelective(List<Article> records);
 
     int updateBatchByPrimaryKeySelective(List<Article> records);
+
+    List<Article> findByTypeId(String typeId);
 }

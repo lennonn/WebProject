@@ -20,4 +20,5 @@ public interface SysPermissionService<SysPermission> extends Service<SysPermissi
     int updateByPrimaryKey(SysPermission sysPermission);
 
     List<SysPermission> selectByQueryParams(String searchText);
+
 }

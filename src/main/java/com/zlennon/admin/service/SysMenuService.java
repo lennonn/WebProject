@@ -3,6 +3,7 @@ package com.zlennon.admin.service;
 import com.zlennon.admin.BootTree;
 import com.zlennon.admin.ZTree;
 import com.zlennon.Service;
+import com.zlennon.admin.model.SysMenu;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -35,4 +36,5 @@ public interface SysMenuService<SysMenu> extends Service<SysMenu> {
 
     String getMaxCode(String menuId);
 
+    List<SysMenu> selectPermissionMenuByRole(String roleId);
 }

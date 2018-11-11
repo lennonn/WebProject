@@ -20,4 +20,5 @@ public interface SysRoleService<SysRole> extends Service<SysRole> {
     int updateByPrimaryKey(SysRole sysRole);
 
     List<SysRole> selectByQueryParams(String searchText);
+
 }

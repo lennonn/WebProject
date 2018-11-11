@@ -18,13 +18,6 @@ public class SysRolePermissionServiceImpl extends AbstractService<SysRolePermiss
     @Autowired
     private SysRolePermissionMapper sysRolePermissionMapper;
 
-    public SysRolePermissionMapper getSysRolePermissionMapper() {
-        return sysRolePermissionMapper;
-    }
-
-    public void setSysRolePermissionMapper(SysRolePermissionMapper sysRolePermissionMapper) {
-        this.sysRolePermissionMapper = sysRolePermissionMapper;
-    }
 
     public int deleteByPrimaryKey(String id){
       return  sysRolePermissionMapper.deleteByPrimaryKey(id);
@@ -46,4 +39,11 @@ public class SysRolePermissionServiceImpl extends AbstractService<SysRolePermiss
     public int updateByPrimaryKey(SysRolePermission sysRolePermission){
        return sysRolePermissionMapper.updateByPrimaryKey(sysRolePermission);
     }
+
+    @Override
+    public List<SysRolePermission> selectByPermissionId(String roleId) {
+        return sysRolePermissionMapper.selectByPermissionId(roleId);
+
+    }
+
 }

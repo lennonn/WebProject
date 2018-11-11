@@ -2,6 +2,7 @@ package com.zlennon.admin.mapper;
 
 import com.zlennon.admin.BootTree;
 import com.zlennon.admin.model.SysMenu;
+import org.apache.ibatis.annotations.Param;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Repository;
 
@@ -44,4 +45,6 @@ public interface SysMenuMapper {
     String getMaxCode(String menuId);
 
     List<BootTree> getBootMenu();
+
+    List<SysMenu> selectPermissionMenuByRole(String roleId);
 }

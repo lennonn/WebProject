@@ -79,7 +79,7 @@ public class SysMenuController {
             maxCode = "100";//每层菜单从100开始
             menuCode= curr.getMenuOrder()+String.valueOf(maxCode);
         }else{
-            menuCode =String.valueOf(Integer.parseInt(maxCode)+1);
+            menuCode =String.valueOf(Long.parseLong(maxCode)+1);
         }
         result.put("menuCode",menuCode);
         result.put("curr",curr);
@@ -160,6 +160,11 @@ public class SysMenuController {
                 sysMenu.setMenuOrder("100");
             }
             if(menuId==null||menuId.equals("")) {
+                //新增菜单都是叶子节点，并且将它的直接父级菜单修改为非叶子节点
+                SysMenu smTemp= (SysMenu) sysMenuService.selectByPrimaryKey(sysMenu.getParentId());
+                smTemp.setMenuStatus("0");
+                sysMenuService.updateByPrimaryKey(smTemp);
+                sysMenu.setMenuStatus("1");
                 sysMenuService.insert(sysMenu);
             }else{
                 sysMenuService.updateByPrimaryKey(sysMenu);

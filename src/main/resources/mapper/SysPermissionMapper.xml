@@ -11,6 +11,8 @@
     delete from sys_permission
     where ID = #{id,jdbcType=VARCHAR}
   </delete>
+
+
   <insert id="insert" parameterType="com.zlennon.admin.model.SysPermission">
     insert into sys_permission (ID, PDESC, PNAME, 
       MENU_ID)

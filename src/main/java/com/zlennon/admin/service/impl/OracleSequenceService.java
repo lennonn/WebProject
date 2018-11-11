@@ -3,10 +3,6 @@
  */
 package com.zlennon.admin.service.impl;
 
-import java.math.BigDecimal;
-import java.sql.Timestamp;
-import java.util.Date;
-
 import com.zlennon.Constants;
 import com.zlennon.PjException;
 import com.zlennon.admin.model.ImpulseSender;
@@ -14,17 +10,21 @@ import com.zlennon.admin.model.SequenceVo;
 import com.zlennon.admin.service.ISequenceService;
 import com.zlennon.admin.service.ImpulseSenderService;
 import com.zlennon.utils.DateUtil;
-
 import com.zlennon.utils.StringHelper;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.util.Date;
 
 @Service
 public class OracleSequenceService implements ISequenceService {
 	@Resource
 	ImpulseSenderService impulseSenderService;
+
 	private final String TABLE_NAME = "BASE_IMPULSE_SENDER";
 	// 日期字段名
 	private final String FIELD_DATE = "update_date";

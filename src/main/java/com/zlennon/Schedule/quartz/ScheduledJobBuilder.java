@@ -20,7 +20,7 @@ public class ScheduledJobBuilder {
     public static List<ScheduledJob> buildAll() {
         List<ScheduledJob> scheduledJobs = new ArrayList<>();
 
-        scheduledJobs.add(new ScheduledJob("myJob", "test", MyJob.class, 3000L, 3));
+        //scheduledJobs.add(new ScheduledJob("myJob", "test", MyJob.class, 3000L, 3));
 
         return scheduledJobs;
     }

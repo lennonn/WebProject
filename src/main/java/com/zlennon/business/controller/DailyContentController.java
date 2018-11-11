@@ -39,7 +39,7 @@ public class DailyContentController {
 
    @RequestMapping("list")
     public String list(Model model) {
-       List< SysDictValue> sdvList=sysDictValueService.selectByTypeId("1012201810080000001");
+       List< SysDictValue> sdvList=sysDictValueService.selectByTypeId("1013201810080000001");
        model.addAttribute("sdvList",sdvList);
        return "/business/dailycontent/dailyContentList";
     }

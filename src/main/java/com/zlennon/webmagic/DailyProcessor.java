@@ -36,19 +36,10 @@ public class DailyProcessor implements PageProcessor {
         System.out.println("cnContent: "+ cnContent);
         System.out.println("zhContent: "+ zhContent);
         DailyContent dailyContent = new DailyContent();
-        dailyContent.setContent(zhContent+"\\n"+cnContent);
-        dailyContent.setType("01");
+        dailyContent.setContent(zhContent+"<br>"+cnContent);
+        dailyContent.setDailyType("01");
         dailyContent.setCreateTime(new Date());
         dailyContentService.insert(dailyContent);
 
-    }
-    public static void main(String[] args) {
-/*        DailyProcessor my = new DailyProcessor();
-        long startTime, endTime;
-        System.out.println("开始爬取...");
-        startTime = System.currentTimeMillis();
-        Spider.create(my).addUrl("http://sentence.iciba.com/index.php?c=dailysentence&m=getTodaySentence").thread(5).run();
-        endTime = System.currentTimeMillis();
-        System.out.println("爬取结束，耗时约" + ((endTime - startTime) / 1000) + "秒");*/
     }
 }

@@ -51,4 +51,9 @@ public class DailyContentServiceImpl extends AbstractService<DailyContent> imple
     public List<DailyContent> selectByQueryParams(String searchText) {
        return dailyContentMapper.selectByQueryParams(searchText);
     }
+
+    @Override
+    public List<DailyContent> selectByType(String type) {
+        return dailyContentMapper.selectByType(type);
+    }
 }

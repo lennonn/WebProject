@@ -24,6 +24,8 @@
       ROLE = #{role,jdbcType=VARCHAR}
     where ROLE_ID = #{roleId,jdbcType=VARCHAR}
   </update>
+
+
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select ROLE_ID, ROLE_NAME, ROLE_DESC, ROLE
     from sys_role

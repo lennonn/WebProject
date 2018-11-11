@@ -10,6 +10,7 @@
     <result column="MENU_TYPE" jdbcType="VARCHAR" property="menuType" />
     <result column="MENU_ORDER" jdbcType="VARCHAR" property="menuOrder" />
     <result column="MENU_STATUS" jdbcType="VARCHAR" property="menuStatus" />
+    <result column="MENU_LEVEL" jdbcType="VARCHAR" property="menuLevel" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from SYS_MENU
@@ -18,10 +19,10 @@
   <insert id="insert" parameterType="com.zlennon.admin.model.SysMenu">
     insert into SYS_MENU (MENU_ID, PARENT_ID, MENU_NAME, 
       MENU_ICON, MENU_URL, MENU_TYPE, 
-      MENU_ORDER, MENU_STATUS)
+      MENU_ORDER,MENU_LEVEL, MENU_STATUS)
     values (#{menuId,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR}, #{menuName,jdbcType=VARCHAR}, 
       #{menuIcon,jdbcType=VARCHAR}, #{menuUrl,jdbcType=VARCHAR}, #{menuType,jdbcType=VARCHAR}, 
-      #{menuOrder,jdbcType=VARCHAR}, #{menuStatus,jdbcType=VARCHAR})
+      #{menuOrder,jdbcType=VARCHAR}, #{menuLevel,jdbcType=VARCHAR}, #{menuStatus,jdbcType=VARCHAR})
   </insert>
 
 
@@ -29,6 +30,15 @@
     select MENU_ID as id, PARENT_ID as parentId, MENU_NAME as text
     from SYS_MENU
   </select>
+
+
+  <select id="selectPermissionMenuByRole" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select MENU_ID, PARENT_ID, MENU_NAME, MENU_ICON, MENU_URL, MENU_TYPE, MENU_ORDER,MENU_LEVEL,
+    MENU_STATUS
+    from SYS_MENU as sm left join SYS_ROLE_PERMISSION AS srp ON sm.MENU_ID=srp.PERMISSION_ID
+    where srp.role_id = #{roleId,jdbcType=VARCHAR}
+  </select>
+
 
   <update id="updateByPrimaryKey" parameterType="com.zlennon.admin.model.SysMenu">
     update SYS_MENU
@@ -38,23 +48,24 @@
       MENU_URL = #{menuUrl,jdbcType=VARCHAR},
       MENU_TYPE = #{menuType,jdbcType=VARCHAR},
       MENU_ORDER = #{menuOrder,jdbcType=VARCHAR},
+      MENU_LEVEL = #{menuLevel,jdbcType=VARCHAR},
       MENU_STATUS = #{menuStatus,jdbcType=VARCHAR}
     where MENU_ID = #{menuId,jdbcType=VARCHAR}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select MENU_ID, PARENT_ID, MENU_NAME, MENU_ICON, MENU_URL, MENU_TYPE, MENU_ORDER, 
+    select MENU_ID, PARENT_ID, MENU_NAME, MENU_ICON, MENU_URL, MENU_TYPE, MENU_ORDER,MENU_LEVEL,
     MENU_STATUS
     from SYS_MENU
     where MENU_ID = #{menuId,jdbcType=VARCHAR}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
-    select MENU_ID, PARENT_ID, MENU_NAME, MENU_ICON, MENU_URL, MENU_TYPE, MENU_ORDER, 
+    select MENU_ID, PARENT_ID, MENU_NAME, MENU_ICON, MENU_URL, MENU_TYPE, MENU_ORDER,MENU_LEVEL,
     MENU_STATUS
     from SYS_MENU
   </select>
 
   <select id="findSubMenuByParentId" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select MENU_ID, PARENT_ID, MENU_NAME, MENU_ICON, MENU_URL, MENU_TYPE, MENU_ORDER,
+    select MENU_ID, PARENT_ID, MENU_NAME, MENU_ICON, MENU_URL, MENU_TYPE, MENU_ORDER,MENU_LEVEL,
     MENU_STATUS
     from SYS_MENU
     where PARENT_ID = #{parentId,jdbcType=VARCHAR}

@@ -51,4 +51,5 @@ public class SysPermissionServiceImpl extends AbstractService<SysPermission> imp
     public List<SysPermission> selectByQueryParams(String searchText) {
         return sysPermissionMapper.selectByQueryParams(searchText);
     }
+
 }

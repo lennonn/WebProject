@@ -105,8 +105,10 @@ public class CommonController {
         String dateStr=DateFormatUtils.format(new Date(),"yyyy-MM-dd");
         String returnPath=proName+ Constants.UPLOAD_PATH+dateStr+"/"+fileName;
         file.transferTo(new File(path));// 返回"图像"选项卡并显示图片 request.getContextPath()为web项目名
-         jsonResult = "{\"uploaded\" : 1, \"fileName\" :\""+ fileName+"\", \"url\":\""+returnPath+"\" , \"error\" : { \"message\":\"errorMsg\" } }";
-        out.write(jsonResult);
+         //jsonResult = "{\"uploaded\" : 1, \"fileName\" :\""+ fileName+"\", \"url\":\""+returnPath+"\" , \"error\" : { \"message\":\"errorMsg\" } }";
+         jsonResult = "{\"uploaded\" : 1, \"fileName\" :\""+ fileName+"\", \"url\":\""+returnPath+"\" }";
+
+            out.write(jsonResult);
         } catch (IllegalStateException e) {
         e.printStackTrace();
     } catch (IOException e) {
@@ -148,9 +150,9 @@ public class CommonController {
 
     @RequestMapping("/test")
     public String test() {
-        DailyProcessor my = new DailyProcessor(this.dailyContentService);
-        Spider.create(my).addUrl("http://sentence.iciba.com/index.php?c=dailysentence&m=getTodaySentence").thread(5).run();
-        return "";
+       // DailyProcessor my = new DailyProcessor(this.dailyContentService);
+       // Spider.create(my).addUrl("http://sentence.iciba.com/index.php?c=dailysentence&m=getTodaySentence").thread(5).run();
+        return "/test/test";
     }
 
 }

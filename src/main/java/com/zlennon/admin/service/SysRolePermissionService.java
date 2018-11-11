@@ -1,5 +1,6 @@
 package com.zlennon.admin.service;
 import com.zlennon.Service;
+
 import java.util.List;
 /**
  *
@@ -16,4 +17,6 @@ public interface SysRolePermissionService<SysRolePermission> extends Service<Sys
     List<SysRolePermission> selectAll();
 
     int updateByPrimaryKey(SysRolePermission sysRolePermission);
+
+    List<SysRolePermission> selectByPermissionId(String roleId);
 }

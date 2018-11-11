@@ -25,4 +25,5 @@ public interface SysRoleMapper {
     int updateBatchByPrimaryKeySelective(List<SysRole> records);
 
     List<SysRole> selectByQueryParams(@Param(value="search")String searchText);
+
 }

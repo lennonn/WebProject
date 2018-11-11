@@ -27,6 +27,13 @@
     from sys_role_permission
     where RP_ID = #{rpId,jdbcType=VARCHAR}
   </select>
+
+ <select id="selectByPermissionId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select RP_ID, ROLE_ID, PERMISSION_ID
+    from sys_role_permission
+    WHERE ROLE_ID=#{roleId,jdbcType=VARCHAR}
+  </select>
+
   <select id="selectAll" resultMap="BaseResultMap">
     select RP_ID, ROLE_ID, PERMISSION_ID
     from sys_role_permission

@@ -47,8 +47,11 @@ public class ArticleServiceImpl extends AbstractService<Article> implements Arti
     }
 
     public int updateByPrimaryKey(Article article){
-        article.setTime(new Date());
-        article.setAuthor("zlennon");
        return articleMapper.updateByPrimaryKey(article);
+    }
+
+    @Override
+    public List<Article> findByTypeId(String typeId) {
+        return articleMapper.findByTypeId(typeId);
     }
 }

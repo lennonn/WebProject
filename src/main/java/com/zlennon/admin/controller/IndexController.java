@@ -3,9 +3,10 @@ package com.zlennon.admin.controller;
 
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
-import com.zlennon.admin.model.SysMenu;
-import com.zlennon.admin.service.SysMenuService;
+import com.zlennon.admin.model.*;
+import com.zlennon.admin.service.*;
 import com.zlennon.utils.MenuTreeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,13 +24,29 @@ public class IndexController {
     @Autowired
     SysMenuService sysMenuService;
 
+    @Autowired
+    SysUserRoleService sysUserRoleService;
+
+    @Autowired
+    SysRolePermissionService sysRolePermissionService;
+
+
     @RequestMapping("/views/index")
     public String index(Model model, HttpServletRequest request) {
-        List<SysMenu> menuList = sysMenuService.selectAll();
+        //查询当前用户的菜单
+        HttpSession currSession = request.getSession();
+        SysUser user= (SysUser) currSession.getAttribute("currUser");
+        SysUserRole sr= (SysUserRole) sysUserRoleService.selectByUserId(user.getId());
+        List<SysMenu> menuList;
+        if(user.getUsername().equals("admin")){
+            menuList = sysMenuService.selectAll();
+        }else{
+           menuList=sysMenuService.selectPermissionMenuByRole(sr.getRoleId());
 
+        }
         MenuTreeUtil treeUtil = new MenuTreeUtil();
-        List<SysMenu> treeMenus = treeUtil.menuList(menuList);
-        model.addAttribute("menu",treeMenus.get(0));
+        List<SysMenu> treeMenus = treeUtil.menuList(menuList,"permission");
+        model.addAttribute("menu",treeMenus);
         return "/index";
     }
 

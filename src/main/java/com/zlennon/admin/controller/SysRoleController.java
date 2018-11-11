@@ -1,8 +1,11 @@
 package com.zlennon.admin.controller;
 import com.zlennon.admin.BootTree;
+import com.zlennon.admin.ZTree;
+import com.zlennon.admin.model.SysMenu;
 import com.zlennon.admin.model.SysPermission;
 import com.zlennon.admin.model.SysRole;
 import com.zlennon.admin.model.SysRolePermission;
+import com.zlennon.admin.service.SysMenuService;
 import com.zlennon.admin.service.SysPermissionService;
 import com.zlennon.admin.service.SysRolePermissionService;
 import com.zlennon.admin.service.SysRoleService;
@@ -51,6 +54,9 @@ public class SysRoleController {
 
     @Autowired
     SysPermissionService sysPermissionService;
+
+    @Autowired
+    SysMenuService sysMenuService;
 
    @RequestMapping("list")
     public String list(Model model) {
@@ -127,14 +133,16 @@ public class SysRoleController {
         Map<String, Object> resultMap = new HashMap<String, Object>();
         try {
             String permissions[] = permissionIds.split(",");
+            List<SysRolePermission> spList = sysRolePermissionService.selectByPermissionId(roleId);
+            //删除原有角色
+            for(SysRolePermission rolePermission:spList){
+                sysRolePermissionService.deleteByPrimaryKey(rolePermission.getRpId());
+            }
             for (String p : permissions) {
-                SysPermission sp = (SysPermission) sysPermissionService.selectByPrimaryKey(p);
-                if (sp != null) {
-                    SysRolePermission srp = new SysRolePermission();
-                    srp.setPermissionId(sp.getId());
-                    srp.setRoleId(roleId);
-                    sysRolePermissionService.insert(srp);
-                }
+                SysRolePermission srp = new SysRolePermission();
+                srp.setPermissionId(p);
+                srp.setRoleId(roleId);
+                sysRolePermissionService.insert(srp);
             }
             resultMap.put("msg","授权成功！");
         }catch (Exception e){
@@ -144,6 +152,16 @@ public class SysRoleController {
         return resultMap;
     }
 
+    @RequestMapping(value = "/findAndAuthorisedMenu")
+    @ResponseBody
+    public Map<String,Object> findAndAuthorisedMenu(@RequestParam String roleId,HttpServletRequest request) {
+        Map<String,Object> result = new HashMap<>();
+        List<SysMenu> menuList=sysMenuService.selectPermissionMenuByRole(roleId);
+        List<ZTree> zTrees= sysMenuService.getMenuTreeJson(request);
+        result.put("menu",menuList);
+        result.put("tree",zTrees);
+        return result;
+    }
 }
 
 

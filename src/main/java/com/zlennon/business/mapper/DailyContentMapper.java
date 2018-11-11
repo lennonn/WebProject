@@ -23,4 +23,6 @@ public interface DailyContentMapper {
     int updateBatchByPrimaryKeySelective(List<DailyContent> records);
 
     List<DailyContent> selectByQueryParams(String searchText);
+
+    List<DailyContent> selectByType(String type);
 }

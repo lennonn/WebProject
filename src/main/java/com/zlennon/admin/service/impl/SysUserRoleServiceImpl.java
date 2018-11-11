@@ -51,4 +51,9 @@ public class SysUserRoleServiceImpl extends AbstractService<SysUserRole> impleme
     public List<SysUserRole> getUserRoleByUserId(String userId) {
         return sysUserRoleMapper.getUserRoleByUserId(userId);
     }
+
+    @Override
+    public SysUserRole selectByUserId(String userId) {
+        return  sysUserRoleMapper.selectByUserId(userId);
+    }
 }

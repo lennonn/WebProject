@@ -25,4 +25,6 @@ public interface SysPermissionMapper {
     int updateBatchByPrimaryKeySelective(List<SysPermission> records);
 
     List<SysPermission> selectByQueryParams(@Param(value="search")String searchText);
+
+    List<SysPermission> selectAllPermissionByRole(String roleId);
 }

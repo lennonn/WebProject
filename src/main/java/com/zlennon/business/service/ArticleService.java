@@ -1,6 +1,7 @@
 package com.zlennon.business.service;
 
 import com.zlennon.Service;
+import com.zlennon.business.model.Article;
 
 import java.util.List;
 /**
@@ -18,4 +19,6 @@ public interface ArticleService<Article> extends Service<Article> {
     List<Article> selectAll();
 
     int updateByPrimaryKey(Article article);
+
+    List<Article> findByTypeId(String typeId);
 }

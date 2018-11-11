@@ -47,7 +47,7 @@ public class SysPermissionController {
     SysOperationService sysOperationService;
 
     @Autowired
-    SysPermissionOperationService permissionOperationService;
+    SysPermissionOperationService sysPermissionOperationService;
 
     @Autowired
     Tree bootTree;
@@ -103,19 +103,19 @@ public class SysPermissionController {
                     SysPermissionOperation spo=new SysPermissionOperation();
                     spo.setPermissionId(sysPermission.getId());
                     spo.setOperationId(id);
-                   permissionOperationService.insert(spo);
+                    sysPermissionOperationService.insert(spo);
                 }
             }else {
                 sysPermissionService.updateByPrimaryKey(sysPermission);
 
                 //功能先删除在添加
-                permissionOperationService.deleteByPermissionId(sysPermission.getId());
+                sysPermissionOperationService.deleteByPermissionId(sysPermission.getId());
 
                 for (String id : ids) {
                     SysPermissionOperation spo = new SysPermissionOperation();
                     spo.setPermissionId(sysPermission.getId());
                     spo.setOperationId(id);
-                    permissionOperationService.insert(spo);
+                    sysPermissionOperationService.insert(spo);
                 }
             }
             resultMap.put("msg", "操作成功");
@@ -131,7 +131,7 @@ public class SysPermissionController {
     @ResponseBody
     public Map<String,Object> getPermissionOperations(@RequestParam String permissionId,String menuId) {
         Map<String,Object> result = new HashMap<>();
-        result.put("pos",permissionOperationService.getByPermissionId(permissionId));
+        result.put("pos",sysPermissionOperationService.getByPermissionId(permissionId));
         result.put("menu",sysMenuService.selectByPrimaryKey(menuId));
         return result;
     }

@@ -20,6 +20,8 @@ public class SysMenu implements Serializable {
 
     private String menuStatus;
 
+    private String menuLevel;
+
     private List<SysMenu> subMenu;
 
     private String target;
@@ -82,6 +84,14 @@ public class SysMenu implements Serializable {
 
     public void setMenuOrder(String menuOrder) {
         this.menuOrder = menuOrder;
+    }
+
+    public String getMenuLevel() {
+        return menuLevel;
+    }
+
+    public void setMenuLevel(String menuLevel) {
+        this.menuLevel = menuLevel;
     }
 
     public String getMenuStatus() {

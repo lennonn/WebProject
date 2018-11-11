@@ -4,7 +4,8 @@
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:tx="http://www.springframework.org/schema/tx" 
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:task="http://www.springframework.org/schema/task"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
         		http://www.springframework.org/schema/beans/spring-beans.xsd
         		http://www.springframework.org/schema/tx 
@@ -14,14 +15,18 @@
         		http://www.springframework.org/schema/context 
         		http://www.springframework.org/schema/context/spring-context.xsd
         		http://www.springframework.org/schema/mvc 
-        		http://www.springframework.org/schema/mvc/spring-mvc.xsd  ">
+        		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+				http://www.springframework.org/schema/task
+				http://www.springframework.org/schema/task/spring-task-4.0.xsd">
 
 	<mvc:annotation-driven />
     <!--启用自动扫描  -->
     <context:component-scan base-package="com.zlennon.*" />
 
 	<context:property-placeholder  location="classpath:jdbc.properties" />
-
+	<!-- 计划任务配置，用 @Service @Lazy(false)标注类，用@Scheduled(cron = "0 0 2 * * ?")标注方法 -->
+	<task:executor id="executor" pool-size="10"/> <task:scheduler id="scheduler" pool-size="10"/>
+	<task:annotation-driven scheduler="scheduler" executor="executor" proxy-target-class="true"/>
 <!-- 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="${driverClassName}"></property>
 		<property name="url" value="${url}"></property>
@@ -45,7 +50,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
         <property name="dataSource" ref="dataSource"></property>  
         <property name="configLocation" value="classpath:sqlMapConfig.xml" />
-        <property name="mapperLocations" value="classpath:mapper/*.xml" />
+		 <property name="mapperLocations" value="classpath:mapper/*.xml" />
 		<property name="typeAliasesPackage" value="com.isea533.mybatis.model"/>
 		<property name="plugins">
 			<array>

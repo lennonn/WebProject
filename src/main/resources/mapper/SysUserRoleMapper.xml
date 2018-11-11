@@ -22,6 +22,14 @@
       ROLE_ID = #{roleId,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=VARCHAR}
   </update>
+
+
+  <select id="selectByUserId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select ID, USER_ID, ROLE_ID
+    from sys_user_role
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select ID, USER_ID, ROLE_ID
     from sys_user_role
