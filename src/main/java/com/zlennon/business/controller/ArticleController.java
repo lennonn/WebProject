@@ -67,6 +67,16 @@ public class ArticleController {
         model.addAttribute("article",article);
         return "/website/article/articleDetail";
     }
+
+    @RequestMapping("website/findByTypeId")
+    public String findByTypeId(Model model,@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10") Integer size,String typeId) {
+        PageHelper.startPage(page, size);
+        List<Article> list = articleService.findByTypeId(typeId);
+        PageInfo pageInfo = new PageInfo(list);
+        model.addAttribute("pageInfo",pageInfo);
+        model.addAttribute("pageUrl","/");
+        return "/website/index";
+    }
     @RequestMapping("initTable")
     @ResponseBody
     public String  initTable(HttpServletRequest request, @RequestParam Integer pageNumber, @RequestParam Integer pageSize){
@@ -77,9 +87,16 @@ public class ArticleController {
     }
     @RequestMapping("delete")
     @ResponseBody
-    public String  delete(@RequestParam String id){
-        articleService.deleteByPrimaryKey(id);
-        return  "";
+    public Map<String,Object>  delete(@RequestParam String id){
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        try {
+            articleService.deleteByPrimaryKey(id);
+            resultMap.put("msg", "操作成功");
+        }catch (Exception e){
+            logger.info(e.getMessage());
+            resultMap.put("msg", "操作失败");
+        }
+        return  resultMap;
     }
 
 
@@ -91,8 +108,12 @@ public class ArticleController {
             if(article.getId()==null) {
                 articleService.insert(article);
             }else{
-                article.setUpdateTime(new Date());
-                articleService.updateByPrimaryKey(article);
+                Article origin = (Article) articleService.selectByPrimaryKey(article.getId());
+                origin.settId(article.gettId());
+                origin.setContent(article.getContent());
+                origin.setShortContent(article.getShortContent());
+                origin.setUpdateTime(new Date());
+                articleService.updateByPrimaryKey(origin);
             }
             resultMap.put("msg", "操作成功");
         } catch (Exception e) {
