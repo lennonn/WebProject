@@ -12,6 +12,7 @@
     <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
     <result column="create_user" jdbcType="VARCHAR" property="createUser" />
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="plain_text" jdbcType="LONGVARCHAR" property="plainText" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from article
@@ -19,11 +20,11 @@
   </delete>
   <insert id="insert" parameterType="com.zlennon.business.model.Article">
     insert into article (id, t_id, title, 
-      author, scan, create_time, content
+      author, scan, create_time, content,plain_text
       )
     values (#{id,jdbcType=VARCHAR}, #{tId,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
       #{author,jdbcType=VARCHAR}, #{scan,jdbcType=INTEGER}, #{createTime,jdbcType=DATE}, #{content,jdbcType=LONGVARCHAR},
-      #{updateTime,jdbcType=DATE},#{updateUser,jdbcType=VARCHAR},#{createUser,jdbcType=VARCHAR},#{plainText,jdbcType=VARCHAR}
+      #{plainText,jdbcType=VARCHAR}
       )
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.zlennon.business.model.Article">
@@ -44,10 +45,17 @@
     select id, t_id, title, author, scan, create_time, content,update_time,plain_text
     from article
     where id = #{id,jdbcType=VARCHAR}
+
   </select>
+
+  <select id="findByTypeId" resultMap="BaseResultMap">
+    select id, t_id, title, author, scan, create_time, content,SUBSTR(plain_text FROM 1 FOR 150) as plainText
+    from article where t_id=#{typeId,jdbcType=VARCHAR} order by  create_time desc
+  </select>
+
   <select id="selectAll" resultMap="BaseResultMap">
     select id, t_id, title, author, scan, create_time, content,SUBSTR(plain_text FROM 1 FOR 150) as plainText
-    from article
+    from article order by  create_time desc
   </select>
   <insert id="insertBatchSelective" parameterType="java.util.List">
     insert into article
