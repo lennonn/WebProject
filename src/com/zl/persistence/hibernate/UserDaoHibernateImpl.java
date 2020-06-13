@@ -21,7 +21,7 @@ public class UserDaoHibernateImpl implements UserDao {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-	
+
 	public void saveUser(CUser user){
 		 session = sessionFactory.getCurrentSession();
 		session.save(user);
@@ -30,7 +30,7 @@ public class UserDaoHibernateImpl implements UserDao {
 	/* (non-Javadoc)
 	 * @see com.zl.persistence.dao.UserDao#getDatabase(java.lang.String)
 	 */
-	@Override
+
 	public CUser getUser(String username) {
 		try{
 			session =sessionFactory.openSession();
@@ -44,10 +44,10 @@ public class UserDaoHibernateImpl implements UserDao {
 			return null;
 		}finally{
 			if(session != null)
-				session.close();	
-		}	
+				session.close();
+		}
 	}
-	
-		
-	
+
+
+
 }

@@ -23,7 +23,7 @@ public class CustomLinkedList<T> {
 		public CustomLinkedList(int size){
 			
 		}
-		class Node<T>{
+		static class Node<T>{
 			int head;
 			Object data;
 			int next;
@@ -50,13 +50,13 @@ public class CustomLinkedList<T> {
 		}
 		public static void main(String[] args) {
 			CustomLinkedList<Object> customLinkedList =new CustomLinkedList<Object>();
-			CustomLinkedList.Node node=customLinkedList.new Node<Object>();
+			Node node=new Node<Object>();
 			node.head=2;
 			node.data="dddd";
 			node.next=4;
 			customLinkedList.add(5, node);
 			
-			CustomLinkedList.Node node1=customLinkedList.new Node();
+			CustomLinkedList.Node node1=new Node();
 			node.head=5;
 			node.data="ddd";
 			node.next=9;

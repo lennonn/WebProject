@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans default-lazy-init="default" default-autowire="byName"
+<beans  default-autowire="byName"
 	xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
@@ -10,6 +10,12 @@
 	</bean>
 	<bean id="deptService" class="com.zl.service.spring.DeptServiceImpl">
 		 <property name="deptDao" ref="deptDao"></property>
+	</bean>
+	<bean id="sonService" class="com.zl.service.spring.SonServiceImpl">
+		 <property name="sonDao" ref="sonDao"></property>
+	</bean>
+	<bean id="fartherService" class="com.zl.service.spring.FartherServiceImpl">
+		 <property name="fartherDao" ref="fartherDao"></property>
 	</bean>
 	<!--  <bean id="userService" class="com.zl.service.spring.UserServiceImpl">
 		 <property name="userDao" ref="userDAO"></property>

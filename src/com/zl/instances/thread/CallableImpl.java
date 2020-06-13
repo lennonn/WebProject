@@ -25,7 +25,7 @@ public class CallableImpl implements Callable<String> {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         Callable<String> callable = new CallableImpl("my callable test!");
-        FutureTask<String> task = new FutureTask<>(callable);
+        FutureTask<String> task = new FutureTask<String>(callable);
         long beginTime = System.currentTimeMillis();
         // 创建线程
         new Thread(task).start();

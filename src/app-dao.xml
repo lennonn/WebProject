@@ -16,4 +16,10 @@
 	<bean id="userDao" class="com.zl.persistence.hibernate.UserDaoHibernateImpl" >
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	<bean id="fartherDao" class="com.zl.persistence.hibernate.FartherDaoHibernateImpl" >
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="sonDao" class="com.zl.persistence.hibernate.SonDaoHibernateImpl" >
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 </beans>

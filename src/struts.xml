@@ -77,9 +77,11 @@
 			method="loginSuccess">
 			<result>/WEB-INF/jsp/user/logon.jsp</result>
 		</action>
-		<action name="index">
+
+		<action name="index" class="com.zl.web.action.IndexAction" method="getAuthcUser">
 			<result>/WEB-INF/jsp/user/index.jsp</result>
 		</action>
+
 		<action name="loout">
 			<result>/WEB-INF/jsp/user/login.jsp</result>
 		</action>

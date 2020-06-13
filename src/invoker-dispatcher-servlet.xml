@@ -5,7 +5,7 @@
     <bean id="userService" class="com.zl.service.spring.UserServiceImpl" />
 
     <bean id="userServiceExporter" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
-        <property name="serviceInterface" value="com.zl.service.facade.IUserService" />
+        <property name="serviceInterface" value="com.zl.service.facade.UserService" />
         <property name="service" ref="userService" />
     </bean>
 

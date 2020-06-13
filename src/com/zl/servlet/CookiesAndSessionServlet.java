@@ -27,7 +27,6 @@ public class CookiesAndSessionServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		StringBuilder sb = new StringBuilder();
 		HttpSession session=req.getSession();
-		
 		Long time=session.getCreationTime();
 		Cookie cookie[]=req.getCookies();
 		resp.setContentType(" text/html;charset=gb2312");

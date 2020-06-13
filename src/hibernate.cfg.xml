@@ -42,5 +42,7 @@
 	<!-- Hibernate将收集有助于性能调节的统计数据 -->
 	<property name="hibernate.generate_statistics">true</property>
 	<property name="dialect">org.hibernate.dialect.OracleDialect</property>
+	<property name="connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+	<property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
 </session-factory>
 </hibernate-configuration>
