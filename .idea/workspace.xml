@@ -1,15 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="a77fc3a5-c465-4a2c-9044-ea6fcdb81165" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
+=======
+    <list default="true" id="48556c69-1ed1-490d-a8a8-f0b8ce84f663" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/javax.annotation.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.ejb.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.jms.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.resource.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log4j/SSHXmlConfigration-error.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log4j/SSHXmlConfigration.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app-shiro.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zl/dto/domain/Farther.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zl/dto/domain/Son.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zl/persistence/dao/FartherDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zl/persistence/dao/SonDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zl/persistence/hibernate/FartherDaoHibernateImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zl/persistence/hibernate/SonDaoHibernateImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zl/persistence/hibernate/mapping/Farther.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zl/persistence/hibernate/mapping/Son.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zl/service/facade/FartherService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zl/service/facade/SonService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zl/service/spring/FartherServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zl/service/spring/SonServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zl/shiro/CasShiroRealm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zl/web/action/IndexAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shiro.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/com/zl/service/spring/MappingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.springBeans" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tern-project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/user/portal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/user/portal.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app-springSecurity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-springSecurity.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zl/instances/customelist/CustomLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zl/instances/customelist/CustomLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zl/instances/thread/CallableImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zl/instances/thread/CallableImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zl/persistence/hibernate/DeptDaoHibernateImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zl/persistence/hibernate/DeptDaoHibernateImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zl/persistence/hibernate/UserDaoHibernateImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zl/persistence/hibernate/UserDaoHibernateImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zl/servlet/CookiesAndSessionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zl/servlet/CookiesAndSessionServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zl/servlet/TestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zl/servlet/TestServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zl/socket/server/ChatSocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zl/socket/server/ChatSocketServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/invoker-dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/invoker-dispatcher-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/struts.xml" afterDir="false" />
+    </list>
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< Updated upstream
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
@@ -110,12 +164,49 @@
       <properties />
       <listeners />
     </configuration>
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1a54OBoJQVCUtsDENGcSwdql8eP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+>>>>>>> Stashed changes
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< Updated upstream
       <changelist id="a77fc3a5-c465-4a2c-9044-ea6fcdb81165" name="Default" comment="" />
       <created>1532583329473</created>
       <option name="number" value="Default" />
@@ -181,5 +272,50 @@
         </settings>
       </state>
     </states>
+=======
+      <changelist id="48556c69-1ed1-490d-a8a8-f0b8ce84f663" name="Default Changelist" comment="" />
+      <created>1586012087032</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586012087032</updated>
+      <workItem from="1586012103161" duration="3000" />
+      <workItem from="1588592098224" duration="37000" />
+      <workItem from="1590934618604" duration="12000" />
+      <workItem from="1591618857241" duration="2150000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="74" key="#HTTP_Proxy" timestamp="1591619270711">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="275" y="74" key="#HTTP_Proxy/0.30.1366.738@0.30.1366.738" timestamp="1591619270711" />
+    <state x="303" y="77" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1591619272576">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="303" y="77" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.30.1366.738@0.30.1366.738" timestamp="1591619272576" />
+    <state x="213" y="54" key="Maven.ArtifactSearchDialog" timestamp="1591619590183">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="213" y="54" key="Maven.ArtifactSearchDialog/0.30.1366.738@0.30.1366.738" timestamp="1591619590183" />
+    <state x="184" y="30" key="SettingsEditor" timestamp="1591619878220">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="184" y="30" key="SettingsEditor/0.30.1366.738@0.30.1366.738" timestamp="1591619878220" />
+    <state x="445" y="111" key="git4idea.branch.GitSmartOperationDialog" timestamp="1592054028233">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="445" y="111" key="git4idea.branch.GitSmartOperationDialog/0.30.1366.738@0.30.1366.738" timestamp="1592054028233" />
+    <state x="434" y="129" key="struts2 file set editor" timestamp="1591619506669">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="434" y="129" key="struts2 file set editor/0.30.1366.738@0.30.1366.738" timestamp="1591619506669" />
+>>>>>>> Stashed changes
   </component>
 </project>
